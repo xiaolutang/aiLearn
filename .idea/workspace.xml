@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="ai 入门搭建本地聊天机器人">
+    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="ai 提示词优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tongyi_ai_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/tongyi_ai_chat.py" afterDir="false" />
     </list>
@@ -94,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752857728810</updated>
-      <workItem from="1752857729906" duration="19801000" />
+      <workItem from="1752857729906" duration="20602000" />
     </task>
     <task id="LOCAL-00001" summary="ai 入门搭建本地聊天机器人">
       <option name="closed" value="true" />
@@ -104,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752944548955</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ai 提示词优化">
+      <option name="closed" value="true" />
+      <created>1752949967378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752949967378</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ai 入门搭建本地聊天机器人" />
-    <option name="LAST_COMMIT_MESSAGE" value="ai 入门搭建本地聊天机器人" />
+    <MESSAGE value="ai 提示词优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai 提示词优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

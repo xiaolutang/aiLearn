@@ -85,12 +85,12 @@ messages: list[ChatCompletionMessageParam] = [system_prompt]
 # 定义异步任务列表
 async def task(question):
     print(f"Sending question: {question}")
-    #将问题插入消息列表
+    #记录用户信息
     messages.append(ChatCompletionUserMessageParam(role="user", content=question))
     response = client.chat.completions.create(
         messages=messages,
         model="qwen-plus",  # 模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
-        stream=True,
+        stream=True,# 是否流式输出 流式输出时 会将模型的输出流式返回，非流式输出时 会将完整的输出返回（有较长的等待期）不同的输出 结果处理方式会不同
     )
     full_response = ""
     for chunk in response:
@@ -101,6 +101,7 @@ async def task(question):
 
     # print("\n完整回答：", full_response)
     print("\n")
+    #记录模型回复信息
     messages.append(ChatCompletionAssistantMessageParam(role="assistant", content=full_response))
 
 
