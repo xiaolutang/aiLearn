@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ .gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aiLearn.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tongyi_ai_chat.py" afterDir="false" />
+    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="ai 入门搭建本地聊天机器人">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tongyi_ai_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/tongyi_ai_chat.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,12 +94,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1752857728810</updated>
-      <workItem from="1752857729906" duration="15163000" />
+      <workItem from="1752857729906" duration="19801000" />
     </task>
+    <task id="LOCAL-00001" summary="ai 入门搭建本地聊天机器人">
+      <option name="closed" value="true" />
+      <created>1752944548955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752944548955</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ai 入门搭建本地聊天机器人" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai 入门搭建本地聊天机器人" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -125,6 +131,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/aiLearn$open_ai_chat.coverage" NAME="tongyi_ai_chat Coverage Results" MODIFIED="1752941318937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aiLearn$open_ai_chat.coverage" NAME="tongyi_ai_chat Coverage Results" MODIFIED="1752946423128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
