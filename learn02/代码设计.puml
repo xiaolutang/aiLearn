@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ChatModelMixIn{
+    def chat_to_llm()
+}
+
+class ToolsProviderMixIn{
+    def get_tools():List<ChatCompletionToolParam>
+}
+
+ChatContext *-- ChatModelMixIn
+ChatContext *-- ToolsProviderMixIn
+ChatContext *-- MessageManager
+class MessageManager{
+    - __messages:List[ChatCompletionMessageParam|ChatCompletion]
+}
+
+class ChatInputMixin{
+    - __input:str
+}
+
+class DisPlayManagerMixIn{
+    def on_message_change(self, message:ChatCompletionMessageParam|ChatCompletion,all_messages:List[ChatCompletionMessageParam|ChatCompletion]):
+}
+
+class ChatContext{
+    - def __on_message_change(self, messages: List[ChatCompletionMessageParam | ChatCompletion])
+
+}
+
+class ChatContextInterface{}
+ChatContext --> ChatContextInterface
+ChatContext *-- DisPlayManagerMixIn
+LocalAiChatAndDisplay --> DisPlayManagerMixIn
+LocalAiChatAndDisplay --> ChatInputMixin
+
+AliBaiLianChatModel --> ChatModelMixIn
+ChatTools --> ToolsProviderMixIn
+LocalAiChatAndDisplay o-- ChatContext
+@enduml

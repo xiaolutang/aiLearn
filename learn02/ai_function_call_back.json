@@ -1,0 +1,44 @@
+{
+  "id": "chatcmpl-ee9c3592-a825-971f-a6a2-7324a1459ab3",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_386cbbf1db3848e69c8460",
+            "function": {
+              "arguments": "{}",
+              "name": "get_current_time"
+            },
+            "type": "function",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1753097180,
+  "model": "qwen-plus",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 16,
+    "prompt_tokens": 230,
+    "total_tokens": 246,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  }
+}
