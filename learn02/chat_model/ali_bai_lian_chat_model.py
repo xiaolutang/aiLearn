@@ -32,4 +32,5 @@ class AliBaiLianChatModel(ChatModelMixin):
             stream=chat_context.stream,  # 是否流式输出 流式输出时 会将模型的输出流式返回，非流式输出时 会将完整的输出返回（有较长的等待期）不同的输出 结果处理方式会不同
             tools=chat_context.tools_provider.get_tools(),
             tool_choice="required",
+            parallel_tool_calls=1,
         )

@@ -52,9 +52,14 @@ class LocalAiChatAndDisplay(ChatDisplayMixIn, ChatInputMixin):
             if isinstance(message, ChatCompletion):
                 role = message.choices[0].message.role
                 content = message.choices[0].message.content
+                function_call = message.choices[0].message.function_call
                 f.write(f"## {role.capitalize()} 消息\n\n")
                 if content:
                     f.write(f"{content}\n\n")
+                if message.choices[0].finish_reason:
+                    f.write(f"Finish Reason: {message.choices[0].finish_reason}\n\n")
+                if function_call:
+                    f.write(f"Function Call: {function_call}\n\n")
                 f.write("---\n\n")
             else:
                 role = message.get('role', 'unknown')

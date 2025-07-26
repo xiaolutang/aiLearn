@@ -56,14 +56,6 @@ class ChatTools(ToolsProviderMixIn):
 
     def get_tools(self) -> List[ChatCompletionToolParam]:
         return [
-            # ChatCompletionToolParam(
-            #     type="function",
-            #     function=FunctionDefinition(
-            #         name="get_current_time",
-            #         description="获取当前时间",
-            #         parameters=FunctionParameters(),
-            #     )
-            # ),
             {
                 "type": "function",
                 "function": {

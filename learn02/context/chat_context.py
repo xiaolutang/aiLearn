@@ -29,6 +29,7 @@ class ChatContext(ChatContextInterface):
 
         if self.tools_provider.message_match_tool(message):
             # 工具调用
+            self.display.on_message_change(messages)
             tools_response_message = self.tools_provider.tools_call(message)
             self.message_manager.add_tools_message(tools_response_message)
             return
