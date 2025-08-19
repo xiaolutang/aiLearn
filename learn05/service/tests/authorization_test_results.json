@@ -1,0 +1,126 @@
+{
+  "start_time": "2025-08-17T00:04:10.533964",
+  "tests": {
+    "role_permissions": {},
+    "unauthorized_access": [
+      {
+        "endpoint": "/api/admin/users",
+        "method": "GET",
+        "token": null,
+        "status_code": 404,
+        "response_time": 0.0010380744934082031,
+        "success": false,
+        "description": "无token访问测试"
+      },
+      {
+        "endpoint": "/api/admin/system",
+        "method": "GET",
+        "token": null,
+        "status_code": 404,
+        "response_time": 0.0011429786682128906,
+        "success": false,
+        "description": "无token访问测试"
+      },
+      {
+        "endpoint": "/api/admin/logs",
+        "method": "GET",
+        "token": null,
+        "status_code": 404,
+        "response_time": 0.0011279582977294922,
+        "success": false,
+        "description": "无token访问测试"
+      },
+      {
+        "endpoint": "/api/school/statistics",
+        "method": "GET",
+        "token": null,
+        "status_code": 404,
+        "response_time": 0.0010671615600585938,
+        "success": false,
+        "description": "无token访问测试"
+      },
+      {
+        "endpoint": "/api/school/reports",
+        "method": "GET",
+        "token": null,
+        "status_code": 404,
+        "response_time": 0.0009639263153076172,
+        "success": false,
+        "description": "无token访问测试"
+      }
+    ],
+    "cross_role_access": [
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "高权限访问低权限资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "高权限访问低权限资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "高权限访问低权限资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "低权限访问高权限资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "低权限访问高权限资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "低权限访问高权限资源"
+      }
+    ],
+    "resource_isolation": [
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "教师访问自己的资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "教师访问自己的资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "教师访问自己的资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "学生访问教师资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "学生访问教师资源"
+      },
+      {
+        "success": false,
+        "error": "未找到有效会话",
+        "test_type": "学生访问教师资源"
+      }
+    ]
+  },
+  "summary": {
+    "total_accounts": 0,
+    "total_endpoints": 23,
+    "role_permission_success_rate": 0,
+    "unauthorized_access_blocked_rate": 0.0,
+    "cross_role_access_success_rate": 0.0,
+    "resource_isolation_success_rate": 0.0
+  },
+  "end_time": "2025-08-17T00:04:10.560583"
+}

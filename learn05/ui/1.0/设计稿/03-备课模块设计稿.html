@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手 - 备课模块设计稿</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #F5F7FA;
+            color: #262626;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background: white;
+            height: 64px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex: 1;
+        }
+
+        .nav-item {
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            color: #595959;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-item.active {
+            color: #1890FF;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: #1890FF;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            margin-top: 64px;
+            display: flex;
+            height: calc(100vh - 64px);
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #F0F0F0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .create-btn {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .create-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(24, 144, 255, 0.3);
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .lesson-list {
+            padding: 16px;
+        }
+
+        .list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .list-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #262626;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: #8C8C8C;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .lesson-item {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .lesson-item:hover {
+            background: #F5F7FA;
+        }
+
+        .lesson-item.active {
+            background: #E6F7FF;
+            border-color: #1890FF;
+        }
+
+        .lesson-title {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .lesson-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        .lesson-status {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .status-draft {
+            background: #FFF7E6;
+            color: #FA8C16;
+        }
+
+        .status-completed {
+            background: #F6FFED;
+            color: #52C41A;
+        }
+
+        /* 主工作区 */
+        .workspace {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .workspace-header {
+            padding: 24px;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .workspace-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .workspace-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            border: 1px solid #D9D9D9;
+            background: white;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn.primary {
+            background: #1890FF;
+            color: white;
+            border-color: #1890FF;
+        }
+
+        .action-btn:hover {
+            border-color: #1890FF;
+            color: #1890FF;
+        }
+
+        .action-btn.primary:hover {
+            background: #096DD9;
+            border-color: #096DD9;
+            color: white;
+        }
+
+        .workspace-content {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+        }
+
+        /* AI助手面板 */
+        .ai-panel {
+            background: linear-gradient(135deg, #F0F8FF 0%, #E6F7FF 100%);
+            border: 1px solid #BAE7FF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .ai-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .ai-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .ai-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .ai-input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .ai-input {
+            flex: 1;
+            height: 40px;
+            padding: 0 12px;
+            border: 1px solid #D9D9D9;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .ai-input:focus {
+            outline: none;
+            border-color: #1890FF;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+        }
+
+        .generate-btn {
+            padding: 0 20px;
+            height: 40px;
+            background: #1890FF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .generate-btn:hover {
+            background: #096DD9;
+        }
+
+        .ai-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion-tag {
+            padding: 4px 8px;
+            background: white;
+            border: 1px solid #D9D9D9;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #595959;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-tag:hover {
+            border-color: #1890FF;
+            color: #1890FF;
+        }
+
+        /* 教案编辑器 */
+        .lesson-editor {
+            background: white;
+            border: 1px solid #F0F0F0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .editor-toolbar {
+            padding: 12px 16px;
+            background: #FAFAFA;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toolbar-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .toolbar-btn:hover {
+            background: #E6F7FF;
+        }
+
+        .toolbar-divider {
+            width: 1px;
+            height: 20px;
+            background: #D9D9D9;
+            margin: 0 4px;
+        }
+
+        .editor-content {
+            padding: 20px;
+            min-height: 400px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .lesson-section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #F0F0F0;
+        }
+
+        .section-content {
+            color: #595959;
+            line-height: 1.8;
+        }
+
+        .objective-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .objective-item {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .objective-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #1890FF;
+            font-weight: bold;
+        }
+
+        .activity-card {
+            background: #F9F9F9;
+            border: 1px solid #E8E8E8;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .activity-icon {
+            width: 24px;
+            height: 24px;
+            background: #1890FF;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .activity-title {
+            font-weight: 500;
+            color: #262626;
+        }
+
+        .activity-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        /* 右侧面板 */
+        .right-panel {
+            width: 320px;
+            background: white;
+            border-left: 1px solid #F0F0F0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-tabs {
+            display: flex;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .panel-tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #8C8C8C;
+            transition: all 0.3s ease;
+        }
+
+        .panel-tab.active {
+            color: #1890FF;
+            background: #F0F8FF;
+        }
+
+        .panel-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .resource-item {
+            padding: 12px;
+            border: 1px solid #F0F0F0;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            border-color: #1890FF;
+            background: #F0F8FF;
+        }
+
+        .resource-title {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .resource-meta {
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .template-card {
+            padding: 16px;
+            border: 1px solid #F0F0F0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .template-card:hover {
+            border-color: #1890FF;
+            background: #F0F8FF;
+        }
+
+        .template-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .template-name {
+            font-size: 12px;
+            color: #262626;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .right-panel {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: 200px;
+            }
+
+            .right-panel {
+                display: none;
+            }
+
+            .workspace {
+                height: calc(100vh - 264px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div class="logo-text">智能教学助手</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">工作台</a>
+            <a href="#" class="nav-item active">备课</a>
+            <a href="#" class="nav-item">上课</a>
+            <a href="#" class="nav-item">成绩</a>
+            <a href="#" class="nav-item">分析</a>
+        </nav>
+        
+        <div class="header-actions">
+            <div class="user-avatar">张</div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="create-btn">
+                    <span>➕</span>
+                    <span>新建教案</span>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="lesson-list">
+                    <div class="list-header">
+                        <div class="list-title">我的教案</div>
+                        <button class="filter-btn">筛选</button>
+                    </div>
+                    
+                    <div class="lesson-item active">
+                        <div class="lesson-title">函数的概念与性质</div>
+                        <div class="lesson-meta">
+                            <span class="lesson-status status-draft">草稿</span>
+                            <span>高一数学</span>
+                            <span>今天</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <div class="lesson-title">二次函数图像与性质</div>
+                        <div class="lesson-meta">
+                            <span class="lesson-status status-completed">已完成</span>
+                            <span>高一数学</span>
+                            <span>昨天</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <div class="lesson-title">指数函数与对数函数</div>
+                        <div class="lesson-meta">
+                            <span class="lesson-status status-completed">已完成</span>
+                            <span>高一数学</span>
+                            <span>3天前</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lesson-item">
+                        <div class="lesson-title">三角函数基础</div>
+                        <div class="lesson-meta">
+                            <span class="lesson-status status-draft">草稿</span>
+                            <span>高一数学</span>
+                            <span>1周前</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主工作区 -->
+        <section class="workspace">
+            <div class="workspace-header">
+                <h1 class="workspace-title">函数的概念与性质</h1>
+                <div class="workspace-actions">
+                    <button class="action-btn">预览</button>
+                    <button class="action-btn">导出</button>
+                    <button class="action-btn primary">保存</button>
+                </div>
+            </div>
+            
+            <div class="workspace-content">
+                <!-- AI助手面板 -->
+                <div class="ai-panel">
+                    <div class="ai-header">
+                        <div class="ai-icon">🤖</div>
+                        <div class="ai-title">AI教案助手</div>
+                    </div>
+                    
+                    <div class="ai-input-group">
+                        <input type="text" class="ai-input" placeholder="描述您的教学需求，AI将为您生成教案内容...">
+                        <button class="generate-btn">生成内容</button>
+                    </div>
+                    
+                    <div class="ai-suggestions">
+                        <div class="suggestion-tag">生成教学目标</div>
+                        <div class="suggestion-tag">设计互动环节</div>
+                        <div class="suggestion-tag">创建练习题</div>
+                        <div class="suggestion-tag">优化教学流程</div>
+                        <div class="suggestion-tag">生成课件大纲</div>
+                    </div>
+                </div>
+
+                <!-- 教案编辑器 -->
+                <div class="lesson-editor">
+                    <div class="editor-toolbar">
+                        <button class="toolbar-btn" title="粗体">B</button>
+                        <button class="toolbar-btn" title="斜体">I</button>
+                        <button class="toolbar-btn" title="下划线">U</button>
+                        <div class="toolbar-divider"></div>
+                        <button class="toolbar-btn" title="标题">H</button>
+                        <button class="toolbar-btn" title="列表">≡</button>
+                        <button class="toolbar-btn" title="链接">🔗</button>
+                        <div class="toolbar-divider"></div>
+                        <button class="toolbar-btn" title="插入图片">🖼️</button>
+                        <button class="toolbar-btn" title="插入表格">⊞</button>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <div class="lesson-section">
+                            <h3 class="section-title">教学目标</h3>
+                            <div class="section-content">
+                                <ul class="objective-list">
+                                    <li class="objective-item">理解函数的概念，掌握函数的三种表示方法</li>
+                                    <li class="objective-item">能够判断给定关系是否为函数关系</li>
+                                    <li class="objective-item">掌握函数的定义域、值域的求法</li>
+                                    <li class="objective-item">了解函数的单调性、奇偶性等基本性质</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="lesson-section">
+                            <h3 class="section-title">教学重难点</h3>
+                            <div class="section-content">
+                                <p><strong>重点：</strong>函数概念的理解，函数三种表示方法的掌握</p>
+                                <p><strong>难点：</strong>抽象函数概念的理解，函数性质的综合应用</p>
+                            </div>
+                        </div>
+
+                        <div class="lesson-section">
+                            <h3 class="section-title">教学过程</h3>
+                            <div class="section-content">
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-icon">1</div>
+                                        <div class="activity-title">导入新课</div>
+                                        <div class="activity-time">5分钟</div>
+                                    </div>
+                                    <p>通过生活中的实例（如温度与时间的关系）引入函数概念，激发学生学习兴趣。</p>
+                                </div>
+
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-icon">2</div>
+                                        <div class="activity-title">概念讲解</div>
+                                        <div class="activity-time">15分钟</div>
+                                    </div>
+                                    <p>详细讲解函数的定义，强调对应关系的唯一性，通过图示帮助学生理解。</p>
+                                </div>
+
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-icon">3</div>
+                                        <div class="activity-title">互动练习</div>
+                                        <div class="activity-time">10分钟</div>
+                                    </div>
+                                    <p>学生分组讨论，判断给定的关系是否为函数，教师巡视指导。</p>
+                                </div>
+
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-icon">4</div>
+                                        <div class="activity-title">例题分析</div>
+                                        <div class="activity-time">12分钟</div>
+                                    </div>
+                                    <p>通过典型例题，讲解函数定义域、值域的求法，强化概念理解。</p>
+                                </div>
+
+                                <div class="activity-card">
+                                    <div class="activity-header">
+                                        <div class="activity-icon">5</div>
+                                        <div class="activity-title">课堂小结</div>
+                                        <div class="activity-time">3分钟</div>
+                                    </div>
+                                    <p>总结本节课重点内容，布置课后作业，预告下节课内容。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lesson-section">
+                            <h3 class="section-title">板书设计</h3>
+                            <div class="section-content">
+                                <p>1. 函数的定义<br>
+                                2. 函数的三种表示方法<br>
+                                3. 定义域与值域<br>
+                                4. 典型例题</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 右侧面板 -->
+        <aside class="right-panel">
+            <div class="panel-tabs">
+                <button class="panel-tab active">资源库</button>
+                <button class="panel-tab">模板</button>
+            </div>
+            
+            <div class="panel-content">
+                <div class="resource-item">
+                    <div class="resource-title">函数概念PPT模板</div>
+                    <div class="resource-meta">课件 • 24页 • 2MB</div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-title">函数性质练习题</div>
+                    <div class="resource-meta">习题 • 15题 • PDF</div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-title">函数图像动画</div>
+                    <div class="resource-meta">动画 • 3分钟 • MP4</div>
+                </div>
+                
+                <div class="resource-item">
+                    <div class="resource-title">互动小游戏：函数配对</div>
+                    <div class="resource-meta">游戏 • H5 • 在线</div>
+                </div>
+                
+                <div class="template-grid" style="margin-top: 20px;">
+                    <div class="template-card">
+                        <div class="template-icon">📝</div>
+                        <div class="template-name">标准教案</div>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-icon">🎯</div>
+                        <div class="template-name">目标导向</div>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-icon">🔄</div>
+                        <div class="template-name">翻转课堂</div>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-icon">👥</div>
+                        <div class="template-name">合作学习</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

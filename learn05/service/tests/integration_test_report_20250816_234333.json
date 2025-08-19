@@ -1,0 +1,1298 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-08-16T23:43:33.435294",
+    "test_environment": "集成测试环境",
+    "test_suite_version": "1.0.0",
+    "total_execution_time": 52.835124015808105
+  },
+  "execution_summary": {
+    "start_time": "2025-08-16T23:42:40.599934",
+    "end_time": "2025-08-16T23:43:33.435065",
+    "total_duration": 52.835124015808105,
+    "tests_executed": 7,
+    "tests_passed": 5,
+    "tests_failed": 2,
+    "tests_skipped": 0
+  },
+  "test_statistics": {
+    "total_tests": 7,
+    "passed_tests": 5,
+    "failed_tests": 2,
+    "error_tests": 0,
+    "timeout_tests": 0,
+    "skipped_tests": 0
+  },
+  "key_metrics": {
+    "success_rate": 71.42857142857143,
+    "total_issues_found": 1,
+    "high_priority_tests_passed": 4,
+    "high_priority_tests_total": 5,
+    "average_test_duration": 5.546196631022862
+  },
+  "quality_assessment": {
+    "overall_quality_level": "需要改进",
+    "success_rate": 71.42857142857143,
+    "critical_issues_count": 0,
+    "readiness_for_production": false
+  },
+  "test_results_by_priority": {
+    "high": [
+      {
+        "test_name": "认证流程测试",
+        "script": "test_authentication.py",
+        "description": "测试用户认证和登录流程",
+        "priority": "high",
+        "start_time": "2025-08-16T23:42:40.599974",
+        "status": "passed",
+        "duration": 0.137542724609375,
+        "output": "2025-08-16 23:42:40,695 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:40,695 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:40,695 - INFO - 开始执行完整认证测试套件...\n2025-08-16 23:42:40,695 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:40,695 - INFO - 1. 测试有效登录...\n2025-08-16 23:42:40,704 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,705 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,706 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,707 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,708 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,709 - ERROR - 账号 director_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,710 - ERROR - 账号 student_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,710 - ERROR - 账号 student_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,711 - ERROR - 账号 parent_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - ERROR - 账号 parent_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - ERROR - 账号 guest_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - INFO - 2. 测试无效凭据...\n2025-08-16 23:42:40,713 - INFO - 开始测试无效凭据...\n2025-08-16 23:42:40,713 - ERROR - 无效凭据测试异常: 完全无效的用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,714 - ERROR - 无效凭据测试异常: 有效用户名，无效密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,715 - ERROR - 无效凭据测试异常: 无效用户名，有效密码格式 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空用户名 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,717 - ERROR - 无效凭据测试异常: 空用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,717 - INFO - 3. 测试会话验证...\n2025-08-16 23:42:40,717 - INFO - 4. 测试无效token访问...\n2025-08-16 23:42:40,717 - INFO - 测试无效token访问...\n2025-08-16 23:42:40,718 - ERROR - 无效token测试异常: invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: Bearer invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: expired_token_12345 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - ERROR - 无效token测试异常:  - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - ERROR - 无效token测试异常: malformed.token.here - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - INFO - 5. 测试并发登录...\n2025-08-16 23:42:40,720 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5\n2025-08-16 23:42:40,722 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s\n2025-08-16 23:42:40,722 - INFO - 6. 测试登出...\n2025-08-16 23:42:40,723 - INFO - 认证测试套件执行完成\n2025-08-16 23:42:40,723 - INFO - 登录成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 会话验证成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 登出成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 无效凭据处理率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 无效token处理: 失败\n2025-08-16 23:42:40,723 - INFO - 并发登录测试: 失败\n\n==================================================\n认证测试结果摘要\n==================================================\n测试账号总数: 11\n登录成功率: 0.0%\n会话验证成功率: 0.0%\n登出成功率: 0.0%\n无效凭据处理率: 0.0%\n无效token处理: ✗ 失败\n并发登录测试: ✗ 失败\n\n总体认证测试通过率: 0.0%\n\n详细测试结果已保存到: authentication_test_results.json\n测试日志已保存到: authentication_test.log\n",
+        "error": "",
+        "details": {
+          "start_time": "2025-08-16T23:42:40.695236",
+          "tests": {
+            "valid_login": {
+              "admin_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "teacher_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "teacher_002": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "teacher_003": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "principal_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "director_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "student_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "student_002": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "parent_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "parent_002": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              "guest_001": {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              }
+            },
+            "invalid_credentials": [
+              {
+                "case": "完全无效的用户名和密码",
+                "username": "invalid_user",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "case": "有效用户名，无效密码",
+                "username": "admin",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "case": "无效用户名，有效密码格式",
+                "username": "wrong_user",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "case": "空用户名",
+                "username": "",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "case": "空密码",
+                "username": "admin",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "case": "空用户名和密码",
+                "username": "",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              }
+            ],
+            "session_validation": {},
+            "invalid_token": {
+              "results": [
+                {
+                  "token": "invalid_token",
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                  "success": false
+                },
+                {
+                  "token": "Bearer invalid_token",
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                  "success": false
+                },
+                {
+                  "token": "expired_token_12345",
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                  "success": false
+                },
+                {
+                  "token": "",
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                  "success": false
+                },
+                {
+                  "token": "malformed.token.here",
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                  "success": false
+                }
+              ],
+              "success": false
+            },
+            "concurrent_login": {
+              "success": false,
+              "total_accounts": 5,
+              "successful_logins": 0,
+              "failed_logins": 5,
+              "total_time": 0.0019121170043945312,
+              "average_time": 0.00038242340087890625,
+              "results": [
+                {
+                  "success": false,
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+                },
+                {
+                  "success": false,
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+                },
+                {
+                  "success": false,
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+                },
+                {
+                  "success": false,
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+                },
+                {
+                  "success": false,
+                  "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+                }
+              ]
+            },
+            "logout": {}
+          },
+          "summary": {
+            "total_accounts": 11,
+            "login_success_rate": 0.0,
+            "session_validation_success_rate": 0,
+            "logout_success_rate": 0,
+            "invalid_credentials_handled": 0.0,
+            "invalid_token_handled": false,
+            "concurrent_login_success": false
+          },
+          "end_time": "2025-08-16T23:42:40.722979"
+        },
+        "return_code": 0,
+        "end_time": "2025-08-16T23:42:40.737519"
+      },
+      {
+        "test_name": "权限控制测试",
+        "script": "test_authorization.py",
+        "description": "测试不同角色的权限控制",
+        "priority": "high",
+        "start_time": "2025-08-16T23:42:42.738943",
+        "status": "passed",
+        "duration": 0.13330817222595215,
+        "output": "2025-08-16 23:42:42,840 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:42,841 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:42,841 - INFO - 开始执行完整权限控制测试套件...\n2025-08-16 23:42:42,841 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:42,845 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,846 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,847 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,847 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,848 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,849 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,850 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,850 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,851 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,852 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,853 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,853 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:42,853 - INFO - 1. 测试角色权限...\n2025-08-16 23:42:42,853 - INFO - 2. 测试未授权访问...\n2025-08-16 23:42:42,853 - INFO - 测试未授权访问...\n2025-08-16 23:42:42,854 - ERROR - 未授权访问测试异常: /api/admin/users - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/system - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/logs - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,856 - ERROR - 未授权访问测试异常: /api/school/statistics - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,857 - ERROR - 未授权访问测试异常: /api/school/reports - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,857 - INFO - 3. 测试跨角色访问...\n2025-08-16 23:42:42,857 - INFO - 测试跨角色访问...\n2025-08-16 23:42:42,857 - INFO - 4. 测试资源隔离...\n2025-08-16 23:42:42,857 - INFO - 测试资源隔离...\n2025-08-16 23:42:42,857 - INFO - 权限控制测试套件执行完成\n2025-08-16 23:42:42,857 - INFO - 角色权限测试成功率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 未授权访问阻止率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 跨角色访问成功率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 资源隔离成功率: 0.0%\n\n==================================================\n权限控制测试结果摘要\n==================================================\n测试账号总数: 0\n测试端点总数: 23\n角色权限测试成功率: 0.0%\n未授权访问阻止率: 0.0%\n跨角色访问成功率: 0.0%\n资源隔离成功率: 0.0%\n\n总体权限控制测试通过率: 0.0%\n\n详细测试结果已保存到: authorization_test_results.json\n测试日志已保存到: authorization_test.log\n",
+        "error": "",
+        "details": {
+          "start_time": "2025-08-16T23:42:42.841089",
+          "tests": {
+            "role_permissions": {},
+            "unauthorized_access": [
+              {
+                "endpoint": "/api/admin/users",
+                "method": "GET",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "endpoint": "/api/admin/system",
+                "method": "GET",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "endpoint": "/api/admin/logs",
+                "method": "GET",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "endpoint": "/api/school/statistics",
+                "method": "GET",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "endpoint": "/api/school/reports",
+                "method": "GET",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              }
+            ],
+            "cross_role_access": [
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "高权限访问低权限资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "高权限访问低权限资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "高权限访问低权限资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "低权限访问高权限资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "低权限访问高权限资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "低权限访问高权限资源"
+              }
+            ],
+            "resource_isolation": [
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "教师访问自己的资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "教师访问自己的资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "教师访问自己的资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "学生访问教师资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "学生访问教师资源"
+              },
+              {
+                "success": false,
+                "error": "未找到有效会话",
+                "test_type": "学生访问教师资源"
+              }
+            ]
+          },
+          "summary": {
+            "total_accounts": 0,
+            "total_endpoints": 23,
+            "role_permission_success_rate": 0,
+            "unauthorized_access_blocked_rate": 0.0,
+            "cross_role_access_success_rate": 0.0,
+            "resource_isolation_success_rate": 0.0
+          },
+          "end_time": "2025-08-16T23:42:42.857318"
+        },
+        "return_code": 0,
+        "end_time": "2025-08-16T23:42:42.872251"
+      },
+      {
+        "test_name": "核心功能测试",
+        "script": "test_core_functions.py",
+        "description": "测试备课、上课、成绩管理等核心功能",
+        "priority": "high",
+        "start_time": "2025-08-16T23:42:44.877006",
+        "status": "passed",
+        "duration": 0.1463911533355713,
+        "output": "2025-08-16 23:42:44,997 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:44,997 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:44,997 - INFO - 开始执行完整核心功能测试套件...\n2025-08-16 23:42:44,997 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:45,001 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,002 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,003 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,004 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,004 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,005 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,006 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,007 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,007 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,008 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,010 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,010 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:45,011 - INFO - 核心功能测试套件执行完成\n2025-08-16 23:42:45,011 - INFO - 总体成功率: 0.0%\n\n==================================================\n核心功能测试结果摘要\n==================================================\n测试账号总数: 0\n测试用例总数: 0\n成功测试数: 0\n总体成功率: 0.0%\n\n各角色测试结果:\n\n详细测试结果已保存到: core_functions_test_results.json\n测试日志已保存到: core_functions_test.log\n",
+        "error": "",
+        "details": {
+          "start_time": "2025-08-16T23:42:44.997918",
+          "tests": {
+            "role_functions": {}
+          },
+          "summary": {
+            "total_accounts": 0,
+            "total_tests": 0,
+            "successful_tests": 0,
+            "overall_success_rate": 0,
+            "role_statistics": {}
+          },
+          "end_time": "2025-08-16T23:42:45.010860"
+        },
+        "return_code": 0,
+        "end_time": "2025-08-16T23:42:45.023395"
+      },
+      {
+        "test_name": "数据流测试",
+        "script": "test_data_flow.py",
+        "description": "测试客户端-服务端数据流",
+        "priority": "high",
+        "start_time": "2025-08-16T23:42:47.023848",
+        "status": "failed",
+        "duration": 0.1286299228668213,
+        "output": "2025-08-16 23:42:47,123 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:47,123 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录\n2025-08-16 23:42:47,123 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:47,123 - INFO - 开始执行完整数据流测试套件...\n2025-08-16 23:42:47,124 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:47,128 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,129 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,130 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,131 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,132 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,132 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,133 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,134 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,135 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,135 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,136 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,136 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:47,136 - ERROR - 没有成功认证的账号，无法进行数据流测试\n\n==================================================\n数据流测试结果摘要\n==================================================\n2025-08-16 23:42:47,136 - ERROR - 数据流测试执行失败: 'total_accounts_tested'\n",
+        "error": "Traceback (most recent call last):\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_data_flow.py\", line 702, in <module>\n    asyncio.run(main())\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ~~~~~~~~~~^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py\", line 721, in run_until_complete\n    return future.result()\n           ~~~~~~~~~~~~~^^\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_data_flow.py\", line 678, in main\n    print(f\"测试账号总数: {summary['total_accounts_tested']}\")\n                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'total_accounts_tested'\n",
+        "details": {},
+        "return_code": 1,
+        "end_time": "2025-08-16T23:42:47.152479"
+      },
+      {
+        "test_name": "安全性测试",
+        "script": "test_security.py",
+        "description": "测试系统安全性",
+        "priority": "high",
+        "start_time": "2025-08-16T23:42:49.153772",
+        "status": "passed",
+        "duration": 0.15435218811035156,
+        "output": "2025-08-16 23:42:49,262 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:49,262 - INFO - 安全性测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:49,262 - INFO - 开始执行完整安全性测试套件...\n2025-08-16 23:42:49,262 - INFO - 执行认证安全性测试...\n2025-08-16 23:42:49,262 - INFO - 开始测试认证安全性...\n2025-08-16 23:42:49,262 - INFO - 测试弱密码登录...\n2025-08-16 23:42:49,266 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,267 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,268 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,268 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,269 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,271 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,271 - INFO - 测试暴力破解防护...\n2025-08-16 23:42:49,271 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,272 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,273 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,274 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,276 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,277 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,278 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,279 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,280 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,281 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,281 - INFO - 测试SQL注入攻击...\n2025-08-16 23:42:49,282 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,282 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,283 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,284 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,284 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,285 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,285 - INFO - 测试会话固定攻击...\n2025-08-16 23:42:49,286 - ERROR - 会话固定测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,286 - INFO - 执行权限控制安全性测试...\n2025-08-16 23:42:49,286 - INFO - 开始测试权限控制安全性...\n2025-08-16 23:42:49,286 - INFO - 测试垂直权限提升...\n2025-08-16 23:42:49,286 - INFO - 测试水平权限提升...\n2025-08-16 23:42:49,286 - INFO - 测试未授权访问...\n2025-08-16 23:42:49,287 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,287 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('127.0.0.1', 8000), [Errno 61] Connect call failed ('::1', 8000, 0, 0)]\n2025-08-16 23:42:49,288 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,289 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('127.0.0.1', 8000), [Errno 61] Connect call failed ('::1', 8000, 0, 0)]\n2025-08-16 23:42:49,289 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,289 - INFO - 测试令牌篡改...\n2025-08-16 23:42:49,289 - INFO - 执行输入验证安全性测试...\n2025-08-16 23:42:49,289 - INFO - 开始测试输入验证安全性...\n2025-08-16 23:42:49,289 - ERROR - 没有找到活跃的教师账号\n2025-08-16 23:42:49,289 - INFO - 执行会话管理安全性测试...\n2025-08-16 23:42:49,289 - INFO - 开始测试会话管理安全性...\n2025-08-16 23:42:49,289 - INFO - 测试会话超时...\n2025-08-16 23:42:49,290 - ERROR - 会话超时测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,290 - INFO - 测试会话注销...\n2025-08-16 23:42:49,291 - ERROR - 会话注销测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,291 - INFO - 测试并发会话...\n2025-08-16 23:42:49,292 - ERROR - 并发会话测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,292 - INFO - 安全性测试套件执行完成\n2025-08-16 23:42:49,292 - INFO - 总体安全评分: 72.5分 (一般)\n2025-08-16 23:42:49,292 - INFO - 发现漏洞总数: 1 (高风险: 0, 中风险: 1, 低风险: 0)\n\n==================================================\n安全性测试结果摘要\n==================================================\n总体安全评分: 72.5分\n安全等级: 一般\n发现漏洞总数: 1\n\n漏洞分布:\n  高风险漏洞: 0个\n  中风险漏洞: 1个\n  低风险漏洞: 0个\n\n各项安全评分:\n  认证安全: 90.0分\n  权限控制: 100.0分\n  输入验证: 0.0分\n  会话管理: 100.0分\n\n安全建议:\n  1. 实施账号锁定和验证码机制防止暴力破解\n  2. 定期进行安全审计和渗透测试\n  3. 保持系统和依赖库的及时更新\n  4. 实施安全日志记录和监控\n  5. 对敏感数据进行加密存储和传输\n\n详细测试结果已保存到: security_test_results.json\n测试日志已保存到: security_test.log\n",
+        "error": "",
+        "details": {
+          "start_time": "2025-08-16T23:42:49.262425",
+          "tests": {
+            "authentication_security": {
+              "test_type": "认证安全性测试",
+              "tests": {
+                "weak_password_test": [],
+                "brute_force_protection": {
+                  "total_attempts": 0,
+                  "blocked_attempts": 0,
+                  "protection_exists": false,
+                  "attempts_details": []
+                },
+                "sql_injection_test": [],
+                "session_fixation_test": []
+              },
+              "vulnerabilities": [
+                "缺少暴力破解防护机制"
+              ],
+              "security_score": 90.0,
+              "security_rating": "优秀"
+            },
+            "authorization_security": {
+              "test_type": "权限控制安全性测试",
+              "tests": {
+                "vertical_privilege_escalation": [],
+                "horizontal_privilege_escalation": [],
+                "unauthorized_access": [],
+                "token_tampering": []
+              },
+              "vulnerabilities": [],
+              "security_score": 100.0,
+              "security_rating": "优秀"
+            },
+            "input_validation_security": {
+              "test_type": "输入验证安全性测试",
+              "tests": {},
+              "vulnerabilities": [],
+              "security_score": 0
+            },
+            "session_management_security": {
+              "test_type": "会话管理安全性测试",
+              "tests": {
+                "session_timeout_test": [],
+                "session_logout_test": [],
+                "concurrent_session_test": []
+              },
+              "vulnerabilities": [],
+              "security_score": 100.0,
+              "security_rating": "优秀"
+            }
+          },
+          "summary": {
+            "total_vulnerabilities": 1,
+            "high_risk_vulnerabilities": 0,
+            "medium_risk_vulnerabilities": 1,
+            "low_risk_vulnerabilities": 0,
+            "security_scores": {
+              "authentication": 90.0,
+              "authorization": 100.0,
+              "input_validation": 0,
+              "session_management": 100.0
+            },
+            "overall_security_score": 72.5,
+            "security_level": "一般",
+            "vulnerability_details": {
+              "high_risk": [],
+              "medium_risk": [
+                "缺少暴力破解防护机制"
+              ],
+              "low_risk": []
+            },
+            "security_recommendations": [
+              "实施账号锁定和验证码机制防止暴力破解",
+              "定期进行安全审计和渗透测试",
+              "保持系统和依赖库的及时更新",
+              "实施安全日志记录和监控",
+              "对敏感数据进行加密存储和传输"
+            ]
+          },
+          "overall_vulnerabilities": [
+            "缺少暴力破解防护机制"
+          ],
+          "end_time": "2025-08-16T23:42:49.292252"
+        },
+        "return_code": 0,
+        "end_time": "2025-08-16T23:42:49.308126"
+      }
+    ],
+    "medium": [
+      {
+        "test_name": "并发访问测试",
+        "script": "test_concurrent_access.py",
+        "description": "测试多用户并发访问",
+        "priority": "medium",
+        "start_time": "2025-08-16T23:42:51.309471",
+        "status": "passed",
+        "duration": 37.970864057540894,
+        "output": "2025-08-16 23:42:51,410 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:51,410 - INFO - 并发访问测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:51,410 - INFO - 开始执行完整并发访问测试套件...\n2025-08-16 23:42:51,411 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:51,411 - INFO - 执行并发登录测试...\n2025-08-16 23:42:51,411 - INFO - 开始测试 10 个账号的并发登录...\n2025-08-16 23:42:51,417 - INFO - 执行并发API调用测试...\n2025-08-16 23:42:51,423 - INFO - 开始测试 8 个账号的并发API调用，持续 30 秒...\n2025-08-16 23:43:23,249 - INFO - 执行资源竞争测试...\n2025-08-16 23:43:23,249 - INFO - 开始测试 6 个账号的资源竞争...\n2025-08-16 23:43:23,249 - INFO - 执行系统负载能力测试...\n2025-08-16 23:43:23,249 - INFO - 开始测试系统负载能力，最大用户数: 11...\n2025-08-16 23:43:23,249 - INFO - 测试 3 个并发用户...\n2025-08-16 23:43:23,249 - INFO - 开始测试 3 个账号的并发登录...\n2025-08-16 23:43:25,252 - INFO - 测试 6 个并发用户...\n2025-08-16 23:43:25,252 - INFO - 开始测试 6 个账号的并发登录...\n2025-08-16 23:43:27,257 - INFO - 测试 9 个并发用户...\n2025-08-16 23:43:27,257 - INFO - 开始测试 9 个账号的并发登录...\n2025-08-16 23:43:29,263 - INFO - 并发访问测试套件执行完成\n2025-08-16 23:43:29,263 - INFO - 总体并发性能评分: 0.0分 (需要改进)\n2025-08-16 23:43:29,263 - INFO - 最大稳定用户数: 0\n\n==================================================\n并发访问测试结果摘要\n==================================================\n可用测试账号: 11\n总体性能评分: 0.0分\n性能等级: 需要改进\n\n各项测试结果:\n  并发登录: 0.0% (平均 0.00s)\n  并发API调用: 0.0% (5.9 req/s)\n  资源竞争: 0.0%\n  负载能力: 最大稳定用户数 0 (较差)\n\n详细测试结果已保存到: concurrent_access_test_results.json\n测试日志已保存到: concurrent_access_test.log\n",
+        "error": "",
+        "details": {
+          "start_time": "2025-08-16T23:42:51.410999",
+          "tests": {
+            "concurrent_login": {
+              "test_type": "并发登录测试",
+              "total_accounts": 10,
+              "successful_logins": 0,
+              "failed_logins": 10,
+              "success_rate": 0.0,
+              "total_time": 0.0063169002532958984,
+              "avg_login_time": 0,
+              "max_login_time": 0,
+              "min_login_time": 0,
+              "role_statistics": {
+                "系统管理员": {
+                  "successful": 0,
+                  "failed": 1
+                },
+                "教师": {
+                  "successful": 0,
+                  "failed": 3
+                },
+                "校长": {
+                  "successful": 0,
+                  "failed": 1
+                },
+                "教务主任": {
+                  "successful": 0,
+                  "failed": 1
+                },
+                "学生": {
+                  "successful": 0,
+                  "failed": 2
+                },
+                "家长": {
+                  "successful": 0,
+                  "failed": 2
+                }
+              },
+              "concurrent_level": 10
+            },
+            "concurrent_api_calls": {
+              "test_type": "并发API调用测试",
+              "test_duration": 31.825683116912842,
+              "concurrent_users": 8,
+              "total_requests": 188,
+              "successful_requests": 0,
+              "failed_requests": 188,
+              "success_rate": 0.0,
+              "requests_per_second": 5.907178781029615,
+              "avg_response_time": 0,
+              "max_response_time": 0,
+              "min_response_time": 0,
+              "endpoint_statistics": {
+                "未知": {
+                  "total": 188,
+                  "successful": 0,
+                  "failed": 188
+                }
+              },
+              "status_code_distribution": {}
+            },
+            "resource_competition": {
+              "test_type": "资源竞争测试",
+              "resource_id": "shared_resource_001",
+              "concurrent_users": 6,
+              "total_operations": 30,
+              "successful_operations": 0,
+              "failed_operations": 30,
+              "overall_success_rate": 0.0,
+              "read_operations": {
+                "total": 18,
+                "successful": 0,
+                "success_rate": 0.0
+              },
+              "write_operations": {
+                "total": 12,
+                "successful": 0,
+                "success_rate": 0.0
+              },
+              "test_duration": 0.00016808509826660156
+            },
+            "load_capacity": {
+              "test_type": "系统负载能力测试",
+              "max_tested_users": 11,
+              "max_stable_users": 0,
+              "performance_degradation_point": 3,
+              "load_test_details": [
+                {
+                  "concurrent_users": 3,
+                  "login_success_rate": 0.0,
+                  "api_success_rate": 0,
+                  "avg_response_time": 0,
+                  "requests_per_second": 0,
+                  "system_stable": false,
+                  "note": "登录成功率过低，跳过API测试"
+                },
+                {
+                  "concurrent_users": 6,
+                  "login_success_rate": 0.0,
+                  "api_success_rate": 0,
+                  "avg_response_time": 0,
+                  "requests_per_second": 0,
+                  "system_stable": false,
+                  "note": "登录成功率过低，跳过API测试"
+                },
+                {
+                  "concurrent_users": 9,
+                  "login_success_rate": 0.0,
+                  "api_success_rate": 0,
+                  "avg_response_time": 0,
+                  "requests_per_second": 0,
+                  "system_stable": false,
+                  "note": "登录成功率过低，跳过API测试"
+                }
+              ],
+              "system_capacity_rating": "较差"
+            }
+          },
+          "summary": {
+            "total_accounts_available": 11,
+            "concurrent_login": {
+              "success_rate": 0.0,
+              "avg_login_time": 0,
+              "concurrent_level": 10
+            },
+            "concurrent_api_calls": {
+              "success_rate": 0.0,
+              "requests_per_second": 5.907178781029615,
+              "avg_response_time": 0
+            },
+            "resource_competition": {
+              "overall_success_rate": 0.0,
+              "read_success_rate": 0.0,
+              "write_success_rate": 0.0
+            },
+            "load_capacity": {
+              "max_stable_users": 0,
+              "system_capacity_rating": "较差"
+            },
+            "overall_concurrent_performance_score": 0.0,
+            "performance_rating": "需要改进"
+          },
+          "end_time": "2025-08-16T23:43:29.262630"
+        },
+        "return_code": 0,
+        "end_time": "2025-08-16T23:43:29.280335"
+      },
+      {
+        "test_name": "性能测试",
+        "script": "test_performance.py",
+        "description": "测试系统性能表现",
+        "priority": "medium",
+        "start_time": "2025-08-16T23:43:31.281576",
+        "status": "failed",
+        "duration": 0.15228819847106934,
+        "output": "",
+        "error": "Traceback (most recent call last):\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_performance.py\", line 21, in <module>\n    import psutil\nModuleNotFoundError: No module named 'psutil'\n",
+        "details": {},
+        "return_code": 1,
+        "end_time": "2025-08-16T23:43:31.433863"
+      }
+    ],
+    "low": []
+  },
+  "detailed_test_results": {
+    "test_authentication.py": {
+      "test_name": "认证流程测试",
+      "script": "test_authentication.py",
+      "description": "测试用户认证和登录流程",
+      "priority": "high",
+      "start_time": "2025-08-16T23:42:40.599974",
+      "status": "passed",
+      "duration": 0.137542724609375,
+      "output": "2025-08-16 23:42:40,695 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:40,695 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:40,695 - INFO - 开始执行完整认证测试套件...\n2025-08-16 23:42:40,695 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:40,695 - INFO - 1. 测试有效登录...\n2025-08-16 23:42:40,704 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,705 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,706 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,707 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,708 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,709 - ERROR - 账号 director_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,710 - ERROR - 账号 student_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,710 - ERROR - 账号 student_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,711 - ERROR - 账号 parent_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - ERROR - 账号 parent_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - ERROR - 账号 guest_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,712 - INFO - 2. 测试无效凭据...\n2025-08-16 23:42:40,713 - INFO - 开始测试无效凭据...\n2025-08-16 23:42:40,713 - ERROR - 无效凭据测试异常: 完全无效的用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,714 - ERROR - 无效凭据测试异常: 有效用户名，无效密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,715 - ERROR - 无效凭据测试异常: 无效用户名，有效密码格式 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空用户名 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,717 - ERROR - 无效凭据测试异常: 空用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,717 - INFO - 3. 测试会话验证...\n2025-08-16 23:42:40,717 - INFO - 4. 测试无效token访问...\n2025-08-16 23:42:40,717 - INFO - 测试无效token访问...\n2025-08-16 23:42:40,718 - ERROR - 无效token测试异常: invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: Bearer invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: expired_token_12345 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - ERROR - 无效token测试异常:  - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - ERROR - 无效token测试异常: malformed.token.here - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,720 - INFO - 5. 测试并发登录...\n2025-08-16 23:42:40,720 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5\n2025-08-16 23:42:40,722 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': \"Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\"}\n2025-08-16 23:42:40,722 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s\n2025-08-16 23:42:40,722 - INFO - 6. 测试登出...\n2025-08-16 23:42:40,723 - INFO - 认证测试套件执行完成\n2025-08-16 23:42:40,723 - INFO - 登录成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 会话验证成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 登出成功率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 无效凭据处理率: 0.0%\n2025-08-16 23:42:40,723 - INFO - 无效token处理: 失败\n2025-08-16 23:42:40,723 - INFO - 并发登录测试: 失败\n\n==================================================\n认证测试结果摘要\n==================================================\n测试账号总数: 11\n登录成功率: 0.0%\n会话验证成功率: 0.0%\n登出成功率: 0.0%\n无效凭据处理率: 0.0%\n无效token处理: ✗ 失败\n并发登录测试: ✗ 失败\n\n总体认证测试通过率: 0.0%\n\n详细测试结果已保存到: authentication_test_results.json\n测试日志已保存到: authentication_test.log\n",
+      "error": "",
+      "details": {
+        "start_time": "2025-08-16T23:42:40.695236",
+        "tests": {
+          "valid_login": {
+            "admin_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "teacher_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "teacher_002": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "teacher_003": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "principal_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "director_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "student_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "student_002": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "parent_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "parent_002": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            },
+            "guest_001": {
+              "success": false,
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+            }
+          },
+          "invalid_credentials": [
+            {
+              "case": "完全无效的用户名和密码",
+              "username": "invalid_user",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "case": "有效用户名，无效密码",
+              "username": "admin",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "case": "无效用户名，有效密码格式",
+              "username": "wrong_user",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "case": "空用户名",
+              "username": "",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "case": "空密码",
+              "username": "admin",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "case": "空用户名和密码",
+              "username": "",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            }
+          ],
+          "session_validation": {},
+          "invalid_token": {
+            "results": [
+              {
+                "token": "invalid_token",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "token": "Bearer invalid_token",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "token": "expired_token_12345",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "token": "",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              },
+              {
+                "token": "malformed.token.here",
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+                "success": false
+              }
+            ],
+            "success": false
+          },
+          "concurrent_login": {
+            "success": false,
+            "total_accounts": 5,
+            "successful_logins": 0,
+            "failed_logins": 5,
+            "total_time": 0.0019121170043945312,
+            "average_time": 0.00038242340087890625,
+            "results": [
+              {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              },
+              {
+                "success": false,
+                "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"
+              }
+            ]
+          },
+          "logout": {}
+        },
+        "summary": {
+          "total_accounts": 11,
+          "login_success_rate": 0.0,
+          "session_validation_success_rate": 0,
+          "logout_success_rate": 0,
+          "invalid_credentials_handled": 0.0,
+          "invalid_token_handled": false,
+          "concurrent_login_success": false
+        },
+        "end_time": "2025-08-16T23:42:40.722979"
+      },
+      "return_code": 0,
+      "end_time": "2025-08-16T23:42:40.737519"
+    },
+    "test_authorization.py": {
+      "test_name": "权限控制测试",
+      "script": "test_authorization.py",
+      "description": "测试不同角色的权限控制",
+      "priority": "high",
+      "start_time": "2025-08-16T23:42:42.738943",
+      "status": "passed",
+      "duration": 0.13330817222595215,
+      "output": "2025-08-16 23:42:42,840 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:42,841 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:42,841 - INFO - 开始执行完整权限控制测试套件...\n2025-08-16 23:42:42,841 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:42,845 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,846 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,847 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,847 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,848 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,849 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,850 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,850 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,851 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,852 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,853 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,853 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:42,853 - INFO - 1. 测试角色权限...\n2025-08-16 23:42:42,853 - INFO - 2. 测试未授权访问...\n2025-08-16 23:42:42,853 - INFO - 测试未授权访问...\n2025-08-16 23:42:42,854 - ERROR - 未授权访问测试异常: /api/admin/users - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/system - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/logs - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,856 - ERROR - 未授权访问测试异常: /api/school/statistics - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,857 - ERROR - 未授权访问测试异常: /api/school/reports - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:42,857 - INFO - 3. 测试跨角色访问...\n2025-08-16 23:42:42,857 - INFO - 测试跨角色访问...\n2025-08-16 23:42:42,857 - INFO - 4. 测试资源隔离...\n2025-08-16 23:42:42,857 - INFO - 测试资源隔离...\n2025-08-16 23:42:42,857 - INFO - 权限控制测试套件执行完成\n2025-08-16 23:42:42,857 - INFO - 角色权限测试成功率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 未授权访问阻止率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 跨角色访问成功率: 0.0%\n2025-08-16 23:42:42,857 - INFO - 资源隔离成功率: 0.0%\n\n==================================================\n权限控制测试结果摘要\n==================================================\n测试账号总数: 0\n测试端点总数: 23\n角色权限测试成功率: 0.0%\n未授权访问阻止率: 0.0%\n跨角色访问成功率: 0.0%\n资源隔离成功率: 0.0%\n\n总体权限控制测试通过率: 0.0%\n\n详细测试结果已保存到: authorization_test_results.json\n测试日志已保存到: authorization_test.log\n",
+      "error": "",
+      "details": {
+        "start_time": "2025-08-16T23:42:42.841089",
+        "tests": {
+          "role_permissions": {},
+          "unauthorized_access": [
+            {
+              "endpoint": "/api/admin/users",
+              "method": "GET",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "endpoint": "/api/admin/system",
+              "method": "GET",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "endpoint": "/api/admin/logs",
+              "method": "GET",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "endpoint": "/api/school/statistics",
+              "method": "GET",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            },
+            {
+              "endpoint": "/api/school/reports",
+              "method": "GET",
+              "error": "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]",
+              "success": false
+            }
+          ],
+          "cross_role_access": [
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "高权限访问低权限资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "高权限访问低权限资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "高权限访问低权限资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "低权限访问高权限资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "低权限访问高权限资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "低权限访问高权限资源"
+            }
+          ],
+          "resource_isolation": [
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "教师访问自己的资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "教师访问自己的资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "教师访问自己的资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "学生访问教师资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "学生访问教师资源"
+            },
+            {
+              "success": false,
+              "error": "未找到有效会话",
+              "test_type": "学生访问教师资源"
+            }
+          ]
+        },
+        "summary": {
+          "total_accounts": 0,
+          "total_endpoints": 23,
+          "role_permission_success_rate": 0,
+          "unauthorized_access_blocked_rate": 0.0,
+          "cross_role_access_success_rate": 0.0,
+          "resource_isolation_success_rate": 0.0
+        },
+        "end_time": "2025-08-16T23:42:42.857318"
+      },
+      "return_code": 0,
+      "end_time": "2025-08-16T23:42:42.872251"
+    },
+    "test_core_functions.py": {
+      "test_name": "核心功能测试",
+      "script": "test_core_functions.py",
+      "description": "测试备课、上课、成绩管理等核心功能",
+      "priority": "high",
+      "start_time": "2025-08-16T23:42:44.877006",
+      "status": "passed",
+      "duration": 0.1463911533355713,
+      "output": "2025-08-16 23:42:44,997 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:44,997 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:44,997 - INFO - 开始执行完整核心功能测试套件...\n2025-08-16 23:42:44,997 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:45,001 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,002 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,003 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,004 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,004 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,005 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,006 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,007 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,007 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,008 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,010 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:45,010 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:45,011 - INFO - 核心功能测试套件执行完成\n2025-08-16 23:42:45,011 - INFO - 总体成功率: 0.0%\n\n==================================================\n核心功能测试结果摘要\n==================================================\n测试账号总数: 0\n测试用例总数: 0\n成功测试数: 0\n总体成功率: 0.0%\n\n各角色测试结果:\n\n详细测试结果已保存到: core_functions_test_results.json\n测试日志已保存到: core_functions_test.log\n",
+      "error": "",
+      "details": {
+        "start_time": "2025-08-16T23:42:44.997918",
+        "tests": {
+          "role_functions": {}
+        },
+        "summary": {
+          "total_accounts": 0,
+          "total_tests": 0,
+          "successful_tests": 0,
+          "overall_success_rate": 0,
+          "role_statistics": {}
+        },
+        "end_time": "2025-08-16T23:42:45.010860"
+      },
+      "return_code": 0,
+      "end_time": "2025-08-16T23:42:45.023395"
+    },
+    "test_data_flow.py": {
+      "test_name": "数据流测试",
+      "script": "test_data_flow.py",
+      "description": "测试客户端-服务端数据流",
+      "priority": "high",
+      "start_time": "2025-08-16T23:42:47.023848",
+      "status": "failed",
+      "duration": 0.1286299228668213,
+      "output": "2025-08-16 23:42:47,123 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:47,123 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录\n2025-08-16 23:42:47,123 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:47,123 - INFO - 开始执行完整数据流测试套件...\n2025-08-16 23:42:47,124 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:47,128 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,129 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,130 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,131 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,132 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,132 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,133 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,134 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,135 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,135 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,136 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:47,136 - INFO - 成功认证 0 个账号\n2025-08-16 23:42:47,136 - ERROR - 没有成功认证的账号，无法进行数据流测试\n\n==================================================\n数据流测试结果摘要\n==================================================\n2025-08-16 23:42:47,136 - ERROR - 数据流测试执行失败: 'total_accounts_tested'\n",
+      "error": "Traceback (most recent call last):\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_data_flow.py\", line 702, in <module>\n    asyncio.run(main())\n    ~~~~~~~~~~~^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py\", line 194, in run\n    return runner.run(main)\n           ~~~~~~~~~~^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py\", line 721, in run_until_complete\n    return future.result()\n           ~~~~~~~~~~~~~^^\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_data_flow.py\", line 678, in main\n    print(f\"测试账号总数: {summary['total_accounts_tested']}\")\n                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'total_accounts_tested'\n",
+      "details": {},
+      "return_code": 1,
+      "end_time": "2025-08-16T23:42:47.152479"
+    },
+    "test_security.py": {
+      "test_name": "安全性测试",
+      "script": "test_security.py",
+      "description": "测试系统安全性",
+      "priority": "high",
+      "start_time": "2025-08-16T23:42:49.153772",
+      "status": "passed",
+      "duration": 0.15435218811035156,
+      "output": "2025-08-16 23:42:49,262 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:49,262 - INFO - 安全性测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:49,262 - INFO - 开始执行完整安全性测试套件...\n2025-08-16 23:42:49,262 - INFO - 执行认证安全性测试...\n2025-08-16 23:42:49,262 - INFO - 开始测试认证安全性...\n2025-08-16 23:42:49,262 - INFO - 测试弱密码登录...\n2025-08-16 23:42:49,266 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,267 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,268 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,268 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,269 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,271 - ERROR - 弱密码测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,271 - INFO - 测试暴力破解防护...\n2025-08-16 23:42:49,271 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,272 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,273 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,274 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,276 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,277 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,278 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,279 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,280 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,281 - ERROR - 暴力破解测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,281 - INFO - 测试SQL注入攻击...\n2025-08-16 23:42:49,282 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,282 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,283 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,284 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,284 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,285 - ERROR - SQL注入测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,285 - INFO - 测试会话固定攻击...\n2025-08-16 23:42:49,286 - ERROR - 会话固定测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,286 - INFO - 执行权限控制安全性测试...\n2025-08-16 23:42:49,286 - INFO - 开始测试权限控制安全性...\n2025-08-16 23:42:49,286 - INFO - 测试垂直权限提升...\n2025-08-16 23:42:49,286 - INFO - 测试水平权限提升...\n2025-08-16 23:42:49,286 - INFO - 测试未授权访问...\n2025-08-16 23:42:49,287 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,287 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('127.0.0.1', 8000), [Errno 61] Connect call failed ('::1', 8000, 0, 0)]\n2025-08-16 23:42:49,288 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,289 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('127.0.0.1', 8000), [Errno 61] Connect call failed ('::1', 8000, 0, 0)]\n2025-08-16 23:42:49,289 - ERROR - 未授权访问测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,289 - INFO - 测试令牌篡改...\n2025-08-16 23:42:49,289 - INFO - 执行输入验证安全性测试...\n2025-08-16 23:42:49,289 - INFO - 开始测试输入验证安全性...\n2025-08-16 23:42:49,289 - ERROR - 没有找到活跃的教师账号\n2025-08-16 23:42:49,289 - INFO - 执行会话管理安全性测试...\n2025-08-16 23:42:49,289 - INFO - 开始测试会话管理安全性...\n2025-08-16 23:42:49,289 - INFO - 测试会话超时...\n2025-08-16 23:42:49,290 - ERROR - 会话超时测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,290 - INFO - 测试会话注销...\n2025-08-16 23:42:49,291 - ERROR - 会话注销测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,291 - INFO - 测试并发会话...\n2025-08-16 23:42:49,292 - ERROR - 并发会话测试异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]\n2025-08-16 23:42:49,292 - INFO - 安全性测试套件执行完成\n2025-08-16 23:42:49,292 - INFO - 总体安全评分: 72.5分 (一般)\n2025-08-16 23:42:49,292 - INFO - 发现漏洞总数: 1 (高风险: 0, 中风险: 1, 低风险: 0)\n\n==================================================\n安全性测试结果摘要\n==================================================\n总体安全评分: 72.5分\n安全等级: 一般\n发现漏洞总数: 1\n\n漏洞分布:\n  高风险漏洞: 0个\n  中风险漏洞: 1个\n  低风险漏洞: 0个\n\n各项安全评分:\n  认证安全: 90.0分\n  权限控制: 100.0分\n  输入验证: 0.0分\n  会话管理: 100.0分\n\n安全建议:\n  1. 实施账号锁定和验证码机制防止暴力破解\n  2. 定期进行安全审计和渗透测试\n  3. 保持系统和依赖库的及时更新\n  4. 实施安全日志记录和监控\n  5. 对敏感数据进行加密存储和传输\n\n详细测试结果已保存到: security_test_results.json\n测试日志已保存到: security_test.log\n",
+      "error": "",
+      "details": {
+        "start_time": "2025-08-16T23:42:49.262425",
+        "tests": {
+          "authentication_security": {
+            "test_type": "认证安全性测试",
+            "tests": {
+              "weak_password_test": [],
+              "brute_force_protection": {
+                "total_attempts": 0,
+                "blocked_attempts": 0,
+                "protection_exists": false,
+                "attempts_details": []
+              },
+              "sql_injection_test": [],
+              "session_fixation_test": []
+            },
+            "vulnerabilities": [
+              "缺少暴力破解防护机制"
+            ],
+            "security_score": 90.0,
+            "security_rating": "优秀"
+          },
+          "authorization_security": {
+            "test_type": "权限控制安全性测试",
+            "tests": {
+              "vertical_privilege_escalation": [],
+              "horizontal_privilege_escalation": [],
+              "unauthorized_access": [],
+              "token_tampering": []
+            },
+            "vulnerabilities": [],
+            "security_score": 100.0,
+            "security_rating": "优秀"
+          },
+          "input_validation_security": {
+            "test_type": "输入验证安全性测试",
+            "tests": {},
+            "vulnerabilities": [],
+            "security_score": 0
+          },
+          "session_management_security": {
+            "test_type": "会话管理安全性测试",
+            "tests": {
+              "session_timeout_test": [],
+              "session_logout_test": [],
+              "concurrent_session_test": []
+            },
+            "vulnerabilities": [],
+            "security_score": 100.0,
+            "security_rating": "优秀"
+          }
+        },
+        "summary": {
+          "total_vulnerabilities": 1,
+          "high_risk_vulnerabilities": 0,
+          "medium_risk_vulnerabilities": 1,
+          "low_risk_vulnerabilities": 0,
+          "security_scores": {
+            "authentication": 90.0,
+            "authorization": 100.0,
+            "input_validation": 0,
+            "session_management": 100.0
+          },
+          "overall_security_score": 72.5,
+          "security_level": "一般",
+          "vulnerability_details": {
+            "high_risk": [],
+            "medium_risk": [
+              "缺少暴力破解防护机制"
+            ],
+            "low_risk": []
+          },
+          "security_recommendations": [
+            "实施账号锁定和验证码机制防止暴力破解",
+            "定期进行安全审计和渗透测试",
+            "保持系统和依赖库的及时更新",
+            "实施安全日志记录和监控",
+            "对敏感数据进行加密存储和传输"
+          ]
+        },
+        "overall_vulnerabilities": [
+          "缺少暴力破解防护机制"
+        ],
+        "end_time": "2025-08-16T23:42:49.292252"
+      },
+      "return_code": 0,
+      "end_time": "2025-08-16T23:42:49.308126"
+    },
+    "test_concurrent_access.py": {
+      "test_name": "并发访问测试",
+      "script": "test_concurrent_access.py",
+      "description": "测试多用户并发访问",
+      "priority": "medium",
+      "start_time": "2025-08-16T23:42:51.309471",
+      "status": "passed",
+      "duration": 37.970864057540894,
+      "output": "2025-08-16 23:42:51,410 - INFO - 成功加载 13 个测试账号\n2025-08-16 23:42:51,410 - INFO - 并发访问测试器初始化完成，基础URL: http://localhost:8000\n2025-08-16 23:42:51,410 - INFO - 开始执行完整并发访问测试套件...\n2025-08-16 23:42:51,411 - INFO - 找到 11 个活跃测试账号\n2025-08-16 23:42:51,411 - INFO - 执行并发登录测试...\n2025-08-16 23:42:51,411 - INFO - 开始测试 10 个账号的并发登录...\n2025-08-16 23:42:51,417 - INFO - 执行并发API调用测试...\n2025-08-16 23:42:51,423 - INFO - 开始测试 8 个账号的并发API调用，持续 30 秒...\n2025-08-16 23:43:23,249 - INFO - 执行资源竞争测试...\n2025-08-16 23:43:23,249 - INFO - 开始测试 6 个账号的资源竞争...\n2025-08-16 23:43:23,249 - INFO - 执行系统负载能力测试...\n2025-08-16 23:43:23,249 - INFO - 开始测试系统负载能力，最大用户数: 11...\n2025-08-16 23:43:23,249 - INFO - 测试 3 个并发用户...\n2025-08-16 23:43:23,249 - INFO - 开始测试 3 个账号的并发登录...\n2025-08-16 23:43:25,252 - INFO - 测试 6 个并发用户...\n2025-08-16 23:43:25,252 - INFO - 开始测试 6 个账号的并发登录...\n2025-08-16 23:43:27,257 - INFO - 测试 9 个并发用户...\n2025-08-16 23:43:27,257 - INFO - 开始测试 9 个账号的并发登录...\n2025-08-16 23:43:29,263 - INFO - 并发访问测试套件执行完成\n2025-08-16 23:43:29,263 - INFO - 总体并发性能评分: 0.0分 (需要改进)\n2025-08-16 23:43:29,263 - INFO - 最大稳定用户数: 0\n\n==================================================\n并发访问测试结果摘要\n==================================================\n可用测试账号: 11\n总体性能评分: 0.0分\n性能等级: 需要改进\n\n各项测试结果:\n  并发登录: 0.0% (平均 0.00s)\n  并发API调用: 0.0% (5.9 req/s)\n  资源竞争: 0.0%\n  负载能力: 最大稳定用户数 0 (较差)\n\n详细测试结果已保存到: concurrent_access_test_results.json\n测试日志已保存到: concurrent_access_test.log\n",
+      "error": "",
+      "details": {
+        "start_time": "2025-08-16T23:42:51.410999",
+        "tests": {
+          "concurrent_login": {
+            "test_type": "并发登录测试",
+            "total_accounts": 10,
+            "successful_logins": 0,
+            "failed_logins": 10,
+            "success_rate": 0.0,
+            "total_time": 0.0063169002532958984,
+            "avg_login_time": 0,
+            "max_login_time": 0,
+            "min_login_time": 0,
+            "role_statistics": {
+              "系统管理员": {
+                "successful": 0,
+                "failed": 1
+              },
+              "教师": {
+                "successful": 0,
+                "failed": 3
+              },
+              "校长": {
+                "successful": 0,
+                "failed": 1
+              },
+              "教务主任": {
+                "successful": 0,
+                "failed": 1
+              },
+              "学生": {
+                "successful": 0,
+                "failed": 2
+              },
+              "家长": {
+                "successful": 0,
+                "failed": 2
+              }
+            },
+            "concurrent_level": 10
+          },
+          "concurrent_api_calls": {
+            "test_type": "并发API调用测试",
+            "test_duration": 31.825683116912842,
+            "concurrent_users": 8,
+            "total_requests": 188,
+            "successful_requests": 0,
+            "failed_requests": 188,
+            "success_rate": 0.0,
+            "requests_per_second": 5.907178781029615,
+            "avg_response_time": 0,
+            "max_response_time": 0,
+            "min_response_time": 0,
+            "endpoint_statistics": {
+              "未知": {
+                "total": 188,
+                "successful": 0,
+                "failed": 188
+              }
+            },
+            "status_code_distribution": {}
+          },
+          "resource_competition": {
+            "test_type": "资源竞争测试",
+            "resource_id": "shared_resource_001",
+            "concurrent_users": 6,
+            "total_operations": 30,
+            "successful_operations": 0,
+            "failed_operations": 30,
+            "overall_success_rate": 0.0,
+            "read_operations": {
+              "total": 18,
+              "successful": 0,
+              "success_rate": 0.0
+            },
+            "write_operations": {
+              "total": 12,
+              "successful": 0,
+              "success_rate": 0.0
+            },
+            "test_duration": 0.00016808509826660156
+          },
+          "load_capacity": {
+            "test_type": "系统负载能力测试",
+            "max_tested_users": 11,
+            "max_stable_users": 0,
+            "performance_degradation_point": 3,
+            "load_test_details": [
+              {
+                "concurrent_users": 3,
+                "login_success_rate": 0.0,
+                "api_success_rate": 0,
+                "avg_response_time": 0,
+                "requests_per_second": 0,
+                "system_stable": false,
+                "note": "登录成功率过低，跳过API测试"
+              },
+              {
+                "concurrent_users": 6,
+                "login_success_rate": 0.0,
+                "api_success_rate": 0,
+                "avg_response_time": 0,
+                "requests_per_second": 0,
+                "system_stable": false,
+                "note": "登录成功率过低，跳过API测试"
+              },
+              {
+                "concurrent_users": 9,
+                "login_success_rate": 0.0,
+                "api_success_rate": 0,
+                "avg_response_time": 0,
+                "requests_per_second": 0,
+                "system_stable": false,
+                "note": "登录成功率过低，跳过API测试"
+              }
+            ],
+            "system_capacity_rating": "较差"
+          }
+        },
+        "summary": {
+          "total_accounts_available": 11,
+          "concurrent_login": {
+            "success_rate": 0.0,
+            "avg_login_time": 0,
+            "concurrent_level": 10
+          },
+          "concurrent_api_calls": {
+            "success_rate": 0.0,
+            "requests_per_second": 5.907178781029615,
+            "avg_response_time": 0
+          },
+          "resource_competition": {
+            "overall_success_rate": 0.0,
+            "read_success_rate": 0.0,
+            "write_success_rate": 0.0
+          },
+          "load_capacity": {
+            "max_stable_users": 0,
+            "system_capacity_rating": "较差"
+          },
+          "overall_concurrent_performance_score": 0.0,
+          "performance_rating": "需要改进"
+        },
+        "end_time": "2025-08-16T23:43:29.262630"
+      },
+      "return_code": 0,
+      "end_time": "2025-08-16T23:43:29.280335"
+    },
+    "test_performance.py": {
+      "test_name": "性能测试",
+      "script": "test_performance.py",
+      "description": "测试系统性能表现",
+      "priority": "medium",
+      "start_time": "2025-08-16T23:43:31.281576",
+      "status": "failed",
+      "duration": 0.15228819847106934,
+      "output": "",
+      "error": "Traceback (most recent call last):\n  File \"/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/tests/test_performance.py\", line 21, in <module>\n    import psutil\nModuleNotFoundError: No module named 'psutil'\n",
+      "details": {},
+      "return_code": 1,
+      "end_time": "2025-08-16T23:43:31.433863"
+    }
+  },
+  "issues_summary": {
+    "total_issues": 1,
+    "unique_issues": [
+      "缺少暴力破解防护机制"
+    ],
+    "issue_categories": {
+      "其他问题": [
+        "缺少暴力破解防护机制"
+      ]
+    }
+  },
+  "recommendations": {
+    "test_recommendations": [
+      "修复 2 个失败的测试用例",
+      "优先修复 1 个高优先级测试问题",
+      "定期执行集成测试以确保系统稳定性",
+      "建立持续集成流水线自动化测试",
+      "完善测试用例覆盖率",
+      "建立测试数据管理机制"
+    ],
+    "technical_recommendations": [
+      "保持系统和依赖库的及时更新",
+      "实施安全日志记录和监控",
+      "定期进行安全审计和渗透测试",
+      "对敏感数据进行加密存储和传输",
+      "实施账号锁定和验证码机制防止暴力破解"
+    ],
+    "next_steps": [
+      "立即修复所有失败的高优先级测试",
+      "进行代码审查和重构",
+      "暂停生产部署直到问题解决"
+    ]
+  }
+}

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>备课助手 - 智能教学助手2.0</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="lesson-prep-container">
+        <!-- 模块头部 -->
+        <div class="module-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="module-title">
+                        <i class="fas fa-book-open"></i>
+                        备课助手
+                    </h1>
+                    <p class="module-subtitle">AI智能备课，让教学准备更高效</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="LessonPrep.createNewLesson()">
+                        <i class="fas fa-plus"></i>
+                        新建课程
+                    </button>
+                    <button class="btn btn-secondary" onclick="LessonPrep.showTemplates()">
+                        <i class="fas fa-layer-group"></i>
+                        模板库
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能导航 -->
+        <div class="function-nav">
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="material-analysis" onclick="LessonPrep.switchTab('material-analysis')">
+                    <i class="fas fa-search"></i>
+                    教材分析
+                </button>
+                <button class="tab-btn" data-tab="lesson-planning" onclick="LessonPrep.switchTab('lesson-planning')">
+                    <i class="fas fa-sitemap"></i>
+                    教学策划
+                </button>
+                <button class="tab-btn" data-tab="student-analysis" onclick="LessonPrep.switchTab('student-analysis')">
+                    <i class="fas fa-users"></i>
+                    学情分析
+                </button>
+                <button class="tab-btn" data-tab="case-library" onclick="LessonPrep.switchTab('case-library')">
+                    <i class="fas fa-archive"></i>
+                    案例库
+                </button>
+            </div>
+        </div>
+
+        <!-- 教材分析模块 -->
+        <div class="tab-content active" id="material-analysis">
+            <div class="analysis-workspace">
+                <!-- 教材上传区域 -->
+                <div class="upload-section">
+                    <div class="upload-card">
+                        <div class="upload-area" onclick="LessonPrep.uploadMaterial()">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h3>上传教材内容</h3>
+                            <p>支持PDF、Word、图片等格式，AI将自动分析教材内容</p>
+                            <button class="btn btn-primary">选择文件</button>
+                        </div>
+                        <div class="upload-options">
+                            <label class="option-item">
+                                <input type="checkbox" checked>
+                                <span>自动提取知识点</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" checked>
+                                <span>生成教学重难点</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox">
+                                <span>关联课程标准</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分析结果区域 -->
+                <div class="analysis-results">
+                    <div class="result-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-lightbulb"></i>
+                                知识点分析
+                            </h3>
+                            <div class="card-actions">
+                                <button class="btn-icon" onclick="LessonPrep.exportAnalysis('knowledge')">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-icon" onclick="LessonPrep.editAnalysis('knowledge')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="knowledge-points">
+                                <div class="point-item primary">
+                                    <div class="point-label">核心概念</div>
+                                    <div class="point-content">春天的特征与表现</div>
+                                </div>
+                                <div class="point-item secondary">
+                                    <div class="point-label">重要概念</div>
+                                    <div class="point-content">修辞手法的运用</div>
+                                </div>
+                                <div class="point-item tertiary">
+                                    <div class="point-label">拓展概念</div>
+                                    <div class="point-content">情感表达技巧</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-target"></i>
+                                教学重难点
+                            </h3>
+                            <div class="card-actions">
+                                <button class="btn-icon" onclick="LessonPrep.exportAnalysis('difficulty')">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-icon" onclick="LessonPrep.editAnalysis('difficulty')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="difficulty-analysis">
+                                <div class="difficulty-item">
+                                    <div class="difficulty-type important">教学重点</div>
+                                    <div class="difficulty-desc">理解春天景物描写的特点，掌握观察和描写的方法</div>
+                                    <div class="difficulty-suggestions">
+                                        <span class="suggestion-tag">多媒体展示</span>
+                                        <span class="suggestion-tag">实地观察</span>
+                                        <span class="suggestion-tag">对比分析</span>
+                                    </div>
+                                </div>
+                                <div class="difficulty-item">
+                                    <div class="difficulty-type difficult">教学难点</div>
+                                    <div class="difficulty-desc">体会作者对春天的热爱之情，学会运用修辞手法表达情感</div>
+                                    <div class="difficulty-suggestions">
+                                        <span class="suggestion-tag">情境创设</span>
+                                        <span class="suggestion-tag">朗读体验</span>
+                                        <span class="suggestion-tag">写作练习</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-bullseye"></i>
+                                教学目标
+                            </h3>
+                            <div class="card-actions">
+                                <button class="btn-icon" onclick="LessonPrep.exportAnalysis('objectives')">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                                <button class="btn-icon" onclick="LessonPrep.editAnalysis('objectives')">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="objectives-list">
+                                <div class="objective-item">
+                                    <div class="objective-type knowledge">知识目标</div>
+                                    <div class="objective-content">掌握课文中的生字词，理解课文内容，了解春天的特点</div>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="objective-type ability">能力目标</div>
+                                    <div class="objective-content">培养观察能力和语言表达能力，学会运用修辞手法</div>
+                                </div>
+                                <div class="objective-item">
+                                    <div class="objective-type emotion">情感目标</div>
+                                    <div class="objective-content">培养热爱自然、热爱生活的情感，提高审美情趣</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 教学策划模块 -->
+        <div class="tab-content" id="lesson-planning">
+            <div class="planning-workspace">
+                <!-- 课程信息设置 -->
+                <div class="course-info-section">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-info-circle"></i>
+                                课程基本信息
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>课程名称</label>
+                                    <input type="text" class="form-input" value="春" placeholder="请输入课程名称">
+                                </div>
+                                <div class="form-group">
+                                    <label>年级学科</label>
+                                    <select class="form-select">
+                                        <option>七年级语文</option>
+                                        <option>八年级语文</option>
+                                        <option>九年级语文</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>课时安排</label>
+                                    <select class="form-select">
+                                        <option>1课时</option>
+                                        <option>2课时</option>
+                                        <option>3课时</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>班级规模</label>
+                                    <input type="number" class="form-input" value="45" placeholder="学生人数">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教学环节设计 -->
+                <div class="lesson-structure-section">
+                    <div class="structure-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-sitemap"></i>
+                                教学环节设计
+                            </h3>
+                            <div class="card-actions">
+                                <button class="btn btn-primary" onclick="LessonPrep.addLessonStep()">
+                                    <i class="fas fa-plus"></i>
+                                    添加环节
+                                </button>
+                                <button class="btn btn-secondary" onclick="LessonPrep.generateStructure()">
+                                    <i class="fas fa-magic"></i>
+                                    AI生成
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="lesson-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">1</div>
+                                    <div class="timeline-content">
+                                        <div class="step-header">
+                                            <h4>课程导入</h4>
+                                            <span class="time-badge">5分钟</span>
+                                        </div>
+                                        <div class="step-description">
+                                            <p>通过春天图片展示，激发学生对春天的感知和兴趣</p>
+                                        </div>
+                                        <div class="step-activities">
+                                            <span class="activity-tag">图片展示</span>
+                                            <span class="activity-tag">提问互动</span>
+                                            <span class="activity-tag">情境创设</span>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="btn-icon" onclick="LessonPrep.editStep(1)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" onclick="LessonPrep.deleteStep(1)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">2</div>
+                                    <div class="timeline-content">
+                                        <div class="step-header">
+                                            <h4>新课讲授</h4>
+                                            <span class="time-badge">25分钟</span>
+                                        </div>
+                                        <div class="step-description">
+                                            <p>逐段分析课文内容，理解作者对春天的描写和情感表达</p>
+                                        </div>
+                                        <div class="step-activities">
+                                            <span class="activity-tag">朗读指导</span>
+                                            <span class="activity-tag">段落分析</span>
+                                            <span class="activity-tag">修辞赏析</span>
+                                            <span class="activity-tag">小组讨论</span>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="btn-icon" onclick="LessonPrep.editStep(2)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" onclick="LessonPrep.deleteStep(2)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">3</div>
+                                    <div class="timeline-content">
+                                        <div class="step-header">
+                                            <h4>课堂练习</h4>
+                                            <span class="time-badge">10分钟</span>
+                                        </div>
+                                        <div class="step-description">
+                                            <p>通过练习巩固所学知识，检验学习效果</p>
+                                        </div>
+                                        <div class="step-activities">
+                                            <span class="activity-tag">词语填空</span>
+                                            <span class="activity-tag">句子仿写</span>
+                                            <span class="activity-tag">情感表达</span>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="btn-icon" onclick="LessonPrep.editStep(3)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" onclick="LessonPrep.deleteStep(3)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">4</div>
+                                    <div class="timeline-content">
+                                        <div class="step-header">
+                                            <h4>课堂小结</h4>
+                                            <span class="time-badge">5分钟</span>
+                                        </div>
+                                        <div class="step-description">
+                                            <p>总结本课重点内容，布置课后作业</p>
+                                        </div>
+                                        <div class="step-activities">
+                                            <span class="activity-tag">知识梳理</span>
+                                            <span class="activity-tag">作业布置</span>
+                                            <span class="activity-tag">预习指导</span>
+                                        </div>
+                                        <div class="step-actions">
+                                            <button class="btn-icon" onclick="LessonPrep.editStep(4)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-icon" onclick="LessonPrep.deleteStep(4)">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教学资源推荐 -->
+                <div class="resources-section">
+                    <div class="resources-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-folder-open"></i>
+                                教学资源推荐
+                            </h3>
+                            <div class="card-actions">
+                                <button class="btn btn-secondary" onclick="LessonPrep.refreshResources()">
+                                    <i class="fas fa-sync"></i>
+                                    刷新推荐
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="resources-grid">
+                                <div class="resource-item">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-images"></i>
+                                    </div>
+                                    <div class="resource-info">
+                                        <h4>春天风景图片集</h4>
+                                        <p>高清春天风景图片，适合课堂展示</p>
+                                        <div class="resource-meta">
+                                            <span class="resource-type">图片</span>
+                                            <span class="resource-size">15MB</span>
+                                        </div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <button class="btn-icon" onclick="LessonPrep.previewResource('images')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="LessonPrep.downloadResource('images')">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="resource-item">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                    <div class="resource-info">
+                                        <h4>朗读示范视频</h4>
+                                        <p>名师朗读示范，帮助学生理解情感</p>
+                                        <div class="resource-meta">
+                                            <span class="resource-type">视频</span>
+                                            <span class="resource-size">8分钟</span>
+                                        </div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <button class="btn-icon" onclick="LessonPrep.previewResource('video')">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="LessonPrep.downloadResource('video')">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="resource-item">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-file-powerpoint"></i>
+                                    </div>
+                                    <div class="resource-info">
+                                        <h4>课件模板</h4>
+                                        <p>精美PPT模板，可直接使用或修改</p>
+                                        <div class="resource-meta">
+                                            <span class="resource-type">PPT</span>
+                                            <span class="resource-size">5MB</span>
+                                        </div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <button class="btn-icon" onclick="LessonPrep.previewResource('ppt')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="LessonPrep.downloadResource('ppt')">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="resource-item">
+                                    <div class="resource-icon">
+                                        <i class="fas fa-clipboard-list"></i>
+                                    </div>
+                                    <div class="resource-info">
+                                        <h4>练习题库</h4>
+                                        <p>配套练习题，包含基础和拓展题目</p>
+                                        <div class="resource-meta">
+                                            <span class="resource-type">文档</span>
+                                            <span class="resource-size">20题</span>
+                                        </div>
+                                    </div>
+                                    <div class="resource-actions">
+                                        <button class="btn-icon" onclick="LessonPrep.previewResource('exercises')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        <button class="btn-icon" onclick="LessonPrep.downloadResource('exercises')">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学情分析模块 -->
+        <div class="tab-content" id="student-analysis">
+            <div class="analysis-workspace">
+                <div class="student-info-section">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-users"></i>
+                                班级学情概览
+                            </h3>
+                            <div class="card-actions">
+                                <select class="form-select">
+                                    <option>七年级(1)班</option>
+                                    <option>七年级(2)班</option>
+                                    <option>七年级(3)班</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="stats-overview">
+                                <div class="stat-item">
+                                    <div class="stat-number">45</div>
+                                    <div class="stat-label">班级人数</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">85.6</div>
+                                    <div class="stat-label">平均分</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">92%</div>
+                                    <div class="stat-label">出勤率</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">78%</div>
+                                    <div class="stat-label">作业完成率</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-analysis-section">
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-chart-bar"></i>
+                                学习能力分析
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="ability-chart">
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>学习能力分布图表</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <h3>
+                                <i class="fas fa-exclamation-triangle"></i>
+                                重点关注学生
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="student-list">
+                                <div class="student-item">
+                                    <div class="student-avatar">
+                                        <img src="https://via.placeholder.com/40x40/FF6B6B/FFFFFF?text=张" alt="学生头像">
+                                    </div>
+                                    <div class="student-info">
+                                        <h4>张小明</h4>
+                                        <p>基础知识薄弱，需要加强辅导</p>
+                                    </div>
+                                    <div class="student-status">
+                                        <span class="status-badge warning">需关注</span>
+                                    </div>
+                                </div>
+                                <div class="student-item">
+                                    <div class="student-avatar">
+                                        <img src="https://via.placeholder.com/40x40/4ECDC4/FFFFFF?text=李" alt="学生头像">
+                                    </div>
+                                    <div class="student-info">
+                                        <h4>李小红</h4>
+                                        <p>学习积极性不高，课堂参与度低</p>
+                                    </div>
+                                    <div class="student-status">
+                                        <span class="status-badge error">重点关注</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 案例库模块 -->
+        <div class="tab-content" id="case-library">
+            <div class="library-workspace">
+                <div class="search-section">
+                    <div class="search-card">
+                        <div class="search-bar">
+                            <input type="text" class="search-input" placeholder="搜索优秀教学案例...">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="search-filters">
+                            <select class="filter-select">
+                                <option>全部学科</option>
+                                <option>语文</option>
+                                <option>数学</option>
+                                <option>英语</option>
+                            </select>
+                            <select class="filter-select">
+                                <option>全部年级</option>
+                                <option>七年级</option>
+                                <option>八年级</option>
+                                <option>九年级</option>
+                            </select>
+                            <select class="filter-select">
+                                <option>全部类型</option>
+                                <option>优秀教案</option>
+                                <option>教学视频</option>
+                                <option>课件资源</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases-section">
+                    <div class="cases-grid">
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="https://via.placeholder.com/300x200/2563EB/FFFFFF?text=春" alt="案例图片">
+                                <div class="case-overlay">
+                                    <button class="btn btn-primary" onclick="LessonPrep.viewCase(1)">
+                                        <i class="fas fa-eye"></i>
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h3>《春》优秀教学设计</h3>
+                                <p>通过多媒体展示和情境创设，引导学生感受春天的美好...</p>
+                                <div class="case-meta">
+                                    <span class="meta-item">
+                                        <i class="fas fa-user"></i>
+                                        王老师
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-star"></i>
+                                        4.8分
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-download"></i>
+                                        1.2k
+                                    </span>
+                                </div>
+                                <div class="case-tags">
+                                    <span class="tag">七年级</span>
+                                    <span class="tag">语文</span>
+                                    <span class="tag">优秀教案</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="https://via.placeholder.com/300x200/10B981/FFFFFF?text=视频" alt="案例图片">
+                                <div class="case-overlay">
+                                    <button class="btn btn-primary" onclick="LessonPrep.viewCase(2)">
+                                        <i class="fas fa-play"></i>
+                                        观看视频
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h3>名师课堂实录</h3>
+                                <p>特级教师示范课，展示如何引导学生深入理解课文...</p>
+                                <div class="case-meta">
+                                    <span class="meta-item">
+                                        <i class="fas fa-user"></i>
+                                        张特级
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-clock"></i>
+                                        45分钟
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-eye"></i>
+                                        5.6k
+                                    </span>
+                                </div>
+                                <div class="case-tags">
+                                    <span class="tag">七年级</span>
+                                    <span class="tag">语文</span>
+                                    <span class="tag">教学视频</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="https://via.placeholder.com/300x200/F59E0B/FFFFFF?text=PPT" alt="案例图片">
+                                <div class="case-overlay">
+                                    <button class="btn btn-primary" onclick="LessonPrep.viewCase(3)">
+                                        <i class="fas fa-download"></i>
+                                        下载资源
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h3>精美课件模板</h3>
+                                <p>设计精美的PPT模板，包含动画效果和互动元素...</p>
+                                <div class="case-meta">
+                                    <span class="meta-item">
+                                        <i class="fas fa-user"></i>
+                                        李老师
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-file"></i>
+                                        25页
+                                    </span>
+                                    <span class="meta-item">
+                                        <i class="fas fa-download"></i>
+                                        890
+                                    </span>
+                                </div>
+                                <div class="case-tags">
+                                    <span class="tag">七年级</span>
+                                    <span class="tag">语文</span>
+                                    <span class="tag">课件资源</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/lesson-prep.js"></script>
+</body>
+</html>

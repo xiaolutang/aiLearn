@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手 - 工作台设计稿</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #F5F7FA;
+            color: #262626;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background: white;
+            height: 64px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex: 1;
+        }
+
+        .nav-item {
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            color: #595959;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-item.active {
+            color: #1890FF;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: #1890FF;
+        }
+
+        .nav-item:hover {
+            color: #1890FF;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-box {
+            width: 240px;
+            height: 32px;
+            background: #F5F5F5;
+            border: none;
+            border-radius: 16px;
+            padding: 0 16px;
+            font-size: 14px;
+        }
+
+        .search-box:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+        }
+
+        .notification-btn {
+            width: 32px;
+            height: 32px;
+            background: #F5F5F5;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .notification-btn::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            width: 8px;
+            height: 8px;
+            background: #FF4D4F;
+            border-radius: 50%;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            margin-top: 64px;
+            padding: 24px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 欢迎区域 */
+        .welcome-section {
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 12px;
+            padding: 32px;
+            color: white;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .welcome-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .welcome-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .quick-stats {
+            display: flex;
+            gap: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* 功能卡片网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 16px;
+        }
+
+        .feature-icon.prepare {
+            background: linear-gradient(135deg, #52C41A 0%, #389E0D 100%);
+        }
+
+        .feature-icon.teach {
+            background: linear-gradient(135deg, #FA8C16 0%, #D46B08 100%);
+        }
+
+        .feature-icon.grade {
+            background: linear-gradient(135deg, #722ED1 0%, #531DAB 100%);
+        }
+
+        .feature-icon.analysis {
+            background: linear-gradient(135deg, #13C2C2 0%, #08979C 100%);
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+
+        .feature-content {
+            margin-bottom: 16px;
+        }
+
+        .feature-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .feature-stat {
+            text-align: center;
+        }
+
+        .feature-stat-number {
+            font-size: 20px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .feature-stat-label {
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        .feature-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            background: #F0F8FF;
+            color: #1890FF;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: #1890FF;
+            color: white;
+        }
+
+        .recent-activity {
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        /* 最近活动区域 */
+        .activity-section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .view-all {
+            color: #1890FF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: #FAFAFA;
+            border-radius: 8px;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 16px;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-size: 14px;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .activity-desc {
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        .activity-time {
+            font-size: 12px;
+            color: #BFBFBF;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 16px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .search-box {
+                width: 180px;
+            }
+
+            .main-content {
+                padding: 16px;
+            }
+
+            .welcome-section {
+                padding: 24px 20px;
+            }
+
+            .quick-stats {
+                gap: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div class="logo-text">智能教学助手</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">工作台</a>
+            <a href="#" class="nav-item">备课</a>
+            <a href="#" class="nav-item">上课</a>
+            <a href="#" class="nav-item">成绩</a>
+            <a href="#" class="nav-item">分析</a>
+        </nav>
+        
+        <div class="header-actions">
+            <input type="text" class="search-box" placeholder="搜索课程、学生...">
+            <button class="notification-btn">🔔</button>
+            <div class="user-avatar">张</div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 欢迎区域 -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <h1 class="welcome-title">早上好，张老师！</h1>
+                <p class="welcome-subtitle">今天是2024年1月15日，您有3个班级需要关注</p>
+                
+                <div class="quick-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">学生总数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">本周课程</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">待批改作业</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">平均出勤率</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能卡片网格 -->
+        <section class="feature-grid">
+            <!-- 备课模块 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon prepare">📚</div>
+                    <div>
+                        <div class="feature-title">智能备课</div>
+                        <div class="feature-desc">AI辅助生成教案和课件</div>
+                    </div>
+                </div>
+                
+                <div class="feature-content">
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">24</div>
+                            <div class="feature-stat-label">教案数量</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">18</div>
+                            <div class="feature-stat-label">课件数量</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">6</div>
+                            <div class="feature-stat-label">本周新增</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-action">
+                    <button class="action-btn">开始备课</button>
+                    <div class="recent-activity">最近使用：2小时前</div>
+                </div>
+            </div>
+
+            <!-- 上课模块 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon teach">🎯</div>
+                    <div>
+                        <div class="feature-title">互动教学</div>
+                        <div class="feature-desc">课堂互动和实时反馈</div>
+                    </div>
+                </div>
+                
+                <div class="feature-content">
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">3</div>
+                            <div class="feature-stat-label">今日课程</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">89%</div>
+                            <div class="feature-stat-label">参与度</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">12</div>
+                            <div class="feature-stat-label">互动次数</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-action">
+                    <button class="action-btn">进入课堂</button>
+                    <div class="recent-activity">下节课：14:30</div>
+                </div>
+            </div>
+
+            <!-- 成绩模块 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon grade">📊</div>
+                    <div>
+                        <div class="feature-title">成绩管理</div>
+                        <div class="feature-desc">成绩录入和统计分析</div>
+                    </div>
+                </div>
+                
+                <div class="feature-content">
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">8</div>
+                            <div class="feature-stat-label">待录入</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">85.6</div>
+                            <div class="feature-stat-label">班级均分</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">92%</div>
+                            <div class="feature-stat-label">及格率</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-action">
+                    <button class="action-btn">录入成绩</button>
+                    <div class="recent-activity">最近更新：昨天</div>
+                </div>
+            </div>
+
+            <!-- 学情分析 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon analysis">🔍</div>
+                    <div>
+                        <div class="feature-title">学情分析</div>
+                        <div class="feature-desc">AI智能分析学习情况</div>
+                    </div>
+                </div>
+                
+                <div class="feature-content">
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">15</div>
+                            <div class="feature-stat-label">需关注学生</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">78%</div>
+                            <div class="feature-stat-label">知识掌握度</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number">5</div>
+                            <div class="feature-stat-label">薄弱知识点</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-action">
+                    <button class="action-btn">查看分析</button>
+                    <div class="recent-activity">报告生成：今天</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最近活动 -->
+        <section class="activity-section">
+            <div class="section-header">
+                <h2 class="section-title">最近活动</h2>
+                <a href="#" class="view-all">查看全部</a>
+            </div>
+            
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #E6F7FF; color: #1890FF;">📝</div>
+                    <div class="activity-content">
+                        <div class="activity-title">完成了《数学-函数》教案设计</div>
+                        <div class="activity-desc">AI生成的教案已优化，包含3个互动环节</div>
+                    </div>
+                    <div class="activity-time">2小时前</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #FFF7E6; color: #FA8C16;">📊</div>
+                    <div class="activity-content">
+                        <div class="activity-title">录入了高一(3)班期中考试成绩</div>
+                        <div class="activity-desc">共45名学生，平均分85.6，较上次提升3.2分</div>
+                    </div>
+                    <div class="activity-time">昨天 16:30</div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-icon" style="background: #F6FFED; color: #52C41A;">🎯</div>
+                    <div class="activity-content">
+                        <div class="activity-title">生成了个性化辅导方案</div>
+                        <div class="activity-desc">为李明同学制定了函数专项练习计划</div>
+                    </div>
+                    <div class="activity-time">昨天 14:20</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

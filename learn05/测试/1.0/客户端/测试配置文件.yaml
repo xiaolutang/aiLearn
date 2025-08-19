@@ -1,0 +1,327 @@
+# 智能教学助手Flutter客户端测试配置文件
+# 用于配置各种测试环境和参数
+
+# 测试环境配置
+test_environments:
+  development:
+    api_base_url: "http://localhost:8080/api"
+    database_url: "sqlite://test_dev.db"
+    log_level: "debug"
+    timeout: 30000
+    
+  staging:
+    api_base_url: "https://staging-api.smartteaching.com/api"
+    database_url: "postgresql://staging_db"
+    log_level: "info"
+    timeout: 15000
+    
+  production:
+    api_base_url: "https://api.smartteaching.com/api"
+    database_url: "postgresql://prod_db"
+    log_level: "error"
+    timeout: 10000
+
+# 测试数据配置
+test_data:
+  # 用户测试数据
+  users:
+    teacher:
+      username: "test_teacher"
+      password: "test_password123"
+      email: "teacher@test.com"
+      role: "teacher"
+    
+    admin:
+      username: "test_admin"
+      password: "admin_password123"
+      email: "admin@test.com"
+      role: "admin"
+  
+  # 学生测试数据
+  students:
+    - name: "张三"
+      student_id: "20240001"
+      class: "一年级1班"
+      age: 7
+    - name: "李四"
+      student_id: "20240002"
+      class: "一年级1班"
+      age: 7
+    - name: "王五"
+      student_id: "20240003"
+      class: "一年级2班"
+      age: 8
+  
+  # 成绩测试数据
+  grades:
+    - student_name: "张三"
+      subject: "数学"
+      score: 95
+      date: "2024-01-15"
+    - student_name: "李四"
+      subject: "语文"
+      score: 88
+      date: "2024-01-15"
+    - student_name: "王五"
+      subject: "英语"
+      score: 92
+      date: "2024-01-16"
+  
+  # 课程测试数据
+  lessons:
+    - title: "数学第一课"
+      content: "学习基础加法运算"
+      subject: "数学"
+      grade_level: "一年级"
+    - title: "语文第一课"
+      content: "学习拼音基础"
+      subject: "语文"
+      grade_level: "一年级"
+
+# 性能测试配置
+performance_test:
+  # 启动性能指标
+  startup:
+    cold_start_max_ms: 3000
+    warm_start_max_ms: 1000
+    first_frame_max_ms: 2000
+  
+  # 页面响应性能指标
+  page_response:
+    navigation_max_ms: 500
+    data_load_max_ms: 2000
+    ui_render_max_ms: 100
+  
+  # 内存性能指标
+  memory:
+    max_heap_size_mb: 200
+    max_memory_leak_mb: 10
+    gc_frequency_max: 5  # 每分钟最大GC次数
+  
+  # CPU性能指标
+  cpu:
+    max_cpu_usage_percent: 80
+    max_frame_drop_rate: 5  # 最大掉帧率百分比
+  
+  # 网络性能指标
+  network:
+    api_response_max_ms: 3000
+    file_download_min_speed_kbps: 100
+    offline_cache_hit_rate_min: 90
+
+# 兼容性测试配置
+compatibility_test:
+  # 移动端平台
+  mobile_platforms:
+    ios:
+      min_version: "13.0"
+      test_versions: ["13.0", "14.0", "15.0", "16.0", "17.0"]
+      devices: ["iPhone SE", "iPhone 12", "iPhone 14", "iPad Air"]
+    
+    android:
+      min_api_level: 21
+      test_api_levels: [21, 23, 26, 28, 30, 33]
+      devices: ["Pixel 4", "Samsung Galaxy S21", "Xiaomi Mi 11"]
+  
+  # 桌面端平台
+  desktop_platforms:
+    macos:
+      min_version: "10.14"
+      test_versions: ["10.14", "11.0", "12.0", "13.0", "14.0"]
+    
+    windows:
+      min_version: "Windows 10"
+      test_versions: ["Windows 10", "Windows 11"]
+    
+    linux:
+      distributions: ["Ubuntu 20.04", "Ubuntu 22.04", "CentOS 8"]
+  
+  # Web平台
+  web_platforms:
+    browsers:
+      - name: "Chrome"
+        min_version: "90"
+        test_versions: ["90", "100", "110", "latest"]
+      - name: "Firefox"
+        min_version: "88"
+        test_versions: ["88", "100", "110", "latest"]
+      - name: "Safari"
+        min_version: "14"
+        test_versions: ["14", "15", "16", "latest"]
+      - name: "Edge"
+        min_version: "90"
+        test_versions: ["90", "100", "110", "latest"]
+
+# 安全测试配置
+security_test:
+  # 认证测试
+  authentication:
+    password_policy:
+      min_length: 8
+      require_uppercase: true
+      require_lowercase: true
+      require_numbers: true
+      require_special_chars: true
+    
+    session_management:
+      session_timeout_minutes: 30
+      max_concurrent_sessions: 3
+      require_reauth_for_sensitive: true
+  
+  # 数据保护测试
+  data_protection:
+    encryption:
+      algorithm: "AES-256"
+      key_rotation_days: 90
+    
+    data_validation:
+      input_sanitization: true
+      sql_injection_protection: true
+      xss_protection: true
+  
+  # 网络安全测试
+  network_security:
+    https_required: true
+    certificate_validation: true
+    api_rate_limiting: true
+    cors_policy: "strict"
+
+# 自动化测试配置
+automation_test:
+  # 测试框架配置
+  frameworks:
+    widget_test:
+      timeout_seconds: 30
+      retry_count: 3
+      parallel_execution: true
+    
+    integration_test:
+      timeout_seconds: 120
+      retry_count: 2
+      device_farm_enabled: true
+    
+    performance_test:
+      timeout_seconds: 300
+      profiling_enabled: true
+      memory_monitoring: true
+  
+  # 测试报告配置
+  reporting:
+    format: ["html", "json", "junit"]
+    include_screenshots: true
+    include_logs: true
+    include_performance_metrics: true
+    
+    output_directory: "test_reports"
+    archive_reports: true
+    retention_days: 30
+  
+  # CI/CD集成配置
+  ci_cd:
+    trigger_on_commit: true
+    trigger_on_pr: true
+    parallel_jobs: 4
+    
+    notification:
+      slack_webhook: "https://hooks.slack.com/test"
+      email_recipients: ["dev-team@company.com"]
+      notify_on_failure: true
+      notify_on_success: false
+
+# 测试工具配置
+test_tools:
+  # 代码覆盖率工具
+  coverage:
+    tool: "lcov"
+    min_coverage_percent: 80
+    exclude_patterns:
+      - "**/*.g.dart"
+      - "**/*.freezed.dart"
+      - "**/generated/**"
+    
+    report_formats: ["html", "lcov"]
+  
+  # 静态分析工具
+  static_analysis:
+    dart_analyzer: true
+    flutter_lints: true
+    custom_rules: "analysis_options.yaml"
+  
+  # 性能分析工具
+  performance_profiling:
+    flutter_driver: true
+    observatory: true
+    memory_profiler: true
+    cpu_profiler: true
+  
+  # 设备测试工具
+  device_testing:
+    firebase_test_lab: true
+    aws_device_farm: false
+    browserstack: false
+    
+    real_device_testing: true
+    emulator_testing: true
+
+# 测试数据管理
+test_data_management:
+  # 数据库配置
+  database:
+    reset_before_test: true
+    seed_data: true
+    backup_before_test: true
+    cleanup_after_test: true
+  
+  # 文件存储配置
+  file_storage:
+    temp_directory: "/tmp/test_files"
+    cleanup_temp_files: true
+    max_file_size_mb: 10
+  
+  # 外部服务模拟
+  service_mocking:
+    api_mocking: true
+    database_mocking: false
+    file_system_mocking: true
+    network_mocking: true
+
+# 日志配置
+logging:
+  level: "debug"
+  output_file: "test_logs.txt"
+  max_file_size_mb: 100
+  rotation_count: 5
+  
+  categories:
+    test_execution: true
+    performance_metrics: true
+    error_details: true
+    debug_info: true
+
+# 通知配置
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.company.com"
+    port: 587
+    username: "test-notifications@company.com"
+    
+  slack:
+    enabled: true
+    webhook_url: "https://hooks.slack.com/test"
+    channel: "#testing"
+    
+  teams:
+    enabled: false
+    webhook_url: ""
+
+# 调试配置
+debugging:
+  enable_debug_mode: true
+  capture_screenshots: true
+  capture_logs: true
+  capture_network_traffic: true
+  
+  breakpoint_debugging: true
+  step_by_step_execution: false
+  verbose_output: true

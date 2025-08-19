@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂助手 - 智能教学助手2.0</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="styles/mobile-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>智能教学助手</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>工作台</span>
+            </a>
+            <a href="lesson-prep.html" class="nav-item">
+                <i class="fas fa-book-open"></i>
+                <span>备课助手</span>
+            </a>
+            <a href="classroom.html" class="nav-item active">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>课堂助手</span>
+            </a>
+            <a href="grades.html" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>成绩管理</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fas fa-analytics"></i>
+                <span>数据分析</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <!-- 页面头部 -->
+        <header class="page-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="page-title">课堂助手</h1>
+                    <p class="page-subtitle">实时互动教学，智能课堂管理</p>
+                </div>
+                <div class="header-right">
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">32</span>
+                            <span class="stat-label">在线学生</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">45:23</span>
+                            <span class="stat-label">课堂时长</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-outline">
+                            <i class="fas fa-cog"></i>
+                            设置
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            开始课堂
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 课堂控制面板 -->
+        <section class="classroom-controls">
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>课堂状态</h3>
+                    <div class="status-indicators">
+                        <div class="status-item active" data-status="live">
+                            <div class="status-icon">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="status-info">
+                                <span class="status-label">直播中</span>
+                                <span class="status-time">45:23</span>
+                            </div>
+                        </div>
+                        <div class="status-item" data-status="recording">
+                            <div class="status-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="status-info">
+                                <span class="status-label">录制</span>
+                                <span class="status-time">--:--</span>
+                            </div>
+                        </div>
+                        <div class="status-item" data-status="screen">
+                            <div class="status-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="status-info">
+                                <span class="status-label">屏幕共享</span>
+                                <span class="status-time">--:--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>互动工具</h3>
+                    <div class="interaction-tools">
+                        <button class="tool-btn" data-tool="quiz">
+                            <i class="fas fa-question-circle"></i>
+                            <span>发起问答</span>
+                        </button>
+                        <button class="tool-btn" data-tool="poll">
+                            <i class="fas fa-poll"></i>
+                            <span>投票调查</span>
+                        </button>
+                        <button class="tool-btn" data-tool="whiteboard">
+                            <i class="fas fa-chalkboard"></i>
+                            <span>白板</span>
+                        </button>
+                        <button class="tool-btn" data-tool="breakout">
+                            <i class="fas fa-users"></i>
+                            <span>分组讨论</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>课堂管理</h3>
+                    <div class="management-tools">
+                        <button class="tool-btn" data-tool="mute-all">
+                            <i class="fas fa-microphone-slash"></i>
+                            <span>全体静音</span>
+                        </button>
+                        <button class="tool-btn" data-tool="raise-hand">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>举手发言</span>
+                        </button>
+                        <button class="tool-btn" data-tool="attention">
+                            <i class="fas fa-eye"></i>
+                            <span>注意力监控</span>
+                        </button>
+                        <button class="tool-btn" data-tool="chat">
+                            <i class="fas fa-comments"></i>
+                            <span>聊天管理</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要内容区域 -->
+        <div class="classroom-main">
+            <!-- 左侧：学生监控 -->
+            <div class="classroom-left">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>学生状态监控</h3>
+                        <div class="section-controls">
+                            <button class="btn-icon" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="btn-icon active" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="student-monitor">
+                        <div class="monitor-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon online">
+                                    <i class="fas fa-circle"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">32</span>
+                                    <span class="stat-text">在线</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon active">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">28</span>
+                                    <span class="stat-text">专注</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon warning">
+                                    <i class="fas fa-hand-paper"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-text">举手</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="student-list">
+                            <div class="student-item" data-status="active">
+                                <div class="student-avatar">
+                                    <img src="https://via.placeholder.com/40" alt="张三">
+                                    <div class="status-indicator online"></div>
+                                </div>
+                                <div class="student-info">
+                                    <div class="student-name">张三</div>
+                                    <div class="student-status">专注听讲</div>
+                                </div>
+                                <div class="student-actions">
+                                    <button class="btn-icon" title="私聊">
+                                        <i class="fas fa-comment"></i>
+                                    </button>
+                                    <button class="btn-icon" title="静音">
+                                        <i class="fas fa-microphone"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="student-item" data-status="raised">
+                                <div class="student-avatar">
+                                    <img src="https://via.placeholder.com/40" alt="李四">
+                                    <div class="status-indicator raised"></div>
+                                </div>
+                                <div class="student-info">
+                                    <div class="student-name">李四</div>
+                                    <div class="student-status">举手发言</div>
+                                </div>
+                                <div class="student-actions">
+                                    <button class="btn-icon" title="允许发言">
+                                        <i class="fas fa-microphone"></i>
+                                    </button>
+                                    <button class="btn-icon" title="拒绝">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="student-item" data-status="distracted">
+                                <div class="student-avatar">
+                                    <img src="https://via.placeholder.com/40" alt="王五">
+                                    <div class="status-indicator warning"></div>
+                                </div>
+                                <div class="student-info">
+                                    <div class="student-name">王五</div>
+                                    <div class="student-status">注意力分散</div>
+                                </div>
+                                <div class="student-actions">
+                                    <button class="btn-icon" title="提醒">
+                                        <i class="fas fa-bell"></i>
+                                    </button>
+                                    <button class="btn-icon" title="私聊">
+                                        <i class="fas fa-comment"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 中间：互动区域 -->
+            <div class="classroom-center">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>实时互动</h3>
+                        <div class="section-controls">
+                            <select class="form-select">
+                                <option>当前问题</option>
+                                <option>历史问题</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="interaction-area">
+                        <!-- 当前问题 -->
+                        <div class="current-question">
+                            <div class="question-card">
+                                <div class="question-header">
+                                    <div class="question-type">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>选择题</span>
+                                    </div>
+                                    <div class="question-timer">
+                                        <i class="fas fa-clock"></i>
+                                        <span>02:35</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-content">
+                                    <h4>下列哪个函数是偶函数？</h4>
+                                    <div class="question-options">
+                                        <div class="option-item" data-option="A">
+                                            <span class="option-label">A</span>
+                                            <span class="option-text">f(x) = x²</span>
+                                            <div class="option-stats">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 65%"></div>
+                                                </div>
+                                                <span class="option-count">21人</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="option-item" data-option="B">
+                                            <span class="option-label">B</span>
+                                            <span class="option-text">f(x) = x³</span>
+                                            <div class="option-stats">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 15%"></div>
+                                                </div>
+                                                <span class="option-count">5人</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="option-item" data-option="C">
+                                            <span class="option-label">C</span>
+                                            <span class="option-text">f(x) = x + 1</span>
+                                            <div class="option-stats">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 10%"></div>
+                                                </div>
+                                                <span class="option-count">3人</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="option-item" data-option="D">
+                                            <span class="option-label">D</span>
+                                            <span class="option-text">f(x) = |x|</span>
+                                            <div class="option-stats">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: 10%"></div>
+                                                </div>
+                                                <span class="option-count">3人</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-actions">
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-pause"></i>
+                                        暂停
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-check"></i>
+                                        结束答题
+                                    </button>
+                                    <button class="btn btn-success">
+                                        <i class="fas fa-chart-bar"></i>
+                                        查看分析
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 快速问答 -->
+                        <div class="quick-quiz">
+                            <div class="quiz-input">
+                                <input type="text" class="form-input" placeholder="输入问题内容...">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    发送
+                                </button>
+                            </div>
+                            
+                            <div class="quiz-templates">
+                                <button class="template-btn" data-template="choice">
+                                    <i class="fas fa-list"></i>
+                                    选择题
+                                </button>
+                                <button class="template-btn" data-template="truefalse">
+                                    <i class="fas fa-check-circle"></i>
+                                    判断题
+                                </button>
+                                <button class="template-btn" data-template="text">
+                                    <i class="fas fa-edit"></i>
+                                    简答题
+                                </button>
+                                <button class="template-btn" data-template="poll">
+                                    <i class="fas fa-poll"></i>
+                                    投票
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧：数据统计 -->
+            <div class="classroom-right">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>课堂数据</h3>
+                        <div class="section-controls">
+                            <button class="btn-icon" title="刷新">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="classroom-analytics">
+                        <!-- 参与度统计 -->
+                        <div class="analytics-section">
+                            <h4>参与度统计</h4>
+                            <div class="participation-chart">
+                                <div class="chart-container">
+                                    <canvas id="participationChart" width="200" height="120"></canvas>
+                                </div>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #4CAF50"></span>
+                                        <span>积极参与 (75%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #FF9800"></span>
+                                        <span>一般参与 (20%)</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background: #F44336"></span>
+                                        <span>较少参与 (5%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 答题统计 -->
+                        <div class="analytics-section">
+                            <h4>答题统计</h4>
+                            <div class="answer-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">总题数</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">平均正确率</span>
+                                    <span class="stat-value">78%</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">平均用时</span>
+                                    <span class="stat-value">45秒</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">参与人数</span>
+                                    <span class="stat-value">32/32</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 注意力监控 -->
+                        <div class="analytics-section">
+                            <h4>注意力监控</h4>
+                            <div class="attention-monitor">
+                                <div class="attention-chart">
+                                    <canvas id="attentionChart" width="200" height="80"></canvas>
+                                </div>
+                                <div class="attention-alerts">
+                                    <div class="alert-item">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <span>3名学生注意力分散</span>
+                                    </div>
+                                    <div class="alert-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>建议休息5分钟</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 课堂活跃度 -->
+                        <div class="analytics-section">
+                            <h4>课堂活跃度</h4>
+                            <div class="activity-metrics">
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <span class="metric-value">156</span>
+                                        <span class="metric-label">聊天消息</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-hand-paper"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <span class="metric-value">23</span>
+                                        <span class="metric-label">举手次数</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-question"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <span class="metric-value">8</span>
+                                        <span class="metric-label">问题数量</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 脚本文件 -->
+    <script src="animations.js"></script>
+    <script src="classroom.js"></script>
+    <script src="scripts/mobile-interactions.js"></script>
+</body>
+</html>

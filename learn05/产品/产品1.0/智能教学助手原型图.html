@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手原型图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .prototype-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .prototype-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .prototype-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .page-section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: #4a90e2;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .section-content {
+            padding: 20px;
+        }
+        
+        .wireframe {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #fafafa;
+            position: relative;
+        }
+        
+        .wireframe-title {
+            background: #4a90e2;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .layout-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .layout-2col {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .layout-3col {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .layout-sidebar {
+            grid-template-columns: 250px 1fr;
+        }
+        
+        .component {
+            background: #e8f4fd;
+            border: 1px solid #b3d9ff;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #2c5aa0;
+        }
+        
+        .sidebar {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .main-content {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            min-height: 300px;
+        }
+        
+        .nav-item {
+            background: #e0e0e0;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        .button {
+            background: #4a90e2;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .input-field {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 5px 0;
+            width: 100%;
+        }
+        
+        .chart-placeholder {
+            background: #f0f8ff;
+            border: 2px dashed #4a90e2;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a90e2;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            background: #f8f9fa;
+            margin: 5px 0;
+            padding: 10px;
+            border-left: 4px solid #4a90e2;
+            border-radius: 3px;
+        }
+        
+        .responsive-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 15px 0;
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .layout-2col, .layout-3col, .layout-sidebar {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .prototype-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav id="top-nav" style="background: #4a90e2; color: white; padding: 10px 0; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+            <div style="font-size: 18px; font-weight: bold;">🎓 智能教学助手</div>
+            <div>
+                <button class="nav-btn" data-target="dashboard" style="background: transparent; border: 1px solid white; color: white; padding: 8px 16px; margin: 0 5px; border-radius: 4px; cursor: pointer;">首页</button>
+                <button class="nav-btn" data-target="lesson-prep" style="background: transparent; border: 1px solid white; color: white; padding: 8px 16px; margin: 0 5px; border-radius: 4px; cursor: pointer;">备课</button>
+                <button class="nav-btn" data-target="teaching-tools" style="background: transparent; border: 1px solid white; color: white; padding: 8px 16px; margin: 0 5px; border-radius: 4px; cursor: pointer;">上课</button>
+                <button class="nav-btn" data-target="grade-entry" style="background: transparent; border: 1px solid white; color: white; padding: 8px 16px; margin: 0 5px; border-radius: 4px; cursor: pointer;">成绩</button>
+                <button id="logout-btn" style="background: #dc3545; border: none; color: white; padding: 8px 16px; margin: 0 5px; border-radius: 4px; cursor: pointer;">退出</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 70px;">
+        <div class="prototype-header">
+            <h1>智能教学助手原型图</h1>
+            <p>基于产品需求文档的界面设计原型</p>
+        </div>
+        
+        <!-- 整体布局说明 -->
+        <div class="page-section">
+            <div class="section-header">整体布局架构</div>
+            <div class="section-content">
+                <div class="responsive-note">
+                    <strong>响应式设计说明：</strong>
+                    <ul>
+                        <li><strong>桌面端：</strong>左侧导航栏 + 主内容区</li>
+                        <li><strong>平板端：</strong>可折叠左侧导航栏</li>
+                        <li><strong>移动端：</strong>底部导航栏 + 单栏布局</li>
+                    </ul>
+                </div>
+                
+                <div class="wireframe">
+                    <div class="wireframe-title">桌面端布局</div>
+                    <div class="layout-grid layout-sidebar">
+                        <div class="sidebar">
+                            <div style="font-weight: bold; margin-bottom: 10px;">导航菜单</div>
+                            <div class="nav-item nav-btn" data-target="dashboard">🏠 首页</div>
+                <div class="nav-item nav-btn" data-target="lesson-prep">📚 备课模块</div>
+                <div class="nav-item nav-btn" data-target="teaching-tools">🎓 上课模块</div>
+                <div class="nav-item nav-btn" data-target="grade-entry">📊 成绩模块</div>
+                <div class="nav-item nav-btn" data-target="profile">👤 个人中心</div>
+                        </div>
+                        <div class="main-content">
+                            <div style="font-weight: bold; margin-bottom: 15px;">主内容区域</div>
+                            <div class="component">页面标题</div>
+                            <div class="component">功能操作区</div>
+                            <div class="component">数据展示区</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 登录/注册页面 -->
+        <div id="login" class="page page-section">
+            <div class="section-header">1. 登录/注册页面</div>
+            <div class="section-content">
+                <div class="wireframe">
+                    <div class="wireframe-title">登录页面</div>
+                    <div style="text-align: center; padding: 40px;">
+                        <div class="component" style="margin: 20px auto; width: 300px; height: 80px; line-height: 80px; font-size: 1.5em;">
+                            🎓 智能教学助手 LOGO
+                        </div>
+                        <div style="width: 300px; margin: 10px auto;">
+                            <input type="text" id="username" placeholder="用户名/手机号" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div style="width: 300px; margin: 10px auto;">
+                            <input type="password" id="password" placeholder="密码" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px;">
+                        </div>
+                        <div style="margin: 20px 0;">
+                            <button id="login-btn" class="button">登录</button>
+                            <button class="button" style="background: #6c757d;">验证码登录</button>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <a href="#" style="color: #4a90e2; margin: 0 10px;">注册账号</a>
+                            <a href="#" style="color: #4a90e2; margin: 0 10px;">忘记密码</a>
+                        </div>
+                        <div style="margin: 20px 0;">
+                            <button class="button" style="background: #1aad19;">微信登录</button>
+                            <button class="button" style="background: #12b7f5;">QQ登录</button>
+                        </div>
+                        <div style="margin-top: 30px; padding: 15px; background: #f0f8ff; border-radius: 8px; font-size: 12px; max-width: 300px; margin-left: auto; margin-right: auto;">
+                            <strong>🎯 演示账号：</strong><br>
+                            用户名：teacher<br>
+                            密码：123456
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 首页/仪表盘 -->
+        <div id="dashboard" class="page page-section">
+            <div class="section-header">2. 首页/仪表盘</div>
+            <div class="section-content">
+                <div class="wireframe">
+                    <div class="wireframe-title">首页仪表盘</div>
+                    <div class="layout-grid layout-sidebar">
+                        <div class="sidebar">
+                            <div class="card">
+                                <div style="font-weight: bold; margin-bottom: 10px;">👤 教师信息</div>
+                                <div>姓名：张老师</div>
+                                <div>学科：数学</div>
+                                <div>班级：初一(1)班</div>
+                            </div>
+                            <div class="card">
+                                <div style="font-weight: bold; margin-bottom: 10px;">📋 待办事项</div>
+                                <div class="nav-item">• 批改作业 (5份)</div>
+                                <div class="nav-item">• 明日课程准备</div>
+                                <div class="nav-item">• 家长会安排</div>
+                            </div>
+                        </div>
+                        <div class="main-content">
+                            <div style="font-weight: bold; margin-bottom: 15px;">快速访问</div>
+                            <div class="layout-grid layout-3col">
+                                <button class="button nav-btn" data-target="grade-entry" style="height: 80px;">📝 成绩录入</button>
+                                <button class="button nav-btn" data-target="lesson-prep" style="height: 80px;">📚 备课助手</button>
+                                <button class="button nav-btn" data-target="teaching-tools" style="height: 80px;">🎓 上课工具</button>
+                            </div>
+                            
+                            <div style="font-weight: bold; margin: 20px 0 15px 0;">班级概览</div>
+                            <div class="layout-grid layout-3col">
+                                <div class="card">
+                                    <div style="font-size: 2em; color: #4a90e2;">85.6</div>
+                                    <div>班级平均分</div>
+                                </div>
+                                <div class="card">
+                                    <div style="font-size: 2em; color: #28a745;">78%</div>
+                                    <div>优秀率</div>
+                                </div>
+                                <div class="card">
+                                    <div style="font-size: 2em; color: #17a2b8;">96%</div>
+                                    <div>出勤率</div>
+                                </div>
+                            </div>
+                            
+                            <div style="font-weight: bold; margin: 20px 0 15px 0;">最近活动</div>
+                            <div class="card">
+                                <div>• 2024-01-15 录入了期末考试成绩</div>
+                                <div>• 2024-01-14 生成了个性化辅导方案</div>
+                                <div>• 2024-01-13 完成了教材分析</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 备课模块 -->
+        <div id="lesson-prep" class="page page-section">
+            <div class="section-header">3. 备课模块</div>
+            <div class="section-content">
+                <!-- 教材分析页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">3.1 教材分析页面</div>
+                    <div class="layout-grid layout-sidebar">
+                        <div class="sidebar">
+                            <div style="font-weight: bold; margin-bottom: 10px;">📖 教材目录</div>
+                            <div class="nav-item">第一章 有理数</div>
+                            <div class="nav-item" style="margin-left: 15px;">1.1 正数和负数</div>
+                            <div class="nav-item" style="margin-left: 15px;">1.2 有理数</div>
+                            <div class="nav-item">第二章 整式的加减</div>
+                            <div class="nav-item" style="margin-left: 15px;">2.1 整式</div>
+                        </div>
+                        <div class="main-content">
+                            <div class="layout-grid layout-2col">
+                                <div>
+                                    <div style="font-weight: bold; margin-bottom: 10px;">教材内容</div>
+                                    <div class="component" style="height: 200px;">文本/图片/PDF显示区</div>
+                                </div>
+                                <div>
+                                    <div style="font-weight: bold; margin-bottom: 10px;">智能分析结果</div>
+                                    <div class="card">
+                                        <div><strong>知识点识别：</strong></div>
+                                        <div>• 正数和负数的概念</div>
+                                        <div>• 数轴的表示方法</div>
+                                    </div>
+                                    <div class="card">
+                                        <div><strong>重点难点：</strong></div>
+                                        <div>• 重点：负数的理解</div>
+                                        <div>• 难点：数轴上的点</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <button class="button">生成分析报告</button>
+                                <button class="button">导出报告</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 环节策划页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">3.2 环节策划页面</div>
+                    <div class="main-content">
+                        <div style="font-weight: bold; margin-bottom: 10px;">环节模板选择</div>
+                        <div class="layout-grid layout-3col">
+                            <div class="component">导入环节</div>
+                            <div class="component">讲解环节</div>
+                            <div class="component">练习环节</div>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">教学环节设计</div>
+                        <div class="layout-grid layout-sidebar">
+                            <div style="border: 2px dashed #4a90e2; padding: 20px; text-align: center; color: #4a90e2;">
+                                拖拽设计区<br>
+                                1. 课堂导入 (5分钟)<br>
+                                2. 新课讲解 (25分钟)<br>
+                                3. 课堂练习 (10分钟)<br>
+                                4. 课堂小结 (5分钟)
+                            </div>
+                            <div class="sidebar">
+                                <div style="font-weight: bold; margin-bottom: 10px;">环节属性设置</div>
+                                <div class="input-field">环节名称</div>
+                                <div class="input-field">时间分配</div>
+                                <div class="input-field">教学方法</div>
+                                <div class="input-field">教学资源</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <button class="button">保存</button>
+                            <button class="button">预览</button>
+                            <button class="button">分享</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 学情预设页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">3.3 学情预设页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">班级选择</div>
+                                <select class="input-field">
+                                    <option>初一(1)班</option>
+                                    <option>初一(2)班</option>
+                                </select>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">学情预测结果</div>
+                                <div class="chart-placeholder">雷达图：知识点掌握情况</div>
+                                <div class="chart-placeholder">热力图：学生能力分布</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">智能推荐教学策略</div>
+                                <ul class="feature-list">
+                                    <li>针对基础薄弱学生，增加基础练习</li>
+                                    <li>对于优秀学生，提供拓展题目</li>
+                                    <li>重点关注中等生的提升空间</li>
+                                </ul>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">参数调整</div>
+                                <div class="input-field">难度系数调整</div>
+                                <div class="input-field">教学节奏调整</div>
+                                <div class="input-field">互动频率调整</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 优秀案例借鉴页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">3.4 优秀案例借鉴页面</div>
+                    <div class="main-content">
+                        <div style="font-weight: bold; margin-bottom: 10px;">搜索和筛选</div>
+                        <div class="layout-grid layout-3col">
+                            <div class="input-field">知识点搜索</div>
+                            <select class="input-field">
+                                <option>年级选择</option>
+                            </select>
+                            <select class="input-field">
+                                <option>教学风格</option>
+                            </select>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">案例列表</div>
+                        <div class="layout-grid layout-2col">
+                            <div class="card">
+                                <div style="font-weight: bold;">有理数概念教学案例</div>
+                                <div>作者：李老师 | 评分：⭐⭐⭐⭐⭐</div>
+                                <div>适用年级：初一 | 教学风格：启发式</div>
+                                <button class="button">查看详情</button>
+                                <button class="button">收藏</button>
+                            </div>
+                            <div class="card">
+                                <div style="font-weight: bold;">数轴教学创新方法</div>
+                                <div>作者：王老师 | 评分：⭐⭐⭐⭐</div>
+                                <div>适用年级：初一 | 教学风格：互动式</div>
+                                <button class="button">查看详情</button>
+                                <button class="button">收藏</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 上课模块 -->
+        <div id="teaching-tools" class="page page-section">
+            <div class="section-header">4. 上课模块</div>
+            <div class="section-content">
+                <!-- AI及时学情生成页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">4.1 AI及时学情生成页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">题目信息输入</div>
+                                <textarea class="input-field" style="height: 100px;">请输入题目内容...</textarea>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">学生回答情况</div>
+                                <div class="component">批量导入学生答案</div>
+                                <div class="component">手动输入答案统计</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">AI分析结果</div>
+                                <div class="card">
+                                    <div><strong>正确率：</strong> 75%</div>
+                                    <div><strong>主要错误类型：</strong></div>
+                                    <div>• 概念理解错误 (40%)</div>
+                                    <div>• 计算错误 (35%)</div>
+                                    <div>• 审题不清 (25%)</div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">课堂调整策略</div>
+                                <ul class="feature-list">
+                                    <li>重点讲解概念理解部分</li>
+                                    <li>增加计算练习环节</li>
+                                    <li>强调审题技巧</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <button class="button">生成针对性练习</button>
+                            <button class="button">导出分析报告</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 生物实验设计页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">4.2 生物实验设计页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">实验模板选择</div>
+                                <div class="template-list">
+                                    <div class="component active">🧬 DNA提取实验</div>
+                                    <div class="component">🔬 细胞观察实验</div>
+                                    <div class="component">🌱 植物生长实验</div>
+                                    <div class="component">🧪 酶活性实验</div>
+                                </div>
+                                <button class="button">自定义实验</button>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">参数设置</div>
+                                <div class="form-group">
+                                    <label>实验时长：</label>
+                                    <input type="number" value="45" class="input-field" style="width: 60px;" /> 分钟
+                                </div>
+                                <div class="form-group">
+                                    <label>温度条件：</label>
+                                    <input type="number" value="25" class="input-field" style="width: 60px;" /> °C
+                                </div>
+                                <div class="form-group">
+                                    <label>安全等级：</label>
+                                    <select class="input-field">
+                                        <option>低风险</option>
+                                        <option>中风险</option>
+                                        <option>高风险</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">实验步骤设计</div>
+                                <div class="step-list">
+                                    <div class="component">
+                                        <span class="step-number">1</span>
+                                        <span>准备实验材料</span>
+                                        <button class="button small">编辑</button>
+                                    </div>
+                                    <div class="component">
+                                        <span class="step-number">2</span>
+                                        <span>样本处理</span>
+                                        <button class="button small">编辑</button>
+                                    </div>
+                                    <div class="component">
+                                        <span class="step-number">3</span>
+                                        <span>DNA提取</span>
+                                        <button class="button small">编辑</button>
+                                    </div>
+                                </div>
+                                <button class="button">+ 添加步骤</button>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">实验结果预测</div>
+                                <div class="card">
+                                    <div><strong>预期成功率：</strong> 85%</div>
+                                    <div><strong>常见问题：</strong> 样本污染、温度控制</div>
+                                    <div><strong>关键控制点：</strong> 无菌操作、时间控制</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="font-weight: bold; margin-bottom: 10px;">改进建议</div>
+                            <ul class="feature-list">
+                                <li>💡 建议增加对照组实验</li>
+                                <li>⚠️ 注意无菌操作规范</li>
+                                <li>📊 可添加定量分析步骤</li>
+                                <li>🔄 建议重复实验验证结果</li>
+                            </ul>
+                            <div class="button-group">
+                                <button class="button">虚拟演示</button>
+                                <button class="button primary">开始实验</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 课堂AI化应用页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">4.3 课堂AI化应用页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">互动工具选择</div>
+                                <div class="layout-grid layout-3col">
+                                    <button class="button">📊 投票</button>
+                                    <button class="button">❓ 问答</button>
+                                    <button class="button">🎮 小游戏</button>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">学生反馈收集</div>
+                                <div class="chart-placeholder">实时反馈统计图</div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">实时互动结果</div>
+                                <div class="card">
+                                    <div><strong>参与度：</strong> 92%</div>
+                                    <div><strong>正确率：</strong> 78%</div>
+                                    <div><strong>活跃学生：</strong> 张三、李四、王五</div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">课堂生成内容</div>
+                                <div class="component">AI生成例题</div>
+                                <div class="component">智能解释说明</div>
+                                <div class="component">拓展知识点</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 课堂录制视频AI分析页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">4.4 课堂录制视频AI分析页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">视频上传/录制</div>
+                                <div class="component" style="height: 200px;">📹 视频播放器<br>进度控制条</div>
+                                <div style="margin-top: 10px;">
+                                    <button class="button">上传视频</button>
+                                    <button class="button">开始录制</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 10px;">AI分析结果</div>
+                                <div class="card">
+                                    <div><strong>教学行为识别：</strong></div>
+                                    <div>• 讲解时间：65%</div>
+                                    <div>• 互动时间：25%</div>
+                                    <div>• 板书时间：10%</div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div><strong>学生参与度：</strong></div>
+                                    <div>• 注意力集中度：82%</div>
+                                    <div>• 互动响应率：75%</div>
+                                    <div>• 举手发言次数：12次</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="font-weight: bold; margin-bottom: 10px;">课堂反思和改进建议</div>
+                            <ul class="feature-list">
+                                <li>建议增加学生互动环节，提高参与度</li>
+                                <li>讲解节奏可以适当放慢，给学生更多思考时间</li>
+                                <li>可以增加小组讨论环节</li>
+                            </ul>
+                            
+                            <button class="button">生成分析报告</button>
+                            <button class="button">导出报告</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 成绩模块 -->
+        <div id="grade-entry" class="page page-section">
+            <div class="section-header">5. 成绩模块</div>
+            <div class="section-content">
+                <!-- 成绩录入页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">5.1 成绩录入页面</div>
+                    <div class="main-content">
+                        <div style="font-weight: bold; margin-bottom: 10px;">录入方式选择</div>
+                        <div class="layout-grid layout-3col">
+                            <button class="button">✏️ 手动录入</button>
+                            <button class="button">📊 Excel导入</button>
+                            <button class="button">📷 拍照识别</button>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">学生成绩表格</div>
+                        <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden;">
+                            <table id="grade-table" style="width: 100%; border-collapse: collapse;">
+                                <thead style="background: #f8f9fa;">
+                                    <tr>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">学号</th>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">姓名</th>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">语文</th>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">数学</th>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">英语</th>
+                                        <th style="padding: 10px; border: 1px solid #ddd;">总分</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="grade-tbody">
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">001</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">张三</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="chinese" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="math" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="english" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;" class="total-score">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">002</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">李四</td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="chinese" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="math" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;"><input type="number" class="grade-input" data-subject="english" style="width: 60px; padding: 5px; border: 1px solid #ccc; border-radius: 3px;"></td>
+                                        <td style="padding: 10px; border: 1px solid #ddd;" class="total-score">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <button id="save-grades" class="button">保存</button>
+                            <button class="button">计算统计</button>
+                            <button class="button">导出Excel</button>
+                        </div>
+                        
+                        <div class="responsive-note">
+                            <strong>实时校验：</strong>系统会自动检查成绩范围、格式等，并显示错误提示
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 班级及年级成绩综合分析页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">5.2 班级及年级成绩综合分析页面</div>
+                    <div class="main-content">
+                        <div style="font-weight: bold; margin-bottom: 10px;">筛选条件</div>
+                        <div class="layout-grid layout-3col">
+                            <select class="input-field">
+                                <option>期末考试</option>
+                                <option>期中考试</option>
+                            </select>
+                            <select class="input-field">
+                                <option>初一(1)班</option>
+                                <option>初一(2)班</option>
+                            </select>
+                            <select class="input-field">
+                                <option>全部科目</option>
+                                <option>数学</option>
+                            </select>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">关键指标</div>
+                        <div class="layout-grid layout-3col">
+                            <div class="card">
+                                <div style="font-size: 2em; color: #4a90e2;">85.6</div>
+                                <div>班级平均分</div>
+                            </div>
+                            <div class="card">
+                                <div style="font-size: 2em; color: #28a745;">78%</div>
+                                <div>优秀率</div>
+                            </div>
+                            <div class="card">
+                                <div style="font-size: 2em; color: #17a2b8;">92%</div>
+                                <div>及格率</div>
+                            </div>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">成绩分布图表</div>
+                        <div class="layout-grid layout-2col">
+                            <div class="chart-placeholder">柱状图：各分数段分布</div>
+                            <div class="chart-placeholder">折线图：成绩趋势变化</div>
+                        </div>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">班级对比分析</div>
+                        <div class="chart-placeholder">雷达图：各班级各科目对比</div>
+                        
+                        <div style="margin-top: 15px;">
+                            <button class="button">生成分析报告</button>
+                            <button class="button">导出报告</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 学生个性化成绩分析页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">5.3 学生个性化成绩分析页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-sidebar">
+                            <div class="sidebar">
+                                <div style="font-weight: bold; margin-bottom: 10px;">学生选择</div>
+                                <select class="input-field">
+                                    <option>张三</option>
+                                    <option>李四</option>
+                                </select>
+                                
+                                <div class="card">
+                                    <div style="text-align: center;">
+                                        <div class="component" style="width: 80px; height: 80px; margin: 0 auto; border-radius: 50%;">📷</div>
+                                        <div style="font-weight: bold; margin-top: 10px;">张三</div>
+                                        <div>学号：001</div>
+                                        <div>班级：初一(1)班</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-content">
+                                <div style="font-weight: bold; margin-bottom: 10px;">成绩趋势分析</div>
+                                <div class="chart-placeholder">折线图：历史考试成绩变化</div>
+                                
+                                <div class="layout-grid layout-2col">
+                                    <div>
+                                        <div style="font-weight: bold; margin: 20px 0 10px 0;">知识点掌握情况</div>
+                                        <div class="chart-placeholder">雷达图：各知识点掌握度</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: bold; margin: 20px 0 10px 0;">薄弱环节分析</div>
+                                        <ul class="feature-list">
+                                            <li>有理数运算：掌握度65%</li>
+                                            <li>方程求解：掌握度72%</li>
+                                            <li>几何图形：掌握度58%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">个性化练题推荐</div>
+                                <div class="card">
+                                    <div><strong>推荐练习：</strong></div>
+                                    <div>• 有理数加减法专项练习 (10题)</div>
+                                    <div>• 几何图形识别训练 (8题)</div>
+                                    <div>• 综合应用题练习 (5题)</div>
+                                    <button class="button">开始练习</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 辅导方案生成页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">5.4 辅导方案生成页面</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-sidebar">
+                            <div class="sidebar">
+                                <div style="font-weight: bold; margin-bottom: 10px;">学生选择</div>
+                                <select class="input-field">
+                                    <option>张三</option>
+                                    <option>李四</option>
+                                </select>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">辅导进度跟踪</div>
+                                <div class="card">
+                                    <div><strong>当前进度：</strong> 60%</div>
+                                    <div style="background: #e9ecef; height: 10px; border-radius: 5px; margin: 10px 0;">
+                                        <div style="background: #4a90e2; height: 100%; width: 60%; border-radius: 5px;"></div>
+                                    </div>
+                                    <div>已完成：6/10个目标</div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">辅导效果评估</div>
+                                <div class="chart-placeholder">成绩提升曲线图</div>
+                            </div>
+                            <div class="main-content">
+                                <div style="font-weight: bold; margin-bottom: 10px;">AI生成辅导方案</div>
+                                <div class="card">
+                                    <div><strong>辅导目标：</strong></div>
+                                    <div>• 提高有理数运算能力</div>
+                                    <div>• 加强几何图形理解</div>
+                                    <div>• 培养解题思维能力</div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div><strong>辅导计划：</strong></div>
+                                    <div>第1周：有理数基础概念复习</div>
+                                    <div>第2周：运算法则强化训练</div>
+                                    <div>第3周：几何图形识别练习</div>
+                                    <div>第4周：综合应用题训练</div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 10px 0;">辅导资源推荐</div>
+                                <div class="layout-grid layout-2col">
+                                    <div class="card">
+                                        <div><strong>📚 学习资料</strong></div>
+                                        <div>• 有理数专项练习册</div>
+                                        <div>• 几何图形识别卡片</div>
+                                        <div>• 解题方法视频教程</div>
+                                    </div>
+                                    <div class="card">
+                                        <div><strong>🎯 练习题目</strong></div>
+                                        <div>• 基础计算题 (20题/周)</div>
+                                        <div>• 应用题训练 (10题/周)</div>
+                                        <div>• 综合测试 (1次/周)</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 15px;">
+                                    <button class="button">调整方案</button>
+                                    <button class="button">开始辅导</button>
+                                    <button class="button">导出方案</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 我的/个人中心模块 -->
+        <div id="profile" class="page page-section">
+            <div class="section-header">6. 我的/个人中心</div>
+            <div class="section-content">
+                <!-- 个人信息页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">6.1 个人信息管理</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-sidebar">
+                            <div class="sidebar">
+                                <div class="card" style="text-align: center;">
+                                    <div class="component" style="width: 100px; height: 100px; margin: 0 auto; border-radius: 50%; background: #f0f0f0;">📷</div>
+                                    <div style="font-weight: bold; margin: 15px 0 5px 0;">张老师</div>
+                                    <div style="color: #666;">数学教师</div>
+                                    <button class="button" style="margin-top: 10px;">更换头像</button>
+                                </div>
+                                
+                                <div class="card">
+                                    <div style="font-weight: bold; margin-bottom: 10px;">📊 教学统计</div>
+                                    <div>• 任教班级：3个</div>
+                                    <div>• 学生总数：120人</div>
+                                    <div>• 本月课时：48节</div>
+                                    <div>• 平台使用：365天</div>
+                                </div>
+                            </div>
+                            <div class="main-content">
+                                <div style="font-weight: bold; margin-bottom: 15px;">基本信息</div>
+                                <div class="layout-grid layout-2col">
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">姓名</label>
+                                        <input type="text" class="input-field" value="张老师">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">工号</label>
+                                        <input type="text" class="input-field" value="T001" readonly>
+                                    </div>
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">手机号</label>
+                                        <input type="tel" class="input-field" value="138****8888">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">邮箱</label>
+                                        <input type="email" class="input-field" value="zhang@school.edu">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">任教学科</label>
+                                        <select class="input-field">
+                                            <option selected>数学</option>
+                                            <option>语文</option>
+                                            <option>英语</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label style="display: block; margin-bottom: 5px;">所属学校</label>
+                                        <input type="text" class="input-field" value="XX中学">
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 20px;">
+                                    <button class="button">保存修改</button>
+                                    <button class="button">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 系统设置页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">6.2 系统设置</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 15px;">通知设置</div>
+                                <div class="card">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <span>成绩录入提醒</span>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <span>课程安排通知</span>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <span>系统更新提醒</span>
+                                        <input type="checkbox">
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>邮件通知</span>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 15px 0;">隐私设置</div>
+                                <div class="card">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <span>允许数据分析</span>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>共享教学资源</span>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 15px;">账户安全</div>
+                                <div class="card">
+                                    <div style="margin-bottom: 15px;">
+                                        <button class="button" style="width: 100%;">修改密码</button>
+                                    </div>
+                                    <div style="margin-bottom: 15px;">
+                                        <button class="button" style="width: 100%;">绑定手机号</button>
+                                    </div>
+                                    <div style="margin-bottom: 15px;">
+                                        <button class="button" style="width: 100%;">设置安全问题</button>
+                                    </div>
+                                    <div>
+                                        <button class="button" style="width: 100%; background: #dc3545; border-color: #dc3545;">注销账户</button>
+                                    </div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 15px 0;">关于应用</div>
+                                <div class="card">
+                                    <div style="margin-bottom: 10px;">版本号：v1.0.0</div>
+                                    <div style="margin-bottom: 10px;">更新时间：2024-01-15</div>
+                                    <div style="margin-bottom: 15px;">
+                                        <button class="button">检查更新</button>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <a href="#" style="color: #4a90e2;">用户协议</a> | 
+                                        <a href="#" style="color: #4a90e2;">隐私政策</a>
+                                    </div>
+                                    <div>
+                                        <a href="#" style="color: #4a90e2;">意见反馈</a> | 
+                                        <a href="#" style="color: #4a90e2;">联系客服</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 使用帮助页面 -->
+                <div class="wireframe">
+                    <div class="wireframe-title">6.3 使用帮助</div>
+                    <div class="main-content">
+                        <div class="layout-grid layout-2col">
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 15px;">常见问题</div>
+                                <div class="card">
+                                    <div style="font-weight: bold; margin-bottom: 5px;">Q: 如何批量录入成绩？</div>
+                                    <div style="margin-bottom: 15px; color: #666;">A: 可以通过Excel导入或拍照识别功能快速录入成绩...</div>
+                                    
+                                    <div style="font-weight: bold; margin-bottom: 5px;">Q: 如何生成个性化辅导方案？</div>
+                                    <div style="margin-bottom: 15px; color: #666;">A: 在成绩分析页面选择学生，系统会自动生成针对性辅导方案...</div>
+                                    
+                                    <div style="font-weight: bold; margin-bottom: 5px;">Q: 如何使用AI课堂分析功能？</div>
+                                    <div style="color: #666;">A: 上传课堂录制视频，AI会自动分析教学行为和学生参与度...</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-weight: bold; margin-bottom: 15px;">操作指南</div>
+                                <div class="card">
+                                    <div style="margin-bottom: 10px;">
+                                        <a href="#" style="color: #4a90e2;">📖 新手入门指南</a>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <a href="#" style="color: #4a90e2;">🎥 功能演示视频</a>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <a href="#" style="color: #4a90e2;">📋 操作手册下载</a>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <a href="#" style="color: #4a90e2;">💡 使用技巧分享</a>
+                                    </div>
+                                </div>
+                                
+                                <div style="font-weight: bold; margin: 20px 0 15px 0;">联系支持</div>
+                                <div class="card">
+                                    <div style="margin-bottom: 10px;">📞 客服热线：400-123-4567</div>
+                                    <div style="margin-bottom: 10px;">📧 邮箱：support@aiteach.com</div>
+                                    <div style="margin-bottom: 10px;">💬 在线客服：工作日 9:00-18:00</div>
+                                    <div>
+                                        <button class="button">联系在线客服</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端适配说明 -->
+        <div class="page-section">
+            <div class="section-header">7. 移动端适配设计</div>
+            <div class="section-content">
+                <div class="wireframe">
+                    <div class="wireframe-title">移动端布局示例</div>
+                    <div class="layout-grid layout-2col">
+                        <div style="max-width: 300px; margin: 0 auto;">
+                            <div style="font-weight: bold; margin-bottom: 10px;">手机端首页</div>
+                            <div style="border: 2px solid #333; border-radius: 20px; padding: 20px; background: #f8f9fa;">
+                                <div style="text-align: center; margin-bottom: 15px;">
+                                    <div style="font-weight: bold;">🎓 智能教学助手</div>
+                                </div>
+                                
+                                <div class="card" style="margin: 10px 0;">
+                                    <div style="font-size: 0.9em;">👤 张老师 | 数学 | 初一(1)班</div>
+                                </div>
+                                
+                                <div class="layout-grid layout-2col" style="gap: 10px;">
+                                    <button class="button nav-btn" data-target="grade-entry" style="font-size: 0.8em; padding: 15px 5px;">📝<br>成绩录入</button>
+                                    <button class="button nav-btn" data-target="lesson-prep" style="font-size: 0.8em; padding: 15px 5px;">📚<br>备课助手</button>
+                                    <button class="button nav-btn" data-target="teaching-tools" style="font-size: 0.8em; padding: 15px 5px;">🎓<br>上课工具</button>
+                                    <button class="button nav-btn" data-target="profile" style="font-size: 0.8em; padding: 15px 5px;">👤<br>我的</button>
+                                </div>
+                                
+                                <div style="margin-top: 15px; border-top: 1px solid #ddd; padding-top: 15px;">
+                                    <div style="font-size: 0.9em; font-weight: bold;">班级概览</div>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: bold; color: #4a90e2;">85.6</div>
+                                            <div style="font-size: 0.8em;">平均分</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: bold; color: #28a745;">78%</div>
+                                            <div style="font-size: 0.8em;">优秀率</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="font-weight: bold; color: #17a2b8;">96%</div>
+                                            <div style="font-size: 0.8em;">出勤率</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 底部导航栏 -->
+                                <div style="position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #ddd; padding: 10px;">
+                                    <div style="display: flex; justify-content: space-around;">
+                                        <div class="nav-btn" data-target="dashboard" style="text-align: center; font-size: 0.8em; cursor: pointer;">
+                                            <div>🏠</div>
+                                            <div>首页</div>
+                                        </div>
+                                        <div class="nav-btn" data-target="lesson-prep" style="text-align: center; font-size: 0.8em; cursor: pointer;">
+                                            <div>📚</div>
+                                            <div>备课</div>
+                                        </div>
+                                        <div class="nav-btn" data-target="teaching-tools" style="text-align: center; font-size: 0.8em; cursor: pointer;">
+                                            <div>🎓</div>
+                                            <div>上课</div>
+                                        </div>
+                                        <div class="nav-btn" data-target="grade-entry" style="text-align: center; font-size: 0.8em; cursor: pointer;">
+                                            <div>📊</div>
+                                            <div>成绩</div>
+                                        </div>
+                                        <div class="nav-btn" data-target="profile" style="text-align: center; font-size: 0.8em; cursor: pointer;">
+                                            <div>👤</div>
+                                            <div>我的</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: bold; margin-bottom: 10px;">移动端设计要点</div>
+                            <ul class="feature-list">
+                                <li><strong>单栏布局：</strong>内容垂直排列，便于滑动浏览</li>
+                                <li><strong>大按钮设计：</strong>按钮尺寸适合手指点击</li>
+                                <li><strong>底部导航：</strong>主要功能入口放在底部，方便单手操作</li>
+                                <li><strong>简化信息：</strong>减少单屏信息量，突出重点内容</li>
+                                <li><strong>手势支持：</strong>支持滑动、长按等手势操作</li>
+                                <li><strong>响应式图表：</strong>图表自适应屏幕尺寸</li>
+                            </ul>
+                            
+                            <div style="font-weight: bold; margin: 20px 0 10px 0;">关键交互优化</div>
+                            <ul class="feature-list">
+                                <li>成绩录入支持语音输入</li>
+                                <li>图表支持手势缩放和滑动</li>
+                                <li>表格支持横向滑动查看</li>
+                                <li>长列表支持下拉刷新和上拉加载</li>
+                                <li>重要操作增加确认提示</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 设计规范说明 -->
+        <div class="page-section">
+            <div class="section-header">7. 设计规范与说明</div>
+            <div class="section-content">
+                <div class="layout-grid layout-2col">
+                    <div>
+                        <div style="font-weight: bold; margin-bottom: 10px;">🎨 视觉设计规范</div>
+                        <ul class="feature-list">
+                            <li><strong>主色调：</strong> #4a90e2 (蓝色系，专业稳重)</li>
+                            <li><strong>辅助色：</strong> #28a745 (绿色，成功状态)</li>
+                            <li><strong>警告色：</strong> #ffc107 (黄色，警告提示)</li>
+                            <li><strong>错误色：</strong> #dc3545 (红色，错误状态)</li>
+                            <li><strong>字体：</strong> Microsoft YaHei, Arial, sans-serif</li>
+                            <li><strong>圆角：</strong> 5-10px，营造友好感</li>
+                            <li><strong>阴影：</strong> 0 2px 10px rgba(0,0,0,0.1)</li>
+                        </ul>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">📐 布局规范</div>
+                        <ul class="feature-list">
+                            <li><strong>栅格系统：</strong> 12列栅格布局</li>
+                            <li><strong>间距：</strong> 基础间距8px，常用倍数16px、24px</li>
+                            <li><strong>断点：</strong> 移动端<768px，平板768-1024px，桌面>1024px</li>
+                            <li><strong>最大宽度：</strong> 1200px，居中显示</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div style="font-weight: bold; margin-bottom: 10px;">🔧 交互设计规范</div>
+                        <ul class="feature-list">
+                            <li><strong>按钮状态：</strong> 默认、悬停、点击、禁用四种状态</li>
+                            <li><strong>加载状态：</strong> 数据加载时显示loading动画</li>
+                            <li><strong>反馈机制：</strong> 操作成功/失败的明确提示</li>
+                            <li><strong>表单验证：</strong> 实时验证，错误提示清晰</li>
+                            <li><strong>导航面包屑：</strong> 深层页面提供导航路径</li>
+                        </ul>
+                        
+                        <div style="font-weight: bold; margin: 20px 0 10px 0;">♿ 可访问性设计</div>
+                        <ul class="feature-list">
+                            <li><strong>颜色对比度：</strong> 符合WCAG 2.1 AA标准</li>
+                            <li><strong>键盘导航：</strong> 支持Tab键导航</li>
+                            <li><strong>屏幕阅读器：</strong> 提供alt文本和aria标签</li>
+                            <li><strong>字体大小：</strong> 最小12px，重要内容14px以上</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <div style="font-weight: bold; margin-bottom: 10px;">📱 技术实现建议</div>
+                    <div class="layout-grid layout-3col">
+                        <div class="card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">前端技术栈</div>
+                            <div>• Flutter (跨平台)</div>
+                            <div>• 响应式设计</div>
+                            <div>• 状态管理 (Provider/GetX)</div>
+                            <div>• 图表库 (fl_chart)</div>
+                        </div>
+                        <div class="card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">UI组件库</div>
+                            <div>• Material Design</div>
+                            <div>• 自定义组件库</div>
+                            <div>• 图标库 (Icons)</div>
+                            <div>• 动画库 (Animations)</div>
+                        </div>
+                        <div class="card">
+                            <div style="font-weight: bold; margin-bottom: 10px;">性能优化</div>
+                            <div>• 图片懒加载</div>
+                            <div>• 列表虚拟滚动</div>
+                            <div>• 数据缓存</div>
+                            <div>• 代码分割</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 原型图总结 -->
+        <div class="page-section">
+            <div class="section-header">8. 原型图总结</div>
+            <div class="section-content">
+                <div class="card">
+                    <div style="font-weight: bold; margin-bottom: 15px;">📋 原型图涵盖内容</div>
+                    <div class="layout-grid layout-2col">
+                        <div>
+                            <div style="font-weight: bold; margin-bottom: 10px;">核心功能页面：</div>
+                            <ul class="feature-list">
+                                <li>登录/注册页面</li>
+                                <li>首页/仪表盘</li>
+                                <li>备课模块 (4个子页面)</li>
+                                <li>上课模块 (3个子页面)</li>
+                                <li>成绩模块 (4个子页面)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; margin-bottom: 10px;">设计特点：</div>
+                            <ul class="feature-list">
+                                <li>响应式设计，支持多端适配</li>
+                                <li>清晰的信息架构和导航</li>
+                                <li>丰富的数据可视化展示</li>
+                                <li>友好的用户交互体验</li>
+                                <li>完整的设计规范说明</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="responsive-note">
+                    <strong>📝 使用说明：</strong>
+                    本原型图基于《智能教学助手产品需求文档》设计，展示了系统的主要功能页面和交互流程。
+                    开发团队可以参考此原型图进行详细的UI设计和前端开发工作。
+                    建议在实际开发过程中，根据用户反馈和测试结果对界面进行持续优化。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 智能教学助手交互式原型图
+        console.log('智能教学助手原型图加载完成');
+        
+        // 全局状态管理
+        const AppState = {
+            currentPage: 'login',
+            currentUser: null,
+            currentClass: null,
+            demoData: {
+                users: {
+                    teacher1: {
+                        id: 'teacher1',
+                        name: '张老师',
+                        role: 'teacher',
+                        avatar: 'https://via.placeholder.com/40x40/4A90E2/FFFFFF?text=张',
+                        classes: ['高一(1)班', '高一(2)班']
+                    }
+                },
+                classes: {
+                    '高一(1)班': {
+                        name: '高一(1)班',
+                        studentCount: 45,
+                        subjects: ['语文', '数学', '英语', '物理', '化学'],
+                        recentScores: {
+                            '数学': { average: 85.6, highest: 98, lowest: 62 },
+                            '英语': { average: 78.3, highest: 95, lowest: 45 },
+                            '物理': { average: 82.1, highest: 96, lowest: 58 }
+                        }
+                    }
+                },
+                students: [
+                    { id: 1, name: '李明', math: 92, english: 85, physics: 88, rank: 3 },
+                    { id: 2, name: '王小红', math: 88, english: 92, physics: 85, rank: 5 },
+                    { id: 3, name: '张伟', math: 95, english: 89, physics: 91, rank: 1 },
+                    { id: 4, name: '刘芳', math: 78, english: 82, physics: 76, rank: 15 },
+                    { id: 5, name: '陈强', math: 85, english: 78, physics: 83, rank: 8 }
+                ],
+                recentActivities: [
+                    { time: '2小时前', action: '批改了高一(1)班数学作业', type: 'homework' },
+                    { time: '4小时前', action: '发布了物理测验成绩', type: 'score' },
+                    { time: '昨天', action: '创建了英语单元测试', type: 'test' },
+                    { time: '2天前', action: '更新了学生学习报告', type: 'report' }
+                ]
+            }
+        };
+        
+        // 页面导航功能
+        function showPage(pageId) {
+            // 显示加载状态
+            showLoadingState();
+            
+            // 延迟执行页面切换，提供视觉反馈
+            setTimeout(() => {
+                // 隐藏所有页面
+                document.querySelectorAll('.page').forEach(page => {
+                    page.style.display = 'none';
+                    page.classList.remove('active');
+                });
+                
+                // 显示目标页面
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.style.display = 'block';
+                    targetPage.classList.add('active');
+                    AppState.currentPage = pageId;
+                    
+                    // 更新导航状态
+                    updateNavigation(pageId);
+                    
+                    // 加载页面数据
+                    loadPageData(pageId);
+                    
+                    // 显示成功通知
+                    showNotification(`已切换到${getPageTitle(pageId)}`, 'success');
+                } else {
+                    showNotification('页面不存在', 'error');
+                }
+                
+                // 隐藏加载状态
+                hideLoadingState();
+            }, 200);
+        }
+        
+        // 获取页面标题
+        function getPageTitle(pageId) {
+            const titles = {
+                'login': '登录页面',
+                'dashboard': '首页',
+                'grade-entry': '成绩录入',
+                'lesson-prep': '备课助手',
+                'teaching-tools': '上课工具'
+            };
+            return titles[pageId] || '未知页面';
+        }
+        
+        // 显示加载状态
+        function showLoadingState() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loading-overlay';
+            loadingDiv.innerHTML = '<div class="loading"></div>';
+            loadingDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            `;
+            document.body.appendChild(loadingDiv);
+        }
+        
+        // 隐藏加载状态
+        function hideLoadingState() {
+            const loadingDiv = document.getElementById('loading-overlay');
+            if (loadingDiv) {
+                loadingDiv.remove();
+            }
+        }
+        
+        // 更新导航状态
+        function updateNavigation(activePageId) {
+            // 移除所有导航项的active状态
+            document.querySelectorAll('.nav-item, .nav-btn').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 查找并激活对应的导航项（支持data-page和data-target属性）
+            const activeNavByPage = document.querySelector(`[data-page="${activePageId}"]`);
+            const activeNavByTarget = document.querySelector(`[data-target="${activePageId}"]`);
+            
+            if (activeNavByPage) {
+                activeNavByPage.classList.add('active');
+            }
+            if (activeNavByTarget) {
+                activeNavByTarget.classList.add('active');
+            }
+        }
+        
+        // 加载页面数据
+        function loadPageData(pageId) {
+            switch(pageId) {
+                case 'dashboard':
+                    loadDashboardData();
+                    break;
+                case 'score-input':
+                    loadScoreInputData();
+                    break;
+                case 'score-analysis':
+                    loadScoreAnalysisData();
+                    break;
+                case 'student-analysis':
+                    loadStudentAnalysisData();
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        // 加载仪表盘数据
+        function loadDashboardData() {
+            const classData = AppState.demoData.classes['高一(1)班'];
+            
+            // 更新班级概览
+            const classOverview = document.querySelector('#dashboard .class-overview');
+            if (classOverview) {
+                classOverview.innerHTML = `
+                    <h3>班级概览 - ${classData.name}</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">${classData.studentCount}</div>
+                            <div class="stat-label">学生总数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">${classData.subjects.length}</div>
+                            <div class="stat-label">授课科目</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">${classData.recentScores['数学'].average}</div>
+                            <div class="stat-label">数学平均分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">${classData.recentScores['英语'].average}</div>
+                            <div class="stat-label">英语平均分</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // 更新最近活动
+            const recentActivities = document.querySelector('#dashboard .recent-activities');
+            if (recentActivities) {
+                const activitiesHtml = AppState.demoData.recentActivities.map(activity => `
+                    <div class="activity-item">
+                        <div class="activity-time">${activity.time}</div>
+                        <div class="activity-content">${activity.action}</div>
+                        <div class="activity-type ${activity.type}">${getActivityTypeLabel(activity.type)}</div>
+                    </div>
+                `).join('');
+                
+                recentActivities.innerHTML = `
+                    <h3>最近活动</h3>
+                    <div class="activities-list">
+                        ${activitiesHtml}
+                    </div>
+                `;
+            }
+        }
+        
+        // 获取活动类型标签
+        function getActivityTypeLabel(type) {
+            const labels = {
+                homework: '作业',
+                score: '成绩',
+                test: '测试',
+                report: '报告'
+            };
+            return labels[type] || type;
+        }
+        
+        // 加载成绩录入数据
+        function loadScoreInputData() {
+            const studentsTable = document.querySelector('#score-input .students-table');
+            if (studentsTable) {
+                const tableHtml = `
+                    <table class="score-table">
+                        <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>数学</th>
+                                <th>英语</th>
+                                <th>物理</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${AppState.demoData.students.map(student => `
+                                <tr>
+                                    <td>${student.id}</td>
+                                    <td>${student.name}</td>
+                                    <td><input type="number" value="${student.math}" class="score-input" data-student="${student.id}" data-subject="math"></td>
+                                    <td><input type="number" value="${student.english}" class="score-input" data-student="${student.id}" data-subject="english"></td>
+                                    <td><input type="number" value="${student.physics}" class="score-input" data-student="${student.id}" data-subject="physics"></td>
+                                    <td><button class="btn-save" onclick="saveStudentScore(${student.id})">保存</button></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+                studentsTable.innerHTML = tableHtml;
+            }
+        }
+        
+        // 保存学生成绩
+        function saveStudentScore(studentId) {
+            const student = AppState.demoData.students.find(s => s.id === studentId);
+            if (student) {
+                const mathInput = document.querySelector(`[data-student="${studentId}"][data-subject="math"]`);
+                const englishInput = document.querySelector(`[data-student="${studentId}"][data-subject="english"]`);
+                const physicsInput = document.querySelector(`[data-student="${studentId}"][data-subject="physics"]`);
+                
+                student.math = parseInt(mathInput.value);
+                student.english = parseInt(englishInput.value);
+                student.physics = parseInt(physicsInput.value);
+                
+                showNotification('成绩保存成功！', 'success');
+            }
+        }
+        
+        // 显示通知
+        function showNotification(message, type = 'info') {
+            // 移除现有通知
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: ${type === 'error' ? '#dc3545' : type === 'success' ? '#28a745' : '#17a2b8'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                z-index: 1001;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // 显示动画
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // 自动隐藏
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // 登录功能
+        function handleLogin() {
+            const username = document.getElementById('username')?.value;
+            const password = document.getElementById('password')?.value;
+            
+            if (username && password) {
+                // 模拟登录验证
+                if (username === 'teacher' && password === '123456') {
+                    AppState.currentUser = AppState.demoData.users.teacher1;
+                    showPage('dashboard');
+                    showNotification('登录成功！', 'success');
+                } else {
+                    showNotification('用户名或密码错误！', 'error');
+                }
+            } else {
+                showNotification('请输入用户名和密码！', 'error');
+            }
+        }
+        
+        // 初始化页面
+        function initializePage() {
+            // 添加CSS动画
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+                .score-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+                .score-table th, .score-table td {
+                    border: 1px solid #E0E0E0;
+                    padding: 12px;
+                    text-align: center;
+                }
+                .score-table th {
+                    background: #F8F9FA;
+                    font-weight: 600;
+                }
+                .score-input {
+                    width: 80px;
+                    padding: 6px;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+                .btn-save {
+                    background: #4A90E2;
+                    color: white;
+                    border: none;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                .btn-save:hover {
+                    background: #357ABD;
+                }
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 16px;
+                    margin-top: 16px;
+                }
+                .stat-item {
+                    background: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    text-align: center;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                .stat-number {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #4A90E2;
+                    margin-bottom: 8px;
+                }
+                .stat-label {
+                    font-size: 14px;
+                    color: #666;
+                }
+                .activities-list {
+                    margin-top: 16px;
+                }
+                .activity-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 12px;
+                    border-bottom: 1px solid #E0E0E0;
+                }
+                .activity-time {
+                    font-size: 12px;
+                    color: #999;
+                    min-width: 80px;
+                }
+                .activity-content {
+                    flex: 1;
+                    margin: 0 12px;
+                }
+                .activity-type {
+                    padding: 4px 8px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    color: white;
+                }
+                .activity-type.homework { background: #7ED321; }
+                .activity-type.score { background: #4A90E2; }
+                .activity-type.test { background: #F5A623; }
+                .activity-type.report { background: #9013FE; }
+                .page {
+                    display: none;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: all 0.3s ease-in-out;
+                }
+                .page.active {
+                    display: block;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .nav-item.active {
+                    background: #4A90E2;
+                    color: white;
+                }
+                .clickable {
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                .clickable:hover {
+                    background: #f0f0f0;
+                }
+                
+                /* 按钮悬停效果 */
+                .button:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                    transition: all 0.2s ease;
+                }
+                
+                .nav-btn:hover {
+                    background: rgba(255,255,255,0.2) !important;
+                    transition: background 0.2s ease;
+                }
+                
+                /* 输入框焦点效果 */
+                .grade-input:focus {
+                    border-color: #4a90e2;
+                    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+                    outline: none;
+                    transition: all 0.2s ease;
+                }
+                
+                /* 卡片悬停效果 */
+                .card:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    transition: all 0.2s ease;
+                }
+                
+                /* 通知动画 */
+                .notification {
+                    position: fixed;
+                    top: 80px;
+                    right: 20px;
+                    background: #28a745;
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    z-index: 1001;
+                    display: none;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in-out;
+                }
+                
+                .notification.error {
+                    background: #dc3545;
+                }
+                
+                .notification.show {
+                    display: block;
+                    transform: translateX(0);
+                }
+                
+                /* 加载动画 */
+                .loading {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: 3px solid #f3f3f3;
+                    border-top: 3px solid #4a90e2;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                }
+                
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                
+                /* 响应式设计 */
+                @media (max-width: 768px) {
+                    #top-nav > div {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+                    
+                    .container {
+                        margin-top: 120px;
+                        padding: 0 10px;
+                    }
+                    
+                    .layout-grid {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+                    
+                    .nav-btn {
+                        padding: 6px 12px !important;
+                        font-size: 12px;
+                    }
+                    
+                    .grade-table {
+                        font-size: 12px;
+                    }
+                    
+                    .grade-input {
+                        width: 50px !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // 绑定事件监听器
+            document.addEventListener('click', function(e) {
+                // 处理导航按钮点击（使用data-target属性）
+                if (e.target.matches('[data-target]')) {
+                    e.preventDefault();
+                    const pageId = e.target.getAttribute('data-target');
+                    showPage(pageId);
+                }
+                
+                // 处理其他页面跳转（使用data-page属性）
+                if (e.target.matches('[data-page]')) {
+                    e.preventDefault();
+                    const pageId = e.target.getAttribute('data-page');
+                    showPage(pageId);
+                }
+                
+                if (e.target.matches('#login-btn')) {
+                    e.preventDefault();
+                    handleLogin();
+                }
+                
+                // 处理退出按钮
+                if (e.target.matches('#logout-btn')) {
+                    e.preventDefault();
+                    showPage('login');
+                    showNotification('已退出登录', 'info');
+                }
+            });
+            
+            // 表单回车提交
+            document.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && AppState.currentPage === 'login') {
+                    handleLogin();
+                }
+            });
+            
+            // 显示登录页面
+            showPage('login');
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html>

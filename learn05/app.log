@@ -1,0 +1,2574 @@
+Requirement already satisfied: pandas==2.3.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 1)) (2.3.1)
+Requirement already satisfied: faker==25.9.2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 2)) (25.9.2)
+Requirement already satisfied: openpyxl==3.1.3 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 3)) (3.1.3)
+Requirement already satisfied: langgraph==0.6.5 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (0.6.5)
+Requirement already satisfied: langchain==0.3.27 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (0.3.27)
+Requirement already satisfied: requests==2.32.3 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 6)) (2.32.3)
+Requirement already satisfied: flask==3.1.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (3.1.0)
+Collecting fastapi==0.111.0 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8))
+  Using cached fastapi-0.111.0-py3-none-any.whl.metadata (25 kB)
+Collecting uvicorn==0.29.0 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 9))
+  Using cached uvicorn-0.29.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting sqlalchemy==2.0.29 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 10))
+  Using cached SQLAlchemy-2.0.29-py3-none-any.whl.metadata (9.6 kB)
+Collecting pydantic==2.7.4 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 11))
+  Using cached pydantic-2.7.4-py3-none-any.whl.metadata (109 kB)
+Collecting numpy==1.26.4 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 12))
+  Using cached numpy-1.26.4.tar.gz (15.8 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting bcrypt==4.0.1 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 13))
+  Using cached bcrypt-4.0.1-cp36-abi3-macosx_10_10_universal2.whl.metadata (9.0 kB)
+Collecting PyJWT==2.8.0 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 14))
+  Using cached PyJWT-2.8.0-py3-none-any.whl.metadata (4.2 kB)
+Collecting python-multipart==0.0.9 (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 15))
+  Using cached python_multipart-0.0.9-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: psutil==7.0.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from -r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 16)) (7.0.0)
+Requirement already satisfied: passlib==1.7.4 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from passlib[bcrypt]==1.7.4->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 17)) (1.7.4)
+Collecting python-jose==3.3.0 (from python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18))
+  Using cached python_jose-3.3.0-py2.py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from pandas==2.3.1->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 1)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from pandas==2.3.1->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from pandas==2.3.1->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 1)) (2025.2)
+Requirement already satisfied: et-xmlfile in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from openpyxl==3.1.3->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: langchain-core>=0.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (0.3.72)
+Requirement already satisfied: langgraph-checkpoint<3.0.0,>=2.1.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (2.1.1)
+Requirement already satisfied: langgraph-prebuilt<0.7.0,>=0.6.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (0.6.1)
+Requirement already satisfied: langgraph-sdk<0.3.0,>=0.2.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (0.2.0)
+Requirement already satisfied: xxhash>=3.5.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (3.5.0)
+Requirement already satisfied: langchain-text-splitters<1.0.0,>=0.3.9 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain==0.3.27->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (0.3.9)
+Requirement already satisfied: langsmith>=0.1.17 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain==0.3.27->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (0.4.8)
+Requirement already satisfied: PyYAML>=5.3 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain==0.3.27->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (6.0.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from requests==2.32.3->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 6)) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from requests==2.32.3->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 6)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from requests==2.32.3->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 6)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from requests==2.32.3->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 6)) (2025.7.14)
+Requirement already satisfied: typing-extensions>=4.6.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from sqlalchemy==2.0.29->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 10)) (4.14.1)
+Requirement already satisfied: annotated-types>=0.4.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from pydantic==2.7.4->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 11)) (0.7.0)
+Collecting pydantic-core==2.18.4 (from pydantic==2.7.4->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 11))
+  Using cached pydantic_core-2.18.4.tar.gz (385 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: Werkzeug>=3.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (3.1.3)
+Requirement already satisfied: Jinja2>=3.1.2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (3.1.6)
+Requirement already satisfied: itsdangerous>=2.2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (8.2.1)
+Requirement already satisfied: blinker>=1.9 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (1.9.0)
+Collecting starlette<0.38.0,>=0.37.2 (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8))
+  Downloading starlette-0.37.2-py3-none-any.whl.metadata (5.9 kB)
+Collecting fastapi-cli>=0.0.2 (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8))
+  Downloading fastapi_cli-0.0.8-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: httpx>=0.23.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (0.28.1)
+Collecting ujson!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0,>=4.0.1 (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8))
+  Downloading ujson-5.10.0-cp313-cp313-macosx_11_0_arm64.whl.metadata (9.3 kB)
+Requirement already satisfied: orjson>=3.2.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (3.11.1)
+Requirement already satisfied: email_validator>=2.0.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (2.2.0)
+Requirement already satisfied: h11>=0.8 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn==0.29.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 9)) (0.16.0)
+Requirement already satisfied: ecdsa!=0.15 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (0.19.1)
+Requirement already satisfied: rsa in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (4.9.1)
+Requirement already satisfied: pyasn1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (0.6.1)
+Requirement already satisfied: cryptography>=3.4.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (45.0.5)
+Requirement already satisfied: tenacity!=8.4.0,<10.0.0,>=8.1.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain-core>=0.1->langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (9.1.2)
+Requirement already satisfied: jsonpatch<2.0,>=1.33 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain-core>=0.1->langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (1.33)
+Requirement already satisfied: packaging>=23.2 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langchain-core>=0.1->langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (25.0)
+Requirement already satisfied: jsonpointer>=1.9 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from jsonpatch<2.0,>=1.33->langchain-core>=0.1->langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (3.0.0)
+Requirement already satisfied: ormsgpack>=1.10.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langgraph-checkpoint<3.0.0,>=2.1.0->langgraph==0.6.5->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 4)) (1.10.0)
+Requirement already satisfied: anyio<5,>=3.4.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from starlette<0.38.0,>=0.37.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (4.9.0)
+Requirement already satisfied: sniffio>=1.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from anyio<5,>=3.4.0->starlette<0.38.0,>=0.37.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (1.3.1)
+Requirement already satisfied: cffi>=1.14 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from cryptography>=3.4.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (1.17.1)
+Requirement already satisfied: pycparser in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from cffi>=1.14->cryptography>=3.4.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (2.22)
+Requirement already satisfied: six>=1.9.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from ecdsa!=0.15->python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 18)) (1.17.0)
+Requirement already satisfied: dnspython>=2.0.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from email_validator>=2.0.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (2.7.0)
+Requirement already satisfied: typer>=0.15.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (0.16.0)
+Collecting rich-toolkit>=0.14.8 (from fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8))
+  Downloading rich_toolkit-0.15.0-py3-none-any.whl.metadata (1.0 kB)
+Requirement already satisfied: httpcore==1.* in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from httpx>=0.23.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (1.0.9)
+Requirement already satisfied: MarkupSafe>=2.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from Jinja2>=3.1.2->flask==3.1.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 7)) (3.0.2)
+Requirement already satisfied: requests-toolbelt<2.0.0,>=1.0.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (1.0.0)
+Requirement already satisfied: zstandard<0.24.0,>=0.23.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from langsmith>=0.1.17->langchain==0.3.27->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 5)) (0.23.0)
+Requirement already satisfied: rich>=13.7.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (14.1.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from markdown-it-py>=2.2.0->rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (0.1.2)
+Requirement already satisfied: shellingham>=1.3.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from typer>=0.15.1->fastapi-cli>=0.0.2->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (1.5.4)
+Requirement already satisfied: httptools>=0.5.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn[standard]>=0.12.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (0.6.4)
+Requirement already satisfied: python-dotenv>=0.13 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn[standard]>=0.12.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (1.1.1)
+Requirement already satisfied: uvloop!=0.15.0,!=0.15.1,>=0.14.0 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn[standard]>=0.12.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (0.21.0)
+Requirement already satisfied: watchfiles>=0.13 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn[standard]>=0.12.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (1.1.0)
+Requirement already satisfied: websockets>=10.4 in /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/lib/python3.13/site-packages (from uvicorn[standard]>=0.12.0->fastapi==0.111.0->-r /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/requirements.txt (line 8)) (15.0.1)
+Downloading SQLAlchemy-2.0.29-py3-none-any.whl (1.9 MB)
+   ━━━━━━ 1.9/1… 10.6    0:00:…
+          MB     MB/s          
+Downloading pydantic-2.7.4-py3-none-any.whl (409 kB)
+Downloading fastapi-0.111.0-py3-none-any.whl (91 kB)
+Downloading uvicorn-0.29.0-py3-none-any.whl (60 kB)
+Downloading bcrypt-4.0.1-cp36-abi3-macosx_10_10_universal2.whl (473 kB)
+Downloading PyJWT-2.8.0-py3-none-any.whl (22 kB)
+Downloading python_multipart-0.0.9-py3-none-any.whl (22 kB)
+Downloading python_jose-3.3.0-py2.py3-none-any.whl (33 kB)
+Downloading starlette-0.37.2-py3-none-any.whl (71 kB)
+Downloading fastapi_cli-0.0.8-py3-none-any.whl (10 kB)
+Downloading rich_toolkit-0.15.0-py3-none-any.whl (29 kB)
+Downloading ujson-5.10.0-cp313-cp313-macosx_11_0_arm64.whl (51 kB)
+Building wheels for collected packages: numpy, pydantic-core
+  Building wheel for numpy (pyproject.toml): started
+  Building wheel for numpy (pyproject.toml): finished with status 'done'
+  Created wheel for numpy: filename=numpy-1.26.4-cp313-cp313-macosx_15_0_arm64.whl size=4728834 sha256=9677bf2dc0b75a0f5eb4c16c0d1187863e38a3365e8d3263e447dea3b293d12a
+  Stored in directory: /Users/tangxiaolu/Library/Caches/pip/wheels/8b/2d/9f/b6b46373f328e2ef50388915d351ccacbedac929459b5459bf
+  Building wheel for pydantic-core (pyproject.toml): started
+  Building wheel for pydantic-core (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Building wheel for pydantic-core (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [115 lines of output]
+      Running `maturin pep517 build-wheel -i /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/bin/python --compatibility off`
+      Python reports SOABI: cpython-313-darwin
+      Computed rustc target triple: aarch64-apple-darwin
+      Installation directory: /Users/tangxiaolu/Library/Caches/puccinialin
+      Rustup already downloaded
+      Installing rust to /Users/tangxiaolu/Library/Caches/puccinialin/rustup
+      warn: It looks like you have an existing rustup settings file at:
+      warn: /Users/tangxiaolu/.rustup/settings.toml
+      warn: Rustup will install the default toolchain as specified in the settings file,
+      warn: instead of the one inferred from the default host triple.
+      info: profile set to 'minimal'
+      info: default host triple is aarch64-apple-darwin
+      warn: Updating existing toolchain, profile choice will be ignored
+      info: syncing channel updates for 'stable-aarch64-apple-darwin'
+      info: default toolchain set to 'stable-aarch64-apple-darwin'
+      Checking if cargo is installed
+      cargo 1.89.0 (c24e10642 2025-06-23)
+      📦 Including license file `LICENSE`
+      🍹 Building a mixed python/rust project
+      🔗 Found pyo3 bindings
+      🐍 Found CPython 3.13 at /Users/tangxiaolu/project/PythonProject/aiLearn/.venv/bin/python
+      📡 Using build options features, bindings from pyproject.toml
+      💻 Using `MACOSX_DEPLOYMENT_TARGET=11.0` for aarch64-apple-darwin by default
+         Compiling autocfg v1.1.0
+         Compiling target-lexicon v0.12.9
+         Compiling python3-dll-a v0.2.9
+         Compiling proc-macro2 v1.0.76
+         Compiling unicode-ident v1.0.10
+         Compiling once_cell v1.18.0
+         Compiling libc v0.2.147
+         Compiling heck v0.4.1
+         Compiling version_check v0.9.4
+         Compiling cfg-if v1.0.0
+         Compiling rustversion v1.0.13
+         Compiling parking_lot_core v0.9.8
+         Compiling smallvec v1.13.2
+         Compiling tinyvec_macros v0.1.1
+         Compiling portable-atomic v1.6.0
+         Compiling radium v0.7.0
+         Compiling scopeguard v1.1.0
+         Compiling static_assertions v1.1.0
+         Compiling lexical-util v0.8.5
+         Compiling tinyvec v1.6.0
+         Compiling ahash v0.8.10
+         Compiling serde v1.0.203
+         Compiling num-traits v0.2.16
+         Compiling num-integer v0.1.45
+         Compiling lock_api v0.4.10
+         Compiling num-bigint v0.4.4
+         Compiling memoffset v0.9.0
+         Compiling tap v1.0.1
+         Compiling memchr v2.6.3
+         Compiling wyz v0.5.1
+         Compiling getrandom v0.2.10
+         Compiling aho-corasick v1.0.2
+         Compiling quote v1.0.35
+         Compiling syn v2.0.48
+         Compiling unicode-normalization v0.1.22
+         Compiling lexical-parse-integer v0.8.6
+         Compiling funty v2.0.0
+         Compiling pyo3-build-config v0.21.2
+         Compiling equivalent v1.0.1
+         Compiling indoc v2.0.4
+         Compiling percent-encoding v2.3.1
+         Compiling regex-syntax v0.8.2
+         Compiling hashbrown v0.14.3
+         Compiling parking_lot v0.12.1
+         Compiling serde_json v1.0.116
+         Compiling zerocopy v0.7.32
+         Compiling unindent v0.2.3
+         Compiling unicode-bidi v0.3.13
+         Compiling indexmap v2.2.2
+         Compiling form_urlencoded v1.2.1
+         Compiling idna v0.5.0
+         Compiling lexical-parse-float v0.8.5
+         Compiling ryu v1.0.14
+         Compiling regex-automata v0.4.5
+         Compiling itoa v1.0.8
+         Compiling bitvec v1.0.1
+         Compiling url v2.5.0
+         Compiling base64 v0.21.7
+         Compiling uuid v1.8.0
+         Compiling strum_macros v0.25.3
+         Compiling serde_derive v1.0.203
+         Compiling enum_dispatch v0.3.13
+         Compiling strum_macros v0.26.1
+         Compiling pyo3-macros-backend v0.21.2
+         Compiling pyo3-ffi v0.21.2
+         Compiling pyo3 v0.21.2
+         Compiling jiter v0.4.1
+         Compiling pydantic-core v2.18.4 (/private/var/folders/mm/kbdfsc9d1kg9lhq1rjjqlcjc0000gn/T/pip-install-vcfio0qr/pydantic-core_50de1cbbd68f44408c329f5bf96f1a51)
+         Compiling regex v1.10.4
+         Compiling strum v0.25.0
+      error: failed to run custom build command for `pyo3-ffi v0.21.2`
+      
+      Caused by:
+        process didn't exit successfully: `/private/var/folders/mm/kbdfsc9d1kg9lhq1rjjqlcjc0000gn/T/pip-install-vcfio0qr/pydantic-core_50de1cbbd68f44408c329f5bf96f1a51/target/release/build/pyo3-ffi-56f38345fb99a932/build-script-build` (exit status: 1)
+        --- stdout
+        cargo:rerun-if-env-changed=PYO3_CROSS
+        cargo:rerun-if-env-changed=PYO3_CROSS_LIB_DIR
+        cargo:rerun-if-env-changed=PYO3_CROSS_PYTHON_VERSION
+        cargo:rerun-if-env-changed=PYO3_CROSS_PYTHON_IMPLEMENTATION
+        cargo:rerun-if-env-changed=PYO3_PRINT_CONFIG
+        cargo:rerun-if-env-changed=PYO3_USE_ABI3_FORWARD_COMPATIBILITY
+      
+        --- stderr
+        error: the configured Python interpreter version (3.13) is newer than PyO3's maximum supported version (3.12)
+        = help: please check if an updated version of PyO3 is available. Current version: 0.21.2
+        = help: set PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1 to suppress this check and build anyway using the stable ABI
+      warning: build failed, waiting for other jobs to finish...
+      💥 maturin failed
+        Caused by: Failed to build a native library through cargo
+        Caused by: Cargo build finished with "exit status: 101": `env -u CARGO MACOSX_DEPLOYMENT_TARGET="11.0" PYO3_ENVIRONMENT_SIGNATURE="cpython-3.13-64bit" PYO3_PYTHON="/Users/tangxiaolu/project/PythonProject/aiLearn/.venv/bin/python" PYTHON_SYS_EXECUTABLE="/Users/tangxiaolu/project/PythonProject/aiLearn/.venv/bin/python" "cargo" "rustc" "--features" "pyo3/extension-module" "--message-format" "json-render-diagnostics" "--manifest-path" "/private/var/folders/mm/kbdfsc9d1kg9lhq1rjjqlcjc0000gn/T/pip-install-vcfio0qr/pydantic-core_50de1cbbd68f44408c329f5bf96f1a51/Cargo.toml" "--release" "--lib" "--crate-type" "cdylib" "--" "-C" "link-arg=-undefined" "-C" "link-arg=dynamic_lookup" "-C" "link-args=-Wl,-install_name,@rpath/pydantic_core._pydantic_core.cpython-313-darwin.so"`
+      Rust not found, installing into a temporary directory
+      Error: command ['maturin', 'pep517', 'build-wheel', '-i', '/Users/tangxiaolu/project/PythonProject/aiLearn/.venv/bin/python', '--compatibility', 'off'] returned non-zero exit status 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pydantic-core
+Successfully built numpy
+Failed to build pydantic-core
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> pydantic-core
+/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/intelligent_teaching_assistant.py:43: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+  Base = declarative_base()
+/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service/intelligent_teaching_assistant.py:750: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Will watch for changes in these directories: ['/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/service']
+INFO:     Uvicorn running on http://127.0.0.1:5001 (Press CTRL+C to quit)
+INFO:     Started reloader process [26521] using WatchFiles
+INFO:     Started server process [26527]
+INFO:     Waiting for application startup.
+INFO:intelligent_teaching_assistant:数据库初始化完成
+INFO:     Application startup complete.
+INFO:watchfiles.main:3 changes detected
+INFO:     127.0.0.1:63855 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63900 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63984 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64054 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64103 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51342 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51706 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26527]
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config/cache_config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config/cache_config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'utils/cache_manager.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'utils/cache_manager.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/cache_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/cache_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/rate_limit_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/rate_limit_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/compression_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/compression_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config/performance_config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config/performance_config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:12 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/compression_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/compression_middleware.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm/agents/agent_manager.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:9 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:16 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py', 'middleware/rate_limit_middleware.py', 'config/performance_config.py', 'api/v1/classroom.py', 'api/v1/teaching_prep.py', 'utils/cache_manager.py', 'config/cache_config.py', 'middleware/compression_middleware.py', 'middleware/cache_middleware.py', 'middleware/__init__.py', 'api/v1/__init__.py', 'main.py', 'database.py', 'services/grade_service.py', 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:18 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py', 'middleware/rate_limit_middleware.py', 'config/performance_config.py', 'llm/agents/agent_manager.py', 'api/v1/classroom.py', 'api/v1/teaching_prep.py', 'api/v1/users.py', 'utils/cache_manager.py', 'config/cache_config.py', 'middleware/compression_middleware.py', 'middleware/cache_middleware.py', 'middleware/__init__.py', 'main.py', 'database.py', 'services/grade_service.py', 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:12 changes detected
+INFO:watchfiles.main:14 changes detected
+INFO:watchfiles.main:3 changes detected
+WARNING:  WatchFiles detected changes in 'llm/agents/agent_manager.py', 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:16 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py', 'middleware/rate_limit_middleware.py', 'config/performance_config.py', 'llm/agents/agent_manager.py', 'api/v1/classroom.py', 'api/v1/teaching_prep.py', 'utils/cache_manager.py', 'config/cache_config.py', 'middleware/compression_middleware.py', 'middleware/cache_middleware.py', 'main.py', 'api/v1/__init__.py', 'middleware/__init__.py', 'database.py', 'services/grade_service.py', 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'ai_services/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/models.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/models.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/exceptions.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/exceptions.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/base.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/base.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/openai_provider.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/openai_provider.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/claude_provider.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/claude_provider.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/providers/qwen_provider.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:24 changes detected
+WARNING:  WatchFiles detected changes in 'ai_services/exceptions.py', 'ai_services/providers/base.py', 'middleware/compression_middleware.py', 'config/cache_config.py', 'middleware/__init__.py', 'api/v1/__init__.py', 'main.py', 'ai_services/providers/openai_provider.py', 'database.py', 'ai_services/providers/__init__.py', 'middleware/rate_limit_middleware.py', 'services/grade_service.py', 'api/v1/ai.py', 'api/v1/teaching_prep.py', 'utils/cache_manager.py', 'ai_services/models.py', 'ai_services/providers/claude_provider.py', 'api/v1/grades.py', 'config/performance_config.py', 'api/v1/classroom.py', 'middleware/cache_middleware.py', 'ai_services/providers/qwen_provider.py', 'ai_services/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/dashboard.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/dashboard.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/experiment.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/experiment.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'core/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/cache_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/task_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/task_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/teaching_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/analytics_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/teaching_prep_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/teaching_prep_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'exceptions.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'exceptions.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/class_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:10 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py', 'middleware/rate_limit_middleware.py', 'config/performance_config.py', 'utils/cache_manager.py', 'config/cache_config.py', 'middleware/compression_middleware.py', 'middleware/cache_middleware.py', 'middleware/__init__.py', 'main.py', 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:32 changes detected
+WARNING:  WatchFiles detected changes in 'config/cache_config.py', 'middleware/compression_middleware.py', 'core/teaching_prep_service.py', 'middleware/__init__.py', 'api/v1/__init__.py', 'main.py', 'exceptions.py', 'middleware/rate_limit_middleware.py', 'llm/agents/agent_manager.py', 'core/cache_service.py', 'core/teaching_service.py', 'core/__init__.py', 'api/v1/dashboard.py', 'core/analytics_service.py', 'services/grade_service.py', 'api/v1/ai.py', 'api/v1/teaching_prep.py', 'services/class_service.py', 'utils/cache_manager.py', 'api/v1/classroom_ai.py', 'core/task_service.py', 'api/v1/homework.py', 'api/v1/grades.py', 'core/homework_service.py', 'config/performance_config.py', 'api/v1/classroom.py', 'middleware/cache_middleware.py', 'api/v1/experiment.py', 'core/ai_service.py', 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+WARNING:  WatchFiles detected changes in 'llm/agents/agent_manager.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:30 changes detected
+WARNING:  WatchFiles detected changes in 'config/cache_config.py', 'middleware/compression_middleware.py', 'core/teaching_prep_service.py', 'middleware/__init__.py', 'api/v1/__init__.py', 'main.py', 'exceptions.py', 'middleware/rate_limit_middleware.py', 'core/cache_service.py', 'core/teaching_service.py', 'core/__init__.py', 'api/v1/dashboard.py', 'core/analytics_service.py', 'services/grade_service.py', 'api/v1/ai.py', 'server.py', 'api/v1/teaching_prep.py', 'services/class_service.py', 'utils/cache_manager.py', 'api/v1/classroom_ai.py', 'core/task_service.py', 'api/v1/homework.py', 'api/v1/grades.py', 'core/homework_service.py', 'config/performance_config.py', 'api/v1/classroom.py', 'middleware/cache_middleware.py', 'api/v1/experiment.py', 'core/ai_service.py', 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:29 changes detected
+WARNING:  WatchFiles detected changes in 'config/cache_config.py', 'middleware/compression_middleware.py', 'core/teaching_prep_service.py', 'middleware/__init__.py', 'main.py', 'exceptions.py', 'middleware/rate_limit_middleware.py', 'core/cache_service.py', 'core/teaching_service.py', 'core/__init__.py', 'api/v1/dashboard.py', 'core/analytics_service.py', 'services/grade_service.py', 'api/v1/ai.py', 'server.py', 'api/v1/teaching_prep.py', 'services/class_service.py', 'utils/cache_manager.py', 'api/v1/classroom_ai.py', 'core/task_service.py', 'api/v1/homework.py', 'api/v1/grades.py', 'core/homework_service.py', 'config/performance_config.py', 'api/v1/classroom.py', 'middleware/cache_middleware.py', 'api/v1/experiment.py', 'core/ai_service.py', 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'start_app.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'server.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/user_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/class_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/grade_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/class_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/user_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/grade_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/class_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'exceptions.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'middleware/exception_handler.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/ai_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'ai_services/ai_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:26 changes detected
+WARNING:  WatchFiles detected changes in 'core/teaching_prep_service.py', 'ai_services/ai_client.py', 'api/v1/__init__.py', 'core/cache_service.py', 'core/teaching_service.py', 'core/__init__.py', 'api/v1/dashboard.py', 'core/analytics_service.py', 'start_app.py', 'api/v1/teaching_prep.py', 'api/v1/classroom_ai.py', 'core/task_service.py', 'api/v1/homework.py', 'core/homework_service.py', 'api/v1/classroom.py', 'api/v1/experiment.py', 'core/ai_service.py', 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:35 changes detected
+WARNING:  WatchFiles detected changes in 'api/user_api.py', 'core/teaching_prep_service.py', 'api/v1/__init__.py', 'exceptions.py', 'core/cache_service.py', 'core/teaching_service.py', 'core/__init__.py', 'api/v1/dashboard.py', 'core/analytics_service.py', 'services/user_service.py', 'services/grade_service.py', 'api/v1/ai.py', 'start_app.py', 'server.py', 'api/v1/teaching_prep.py', 'middleware/exception_handler.py', 'services/class_service.py', 'api/class_api.py', 'api/grade_api.py', 'api/v1/classroom_ai.py', 'core/task_service.py', 'api/v1/homework.py', 'core/homework_service.py', 'api/v1/classroom.py', 'api/v1/experiment.py', 'core/ai_service.py', 'core/classroom_ai_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:9 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:9 changes detected
+WARNING:  WatchFiles detected changes in 'start_app.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'export_users_to_excel.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'export_users_to_excel.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'export_users_to_excel.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'view_excel_summary.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'view_excel_summary.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'database.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'services/user_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config/core_config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/user_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/user_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:5 changes detected
+WARNING:  WatchFiles detected changes in 'view_excel_summary.py', 'services/user_service.py', 'config/core_config.py', 'export_users_to_excel.py', 'database.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'user_management.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'user_management.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:9 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/users.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/dashboard.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/teaching_prep.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/system.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/grades.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/experiment.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/analytics.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/tutoring.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/__init__.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'grade_management.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:22 changes detected
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:15 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'tutoring_plan.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'grade_management.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'core/homework_service.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:12 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/homework.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:18 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/classroom_ai.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:6 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/ai_service_integration.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:4 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'test_login_api.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'test_login_final.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'llm_client.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'config.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'test_login_verification.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:2 changes detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'api/v1/auth.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:3 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:2 changes detected
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'check_password_hash.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'check_password_hash.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+WARNING:  WatchFiles detected changes in 'check_password_hash.py'. Reloading...
+Fatal Python error: init_sys_streams: can't initialize sys standard streams
+Python runtime state: core initialized
+OSError: [Errno 9] Bad file descriptor
+
+Current thread 0x00000001f72a5f00 (most recent call first):
+  <no Python frame>
+INFO:watchfiles.main:1 change detected
+INFO:watchfiles.main:2 changes detected

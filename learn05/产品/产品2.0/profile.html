@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 智能教学助手2.0</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="styles/mobile-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>智能教学助手2.0</span>
+            </div>
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>工作台</span>
+                </a>
+                <a href="lesson-prep.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>备课助手</span>
+                </a>
+                <a href="classroom.html" class="nav-link">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>课堂助手</span>
+                </a>
+                <a href="grades.html" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>成绩管理</span>
+                </a>
+                <a href="analytics.html" class="nav-link">
+                    <i class="fas fa-analytics"></i>
+                    <span>数据分析</span>
+                </a>
+                <a href="profile.html" class="nav-link active">
+                    <i class="fas fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar">
+                    <img src="https://via.placeholder.com/40" alt="用户头像">
+                </div>
+                <span class="user-name">张老师</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <div class="profile-container">
+            <!-- 页面头部 -->
+            <div class="profile-header">
+                <div class="profile-header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-user-circle"></i>
+                        个人中心
+                    </h1>
+                    <p class="page-subtitle">管理您的个人信息和系统设置</p>
+                </div>
+                <div class="profile-header-actions">
+                    <button class="btn btn-outline" id="editProfileBtn">
+                        <i class="fas fa-edit"></i>
+                        编辑资料
+                    </button>
+                    <button class="btn btn-primary" id="saveChangesBtn" style="display: none;">
+                        <i class="fas fa-save"></i>
+                        保存更改
+                    </button>
+                </div>
+            </div>
+
+            <!-- 个人信息卡片 -->
+            <div class="profile-info-section">
+                <div class="profile-card">
+                    <div class="profile-avatar-section">
+                        <div class="avatar-container">
+                            <img src="https://via.placeholder.com/120" alt="用户头像" class="profile-avatar" id="profileAvatar">
+                            <div class="avatar-overlay" id="avatarOverlay">
+                                <i class="fas fa-camera"></i>
+                                <span>更换头像</span>
+                            </div>
+                        </div>
+                        <div class="profile-basic-info">
+                            <h2 class="profile-name" id="profileName">张明华</h2>
+                            <p class="profile-title">高级数学教师</p>
+                            <div class="profile-badges">
+                                <span class="badge badge-primary">认证教师</span>
+                                <span class="badge badge-success">优秀教师</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">156</div>
+                            <div class="stat-label">学生总数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1,248</div>
+                            <div class="stat-label">授课时长</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">87.5</div>
+                            <div class="stat-label">平均成绩</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">满意度</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主要内容区域 -->
+            <div class="profile-main">
+                <!-- 左侧内容 -->
+                <div class="profile-content">
+                    <!-- 个人信息表单 -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-user"></i>
+                                基本信息
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <form class="profile-form" id="profileForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullName">姓名</label>
+                                        <input type="text" id="fullName" value="张明华" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jobTitle">职位</label>
+                                        <input type="text" id="jobTitle" value="高级数学教师" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">邮箱</label>
+                                        <input type="email" id="email" value="zhang.minghua@school.edu.cn" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">手机号</label>
+                                        <input type="tel" id="phone" value="138****8888" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="department">所属部门</label>
+                                        <select id="department" disabled>
+                                            <option value="math">数学教研组</option>
+                                            <option value="chinese">语文教研组</option>
+                                            <option value="english">英语教研组</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="workYears">工作年限</label>
+                                        <input type="number" id="workYears" value="8" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">个人简介</label>
+                                    <textarea id="bio" rows="3" readonly>专注于数学教育8年，擅长运用现代化教学方法，致力于提升学生的数学思维能力和学习兴趣。</textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 账户设置 -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-cog"></i>
+                                账户设置
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">修改密码</div>
+                                        <div class="setting-desc">定期更新密码以保护账户安全</div>
+                                    </div>
+                                    <button class="btn btn-outline btn-sm" id="changePasswordBtn">
+                                        <i class="fas fa-key"></i>
+                                        修改
+                                    </button>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">两步验证</div>
+                                        <div class="setting-desc">为账户添加额外的安全保护</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="twoFactorAuth">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">邮件通知</div>
+                                        <div class="setting-desc">接收重要的系统通知和更新</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="emailNotifications" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">短信通知</div>
+                                        <div class="setting-desc">接收紧急通知和验证码</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="smsNotifications" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 偏好设置 -->
+                    <div class="profile-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-palette"></i>
+                                偏好设置
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="settings-list">
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">主题模式</div>
+                                        <div class="setting-desc">选择您喜欢的界面主题</div>
+                                    </div>
+                                    <select class="form-select" id="themeMode">
+                                        <option value="light">浅色模式</option>
+                                        <option value="dark">深色模式</option>
+                                        <option value="auto">跟随系统</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">语言设置</div>
+                                        <div class="setting-desc">选择界面显示语言</div>
+                                    </div>
+                                    <select class="form-select" id="language">
+                                        <option value="zh-CN">简体中文</option>
+                                        <option value="zh-TW">繁体中文</option>
+                                        <option value="en-US">English</option>
+                                    </select>
+                                </div>
+                                <div class="setting-item">
+                                    <div class="setting-info">
+                                        <div class="setting-title">自动保存</div>
+                                        <div class="setting-desc">自动保存您的工作内容</div>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" id="autoSave" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧侧边栏 -->
+                <div class="profile-sidebar">
+                    <!-- 使用统计 -->
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-chart-bar"></i>
+                                使用统计
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="usage-stats">
+                                <div class="usage-item">
+                                    <div class="usage-icon">
+                                        <i class="fas fa-calendar-day"></i>
+                                    </div>
+                                    <div class="usage-info">
+                                        <div class="usage-value">28</div>
+                                        <div class="usage-label">本月登录天数</div>
+                                    </div>
+                                </div>
+                                <div class="usage-item">
+                                    <div class="usage-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="usage-info">
+                                        <div class="usage-value">156h</div>
+                                        <div class="usage-label">本月使用时长</div>
+                                    </div>
+                                </div>
+                                <div class="usage-item">
+                                    <div class="usage-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="usage-info">
+                                        <div class="usage-value">42</div>
+                                        <div class="usage-label">创建课件数</div>
+                                    </div>
+                                </div>
+                                <div class="usage-item">
+                                    <div class="usage-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="usage-info">
+                                        <div class="usage-value">156</div>
+                                        <div class="usage-label">管理学生数</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 最近活动 -->
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-history"></i>
+                                最近活动
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="activity-list" id="activityList">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-file-plus"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">创建了新课件</div>
+                                        <div class="activity-desc">《二次函数的图像与性质》</div>
+                                        <div class="activity-time">2小时前</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">录入了成绩</div>
+                                        <div class="activity-desc">高一(3)班数学测验</div>
+                                        <div class="activity-time">5小时前</div>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <div class="activity-title">完成了课堂教学</div>
+                                        <div class="activity-desc">高一(2)班数学课</div>
+                                        <div class="activity-time">1天前</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 快速操作 -->
+                    <div class="sidebar-section">
+                        <div class="section-header">
+                            <h3 class="section-title">
+                                <i class="fas fa-bolt"></i>
+                                快速操作
+                            </h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn" data-action="backup">
+                                    <i class="fas fa-download"></i>
+                                    <span>备份数据</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="export">
+                                    <i class="fas fa-file-export"></i>
+                                    <span>导出报告</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="help">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>帮助中心</span>
+                                </button>
+                                <button class="quick-action-btn" data-action="feedback">
+                                    <i class="fas fa-comment"></i>
+                                    <span>意见反馈</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 修改密码模态框 -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">修改密码</h3>
+                <button class="close" type="button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="password-form" id="passwordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">当前密码</label>
+                        <input type="password" id="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">新密码</label>
+                        <input type="password" id="newPassword" required>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar"></div>
+                            <span class="strength-text">密码强度：弱</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">确认新密码</label>
+                        <input type="password" id="confirmPassword" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" type="button" data-dismiss="modal">取消</button>
+                <button class="btn btn-primary" type="button" id="confirmPasswordChange">确认修改</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头像上传模态框 -->
+    <div class="modal" id="avatarModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">更换头像</h3>
+                <button class="close" type="button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="avatar-upload">
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>点击或拖拽图片到此处上传</p>
+                        <p class="upload-hint">支持 JPG、PNG 格式，文件大小不超过 2MB</p>
+                        <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="avatar-preview" id="avatarPreview" style="display: none;">
+                        <img id="previewImage" alt="预览">
+                        <div class="preview-actions">
+                            <button class="btn btn-outline btn-sm" id="reSelectBtn">重新选择</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" type="button" data-dismiss="modal">取消</button>
+                <button class="btn btn-primary" type="button" id="confirmAvatarChange" disabled>确认更换</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="animations.js"></script>
+    <script src="profile.js"></script>
+    <script src="scripts/mobile-interactions.js"></script>
+</body>
+</html>

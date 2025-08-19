@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手 - 成绩管理模块设计稿</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #F5F7FA;
+            color: #262626;
+        }
+
+        /* 顶部导航栏 */
+        .header {
+            background: white;
+            height: 64px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            margin-right: 12px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .nav-menu {
+            display: flex;
+            flex: 1;
+        }
+
+        .nav-item {
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            color: #595959;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-item.active {
+            color: #1890FF;
+        }
+
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: #1890FF;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            margin-top: 64px;
+            padding: 24px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 页面头部 */
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .page-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            border: 1px solid #D9D9D9;
+            background: white;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .action-btn.primary {
+            background: #1890FF;
+            color: white;
+            border-color: #1890FF;
+        }
+
+        .action-btn:hover {
+            border-color: #1890FF;
+            color: #1890FF;
+        }
+
+        .action-btn.primary:hover {
+            background: #096DD9;
+            border-color: #096DD9;
+            color: white;
+        }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .stat-card.students::before {
+            background: linear-gradient(90deg, #1890FF, #096DD9);
+        }
+
+        .stat-card.average::before {
+            background: linear-gradient(90deg, #52C41A, #389E0D);
+        }
+
+        .stat-card.excellent::before {
+            background: linear-gradient(90deg, #FA8C16, #D46B08);
+        }
+
+        .stat-card.improvement::before {
+            background: linear-gradient(90deg, #722ED1, #531DAB);
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .stat-title {
+            font-size: 14px;
+            color: #8C8C8C;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .stat-icon.students {
+            background: #E6F7FF;
+            color: #1890FF;
+        }
+
+        .stat-icon.average {
+            background: #F6FFED;
+            color: #52C41A;
+        }
+
+        .stat-icon.excellent {
+            background: #FFF7E6;
+            color: #FA8C16;
+        }
+
+        .stat-icon.improvement {
+            background: #F9F0FF;
+            color: #722ED1;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 8px;
+        }
+
+        .stat-change {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .change-positive {
+            color: #52C41A;
+        }
+
+        .change-negative {
+            color: #FF4D4F;
+        }
+
+        /* 主要内容区 */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+        }
+
+        .main-panel {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .panel-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-select {
+            padding: 6px 12px;
+            border: 1px solid #D9D9D9;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+        }
+
+        .panel-content {
+            padding: 24px;
+        }
+
+        /* 成绩表格 */
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .grade-table th,
+        .grade-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .grade-table th {
+            background: #FAFAFA;
+            font-weight: 500;
+            color: #262626;
+            font-size: 14px;
+        }
+
+        .grade-table td {
+            font-size: 14px;
+            color: #595959;
+        }
+
+        .grade-table tr:hover {
+            background: #F5F7FA;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .student-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1890FF, #096DD9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .student-name {
+            font-weight: 500;
+            color: #262626;
+        }
+
+        .student-id {
+            font-size: 12px;
+            color: #8C8C8C;
+        }
+
+        .grade-score {
+            font-weight: 600;
+        }
+
+        .score-excellent {
+            color: #52C41A;
+        }
+
+        .score-good {
+            color: #1890FF;
+        }
+
+        .score-average {
+            color: #FA8C16;
+        }
+
+        .score-poor {
+            color: #FF4D4F;
+        }
+
+        .trend-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .trend-up {
+            background: #F6FFED;
+            color: #52C41A;
+        }
+
+        .trend-down {
+            background: #FFF2F0;
+            color: #FF4D4F;
+        }
+
+        .trend-stable {
+            background: #F0F0F0;
+            color: #8C8C8C;
+        }
+
+        .action-menu {
+            position: relative;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background: #F0F0F0;
+        }
+
+        /* 右侧面板 */
+        .side-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .analysis-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 16px;
+        }
+
+        .chart-container {
+            height: 200px;
+            background: #FAFAFA;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8C8C8C;
+            margin-bottom: 16px;
+        }
+
+        .insight-list {
+            list-style: none;
+        }
+
+        .insight-item {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .insight-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+
+        .insight-icon.warning {
+            background: #FFF7E6;
+            color: #FA8C16;
+        }
+
+        .insight-icon.success {
+            background: #F6FFED;
+            color: #52C41A;
+        }
+
+        .insight-icon.info {
+            background: #E6F7FF;
+            color: #1890FF;
+        }
+
+        .ai-suggestions {
+            background: linear-gradient(135deg, #F0F8FF 0%, #E6F7FF 100%);
+            border: 1px solid #BAE7FF;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .ai-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .ai-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #1890FF 0%, #096DD9 100%);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .ai-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .suggestion-item {
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #595959;
+            line-height: 1.5;
+        }
+
+        .suggestion-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 分页 */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-top: 1px solid #F0F0F0;
+        }
+
+        .pagination-info {
+            font-size: 14px;
+            color: #8C8C8C;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .page-btn {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #D9D9D9;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .page-btn:hover {
+            border-color: #1890FF;
+            color: #1890FF;
+        }
+
+        .page-btn.active {
+            background: #1890FF;
+            color: white;
+            border-color: #1890FF;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-panel {
+                grid-row: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .grade-table {
+                font-size: 12px;
+            }
+
+            .grade-table th,
+            .grade-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <div class="logo-text">智能教学助手</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">工作台</a>
+            <a href="#" class="nav-item">备课</a>
+            <a href="#" class="nav-item">上课</a>
+            <a href="#" class="nav-item active">成绩</a>
+            <a href="#" class="nav-item">分析</a>
+        </nav>
+        
+        <div class="header-actions">
+            <div class="user-avatar">张</div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 页面头部 -->
+        <div class="page-header">
+            <h1 class="page-title">成绩管理</h1>
+            <div class="page-actions">
+                <button class="action-btn">
+                    <span>📊</span>
+                    <span>导出报告</span>
+                </button>
+                <button class="action-btn">
+                    <span>📤</span>
+                    <span>批量导入</span>
+                </button>
+                <button class="action-btn primary">
+                    <span>➕</span>
+                    <span>录入成绩</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 统计卡片 -->
+        <div class="stats-grid">
+            <div class="stat-card students">
+                <div class="stat-header">
+                    <div class="stat-title">学生总数</div>
+                    <div class="stat-icon students">👥</div>
+                </div>
+                <div class="stat-number">156</div>
+                <div class="stat-change">
+                    <span class="change-positive">↗ +3 较上学期</span>
+                </div>
+            </div>
+
+            <div class="stat-card average">
+                <div class="stat-header">
+                    <div class="stat-title">班级平均分</div>
+                    <div class="stat-icon average">📈</div>
+                </div>
+                <div class="stat-number">85.6</div>
+                <div class="stat-change">
+                    <span class="change-positive">↗ +2.3 较上次</span>
+                </div>
+            </div>
+
+            <div class="stat-card excellent">
+                <div class="stat-header">
+                    <div class="stat-title">优秀率</div>
+                    <div class="stat-icon excellent">🏆</div>
+                </div>
+                <div class="stat-number">68%</div>
+                <div class="stat-change">
+                    <span class="change-positive">↗ +5% 较上次</span>
+                </div>
+            </div>
+
+            <div class="stat-card improvement">
+                <div class="stat-header">
+                    <div class="stat-title">进步学生</div>
+                    <div class="stat-icon improvement">🚀</div>
+                </div>
+                <div class="stat-number">23</div>
+                <div class="stat-change">
+                    <span class="change-positive">↗ +8 较上次</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容布局 -->
+        <div class="content-layout">
+            <!-- 主面板 -->
+            <div class="main-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">高一(3)班 - 数学期中考试</h2>
+                    <div class="panel-actions">
+                        <select class="filter-select">
+                            <option>全部学生</option>
+                            <option>优秀学生</option>
+                            <option>需关注学生</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>期中考试</option>
+                            <option>期末考试</option>
+                            <option>月考</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel-content">
+                    <table class="grade-table">
+                        <thead>
+                            <tr>
+                                <th>学生</th>
+                                <th>学号</th>
+                                <th>成绩</th>
+                                <th>排名</th>
+                                <th>趋势</th>
+                                <th>知识点掌握</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">李</div>
+                                        <div>
+                                            <div class="student-name">李明</div>
+                                            <div class="student-id">20240301</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>001</td>
+                                <td><span class="grade-score score-excellent">95</span></td>
+                                <td>1</td>
+                                <td><span class="trend-icon trend-up">↗</span></td>
+                                <td>92%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">王</div>
+                                        <div>
+                                            <div class="student-name">王小红</div>
+                                            <div class="student-id">20240302</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>002</td>
+                                <td><span class="grade-score score-excellent">92</span></td>
+                                <td>2</td>
+                                <td><span class="trend-icon trend-up">↗</span></td>
+                                <td>89%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">张</div>
+                                        <div>
+                                            <div class="student-name">张三</div>
+                                            <div class="student-id">20240303</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>003</td>
+                                <td><span class="grade-score score-good">88</span></td>
+                                <td>3</td>
+                                <td><span class="trend-icon trend-stable">→</span></td>
+                                <td>85%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">刘</div>
+                                        <div>
+                                            <div class="student-name">刘强</div>
+                                            <div class="student-id">20240304</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>004</td>
+                                <td><span class="grade-score score-good">85</span></td>
+                                <td>4</td>
+                                <td><span class="trend-icon trend-up">↗</span></td>
+                                <td>82%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">陈</div>
+                                        <div>
+                                            <div class="student-name">陈小华</div>
+                                            <div class="student-id">20240305</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>005</td>
+                                <td><span class="grade-score score-average">78</span></td>
+                                <td>8</td>
+                                <td><span class="trend-icon trend-down">↘</span></td>
+                                <td>75%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="student-info">
+                                        <div class="student-avatar">赵</div>
+                                        <div>
+                                            <div class="student-name">赵敏</div>
+                                            <div class="student-id">20240306</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>006</td>
+                                <td><span class="grade-score score-poor">65</span></td>
+                                <td>15</td>
+                                <td><span class="trend-icon trend-down">↘</span></td>
+                                <td>68%</td>
+                                <td>
+                                    <div class="action-menu">
+                                        <button class="menu-btn">⋯</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <div class="pagination-info">显示 1-10 条，共 45 条记录</div>
+                    <div class="pagination-controls">
+                        <button class="page-btn">‹</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn">5</button>
+                        <button class="page-btn">›</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧面板 -->
+            <div class="side-panel">
+                <!-- 成绩分析 -->
+                <div class="analysis-card">
+                    <h3 class="card-title">成绩分布</h3>
+                    <div class="chart-container">
+                        📊 成绩分布图表
+                    </div>
+                    <ul class="insight-list">
+                        <li class="insight-item">
+                            <span class="insight-icon success">✓</span>
+                            <span>优秀率较上次提升5%</span>
+                        </li>
+                        <li class="insight-item">
+                            <span class="insight-icon warning">!</span>
+                            <span>6名学生需重点关注</span>
+                        </li>
+                        <li class="insight-item">
+                            <span class="insight-icon info">i</span>
+                            <span>函数知识点掌握较弱</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 知识点分析 -->
+                <div class="analysis-card">
+                    <h3 class="card-title">知识点掌握情况</h3>
+                    <div class="chart-container">
+                        📈 知识点掌握度图表
+                    </div>
+                    <ul class="insight-list">
+                        <li class="insight-item">
+                            <span class="insight-icon success">✓</span>
+                            <span>基础运算：95%</span>
+                        </li>
+                        <li class="insight-item">
+                            <span class="insight-icon warning">!</span>
+                            <span>函数性质：72%</span>
+                        </li>
+                        <li class="insight-item">
+                            <span class="insight-icon warning">!</span>
+                            <span>综合应用：68%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI智能建议 -->
+                <div class="ai-suggestions">
+                    <div class="ai-header">
+                        <div class="ai-icon">🤖</div>
+                        <div class="ai-title">AI智能建议</div>
+                    </div>
+                    
+                    <div class="suggestion-item">
+                        建议为赵敏同学制定函数专项练习计划，重点加强基础概念理解。
+                    </div>
+                    
+                    <div class="suggestion-item">
+                        陈小华同学近期成绩下滑，建议安排一对一辅导，了解学习困难。
+                    </div>
+                    
+                    <div class="suggestion-item">
+                        班级整体在函数性质方面较弱，建议增加相关练习和讲解时间。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

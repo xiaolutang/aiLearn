@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手2.0 - 工作台</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/mobile-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>智能教学助手2.0</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link" data-module="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>工作台</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lesson-prep.html" class="nav-link" data-module="lesson-prep">
+                            <i class="fas fa-book-open"></i>
+                            <span>备课助手</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="classroom.html" class="nav-link" data-module="classroom">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>课堂助手</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="grade-management.html" class="nav-link" data-module="grade-management">
+                            <i class="fas fa-chart-line"></i>
+                            <span>成绩管理</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-module="analytics">
+                            <i class="fas fa-analytics"></i>
+                            <span>数据分析</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-module="resources">
+                            <i class="fas fa-folder-open"></i>
+                            <span>资源库</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-module="settings">
+                            <i class="fas fa-cog"></i>
+                            <span>系统设置</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <div class="user-name">张老师</div>
+                        <div class="user-role">语文教师</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="header-left">
+                    <h1 class="page-title">工作台</h1>
+                    <p class="page-subtitle">欢迎回来，今天是 <span id="current-date"></span></p>
+                </div>
+                <div class="header-right">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        新建课程
+                    </button>
+                </div>
+            </div>
+            
+            <div class="dashboard-content">
+                <!-- 快速入口 -->
+                <section class="quick-access">
+                    <h2 class="section-title">快速入口</h2>
+                    <div class="quick-cards">
+                        <div class="quick-card" data-module="lesson-prep">
+                            <div class="card-icon">📚</div>
+                            <div class="card-content">
+                                <h3>备课助手</h3>
+                                <p>智能生成教学方案，提供丰富的教学资源</p>
+                                <div class="card-action">立即使用 →</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-card" data-module="classroom">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-content">
+                                <h3>课堂助手</h3>
+                                <p>实时课堂互动，智能答疑和学情分析</p>
+                                <div class="card-action">立即使用 →</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-card" data-module="grade-management">
+                            <div class="card-icon">📊</div>
+                            <div class="card-content">
+                                <h3>成绩管理</h3>
+                                <p>快速录入成绩，自动生成分析报告</p>
+                                <div class="card-action">立即使用 →</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quick-card" data-module="analytics">
+                            <div class="card-icon">📈</div>
+                            <div class="card-content">
+                                <h3>数据分析</h3>
+                                <p>深度学情分析，个性化教学建议</p>
+                                <div class="card-action">立即使用 →</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 最近活动 -->
+                <div class="recent-activities">
+                    <h3>最近活动</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">📝</div>
+                            <div class="activity-content">
+                                <h4>创建教学方案</h4>
+                                <p>高中数学 - 函数与导数</p>
+                                <span class="activity-time">2小时前</span>
+                            </div>
+                            <div class="activity-status">
+                                <span class="status-badge status-completed">已完成</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">🎯</div>
+                            <div class="activity-content">
+                                <h4>数学课</h4>
+                                <p>高一(3)班 - 三角函数</p>
+                                <span class="activity-time">1天前</span>
+                            </div>
+                            <div class="activity-status">
+                                <span class="status-badge status-pending">进行中</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">📊</div>
+                            <div class="activity-content">
+                                <h4>期中考试成绩录入</h4>
+                                <p>高一年级数学成绩</p>
+                                <span class="activity-time">3天前</span>
+                            </div>
+                            <div class="activity-status">
+                                <span class="status-badge status-completed">已完成</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 数据概览 -->
+                <section class="data-overview">
+                    <h2 class="section-title">数据概览</h2>
+                    <div class="overview-cards">
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>本周课程</h3>
+                                <i class="fas fa-calendar-week"></i>
+                            </div>
+                            <div class="card-value">12</div>
+                            <div class="card-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+2 较上周</span>
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>学生总数</h3>
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="card-value">156</div>
+                            <div class="card-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+3 较上月</span>
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>平均成绩</h3>
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="card-value">85.6</div>
+                            <div class="card-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+1.2 较上次</span>
+                            </div>
+                        </div>
+                        
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <h3>课堂参与度</h3>
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <div class="card-value">92%</div>
+                            <div class="card-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+5% 较上周</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 数据统计卡片 -->
+                <section class="stats-overview">
+                    <h2 class="section-title">详细统计</h2>
+                    <div class="stats-cards">
+                        <div class="stat-card" data-stat="students">
+                            <div class="stat-header">
+                                <div class="stat-icon">👥</div>
+                                <div class="stat-trend">
+                                    <svg width="24" height="16" viewBox="0 0 24 16">
+                                        <path d="M2 14 L6 10 L10 12 L14 6 L18 8 L22 2" stroke="#52C41A" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h4>学生总数</h4>
+                                <p class="stat-number">156</p>
+                                <span class="stat-change positive">+12 本月</span>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" data-stat="courses">
+                            <div class="stat-header">
+                                <div class="stat-icon">📚</div>
+                                <div class="stat-trend">
+                                    <svg width="24" height="16" viewBox="0 0 24 16">
+                                        <path d="M2 8 L6 4 L10 6 L14 2 L18 5 L22 3" stroke="#1890FF" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h4>课程数量</h4>
+                                <p class="stat-number">24</p>
+                                <span class="stat-change positive">+3 本周</span>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" data-stat="grades">
+                            <div class="stat-header">
+                                <div class="stat-icon">📊</div>
+                                <div class="stat-trend">
+                                    <svg width="24" height="16" viewBox="0 0 24 16">
+                                        <path d="M2 12 L6 8 L10 10 L14 4 L18 6 L22 2" stroke="#FAAD14" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h4>平均成绩</h4>
+                                <p class="stat-number">85.6</p>
+                                <span class="stat-change positive">+2.3 较上月</span>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" style="width: 85.6%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card" data-stat="time">
+                            <div class="stat-header">
+                                <div class="stat-icon">⏰</div>
+                                <div class="stat-trend">
+                                    <svg width="24" height="16" viewBox="0 0 24 16">
+                                        <circle cx="12" cy="8" r="6" stroke="#722ED1" stroke-width="2" fill="none"/>
+                                        <path d="M12 8 L15 5" stroke="#722ED1" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="stat-content">
+                                <h4>教学时长</h4>
+                                <p class="stat-number">128h</p>
+                                <span class="stat-change neutral">本月累计</span>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" style="width: 64%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 图表区域 -->
+                <section class="charts-section">
+                    <h2 class="section-title">数据可视化</h2>
+                    <div class="charts-container">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>学习趋势分析</h3>
+                                <div class="chart-controls">
+                                    <button class="chart-btn active">7天</button>
+                                    <button class="chart-btn">30天</button>
+                                    <button class="chart-btn">90天</button>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="trendChart" width="600" height="300"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>学科成绩分布</h3>
+                                <div class="chart-legend">
+                                    <span class="legend-item"><span class="legend-color" style="background: #1890FF"></span>数学</span>
+                                    <span class="legend-item"><span class="legend-color" style="background: #52C41A"></span>语文</span>
+                                    <span class="legend-item"><span class="legend-color" style="background: #FAAD14"></span>英语</span>
+                                    <span class="legend-item"><span class="legend-color" style="background: #722ED1"></span>物理</span>
+                                </div>
+                            </div>
+                            <div class="chart-content">
+                                <canvas id="subjectChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 加载脚本 -->
+    <script src="scripts/common.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+        // 初始化工作台
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置当前日期
+            const currentDate = new Date().toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                weekday: 'long'
+            });
+            document.getElementById('current-date').textContent = currentDate;
+            
+            // 快速入口卡片点击事件
+            const quickCards = document.querySelectorAll('.quick-card');
+            quickCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const module = this.dataset.module;
+                    switch(module) {
+                        case 'lesson-prep':
+                            window.location.href = 'lesson-prep.html';
+                            break;
+                        case 'classroom':
+                            window.location.href = 'classroom.html';
+                            break;
+                        case 'grade-management':
+                            window.location.href = 'grade-management.html';
+                            break;
+                        default:
+                            Utils.showNotification('功能开发中，敬请期待', 'info');
+                    }
+                });
+            });
+            
+            // 侧边栏导航点击事件
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const module = this.dataset.module;
+                    if (module === 'dashboard') {
+                        e.preventDefault();
+                        return;
+                    }
+                    
+                    if (!this.href || this.href.includes('#')) {
+                        e.preventDefault();
+                        Utils.showNotification('功能开发中，敬请期待', 'info');
+                    }
+                });
+            });
+            
+            // 添加卡片悬停效果
+            quickCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+    <script src="scripts/mobile-interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂AI助手 - 智能教学助手2.0</title>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="classroom-ai.css">
+    
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="classroom-ai-container">
+        <!-- 页面头部 -->
+        <header class="classroom-ai-header">
+            <div class="header-content">
+                <div class="page-title-section">
+                    <h1 class="page-title">
+                        <i class="page-icon fas fa-robot"></i>
+                        课堂AI助手
+                    </h1>
+                    <p class="page-subtitle">智能化课堂教学支持系统</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-cog"></i>
+                        AI设置
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        开始课堂
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="classroom-ai-main">
+            <!-- 功能导航标签 -->
+            <div class="feature-tabs">
+                <div class="tabs-container">
+                    <button class="tab-item active" data-tab="realtime-analysis">
+                        <i class="fas fa-chart-line"></i>
+                        <span>实时学情分析</span>
+                    </button>
+                    <button class="tab-item" data-tab="experiment-assistant">
+                        <i class="fas fa-flask"></i>
+                        <span>实验设计助手</span>
+                    </button>
+                    <button class="tab-item" data-tab="ai-applications">
+                        <i class="fas fa-magic"></i>
+                        <span>AI化应用</span>
+                    </button>
+                    <button class="tab-item" data-tab="interaction-tools">
+                        <i class="fas fa-comments"></i>
+                        <span>互动工具</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 标签页内容 -->
+            <div class="tab-content">
+                <!-- 实时学情分析 -->
+                <div class="tab-pane active" id="realtime-analysis">
+                    <div class="grid grid-cols-12 gap-lg">
+                        <!-- 主要分析区域 -->
+                        <div class="col-span-8">
+                            <!-- 课堂状态监控 -->
+                            <div class="card mb-lg">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-eye text-primary"></i>
+                                        课堂状态监控
+                                    </h3>
+                                    <div class="card-actions">
+                                        <div class="status-indicator">
+                                            <span class="status-dot status-active"></span>
+                                            <span class="status-text">监控中</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- 实时数据面板 -->
+                                    <div class="realtime-dashboard">
+                                        <div class="dashboard-metrics">
+                                            <div class="metric-item">
+                                                <div class="metric-icon">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <div class="metric-content">
+                                                    <div class="metric-value">32</div>
+                                                    <div class="metric-label">在线学生</div>
+                                                </div>
+                                            </div>
+                                            <div class="metric-item">
+                                                <div class="metric-icon">
+                                                    <i class="fas fa-brain"></i>
+                                                </div>
+                                                <div class="metric-content">
+                                                    <div class="metric-value">78%</div>
+                                                    <div class="metric-label">专注度</div>
+                                                </div>
+                                            </div>
+                                            <div class="metric-item">
+                                                <div class="metric-icon">
+                                                    <i class="fas fa-hand-paper"></i>
+                                                </div>
+                                                <div class="metric-content">
+                                                    <div class="metric-value">85%</div>
+                                                    <div class="metric-label">参与度</div>
+                                                </div>
+                                            </div>
+                                            <div class="metric-item">
+                                                <div class="metric-icon">
+                                                    <i class="fas fa-lightbulb"></i>
+                                                </div>
+                                                <div class="metric-content">
+                                                    <div class="metric-value">72%</div>
+                                                    <div class="metric-label">理解度</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 实时图表 -->
+                                        <div class="realtime-charts">
+                                            <div class="chart-container">
+                                                <h4 class="chart-title">学生专注度趋势</h4>
+                                                <div class="chart-placeholder" id="attention-chart">
+                                                    <canvas width="600" height="200"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 学生状态列表 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-list text-primary"></i>
+                                        学生状态详情
+                                    </h3>
+                                    <div class="card-actions">
+                                        <div class="filter-tabs">
+                                            <button class="filter-tab active" data-filter="all">全部</button>
+                                            <button class="filter-tab" data-filter="attention">需要关注</button>
+                                            <button class="filter-tab" data-filter="active">活跃</button>
+                                            <button class="filter-tab" data-filter="confused">困惑</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="student-list">
+                                        <!-- 学生状态项将通过JavaScript动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 侧边栏 -->
+                        <div class="col-span-4">
+                            <div class="sidebar-content">
+                                <!-- AI分析建议 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-lightbulb text-warning"></i>
+                                            AI分析建议
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ai-suggestions">
+                                            <!-- AI建议将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 快速操作 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-bolt text-primary"></i>
+                                            快速操作
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="quick-actions-vertical">
+                                            <button class="btn btn-outline btn-block">
+                                                <i class="fas fa-question-circle"></i>
+                                                发起提问
+                                            </button>
+                                            <button class="btn btn-outline btn-block">
+                                                <i class="fas fa-poll"></i>
+                                                课堂投票
+                                            </button>
+                                            <button class="btn btn-outline btn-block">
+                                                <i class="fas fa-gamepad"></i>
+                                                互动游戏
+                                            </button>
+                                            <button class="btn btn-outline btn-block">
+                                                <i class="fas fa-pause"></i>
+                                                课间休息
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 课堂统计 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-chart-pie text-success"></i>
+                                            课堂统计
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="classroom-stats">
+                                            <!-- 统计数据将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 实验设计助手 -->
+                <div class="tab-pane" id="experiment-assistant">
+                    <div class="grid grid-cols-12 gap-lg">
+                        <!-- 实验设计区域 -->
+                        <div class="col-span-8">
+                            <!-- 实验创建 -->
+                            <div class="card mb-lg">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-plus-circle text-primary"></i>
+                                        创建新实验
+                                    </h3>
+                                    <div class="card-actions">
+                                        <button class="btn btn-outline">
+                                            <i class="fas fa-save"></i>
+                                            保存草稿
+                                        </button>
+                                        <button class="btn btn-primary">
+                                            <i class="fas fa-play"></i>
+                                            开始实验
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="experiment-designer">
+                                        <!-- 实验基本信息 -->
+                                        <div class="experiment-form">
+                                            <div class="form-section">
+                                                <h4 class="section-title">实验基本信息</h4>
+                                                <div class="form-grid">
+                                                    <div class="form-group">
+                                                        <label class="form-label">实验名称</label>
+                                                        <input type="text" class="form-input" placeholder="请输入实验名称">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="form-label">实验类型</label>
+                                                        <select class="form-select">
+                                                            <option>观察实验</option>
+                                                            <option>对比实验</option>
+                                                            <option>探究实验</option>
+                                                            <option>验证实验</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="form-label">预计时长</label>
+                                                        <input type="number" class="form-input" placeholder="分钟">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="form-label">难度等级</label>
+                                                        <select class="form-select">
+                                                            <option>简单</option>
+                                                            <option>中等</option>
+                                                            <option>困难</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 实验步骤设计 -->
+                                            <div class="form-section">
+                                                <h4 class="section-title">实验步骤设计</h4>
+                                                <div class="experiment-steps">
+                                                    <!-- 实验步骤将通过JavaScript动态生成 -->
+                                                </div>
+                                                <button class="btn btn-outline btn-add-step">
+                                                    <i class="fas fa-plus"></i>
+                                                    添加步骤
+                                                </button>
+                                            </div>
+
+                                            <!-- 材料清单 -->
+                                            <div class="form-section">
+                                                <h4 class="section-title">实验材料</h4>
+                                                <div class="materials-list">
+                                                    <!-- 材料清单将通过JavaScript动态生成 -->
+                                                </div>
+                                                <button class="btn btn-outline btn-add-material">
+                                                    <i class="fas fa-plus"></i>
+                                                    添加材料
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 实验预览 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-eye text-primary"></i>
+                                        实验预览
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="experiment-preview">
+                                        <!-- 实验预览内容将通过JavaScript动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 实验库和模板 -->
+                        <div class="col-span-4">
+                            <div class="sidebar-content">
+                                <!-- 实验模板 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-layer-group text-primary"></i>
+                                            实验模板
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="template-list">
+                                            <!-- 实验模板将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI实验建议 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-robot text-warning"></i>
+                                            AI实验建议
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="ai-experiment-suggestions">
+                                            <!-- AI建议将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 安全提醒 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-shield-alt text-error"></i>
+                                            安全提醒
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="safety-reminders">
+                                            <!-- 安全提醒将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI化应用 -->
+                <div class="tab-pane" id="ai-applications">
+                    <div class="grid grid-cols-12 gap-lg">
+                        <!-- AI应用列表 -->
+                        <div class="col-span-8">
+                            <div class="ai-apps-grid">
+                                <!-- 智能问答 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">智能问答助手</h3>
+                                        <p class="app-description">AI驱动的智能问答系统，实时回答学生疑问</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">自然语言处理</span>
+                                            <span class="feature-tag">知识图谱</span>
+                                            <span class="feature-tag">多轮对话</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="qa-assistant">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 智能板书 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-chalkboard"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">智能板书系统</h3>
+                                        <p class="app-description">AI辅助的智能板书，自动整理和美化板书内容</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">手写识别</span>
+                                            <span class="feature-tag">自动排版</span>
+                                            <span class="feature-tag">内容结构化</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="smart-board">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 语音助手 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-microphone"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">语音教学助手</h3>
+                                        <p class="app-description">语音识别和合成技术，支持语音互动教学</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">语音识别</span>
+                                            <span class="feature-tag">语音合成</span>
+                                            <span class="feature-tag">多语言支持</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="voice-assistant">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 图像识别 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">图像识别分析</h3>
+                                        <p class="app-description">AI图像识别技术，辅助生物标本和实验观察</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">物体识别</span>
+                                            <span class="feature-tag">特征分析</span>
+                                            <span class="feature-tag">实时检测</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="image-recognition">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 个性化推荐 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-user-cog"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">个性化推荐</h3>
+                                        <p class="app-description">基于学习数据的个性化内容和方法推荐</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">学习分析</span>
+                                            <span class="feature-tag">内容推荐</span>
+                                            <span class="feature-tag">适应性学习</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="personalization">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 情感分析 -->
+                                <div class="ai-app-card">
+                                    <div class="app-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="app-content">
+                                        <h3 class="app-title">情感状态分析</h3>
+                                        <p class="app-description">分析学生情感状态，优化教学氛围和节奏</p>
+                                        <div class="app-features">
+                                            <span class="feature-tag">情感识别</span>
+                                            <span class="feature-tag">状态监控</span>
+                                            <span class="feature-tag">氛围调节</span>
+                                        </div>
+                                    </div>
+                                    <div class="app-actions">
+                                        <button class="btn btn-primary btn-launch-app" data-app="emotion-analysis">
+                                            <i class="fas fa-rocket"></i>
+                                            启动应用
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI应用控制面板 -->
+                        <div class="col-span-4">
+                            <div class="sidebar-content">
+                                <!-- 运行中的应用 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-play-circle text-success"></i>
+                                            运行中的应用
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="running-apps">
+                                            <!-- 运行中的应用将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI性能监控 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-tachometer-alt text-primary"></i>
+                                            AI性能监控
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="performance-metrics">
+                                            <!-- 性能指标将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 使用统计 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-chart-bar text-info"></i>
+                                            使用统计
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="usage-stats">
+                                            <!-- 使用统计将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 互动工具 -->
+                <div class="tab-pane" id="interaction-tools">
+                    <div class="grid grid-cols-12 gap-lg">
+                        <!-- 互动工具区域 -->
+                        <div class="col-span-8">
+                            <!-- 实时投票 -->
+                            <div class="card mb-lg">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-poll text-primary"></i>
+                                        实时投票
+                                    </h3>
+                                    <div class="card-actions">
+                                        <button class="btn btn-primary btn-create-poll">
+                                            <i class="fas fa-plus"></i>
+                                            创建投票
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="poll-container">
+                                        <!-- 投票内容将通过JavaScript动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 互动游戏 -->
+                            <div class="card mb-lg">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-gamepad text-success"></i>
+                                        互动游戏
+                                    </h3>
+                                    <div class="card-actions">
+                                        <button class="btn btn-success btn-start-game">
+                                            <i class="fas fa-play"></i>
+                                            开始游戏
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="game-container">
+                                        <!-- 游戏内容将通过JavaScript动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 白板协作 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-draw-polygon text-warning"></i>
+                                        协作白板
+                                    </h3>
+                                    <div class="card-actions">
+                                        <div class="whiteboard-tools">
+                                            <button class="tool-btn active" data-tool="pen">
+                                                <i class="fas fa-pen"></i>
+                                            </button>
+                                            <button class="tool-btn" data-tool="eraser">
+                                                <i class="fas fa-eraser"></i>
+                                            </button>
+                                            <button class="tool-btn" data-tool="text">
+                                                <i class="fas fa-font"></i>
+                                            </button>
+                                            <button class="tool-btn" data-tool="shape">
+                                                <i class="fas fa-shapes"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline">
+                                                <i class="fas fa-trash"></i>
+                                                清空
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="whiteboard-container">
+                                        <canvas id="whiteboard" width="800" height="400"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 互动控制面板 -->
+                        <div class="col-span-4">
+                            <div class="sidebar-content">
+                                <!-- 参与统计 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-users text-primary"></i>
+                                            参与统计
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="participation-stats">
+                                            <!-- 参与统计将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 互动历史 -->
+                                <div class="card mb-lg">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-history text-info"></i>
+                                            互动历史
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="interaction-history">
+                                            <!-- 互动历史将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 快速模板 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-layer-group text-warning"></i>
+                                            快速模板
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="template-shortcuts">
+                                            <!-- 快速模板将通过JavaScript动态生成 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- AI应用模态框 -->
+    <div class="modal" id="ai-app-modal">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h3 class="modal-title">AI应用</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ai-app-interface">
+                    <!-- AI应用界面将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="app.js"></script>
+    <script src="classroom-ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!-- 智能教学助手2.0 - 状态图标库 -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- 成功图标 -->
+  <symbol id="icon-success" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+  </symbol>
+
+  <!-- 错误图标 -->
+  <symbol id="icon-error" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+  </symbol>
+
+  <!-- 警告图标 -->
+  <symbol id="icon-warning" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+  </symbol>
+
+  <!-- 信息图标 -->
+  <symbol id="icon-info" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+  </symbol>
+
+  <!-- 加载图标 -->
+  <symbol id="icon-loading" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+  </symbol>
+
+  <!-- 在线状态图标 -->
+  <symbol id="icon-online" viewBox="0 0 24 24">
+    <circle fill="#4CAF50" cx="12" cy="12" r="8"/>
+    <circle fill="white" cx="12" cy="12" r="4"/>
+  </symbol>
+
+  <!-- 离线状态图标 -->
+  <symbol id="icon-offline" viewBox="0 0 24 24">
+    <circle fill="#9E9E9E" cx="12" cy="12" r="8"/>
+    <circle fill="white" cx="12" cy="12" r="4"/>
+  </symbol>
+
+  <!-- 忙碌状态图标 -->
+  <symbol id="icon-busy" viewBox="0 0 24 24">
+    <circle fill="#FF5722" cx="12" cy="12" r="8"/>
+    <rect fill="white" x="8" y="11" width="8" height="2"/>
+  </symbol>
+
+  <!-- 空闲状态图标 -->
+  <symbol id="icon-idle" viewBox="0 0 24 24">
+    <circle fill="#FFC107" cx="12" cy="12" r="8"/>
+    <circle fill="white" cx="12" cy="12" r="3"/>
+  </symbol>
+
+  <!-- 星级评分图标 -->
+  <symbol id="icon-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+  </symbol>
+
+  <!-- 空星级图标 -->
+  <symbol id="icon-star-empty" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
+  </symbol>
+
+  <!-- 半星级图标 -->
+  <symbol id="icon-star-half" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
+  </symbol>
+
+  <!-- 收藏图标 -->
+  <symbol id="icon-favorite" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+  </symbol>
+
+  <!-- 未收藏图标 -->
+  <symbol id="icon-favorite-empty" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/>
+  </symbol>
+
+  <!-- 书签图标 -->
+  <symbol id="icon-bookmark" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+  </symbol>
+
+  <!-- 未书签图标 -->
+  <symbol id="icon-bookmark-empty" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
+  </symbol>
+
+  <!-- 点赞图标 -->
+  <symbol id="icon-thumb-up" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/>
+  </symbol>
+
+  <!-- 点踩图标 -->
+  <symbol id="icon-thumb-down" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/>
+  </symbol>
+
+  <!-- 评论图标 -->
+  <symbol id="icon-comment" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M21.99 4c0-1.1-.89-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+  </symbol>
+
+  <!-- 标签图标 -->
+  <symbol id="icon-tag" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+  </symbol>
+
+  <!-- 时钟图标 -->
+  <symbol id="icon-clock" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.7L16.2,16.2Z"/>
+  </symbol>
+
+  <!-- 日历图标 -->
+  <symbol id="icon-calendar" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+  </symbol>
+
+  <!-- 位置图标 -->
+  <symbol id="icon-location" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+  </symbol>
+
+  <!-- 邮件图标 -->
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+
+  <!-- 电话图标 -->
+  <symbol id="icon-phone" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+  </symbol>
+
+  <!-- 链接图标 -->
+  <symbol id="icon-link" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+  </symbol>
+
+  <!-- 锁定图标 -->
+  <symbol id="icon-lock" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+  </symbol>
+
+  <!-- 解锁图标 -->
+  <symbol id="icon-unlock" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z"/>
+  </symbol>
+</svg>

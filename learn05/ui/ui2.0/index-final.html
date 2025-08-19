@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手 2.0 - 优化版</title>
+    
+    <!-- 引入优化后的样式文件 -->
+    <link rel="stylesheet" href="design-system-optimized.css">
+    <link rel="stylesheet" href="components-optimized.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="pages.css">
+    
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 页面特定样式 */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* 侧边栏导航样式 */
+        .nav {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            margin: 0;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: var(--space-3) var(--space-6);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            position: relative;
+            gap: var(--space-3);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            margin-right: var(--space-4);
+        }
+        
+        .nav-link:hover {
+            background: var(--primary-50);
+            color: var(--primary-700);
+            transform: translateX(4px);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+            color: white;
+            font-weight: var(--font-semibold);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .nav-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: white;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: var(--text-base);
+        }
+        
+        .nav-text {
+            flex: 1;
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+        }
+        
+        .nav-badge {
+            margin-left: auto;
+        }
+        
+        .nav-divider {
+            height: 1px;
+            background: var(--border-light);
+            margin: var(--space-4) var(--space-6);
+        }
+        
+        /* 品牌区域样式 */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--text-xl);
+            font-weight: var(--font-bold);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0%, 100% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            50% {
+                transform: translateX(100%) rotate(45deg);
+            }
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .brand-title {
+            font-size: var(--text-lg);
+            font-weight: var(--font-bold);
+            color: white;
+            margin: 0;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand-version {
+            font-size: var(--text-xs);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-medium);
+            align-self: flex-start;
+            margin-top: var(--space-1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        /* 用户信息样式 */
+        .user-profile {
+            padding: var(--space-6);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            background: var(--bg-secondary);
+        }
+        
+        .user-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 3px solid var(--primary-200);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .user-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .user-name {
+            font-size: var(--text-base);
+            font-weight: var(--font-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-1);
+        }
+        
+        .user-role {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+        
+        .user-status {
+            width: 8px;
+            height: 8px;
+            background: var(--success-500);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* 升级提示样式 */
+        .upgrade-prompt {
+            background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: var(--space-4);
+        }
+        
+        .upgrade-prompt::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .upgrade-icon {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .upgrade-title {
+            font-size: var(--text-base);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--space-2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .upgrade-desc {
+            font-size: var(--text-sm);
+            opacity: 0.9;
+            margin-bottom: var(--space-4);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .upgrade-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .upgrade-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* 搜索框样式 */
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            background: var(--bg-secondary);
+            font-size: var(--text-sm);
+            transition: all var(--transition-base);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-300);
+            box-shadow: 0 0 0 3px var(--primary-100);
+            background: var(--bg-card);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: var(--space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+            font-size: var(--text-sm);
+        }
+        
+        /* 头部按钮样式 */
+        .header-btn {
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-light);
+        }
+        
+        .header-btn:hover {
+            background: var(--primary-50);
+            color: var(--primary-600);
+            border-color: var(--primary-200);
+            transform: translateY(-1px);
+        }
+        
+        .header-btn[data-badge]::after {
+            content: attr(data-badge);
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: var(--error-500);
+            color: white;
+            font-size: var(--text-xs);
+            font-weight: var(--font-semibold);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-full);
+            min-width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* 用户下拉菜单 */
+        .user-dropdown {
+            position: relative;
+        }
+        
+        .user-menu-trigger {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-2) var(--space-3);
+            border: 1px solid var(--border-light);
+            background: var(--bg-card);
+            cursor: pointer;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+        }
+        
+        .user-menu-trigger:hover {
+            background: var(--primary-50);
+            border-color: var(--primary-200);
+            transform: translateY(-1px);
+        }
+        
+        .user-avatar-sm {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-200);
+        }
+        
+        .user-menu-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .user-menu-name {
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+            color: var(--text-primary);
+        }
+        
+        .user-menu-role {
+            font-size: var(--text-xs);
+            color: var(--text-secondary);
+        }
+        
+        .dropdown-arrow {
+            color: var(--text-tertiary);
+            font-size: var(--text-xs);
+            transition: transform var(--transition-base);
+        }
+        
+        .user-menu-trigger:hover .dropdown-arrow {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 跳转到主内容的无障碍链接 -->
+    <a href="#main-content" class="skip-to-content">跳转到主内容</a>
+    
+    <!-- 应用容器 -->
+    <div class="app-container">
+        <!-- 侧边导航栏 -->
+        <aside class="sidebar">
+            <!-- 侧边栏头部 -->
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">智能教学助手</h1>
+                        <span class="brand-version">v2.0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 用户信息 -->
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="用户头像">
+                </div>
+                <div class="user-info">
+                    <div class="user-name">张老师</div>
+                    <div class="user-role">
+                        <span class="user-status"></span>
+                        高中生物教师
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 导航菜单 -->
+            <nav class="sidebar-nav">
+                <ul class="nav nav-vertical">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" data-page="dashboard">
+                            <span class="nav-icon"><i class="fas fa-home"></i></span>
+                            <span class="nav-text">工作台</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="prepare">
+                            <span class="nav-icon"><i class="fas fa-book-open"></i></span>
+                            <span class="nav-text">备课助手</span>
+                            <span class="nav-badge badge badge-primary">新</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="classroom">
+                            <span class="nav-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                            <span class="nav-text">课堂AI助手</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="grades">
+                            <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+                            <span class="nav-text">成绩管理</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="students">
+                            <span class="nav-icon"><i class="fas fa-users"></i></span>
+                            <span class="nav-text">学生管理</span>
+                        </a>
+                    </li>
+                    
+                    <div class="nav-divider"></div>
+                    
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="resources">
+                            <span class="nav-icon"><i class="fas fa-folder"></i></span>
+                            <span class="nav-text">教学资源</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="analytics">
+                            <span class="nav-icon"><i class="fas fa-analytics"></i></span>
+                            <span class="nav-text">数据分析</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-page="settings">
+                            <span class="nav-icon"><i class="fas fa-cog"></i></span>
+                            <span class="nav-text">系统设置</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- 侧边栏底部 -->
+            <div class="sidebar-footer">
+                <div class="upgrade-prompt">
+                    <div class="upgrade-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="upgrade-title">升级到专业版</div>
+                    <div class="upgrade-desc">解锁更多AI功能和高级分析</div>
+                    <button class="btn btn-sm upgrade-btn">立即升级</button>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="header-btn mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <div class="header-center">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="搜索课程、学生、资源...">
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <button class="header-btn" data-badge="3">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="header-btn">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <button class="header-btn">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    
+                    <div class="user-dropdown">
+                        <button class="user-menu-trigger">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="用户头像" class="user-avatar-sm">
+                            <div class="user-menu-info">
+                                <span class="user-menu-name">张老师</span>
+                                <span class="user-menu-role">高中生物</span>
+                            </div>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- 页面内容区域 -->
+            <div class="page-content" id="main-content">
+                <!-- 工作台页面 -->
+                <div class="page active" id="dashboard">
+                    <!-- 欢迎横幅 -->
+                    <div class="welcome-banner">
+                        <div class="banner-content">
+                            <h2 class="banner-title">欢迎回来，张老师！</h2>
+                            <p class="banner-subtitle">今天是美好的一天，让我们一起为学生们创造精彩的学习体验</p>
+                            <div class="banner-actions">
+                                <button class="btn btn-lg">开始备课</button>
+                                <button class="btn btn-lg btn-secondary">查看课程表</button>
+                            </div>
+                        </div>
+                        <div class="banner-illustration">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- 数据概览 -->
+                    <div class="dashboard-stats">
+                        <div class="grid grid-cols-responsive">
+                            <div class="card data-card">
+                                <div class="data-card-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="data-card-value">156</div>
+                                <div class="data-card-label">学生总数</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+12 本月</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card data-card">
+                                <div class="data-card-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="data-card-value">24</div>
+                                <div class="data-card-label">本周课程</div>
+                                <div class="data-card-trend neutral">
+                                    <i class="fas fa-minus"></i>
+                                    <span>与上周持平</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card data-card">
+                                <div class="data-card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="data-card-value">87.5%</div>
+                                <div class="data-card-label">平均成绩</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+2.3% 本月</span>
+                                </div>
+                            </div>
+                            
+                            <div class="card data-card">
+                                <div class="data-card-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="data-card-value">42</div>
+                                <div class="data-card-label">备课时长(小时)</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+5 本周</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 主要内容区域 -->
+                    <div class="grid grid-cols-3">
+                        <!-- 快速入口 -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-rocket"></i>
+                                    快速入口
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="grid grid-cols-1 gap-4">
+                                    <a href="#" class="quick-entry">
+                                        <div class="quick-entry-icon bg-primary">
+                                            <i class="fas fa-book-open"></i>
+                                        </div>
+                                        <div class="quick-entry-content">
+                                            <div class="quick-entry-title">智能备课</div>
+                                            <div class="quick-entry-desc">AI辅助生成教案和课件</div>
+                                        </div>
+                                        <div class="quick-entry-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="quick-entry">
+                                        <div class="quick-entry-icon bg-secondary">
+                                            <i class="fas fa-microscope"></i>
+                                        </div>
+                                        <div class="quick-entry-content">
+                                            <div class="quick-entry-title">实验设计</div>
+                                            <div class="quick-entry-desc">生物实验方案智能推荐</div>
+                                        </div>
+                                        <div class="quick-entry-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="quick-entry">
+                                        <div class="quick-entry-icon bg-accent">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="quick-entry-content">
+                                            <div class="quick-entry-title">成绩分析</div>
+                                            <div class="quick-entry-desc">学生学习情况深度分析</div>
+                                        </div>
+                                        <div class="quick-entry-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                    
+                                    <a href="#" class="quick-entry">
+                                        <div class="quick-entry-icon bg-success">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                        <div class="quick-entry-content">
+                                            <div class="quick-entry-title">AI问答</div>
+                                            <div class="quick-entry-desc">智能教学问题解答</div>
+                                        </div>
+                                        <div class="quick-entry-arrow">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 最近活动 -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-history"></i>
+                                    最近活动
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon bg-primary">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">创建了新教案</div>
+                                            <div class="activity-desc">《细胞的结构与功能》</div>
+                                            <div class="activity-time">
+                                                <i class="fas fa-clock"></i>
+                                                2小时前
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon bg-secondary">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">批改了作业</div>
+                                            <div class="activity-desc">高二(3)班生物作业</div>
+                                            <div class="activity-time">
+                                                <i class="fas fa-clock"></i>
+                                                4小时前
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon bg-accent">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">查看了成绩报告</div>
+                                            <div class="activity-desc">期中考试分析报告</div>
+                                            <div class="activity-time">
+                                                <i class="fas fa-clock"></i>
+                                                昨天
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-icon bg-success">
+                                            <i class="fas fa-microscope"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <div class="activity-title">设计了实验方案</div>
+                                            <div class="activity-desc">观察植物细胞实验</div>
+                                            <div class="activity-time">
+                                                <i class="fas fa-clock"></i>
+                                                2天前
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 今日课程安排 -->
+                        <div class="card today-schedule">
+                            <div class="card-header">
+                                <div class="schedule-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-calendar-day"></i>
+                                        今日课程
+                                    </h3>
+                                    <div class="schedule-date">
+                                        <i class="fas fa-calendar"></i>
+                                        12月15日 周五
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="schedule-list">
+                                    <div class="schedule-item current">
+                                        <div class="schedule-time">
+                                            <span class="time-start">08:00</span>
+                                            <span class="time-end">08:45</span>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">生物</div>
+                                            <div class="schedule-topic">细胞膜的结构与功能</div>
+                                            <div class="schedule-class">
+                                                <i class="fas fa-users"></i>
+                                                高二(3)班
+                                            </div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-sm btn-primary">进入课堂</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">
+                                            <span class="time-start">10:00</span>
+                                            <span class="time-end">10:45</span>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">生物</div>
+                                            <div class="schedule-topic">蛋白质的结构与功能</div>
+                                            <div class="schedule-class">
+                                                <i class="fas fa-users"></i>
+                                                高二(1)班
+                                            </div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-sm btn-outline">查看教案</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">
+                                            <span class="time-start">14:30</span>
+                                            <span class="time-end">15:15</span>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">生物实验</div>
+                                            <div class="schedule-topic">观察植物细胞</div>
+                                            <div class="schedule-class">
+                                                <i class="fas fa-users"></i>
+                                                高二(2)班
+                                            </div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-sm btn-outline">准备实验</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 其他页面占位符 -->
+                <div class="page" id="prepare">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="empty-state-title">备课助手</h3>
+                        <p class="empty-state-desc">AI智能备课功能正在开发中，敬请期待...</p>
+                        <button class="btn btn-primary">了解更多</button>
+                    </div>
+                </div>
+                
+                <div class="page" id="classroom">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="empty-state-title">课堂AI助手</h3>
+                        <p class="empty-state-desc">智能课堂辅助功能正在开发中，敬请期待...</p>
+                        <button class="btn btn-primary">了解更多</button>
+                    </div>
+                </div>
+                
+                <div class="page" id="grades">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="empty-state-title">成绩管理</h3>
+                        <p class="empty-state-desc">成绩管理功能正在开发中，敬请期待...</p>
+                        <button class="btn btn-primary">了解更多</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 简单的页面切换脚本 -->
+    <script>
+        // 页面切换功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link[data-page]');
+            const pages = document.querySelectorAll('.page');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有活动状态
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    pages.forEach(p => p.classList.remove('active'));
+                    
+                    // 添加当前活动状态
+                    this.classList.add('active');
+                    const targetPage = document.getElementById(this.dataset.page);
+                    if (targetPage) {
+                        targetPage.classList.add('active');
+                    }
+                });
+            });
+            
+            // 移动端菜单切换
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (mobileToggle && sidebar) {
+                mobileToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+2025-08-16 23:42:47,123 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:42:47,123 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录
+2025-08-16 23:42:47,123 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:42:47,123 - INFO - 开始执行完整数据流测试套件...
+2025-08-16 23:42:47,124 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:42:47,128 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,129 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,130 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,131 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,132 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,132 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,133 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,134 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,135 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,135 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,136 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:47,136 - INFO - 成功认证 0 个账号
+2025-08-16 23:42:47,136 - ERROR - 没有成功认证的账号，无法进行数据流测试
+2025-08-16 23:42:47,136 - ERROR - 数据流测试执行失败: 'total_accounts_tested'
+2025-08-16 23:45:43,960 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:45:43,961 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录
+2025-08-16 23:45:43,961 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:45:43,961 - INFO - 开始执行完整数据流测试套件...
+2025-08-16 23:45:43,961 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:45:43,965 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,966 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,967 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,968 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,969 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,970 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,970 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,971 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,972 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,972 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,973 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:43,973 - INFO - 成功认证 0 个账号
+2025-08-16 23:45:43,973 - ERROR - 没有成功认证的账号，无法进行数据流测试
+2025-08-16 23:45:43,973 - ERROR - 数据流测试执行失败: 'total_accounts_tested'
+2025-08-16 23:59:22,499 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:59:22,500 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录
+2025-08-16 23:59:22,500 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:59:22,500 - INFO - 开始执行完整数据流测试套件...
+2025-08-16 23:59:22,500 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:59:22,504 - ERROR - 账号 admin_001 认证失败，状态码: 404
+2025-08-16 23:59:22,506 - ERROR - 账号 teacher_001 认证失败，状态码: 404
+2025-08-16 23:59:22,507 - ERROR - 账号 teacher_002 认证失败，状态码: 404
+2025-08-16 23:59:22,509 - ERROR - 账号 teacher_003 认证失败，状态码: 404
+2025-08-16 23:59:22,510 - ERROR - 账号 principal_001 认证失败，状态码: 404
+2025-08-16 23:59:22,512 - ERROR - 账号 director_001 认证失败，状态码: 404
+2025-08-16 23:59:22,513 - ERROR - 账号 student_001 认证失败，状态码: 404
+2025-08-16 23:59:22,514 - ERROR - 账号 student_002 认证失败，状态码: 404
+2025-08-16 23:59:22,515 - ERROR - 账号 parent_001 认证失败，状态码: 404
+2025-08-16 23:59:22,517 - ERROR - 账号 parent_002 认证失败，状态码: 404
+2025-08-16 23:59:22,518 - ERROR - 账号 guest_001 认证失败，状态码: 404
+2025-08-16 23:59:22,518 - INFO - 成功认证 0 个账号
+2025-08-16 23:59:22,518 - ERROR - 没有成功认证的账号，无法进行数据流测试
+2025-08-16 23:59:22,518 - ERROR - 数据流测试执行失败: 'total_accounts_tested'
+2025-08-17 00:04:14,817 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:04:14,818 - INFO - 初始化测试数据: 50 学生, 20 考试, 1000 成绩记录
+2025-08-17 00:04:14,818 - INFO - 数据流测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:04:14,818 - INFO - 开始执行完整数据流测试套件...
+2025-08-17 00:04:14,818 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:04:14,823 - ERROR - 账号 admin_001 认证失败，状态码: 422
+2025-08-17 00:04:14,824 - ERROR - 账号 teacher_001 认证失败，状态码: 422
+2025-08-17 00:04:14,826 - ERROR - 账号 teacher_002 认证失败，状态码: 422
+2025-08-17 00:04:14,827 - ERROR - 账号 teacher_003 认证失败，状态码: 422
+2025-08-17 00:04:14,829 - ERROR - 账号 principal_001 认证失败，状态码: 422
+2025-08-17 00:04:14,831 - ERROR - 账号 director_001 认证失败，状态码: 422
+2025-08-17 00:04:14,832 - ERROR - 账号 student_001 认证失败，状态码: 422
+2025-08-17 00:04:14,833 - ERROR - 账号 student_002 认证失败，状态码: 422
+2025-08-17 00:04:14,835 - ERROR - 账号 parent_001 认证失败，状态码: 422
+2025-08-17 00:04:14,836 - ERROR - 账号 parent_002 认证失败，状态码: 422
+2025-08-17 00:04:14,837 - ERROR - 账号 guest_001 认证失败，状态码: 422
+2025-08-17 00:04:14,837 - INFO - 成功认证 0 个账号
+2025-08-17 00:04:14,837 - ERROR - 没有成功认证的账号，无法进行数据流测试
+2025-08-17 00:04:14,837 - ERROR - 数据流测试执行失败: 'total_accounts_tested'

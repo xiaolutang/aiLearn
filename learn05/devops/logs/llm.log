@@ -1,0 +1,354 @@
+INFO:__main__:日志系统初始化完成
+INFO:__main__:智能教学助手AI服务初始化
+INFO:__main__:确保目录存在: /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/llm/logs
+INFO:__main__:确保目录存在: /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/llm/cache
+INFO:__main__:环境验证完成
+INFO:__main__:运行模式: development
+INFO:__main__:API地址: http://localhost:8001
+INFO:__main__:调试模式: True
+INFO:     Will watch for changes in these directories: ['/Users/tangxiaolu/project/PythonProject/aiLearn/learn05/llm']
+INFO:     Uvicorn running on http://localhost:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [19015] using StatReload
+已加载环境变量文件: /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/llm/.env
+INFO:     Started server process [19019]
+INFO:     Waiting for application startup.
+INFO:agents.base_agent:初始化analysis智能体
+INFO:agents.base_agent:初始化planning智能体
+INFO:agents.base_agent:初始化analysis智能体
+INFO:agents.base_agent:初始化monitoring智能体
+INFO:agents.base_agent:初始化design智能体
+INFO:agents.base_agent:初始化application智能体
+INFO:agents.base_agent:初始化data_processing智能体
+INFO:agents.base_agent:初始化analysis智能体
+INFO:agents.base_agent:初始化guidance智能体
+INFO:agents.base_agent:初始化planning智能体
+INFO:api.ai_service_api:AI服务管理器初始化完成
+INFO:     Application startup complete.
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+已加载环境变量文件: /Users/tangxiaolu/project/PythonProject/aiLearn/learn05/llm/.env
+INFO:     127.0.0.1:56413 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:56479 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.002s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:56539 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.003s
+INFO:     127.0.0.1:57440 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:57468 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/health - 404 - 0.000s
+INFO:     127.0.0.1:57760 - "GET /health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/health - 404 - 0.001s
+INFO:     127.0.0.1:57851 - "GET /health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/health - 404 - 0.000s
+INFO:     127.0.0.1:57853 - "GET /api/health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/v1/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/v1/health - 200 - 0.000s
+INFO:     127.0.0.1:57855 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57857 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57861 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.002s
+INFO:     127.0.0.1:57866 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57870 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57872 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57880 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57883 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57885 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57889 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57891 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57895 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57897 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:57899 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:57907 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:57913 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57916 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:57920 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57922 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:57926 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:57928 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/health - 404 - 0.001s
+INFO:     127.0.0.1:58205 - "GET /health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/health - 404 - 0.000s
+INFO:     127.0.0.1:58207 - "GET /api/health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/v1/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/v1/health - 200 - 0.000s
+INFO:     127.0.0.1:58209 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58211 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58213 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58215 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58217 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58227 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58229 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58231 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:58235 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58240 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58242 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58244 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58248 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:58259 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58262 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58264 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58268 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:58272 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58274 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:58276 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:58278 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/health - 404 - 0.000s
+INFO:     127.0.0.1:58580 - "GET /health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/health - 404 - 0.000s
+INFO:     127.0.0.1:58582 - "GET /api/health HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: GET http://localhost:8001/api/v1/health
+INFO:api.ai_service_api:请求完成: GET http://localhost:8001/api/v1/health - 200 - 0.000s
+INFO:     127.0.0.1:58584 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58586 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58593 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.002s
+INFO:     127.0.0.1:58595 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58597 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58599 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.002s
+INFO:     127.0.0.1:58601 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58609 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58611 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58614 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58620 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58622 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58624 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58628 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58633 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58644 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58646 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58648 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.000s
+INFO:     127.0.0.1:58654 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58657 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/v1/auth/login
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/v1/auth/login - 404 - 0.001s
+INFO:     127.0.0.1:58661 - "POST /api/v1/auth/login HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:59360 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.007s
+INFO:     127.0.0.1:62014 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.005s
+INFO:     127.0.0.1:62434 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.002s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.000s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:api.ai_service_api:请求开始: POST http://localhost:8001/api/users/token
+INFO:api.ai_service_api:请求完成: POST http://localhost:8001/api/users/token - 404 - 0.001s
+INFO:     127.0.0.1:62604 - "POST /api/users/token HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:api.ai_service_api:AI服务管理器清理资源
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19019]
+INFO:     Stopping reloader process [19015]

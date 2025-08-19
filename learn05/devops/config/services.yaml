@@ -1,0 +1,182 @@
+# 智能教学助手服务配置
+# DevOps运维工程师专用配置文件
+
+# 全局配置
+global:
+  project_name: "智能教学助手"
+  project_root: "/Users/tangxiaolu/project/PythonProject/aiLearn/learn05"
+  environment: "development"
+  log_level: "INFO"
+  timezone: "Asia/Shanghai"
+
+# 服务配置
+services:
+  backend:
+    name: "后端服务"
+    description: "智能教学助手后端API服务"
+    port: 8000
+    host: "127.0.0.1"
+    path: "service"
+    start_command: "python3 server.py"
+    health_check:
+      enabled: true
+      url: "http://127.0.0.1:8000"
+      timeout: 5
+      interval: 30
+    resources:
+      cpu_limit: "500m"
+      memory_limit: "512Mi"
+      cpu_request: "250m"
+      memory_request: "256Mi"
+    dependencies: []
+    
+  llm:
+    name: "大模型服务"
+    description: "智能教学助手AI大模型服务"
+    port: 8000
+    host: "localhost"
+    path: "llm"
+    start_command: "python3 main.py"
+    health_check:
+      enabled: true
+      url: "http://localhost:8000"
+      timeout: 10
+      interval: 30
+    resources:
+      cpu_limit: "1000m"
+      memory_limit: "2Gi"
+      cpu_request: "500m"
+      memory_request: "1Gi"
+    dependencies: []
+    environment:
+      - "DASHSCOPE_API_KEY"
+      - "OPENAI_API_KEY"
+      - "TONG_YI_API_KEY"
+    
+  frontend:
+    name: "前端服务"
+    description: "智能教学助手前端界面服务"
+    port: 8080
+    host: "localhost"
+    path: "ui/ui2.0"
+    start_command: "python3 -m http.server 8080"
+    health_check:
+      enabled: true
+      url: "http://localhost:8080"
+      timeout: 5
+      interval: 30
+    resources:
+      cpu_limit: "200m"
+      memory_limit: "128Mi"
+      cpu_request: "100m"
+      memory_request: "64Mi"
+    dependencies: ["backend", "llm"]
+
+# 监控配置
+monitoring:
+  enabled: true
+  metrics:
+    enabled: true
+    port: 9090
+    path: "/metrics"
+  alerts:
+    enabled: true
+    rules:
+      - name: "service_down"
+        condition: "service_status == 0"
+        severity: "critical"
+        message: "服务 {{ $labels.service }} 已停止运行"
+      - name: "high_cpu_usage"
+        condition: "cpu_usage > 80"
+        severity: "warning"
+        message: "服务 {{ $labels.service }} CPU使用率过高: {{ $value }}%"
+      - name: "high_memory_usage"
+        condition: "memory_usage > 80"
+        severity: "warning"
+        message: "服务 {{ $labels.service }} 内存使用率过高: {{ $value }}%"
+  logging:
+    level: "INFO"
+    format: "json"
+    rotation:
+      max_size: "100MB"
+      max_files: 10
+      max_age: "7d"
+
+# 部署配置
+deployment:
+  strategy: "rolling_update"
+  replicas: 1
+  max_unavailable: 0
+  max_surge: 1
+  readiness_probe:
+    initial_delay: 10
+    period: 10
+    timeout: 5
+    failure_threshold: 3
+  liveness_probe:
+    initial_delay: 30
+    period: 30
+    timeout: 10
+    failure_threshold: 3
+
+# 安全配置
+security:
+  tls:
+    enabled: false
+    cert_file: ""
+    key_file: ""
+  cors:
+    enabled: true
+    allowed_origins: ["*"]
+    allowed_methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allowed_headers: ["*"]
+  rate_limiting:
+    enabled: false
+    requests_per_minute: 100
+
+# 备份配置
+backup:
+  enabled: true
+  schedule: "0 2 * * *"  # 每天凌晨2点
+  retention: "7d"
+  storage:
+    type: "local"
+    path: "./backups"
+  include:
+    - "logs"
+    - "config"
+    - "data"
+
+# 网络配置
+network:
+  proxy:
+    enabled: false
+    http_proxy: ""
+    https_proxy: ""
+    no_proxy: "localhost,127.0.0.1"
+  load_balancer:
+    enabled: false
+    algorithm: "round_robin"
+    health_check: true
+
+# 开发环境特定配置
+development:
+  debug: true
+  hot_reload: true
+  auto_restart: true
+  log_level: "DEBUG"
+  
+# 生产环境特定配置
+production:
+  debug: false
+  hot_reload: false
+  auto_restart: true
+  log_level: "INFO"
+  performance:
+    enable_profiling: false
+    enable_tracing: true
+  scaling:
+    auto_scaling: false
+    min_replicas: 2
+    max_replicas: 10
+    target_cpu_utilization: 70

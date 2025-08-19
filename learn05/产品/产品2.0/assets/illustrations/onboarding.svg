@@ -1,0 +1,373 @@
+<!-- 智能教学助手2.0 - 引导插图库 -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- 欢迎使用 -->
+  <symbol id="illustration-welcome" viewBox="0 0 400 300">
+    <defs>
+      <linearGradient id="welcomeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#BBDEFB;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#90CAF9;stop-opacity:0.6" />
+      </linearGradient>
+      <radialGradient id="welcomeRadial" cx="50%" cy="30%" r="60%">
+        <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#E3F2FD;stop-opacity:0.2" />
+      </radialGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="400" height="300" fill="url(#welcomeGrad)"/>
+    <rect width="400" height="300" fill="url(#welcomeRadial)"/>
+    
+    <!-- 主要图形 - 教学场景 -->
+    <g transform="translate(100, 50)">
+      <!-- 黑板 -->
+      <rect x="50" y="20" width="120" height="80" rx="8" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+      <rect x="55" y="25" width="110" height="70" rx="4" fill="#388E3C"/>
+      
+      <!-- 黑板内容 -->
+      <text x="110" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">智能教学助手</text>
+      <line x1="70" y1="55" x2="150" y2="55" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="110" y="75" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#E8F5E9">让教学更智能</text>
+      <text x="110" y="90" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#E8F5E9">让学习更高效</text>
+      
+      <!-- 讲台 -->
+      <rect x="80" y="100" width="60" height="30" rx="4" fill="#8D6E63"/>
+      <rect x="85" y="105" width="50" height="20" rx="2" fill="#A1887F"/>
+      
+      <!-- 老师形象 -->
+      <g transform="translate(95, 70)">
+        <!-- 头部 -->
+        <circle cx="15" cy="15" r="12" fill="#FFDBCB"/>
+        <!-- 身体 -->
+        <rect x="8" y="25" width="14" height="20" rx="7" fill="#2196F3"/>
+        <!-- 手臂 -->
+        <rect x="2" y="28" width="8" height="3" rx="1.5" fill="#FFDBCB"/>
+        <rect x="20" y="28" width="8" height="3" rx="1.5" fill="#FFDBCB"/>
+        <!-- 指向黑板的手 -->
+        <circle cx="25" cy="29" r="2" fill="#FFDBCB"/>
+      </g>
+    </g>
+    
+    <!-- 装饰元素 -->
+    <g opacity="0.6">
+      <circle cx="60" cy="80" r="4" fill="#1976D2"/>
+      <circle cx="350" cy="60" r="6" fill="#4CAF50"/>
+      <circle cx="80" cy="200" r="3" fill="#FF9800"/>
+      <circle cx="320" cy="220" r="5" fill="#9C27B0"/>
+    </g>
+    
+    <!-- 浮动图标 -->
+    <g opacity="0.4">
+      <g transform="translate(40, 120) rotate(15)">
+        <rect width="20" height="20" rx="4" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+        <text x="10" y="14" text-anchor="middle" font-size="10" fill="#2196F3">📚</text>
+      </g>
+      
+      <g transform="translate(320, 140) rotate(-10)">
+        <rect width="20" height="20" rx="4" fill="#E8F5E8" stroke="#4CAF50" stroke-width="1"/>
+        <text x="10" y="14" text-anchor="middle" font-size="10" fill="#4CAF50">✏️</text>
+      </g>
+      
+      <g transform="translate(300, 80) rotate(20)">
+        <rect width="20" height="20" rx="4" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+        <text x="10" y="14" text-anchor="middle" font-size="10" fill="#FF9800">💡</text>
+      </g>
+    </g>
+    
+    <!-- 文字区域 -->
+    <text x="200" y="220" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#1976D2">欢迎使用智能教学助手</text>
+    <text x="200" y="245" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#666666">让我们开始您的智能教学之旅</text>
+  </symbol>
+
+  <!-- 备课助手介绍 -->
+  <symbol id="illustration-lesson-prep" viewBox="0 0 400 300">
+    <defs>
+      <linearGradient id="lessonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#F3E5F5;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#E1BEE7;stop-opacity:0.6" />
+      </linearGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="400" height="300" fill="url(#lessonGrad)"/>
+    
+    <!-- 主要图形 - 备课场景 -->
+    <g transform="translate(80, 40)">
+      <!-- 电脑屏幕 -->
+      <rect x="60" y="20" width="120" height="80" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+      <rect x="65" y="25" width="110" height="60" rx="4" fill="#F5F5F5"/>
+      
+      <!-- 屏幕内容 -->
+      <rect x="75" y="35" width="90" height="6" rx="3" fill="#9C27B0" opacity="0.3"/>
+      <rect x="75" y="45" width="70" height="4" rx="2" fill="#E0E0E0"/>
+      <rect x="75" y="52" width="80" height="4" rx="2" fill="#E0E0E0"/>
+      <rect x="75" y="59" width="60" height="4" rx="2" fill="#E0E0E0"/>
+      
+      <!-- 课件缩略图 -->
+      <rect x="75" y="68" width="25" height="15" rx="2" fill="#CE93D8" opacity="0.5"/>
+      <rect x="105" y="68" width="25" height="15" rx="2" fill="#CE93D8" opacity="0.5"/>
+      <rect x="135" y="68" width="25" height="15" rx="2" fill="#CE93D8" opacity="0.5"/>
+      
+      <!-- 电脑底座 -->
+      <rect x="110" y="100" width="20" height="8" rx="4" fill="#E0E0E0"/>
+      <rect x="90" y="108" width="60" height="4" rx="2" fill="#E0E0E0"/>
+      
+      <!-- 书籍和资料 -->
+      <g transform="translate(20, 60)">
+        <rect x="0" y="0" width="30" height="40" rx="3" fill="#7B1FA2" opacity="0.8"/>
+        <rect x="5" y="5" width="20" height="3" rx="1.5" fill="#FFFFFF" opacity="0.8"/>
+        <rect x="5" y="12" width="15" height="2" rx="1" fill="#FFFFFF" opacity="0.6"/>
+        <rect x="5" y="17" width="18" height="2" rx="1" fill="#FFFFFF" opacity="0.6"/>
+      </g>
+      
+      <g transform="translate(200, 70)">
+        <rect x="0" y="0" width="25" height="35" rx="3" fill="#8E24AA" opacity="0.7"/>
+        <rect x="3" y="3" width="19" height="2" rx="1" fill="#FFFFFF" opacity="0.8"/>
+        <rect x="3" y="8" width="15" height="2" rx="1" fill="#FFFFFF" opacity="0.6"/>
+      </g>
+      
+      <!-- 笔记本 -->
+      <g transform="translate(30, 110)">
+        <rect x="0" y="0" width="40" height="25" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <line x1="8" y1="0" x2="8" y2="25" stroke="#FF5722" stroke-width="2"/>
+        <rect x="12" y="5" width="25" height="2" rx="1" fill="#E0E0E0"/>
+        <rect x="12" y="10" width="20" height="2" rx="1" fill="#E0E0E0"/>
+        <rect x="12" y="15" width="22" height="2" rx="1" fill="#E0E0E0"/>
+      </g>
+    </g>
+    
+    <!-- AI 助手图标 -->
+    <g transform="translate(300, 100)">
+      <circle cx="20" cy="20" r="18" fill="#9C27B0" opacity="0.1"/>
+      <circle cx="20" cy="20" r="12" fill="#9C27B0" opacity="0.2"/>
+      <text x="20" y="26" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="bold" fill="#9C27B0">AI</text>
+    </g>
+    
+    <!-- 装饰元素 -->
+    <circle cx="50" cy="80" r="3" fill="#E1BEE7" opacity="0.8"/>
+    <circle cx="350" cy="60" r="4" fill="#CE93D8" opacity="0.8"/>
+    <circle cx="60" cy="200" r="2" fill="#BA68C8" opacity="0.8"/>
+    
+    <!-- 文字区域 -->
+    <text x="200" y="220" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="600" fill="#7B1FA2">智能备课助手</text>
+    <text x="200" y="245" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">AI 帮您快速生成优质课件</text>
+    <text x="200" y="265" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">丰富的教学资源库随时调用</text>
+  </symbol>
+
+  <!-- 课堂助手介绍 -->
+  <symbol id="illustration-classroom" viewBox="0 0 400 300">
+    <defs>
+      <linearGradient id="classroomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#C8E6C9;stop-opacity:0.6" />
+      </linearGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="400" height="300" fill="url(#classroomGrad)"/>
+    
+    <!-- 主要图形 - 课堂互动场景 -->
+    <g transform="translate(100, 50)">
+      <!-- 互动屏幕 -->
+      <rect x="50" y="10" width="100" height="70" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+      <rect x="55" y="15" width="90" height="50" rx="4" fill="#E8F5E8"/>
+      
+      <!-- 屏幕内容 - 实时数据 -->
+      <text x="100" y="30" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#2E7D32">课堂实时数据</text>
+      
+      <!-- 进度条 -->
+      <rect x="65" y="35" width="70" height="4" rx="2" fill="#C8E6C9"/>
+      <rect x="65" y="35" width="45" height="4" rx="2" fill="#4CAF50"/>
+      <text x="135" y="43" font-size="8" fill="#666666">64%</text>
+      
+      <!-- 学生状态指示 -->
+      <g transform="translate(65, 45)">
+        <circle cx="5" cy="5" r="3" fill="#4CAF50"/>
+        <circle cx="15" cy="5" r="3" fill="#4CAF50"/>
+        <circle cx="25" cy="5" r="3" fill="#FFC107"/>
+        <circle cx="35" cy="5" r="3" fill="#4CAF50"/>
+        <circle cx="45" cy="5" r="3" fill="#FF5722"/>
+        <circle cx="55" cy="5" r="3" fill="#4CAF50"/>
+        <circle cx="65" cy="5" r="3" fill="#4CAF50"/>
+      </g>
+      
+      <!-- 屏幕底座 -->
+      <rect x="90" y="80" width="20" height="6" rx="3" fill="#E0E0E0"/>
+      
+      <!-- 学生设备 -->
+      <g transform="translate(20, 100)">
+        <!-- 平板1 -->
+        <rect x="0" y="0" width="25" height="18" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="2" y="2" width="21" height="14" rx="2" fill="#E8F5E8"/>
+        <circle cx="12" cy="9" r="2" fill="#4CAF50"/>
+        
+        <!-- 平板2 -->
+        <rect x="35" y="0" width="25" height="18" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="37" y="2" width="21" height="14" rx="2" fill="#E8F5E8"/>
+        <circle cx="47" cy="9" r="2" fill="#4CAF50"/>
+        
+        <!-- 平板3 -->
+        <rect x="70" y="0" width="25" height="18" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="72" y="2" width="21" height="14" rx="2" fill="#FFF3E0"/>
+        <circle cx="82" cy="9" r="2" fill="#FFC107"/>
+        
+        <!-- 平板4 -->
+        <rect x="105" y="0" width="25" height="18" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <rect x="107" y="2" width="21" height="14" rx="2" fill="#E8F5E8"/>
+        <circle cx="117" cy="9" r="2" fill="#4CAF50"/>
+      </g>
+    </g>
+    
+    <!-- 互动箭头 -->
+    <g stroke="#4CAF50" stroke-width="2" fill="none" opacity="0.6">
+      <path d="M 150 130 Q 180 110 200 130" marker-end="url(#arrowhead)"/>
+      <path d="M 250 130 Q 220 110 200 130"/>
+    </g>
+    
+    <!-- 箭头标记定义 -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#4CAF50"/>
+      </marker>
+    </defs>
+    
+    <!-- 装饰元素 -->
+    <circle cx="70" cy="70" r="3" fill="#C8E6C9" opacity="0.8"/>
+    <circle cx="330" cy="80" r="4" fill="#A5D6A7" opacity="0.8"/>
+    <circle cx="50" cy="200" r="2" fill="#81C784" opacity="0.8"/>
+    
+    <!-- 文字区域 -->
+    <text x="200" y="220" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="600" fill="#2E7D32">智能课堂助手</text>
+    <text x="200" y="245" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">实时监控学生学习状态</text>
+    <text x="200" y="265" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">智能互动提升课堂效果</text>
+  </symbol>
+
+  <!-- 数据分析介绍 -->
+  <symbol id="illustration-analytics" viewBox="0 0 400 300">
+    <defs>
+      <linearGradient id="analyticsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#FFF8E1;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#FFECB3;stop-opacity:0.6" />
+      </linearGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="400" height="300" fill="url(#analyticsGrad)"/>
+    
+    <!-- 主要图形 - 数据分析场景 -->
+    <g transform="translate(80, 40)">
+      <!-- 仪表板 -->
+      <rect x="40" y="20" width="160" height="100" rx="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2"/>
+      <rect x="45" y="25" width="150" height="20" rx="4" fill="#FFC107" opacity="0.2"/>
+      <text x="120" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="bold" fill="#F57C00">学习数据分析</text>
+      
+      <!-- 图表区域 -->
+      <g transform="translate(55, 50)">
+        <!-- 柱状图 -->
+        <rect x="10" y="40" width="8" height="20" fill="#FFC107" opacity="0.7"/>
+        <rect x="22" y="30" width="8" height="30" fill="#FFC107" opacity="0.7"/>
+        <rect x="34" y="25" width="8" height="35" fill="#FFC107" opacity="0.7"/>
+        <rect x="46" y="35" width="8" height="25" fill="#FFC107" opacity="0.7"/>
+        <rect x="58" y="20" width="8" height="40" fill="#FFC107" opacity="0.7"/>
+        
+        <!-- 折线图 -->
+        <g stroke="#FF9800" stroke-width="2" fill="none">
+          <path d="M 80 50 L 90 40 L 100 35 L 110 45 L 120 30"/>
+          <circle cx="80" cy="50" r="2" fill="#FF9800"/>
+          <circle cx="90" cy="40" r="2" fill="#FF9800"/>
+          <circle cx="100" cy="35" r="2" fill="#FF9800"/>
+          <circle cx="110" cy="45" r="2" fill="#FF9800"/>
+          <circle cx="120" cy="30" r="2" fill="#FF9800"/>
+        </g>
+      </g>
+      
+      <!-- 数据卡片 -->
+      <g transform="translate(220, 30)">
+        <rect x="0" y="0" width="50" height="35" rx="4" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <text x="25" y="15" text-anchor="middle" font-size="10" font-weight="bold" fill="#FFC107">85%</text>
+        <text x="25" y="25" text-anchor="middle" font-size="8" fill="#666666">平均分</text>
+        
+        <rect x="0" y="45" width="50" height="35" rx="4" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+        <text x="25" y="60" text-anchor="middle" font-size="10" font-weight="bold" fill="#4CAF50">92%</text>
+        <text x="25" y="70" text-anchor="middle" font-size="8" fill="#666666">出勤率</text>
+      </g>
+    </g>
+    
+    <!-- AI 洞察图标 -->
+    <g transform="translate(300, 120)">
+      <circle cx="20" cy="20" r="18" fill="#FFC107" opacity="0.1"/>
+      <path d="M 15 15 L 20 10 L 25 15 L 20 20 Z" fill="#FFC107"/>
+      <circle cx="20" cy="25" r="2" fill="#FFC107"/>
+    </g>
+    
+    <!-- 装饰元素 -->
+    <circle cx="60" cy="80" r="3" fill="#FFECB3" opacity="0.8"/>
+    <circle cx="340" cy="60" r="4" fill="#FFE082" opacity="0.8"/>
+    <circle cx="50" cy="200" r="2" fill="#FFD54F" opacity="0.8"/>
+    
+    <!-- 文字区域 -->
+    <text x="200" y="220" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="600" fill="#F57C00">智能数据分析</text>
+    <text x="200" y="245" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">深度挖掘学习数据价值</text>
+    <text x="200" y="265" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#666666">AI 洞察助力教学决策</text>
+  </symbol>
+
+  <!-- 完成引导 -->
+  <symbol id="illustration-complete" viewBox="0 0 400 300">
+    <defs>
+      <linearGradient id="completeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#E8F5E8;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#C8E6C9;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#A5D6A7;stop-opacity:0.6" />
+      </linearGradient>
+      <radialGradient id="completeRadial" cx="50%" cy="40%" r="50%">
+        <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#E8F5E8;stop-opacity:0.2" />
+      </radialGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="400" height="300" fill="url(#completeGrad)"/>
+    <rect width="400" height="300" fill="url(#completeRadial)"/>
+    
+    <!-- 主要图形 - 成功完成 -->
+    <g transform="translate(150, 60)">
+      <!-- 大勾号 -->
+      <circle cx="50" cy="50" r="45" fill="#4CAF50" opacity="0.1"/>
+      <circle cx="50" cy="50" r="35" fill="#4CAF50" opacity="0.2"/>
+      <path d="M 30 50 L 45 65 L 70 35" stroke="#4CAF50" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+    
+    <!-- 庆祝元素 -->
+    <g opacity="0.7">
+      <!-- 彩带 -->
+      <path d="M 80 100 Q 90 80 100 100 Q 110 120 120 100" stroke="#FF9800" stroke-width="3" fill="none"/>
+      <path d="M 280 120 Q 290 100 300 120 Q 310 140 320 120" stroke="#2196F3" stroke-width="3" fill="none"/>
+      
+      <!-- 星星 -->
+      <g transform="translate(100, 50) rotate(15)">
+        <path d="M 0 -8 L 2 -2 L 8 -2 L 3 2 L 5 8 L 0 4 L -5 8 L -3 2 L -8 -2 L -2 -2 Z" fill="#FFC107"/>
+      </g>
+      
+      <g transform="translate(300, 80) rotate(-20)">
+        <path d="M 0 -6 L 1.5 -1.5 L 6 -1.5 L 2.25 1.5 L 3.75 6 L 0 3 L -3.75 6 L -2.25 1.5 L -6 -1.5 L -1.5 -1.5 Z" fill="#E91E63"/>
+      </g>
+      
+      <g transform="translate(320, 160) rotate(30)">
+        <path d="M 0 -5 L 1.25 -1.25 L 5 -1.25 L 1.875 1.25 L 3.125 5 L 0 2.5 L -3.125 5 L -1.875 1.25 L -5 -1.25 L -1.25 -1.25 Z" fill="#9C27B0"/>
+      </g>
+    </g>
+    
+    <!-- 装饰圆点 -->
+    <g opacity="0.5">
+      <circle cx="70" cy="180" r="4" fill="#4CAF50"/>
+      <circle cx="330" cy="70" r="6" fill="#81C784"/>
+      <circle cx="60" cy="120" r="3" fill="#A5D6A7"/>
+      <circle cx="340" cy="200" r="5" fill="#C8E6C9"/>
+    </g>
+    
+    <!-- 文字区域 -->
+    <text x="200" y="200" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#2E7D32">设置完成！</text>
+    <text x="200" y="225" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#666666">您已成功完成初始设置</text>
+    <text x="200" y="250" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#666666">现在可以开始使用智能教学助手了</text>
+  </symbol>
+</svg>

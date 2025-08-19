@@ -1,0 +1,132 @@
+2025-08-16 23:42:42,840 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:42:42,841 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:42:42,841 - INFO - 开始执行完整权限控制测试套件...
+2025-08-16 23:42:42,841 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:42:42,845 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,846 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,847 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,847 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,848 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,849 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,850 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,850 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,851 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,852 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,853 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,853 - INFO - 成功认证 0 个账号
+2025-08-16 23:42:42,853 - INFO - 1. 测试角色权限...
+2025-08-16 23:42:42,853 - INFO - 2. 测试未授权访问...
+2025-08-16 23:42:42,853 - INFO - 测试未授权访问...
+2025-08-16 23:42:42,854 - ERROR - 未授权访问测试异常: /api/admin/users - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/system - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,855 - ERROR - 未授权访问测试异常: /api/admin/logs - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,856 - ERROR - 未授权访问测试异常: /api/school/statistics - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,857 - ERROR - 未授权访问测试异常: /api/school/reports - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:42,857 - INFO - 3. 测试跨角色访问...
+2025-08-16 23:42:42,857 - INFO - 测试跨角色访问...
+2025-08-16 23:42:42,857 - INFO - 4. 测试资源隔离...
+2025-08-16 23:42:42,857 - INFO - 测试资源隔离...
+2025-08-16 23:42:42,857 - INFO - 权限控制测试套件执行完成
+2025-08-16 23:42:42,857 - INFO - 角色权限测试成功率: 0.0%
+2025-08-16 23:42:42,857 - INFO - 未授权访问阻止率: 0.0%
+2025-08-16 23:42:42,857 - INFO - 跨角色访问成功率: 0.0%
+2025-08-16 23:42:42,857 - INFO - 资源隔离成功率: 0.0%
+2025-08-16 23:45:39,682 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:45:39,683 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:45:39,683 - INFO - 开始执行完整权限控制测试套件...
+2025-08-16 23:45:39,683 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:45:39,686 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,687 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,688 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,689 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,689 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,690 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,691 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,692 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,692 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,693 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,694 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,694 - INFO - 成功认证 0 个账号
+2025-08-16 23:45:39,694 - INFO - 1. 测试角色权限...
+2025-08-16 23:45:39,694 - INFO - 2. 测试未授权访问...
+2025-08-16 23:45:39,694 - INFO - 测试未授权访问...
+2025-08-16 23:45:39,695 - ERROR - 未授权访问测试异常: /api/admin/users - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,695 - ERROR - 未授权访问测试异常: /api/admin/system - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,696 - ERROR - 未授权访问测试异常: /api/admin/logs - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,697 - ERROR - 未授权访问测试异常: /api/school/statistics - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,697 - ERROR - 未授权访问测试异常: /api/school/reports - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:39,697 - INFO - 3. 测试跨角色访问...
+2025-08-16 23:45:39,697 - INFO - 测试跨角色访问...
+2025-08-16 23:45:39,697 - INFO - 4. 测试资源隔离...
+2025-08-16 23:45:39,697 - INFO - 测试资源隔离...
+2025-08-16 23:45:39,698 - INFO - 权限控制测试套件执行完成
+2025-08-16 23:45:39,698 - INFO - 角色权限测试成功率: 0.0%
+2025-08-16 23:45:39,698 - INFO - 未授权访问阻止率: 0.0%
+2025-08-16 23:45:39,698 - INFO - 跨角色访问成功率: 0.0%
+2025-08-16 23:45:39,698 - INFO - 资源隔离成功率: 0.0%
+2025-08-16 23:59:18,195 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:59:18,195 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:59:18,195 - INFO - 开始执行完整权限控制测试套件...
+2025-08-16 23:59:18,195 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:59:18,200 - ERROR - 账号 admin_001 认证失败，状态码: 404
+2025-08-16 23:59:18,201 - ERROR - 账号 teacher_001 认证失败，状态码: 404
+2025-08-16 23:59:18,203 - ERROR - 账号 teacher_002 认证失败，状态码: 404
+2025-08-16 23:59:18,204 - ERROR - 账号 teacher_003 认证失败，状态码: 404
+2025-08-16 23:59:18,205 - ERROR - 账号 principal_001 认证失败，状态码: 404
+2025-08-16 23:59:18,207 - ERROR - 账号 director_001 认证失败，状态码: 404
+2025-08-16 23:59:18,220 - ERROR - 账号 student_001 认证失败，状态码: 404
+2025-08-16 23:59:18,231 - ERROR - 账号 student_002 认证失败，状态码: 404
+2025-08-16 23:59:18,237 - ERROR - 账号 parent_001 认证失败，状态码: 404
+2025-08-16 23:59:18,238 - ERROR - 账号 parent_002 认证失败，状态码: 404
+2025-08-16 23:59:18,240 - ERROR - 账号 guest_001 认证失败，状态码: 404
+2025-08-16 23:59:18,240 - INFO - 成功认证 0 个账号
+2025-08-16 23:59:18,240 - INFO - 1. 测试角色权限...
+2025-08-16 23:59:18,240 - INFO - 2. 测试未授权访问...
+2025-08-16 23:59:18,240 - INFO - 测试未授权访问...
+2025-08-16 23:59:18,241 - ERROR - 未授权访问测试失败: /api/admin/users - 期望401，实际: 404
+2025-08-16 23:59:18,243 - ERROR - 未授权访问测试失败: /api/admin/system - 期望401，实际: 404
+2025-08-16 23:59:18,246 - ERROR - 未授权访问测试失败: /api/admin/logs - 期望401，实际: 404
+2025-08-16 23:59:18,247 - ERROR - 未授权访问测试失败: /api/school/statistics - 期望401，实际: 404
+2025-08-16 23:59:18,248 - ERROR - 未授权访问测试失败: /api/school/reports - 期望401，实际: 404
+2025-08-16 23:59:18,248 - INFO - 3. 测试跨角色访问...
+2025-08-16 23:59:18,248 - INFO - 测试跨角色访问...
+2025-08-16 23:59:18,248 - INFO - 4. 测试资源隔离...
+2025-08-16 23:59:18,248 - INFO - 测试资源隔离...
+2025-08-16 23:59:18,249 - INFO - 权限控制测试套件执行完成
+2025-08-16 23:59:18,249 - INFO - 角色权限测试成功率: 0.0%
+2025-08-16 23:59:18,249 - INFO - 未授权访问阻止率: 0.0%
+2025-08-16 23:59:18,249 - INFO - 跨角色访问成功率: 0.0%
+2025-08-16 23:59:18,249 - INFO - 资源隔离成功率: 0.0%
+2025-08-17 00:04:10,533 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:04:10,533 - INFO - 权限控制测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:04:10,533 - INFO - 开始执行完整权限控制测试套件...
+2025-08-17 00:04:10,533 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:04:10,539 - ERROR - 账号 admin_001 认证失败，状态码: 422
+2025-08-17 00:04:10,540 - ERROR - 账号 teacher_001 认证失败，状态码: 422
+2025-08-17 00:04:10,542 - ERROR - 账号 teacher_002 认证失败，状态码: 422
+2025-08-17 00:04:10,543 - ERROR - 账号 teacher_003 认证失败，状态码: 422
+2025-08-17 00:04:10,545 - ERROR - 账号 principal_001 认证失败，状态码: 422
+2025-08-17 00:04:10,547 - ERROR - 账号 director_001 认证失败，状态码: 422
+2025-08-17 00:04:10,548 - ERROR - 账号 student_001 认证失败，状态码: 422
+2025-08-17 00:04:10,549 - ERROR - 账号 student_002 认证失败，状态码: 422
+2025-08-17 00:04:10,551 - ERROR - 账号 parent_001 认证失败，状态码: 422
+2025-08-17 00:04:10,552 - ERROR - 账号 parent_002 认证失败，状态码: 422
+2025-08-17 00:04:10,554 - ERROR - 账号 guest_001 认证失败，状态码: 422
+2025-08-17 00:04:10,554 - INFO - 成功认证 0 个账号
+2025-08-17 00:04:10,554 - INFO - 1. 测试角色权限...
+2025-08-17 00:04:10,554 - INFO - 2. 测试未授权访问...
+2025-08-17 00:04:10,554 - INFO - 测试未授权访问...
+2025-08-17 00:04:10,555 - ERROR - 未授权访问测试失败: /api/admin/users - 期望401，实际: 404
+2025-08-17 00:04:10,556 - ERROR - 未授权访问测试失败: /api/admin/system - 期望401，实际: 404
+2025-08-17 00:04:10,558 - ERROR - 未授权访问测试失败: /api/admin/logs - 期望401，实际: 404
+2025-08-17 00:04:10,559 - ERROR - 未授权访问测试失败: /api/school/statistics - 期望401，实际: 404
+2025-08-17 00:04:10,560 - ERROR - 未授权访问测试失败: /api/school/reports - 期望401，实际: 404
+2025-08-17 00:04:10,560 - INFO - 3. 测试跨角色访问...
+2025-08-17 00:04:10,560 - INFO - 测试跨角色访问...
+2025-08-17 00:04:10,560 - INFO - 4. 测试资源隔离...
+2025-08-17 00:04:10,560 - INFO - 测试资源隔离...
+2025-08-17 00:04:10,560 - INFO - 权限控制测试套件执行完成
+2025-08-17 00:04:10,560 - INFO - 角色权限测试成功率: 0.0%
+2025-08-17 00:04:10,560 - INFO - 未授权访问阻止率: 0.0%
+2025-08-17 00:04:10,560 - INFO - 跨角色访问成功率: 0.0%
+2025-08-17 00:04:10,560 - INFO - 资源隔离成功率: 0.0%

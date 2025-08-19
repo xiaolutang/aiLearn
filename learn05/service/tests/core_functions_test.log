@@ -1,0 +1,72 @@
+2025-08-16 23:42:44,997 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:42:44,997 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:42:44,997 - INFO - 开始执行完整核心功能测试套件...
+2025-08-16 23:42:44,997 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:42:45,001 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,002 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,003 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,004 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,004 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,005 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,006 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,007 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,007 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,008 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,010 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:45,010 - INFO - 成功认证 0 个账号
+2025-08-16 23:42:45,011 - INFO - 核心功能测试套件执行完成
+2025-08-16 23:42:45,011 - INFO - 总体成功率: 0.0%
+2025-08-16 23:45:41,817 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:45:41,818 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:45:41,818 - INFO - 开始执行完整核心功能测试套件...
+2025-08-16 23:45:41,818 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:45:41,822 - ERROR - 账号 admin_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,823 - ERROR - 账号 teacher_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,824 - ERROR - 账号 teacher_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,826 - ERROR - 账号 teacher_003 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,826 - ERROR - 账号 principal_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,827 - ERROR - 账号 director_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,828 - ERROR - 账号 student_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,829 - ERROR - 账号 student_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,829 - ERROR - 账号 parent_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,830 - ERROR - 账号 parent_002 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,833 - ERROR - 账号 guest_001 认证异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:41,833 - INFO - 成功认证 0 个账号
+2025-08-16 23:45:41,833 - INFO - 核心功能测试套件执行完成
+2025-08-16 23:45:41,833 - INFO - 总体成功率: 0.0%
+2025-08-16 23:59:20,360 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:59:20,360 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:59:20,360 - INFO - 开始执行完整核心功能测试套件...
+2025-08-16 23:59:20,360 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:59:20,365 - ERROR - 账号 admin_001 认证失败，状态码: 404
+2025-08-16 23:59:20,367 - ERROR - 账号 teacher_001 认证失败，状态码: 404
+2025-08-16 23:59:20,368 - ERROR - 账号 teacher_002 认证失败，状态码: 404
+2025-08-16 23:59:20,369 - ERROR - 账号 teacher_003 认证失败，状态码: 404
+2025-08-16 23:59:20,371 - ERROR - 账号 principal_001 认证失败，状态码: 404
+2025-08-16 23:59:20,372 - ERROR - 账号 director_001 认证失败，状态码: 404
+2025-08-16 23:59:20,374 - ERROR - 账号 student_001 认证失败，状态码: 404
+2025-08-16 23:59:20,375 - ERROR - 账号 student_002 认证失败，状态码: 404
+2025-08-16 23:59:20,376 - ERROR - 账号 parent_001 认证失败，状态码: 404
+2025-08-16 23:59:20,377 - ERROR - 账号 parent_002 认证失败，状态码: 404
+2025-08-16 23:59:20,379 - ERROR - 账号 guest_001 认证失败，状态码: 404
+2025-08-16 23:59:20,379 - INFO - 成功认证 0 个账号
+2025-08-16 23:59:20,379 - INFO - 核心功能测试套件执行完成
+2025-08-16 23:59:20,379 - INFO - 总体成功率: 0.0%
+2025-08-17 00:04:12,680 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:04:12,681 - INFO - 核心功能测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:04:12,681 - INFO - 开始执行完整核心功能测试套件...
+2025-08-17 00:04:12,681 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:04:12,685 - ERROR - 账号 admin_001 认证失败，状态码: 422
+2025-08-17 00:04:12,687 - ERROR - 账号 teacher_001 认证失败，状态码: 422
+2025-08-17 00:04:12,688 - ERROR - 账号 teacher_002 认证失败，状态码: 422
+2025-08-17 00:04:12,689 - ERROR - 账号 teacher_003 认证失败，状态码: 422
+2025-08-17 00:04:12,691 - ERROR - 账号 principal_001 认证失败，状态码: 422
+2025-08-17 00:04:12,692 - ERROR - 账号 director_001 认证失败，状态码: 422
+2025-08-17 00:04:12,694 - ERROR - 账号 student_001 认证失败，状态码: 422
+2025-08-17 00:04:12,695 - ERROR - 账号 student_002 认证失败，状态码: 422
+2025-08-17 00:04:12,696 - ERROR - 账号 parent_001 认证失败，状态码: 422
+2025-08-17 00:04:12,700 - ERROR - 账号 parent_002 认证失败，状态码: 422
+2025-08-17 00:04:12,701 - ERROR - 账号 guest_001 认证失败，状态码: 422
+2025-08-17 00:04:12,701 - INFO - 成功认证 0 个账号
+2025-08-17 00:04:12,701 - INFO - 核心功能测试套件执行完成
+2025-08-17 00:04:12,701 - INFO - 总体成功率: 0.0%

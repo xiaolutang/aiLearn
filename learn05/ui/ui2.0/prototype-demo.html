@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手2.0 - 交互原型演示</title>
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="mobile.css">
+    
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 演示页面专用样式 */
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-6);
+        }
+        
+        .demo-section {
+            margin-bottom: var(--spacing-8);
+            padding: var(--spacing-6);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
+        
+        .demo-title {
+            font-size: var(--text-2xl);
+            font-weight: var(--font-semibold);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-4);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-2);
+        }
+        
+        .demo-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-6);
+            line-height: 1.6;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .demo-item {
+            padding: var(--spacing-4);
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--animation-fast) var(--ease-out-cubic);
+        }
+        
+        .demo-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .demo-item h4 {
+            margin-bottom: var(--spacing-2);
+            color: var(--text-primary);
+        }
+        
+        .demo-item p {
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+        }
+        
+        .demo-controls {
+            display: flex;
+            gap: var(--spacing-2);
+            margin-bottom: var(--spacing-4);
+            flex-wrap: wrap;
+        }
+        
+        .demo-playground {
+            min-height: 200px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            border: 2px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-target {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-500);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: var(--font-semibold);
+            cursor: pointer;
+        }
+        
+        .score-demo {
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            color: var(--primary-500);
+            position: relative;
+        }
+        
+        .progress-demo {
+            width: 100%;
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-demo .progress-bar {
+            height: 100%;
+            background: var(--primary-500);
+            border-radius: var(--radius-full);
+            transition: width var(--animation-base) var(--ease-out-cubic);
+            width: 0%;
+        }
+        
+        .notification-demo {
+            position: fixed;
+            top: var(--spacing-4);
+            right: var(--spacing-4);
+            z-index: 1000;
+        }
+        
+        .modal-demo {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+        }
+        
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            max-width: 500px;
+            width: 90%;
+            opacity: 0;
+        }
+        
+        .ai-demo {
+            background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+            border: 1px solid var(--primary-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .ai-message {
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        
+        .gamification-demo {
+            text-align: center;
+            padding: var(--spacing-6);
+        }
+        
+        .level-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-2);
+            background: var(--warning-500);
+            color: white;
+            padding: var(--spacing-2) var(--spacing-4);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-semibold);
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-3);
+            margin-top: var(--spacing-4);
+        }
+        
+        .achievement-item {
+            padding: var(--spacing-3);
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all var(--animation-fast) var(--ease-out-cubic);
+        }
+        
+        .achievement-item.unlocked {
+            border-color: var(--success-500);
+            background: var(--success-50);
+        }
+        
+        .achievement-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .achievement-icon {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--spacing-2);
+        }
+        
+        .achievement-item.unlocked .achievement-icon {
+            color: var(--success-500);
+        }
+        
+        .achievement-item:not(.unlocked) .achievement-icon {
+            color: var(--gray-400);
+        }
+        
+        .settings-panel {
+            position: fixed;
+            top: var(--spacing-4);
+            left: var(--spacing-4);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+        }
+        
+        .settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-3);
+        }
+        
+        .settings-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            background: var(--gray-300);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: background var(--animation-fast) var(--ease-out-cubic);
+        }
+        
+        .switch.active {
+            background: var(--primary-500);
+        }
+        
+        .switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform var(--animation-fast) var(--ease-out-cubic);
+        }
+        
+        .switch.active::after {
+            transform: translateX(20px);
+        }
+        
+        @keyframes scoreImprovement {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-10px) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(1);
+            }
+        }
+        
+        @keyframes celebrationParticle {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translateY(-50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 设置面板 -->
+    <div class="settings-panel">
+        <h4 style="margin-bottom: var(--spacing-3); color: var(--text-primary);">动画设置</h4>
+        <div class="settings-item">
+            <span>减少动画</span>
+            <div class="switch" id="reducedMotionSwitch"></div>
+        </div>
+        <div class="settings-item">
+            <span>启用声音</span>
+            <div class="switch" id="soundSwitch"></div>
+        </div>
+        <div class="settings-item">
+            <span>启用震动</span>
+            <div class="switch" id="vibrationSwitch"></div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <header style="text-align: center; margin-bottom: var(--spacing-8);">
+            <h1 style="font-size: var(--text-4xl); font-weight: var(--font-bold); color: var(--text-primary); margin-bottom: var(--spacing-2);">
+                智能教学助手2.0 交互原型演示
+            </h1>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg);">
+                体验丰富的动画效果和交互功能
+            </p>
+        </header>
+
+        <!-- 基础动画演示 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-magic"></i>
+                基础动画效果
+            </h2>
+            <p class="demo-description">
+                展示各种基础动画效果，包括淡入淡出、滑动、缩放、旋转等动画类型。
+            </p>
+            
+            <div class="demo-controls">
+                <button class="btn btn-primary" onclick="triggerAnimation('fade-in')">淡入</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('slide-in-up')">滑入</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('zoom-in')">缩放</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('bounce-in')">弹跳</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('rotate-in')">旋转</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('shake')">摇摆</button>
+                <button class="btn btn-primary" onclick="triggerAnimation('pulse')">脉冲</button>
+                <button class="btn btn-secondary" onclick="resetAnimation()">重置</button>
+            </div>
+            
+            <div class="demo-playground">
+                <div class="demo-target" id="animationTarget">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交互反馈演示 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-hand-pointer"></i>
+                交互反馈效果
+            </h2>
+            <p class="demo-description">
+                展示悬停、点击、焦点等交互状态的视觉反馈效果。
+            </p>
+            
+            <div class="demo-grid">
+                <div class="demo-item hover-lift ripple-effect" onclick="createRipple(event)">
+                    <h4>悬停提升</h4>
+                    <p>鼠标悬停时元素向上移动</p>
+                </div>
+                <div class="demo-item hover-grow ripple-effect" onclick="createRipple(event)">
+                    <h4>悬停放大</h4>
+                    <p>鼠标悬停时元素放大</p>
+                </div>
+                <div class="demo-item hover-shadow ripple-effect" onclick="createRipple(event)">
+                    <h4>悬停阴影</h4>
+                    <p>鼠标悬停时增加阴影</p>
+                </div>
+                <div class="demo-item hover-glow ripple-effect" onclick="createRipple(event)">
+                    <h4>悬停发光</h4>
+                    <p>鼠标悬停时产生光晕效果</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育场景动画 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-graduation-cap"></i>
+                教育场景动画
+            </h2>
+            <p class="demo-description">
+                专为教育场景设计的动画效果，包括成绩变化、进度更新、AI反馈等。
+            </p>
+            
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h4>成绩变化</h4>
+                    <div class="score-demo" id="scoreDemo">85</div>
+                    <div style="margin-top: var(--spacing-2);">
+                        <button class="btn btn-sm btn-success" onclick="updateScore(95)">提升成绩</button>
+                        <button class="btn btn-sm btn-error" onclick="updateScore(75)">降低成绩</button>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h4>学习进度</h4>
+                    <div class="progress-demo" id="progressDemo">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div style="margin-top: var(--spacing-2);">
+                        <button class="btn btn-sm btn-primary" onclick="updateProgress()">更新进度</button>
+                        <button class="btn btn-sm btn-success" onclick="completeProgress()">完成课程</button>
+                    </div>
+                </div>
+                
+                <div class="demo-item">
+                    <h4>AI智能反馈</h4>
+                    <div class="ai-demo" id="aiDemo">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot ai-thinking"></i>
+                        </div>
+                        <div class="ai-message">点击按钮获取AI反馈...</div>
+                    </div>
+                    <div style="margin-top: var(--spacing-2);">
+                        <button class="btn btn-sm btn-primary" onclick="showAIFeedback()">获取反馈</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 通知系统演示 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-bell"></i>
+                通知系统
+            </h2>
+            <p class="demo-description">
+                展示不同类型的通知消息和提示效果。
+            </p>
+            
+            <div class="demo-controls">
+                <button class="btn btn-success" onclick="showNotification('操作成功完成！', 'success')">成功通知</button>
+                <button class="btn btn-error" onclick="showNotification('发生了一个错误！', 'error')">错误通知</button>
+                <button class="btn btn-warning" onclick="showNotification('请注意这个警告！', 'warning')">警告通知</button>
+                <button class="btn btn-primary" onclick="showNotification('这是一条信息！', 'info')">信息通知</button>
+            </div>
+        </section>
+
+        <!-- 模态框演示 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-window-restore"></i>
+                模态框动画
+            </h2>
+            <p class="demo-description">
+                展示模态框的打开和关闭动画效果。
+            </p>
+            
+            <div class="demo-controls">
+                <button class="btn btn-primary" onclick="showModal()">打开模态框</button>
+            </div>
+        </section>
+
+        <!-- 游戏化元素 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-trophy"></i>
+                游戏化元素
+            </h2>
+            <p class="demo-description">
+                展示成就系统、等级提升、奖励反馈等游戏化元素的动画效果。
+            </p>
+            
+            <div class="gamification-demo">
+                <div class="level-badge">
+                    <i class="fas fa-star"></i>
+                    <span id="levelDisplay">等级 5</span>
+                </div>
+                
+                <div class="demo-controls">
+                    <button class="btn btn-warning" onclick="levelUp()">升级</button>
+                    <button class="btn btn-success" onclick="unlockAchievement()">解锁成就</button>
+                    <button class="btn btn-primary" onclick="showReward()">获得奖励</button>
+                </div>
+                
+                <div class="achievement-grid">
+                    <div class="achievement-item unlocked" data-achievement="first-lesson">
+                        <div class="achievement-icon"><i class="fas fa-book"></i></div>
+                        <div>第一课</div>
+                    </div>
+                    <div class="achievement-item unlocked" data-achievement="perfect-score">
+                        <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                        <div>满分</div>
+                    </div>
+                    <div class="achievement-item" data-achievement="week-streak">
+                        <div class="achievement-icon"><i class="fas fa-fire"></i></div>
+                        <div>连续一周</div>
+                    </div>
+                    <div class="achievement-item" data-achievement="master">
+                        <div class="achievement-icon"><i class="fas fa-crown"></i></div>
+                        <div>大师级</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加载动画演示 -->
+        <section class="demo-section">
+            <h2 class="demo-title">
+                <i class="fas fa-spinner"></i>
+                加载动画
+            </h2>
+            <p class="demo-description">
+                展示不同类型的加载动画效果。
+            </p>
+            
+            <div class="demo-controls">
+                <button class="btn btn-primary" onclick="showLoading('spinner')">旋转加载</button>
+                <button class="btn btn-primary" onclick="showLoading('dots')">点状加载</button>
+                <button class="btn btn-primary" onclick="showLoading('progress')">进度加载</button>
+                <button class="btn btn-secondary" onclick="hideLoading()">停止加载</button>
+            </div>
+            
+            <div class="demo-playground" id="loadingPlayground">
+                <p style="color: var(--text-secondary);">点击按钮查看加载动画</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal-demo" id="demoModal">
+        <div class="modal-backdrop" onclick="hideModal()"></div>
+        <div class="modal-content">
+            <h3 style="margin-bottom: var(--spacing-4); color: var(--text-primary);">演示模态框</h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--spacing-4);">这是一个带有动画效果的模态框演示。</p>
+            <div style="text-align: right;">
+                <button class="btn btn-secondary" onclick="hideModal()">关闭</button>
+                <button class="btn btn-primary" onclick="hideModal()">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知容器 -->
+    <div class="notification-container"></div>
+
+    <!-- JavaScript -->
+    <script src="interactions.js"></script>
+    <script>
+        // 演示功能实现
+        let currentLevel = 5;
+        let currentScore = 85;
+        let currentProgress = 60;
+        let loadingElement = null;
+        
+        // 动画触发函数
+        function triggerAnimation(animationType) {
+            const target = document.getElementById('animationTarget');
+            
+            // 清除之前的动画类
+            target.className = 'demo-target';
+            
+            // 强制重绘
+            target.offsetHeight;
+            
+            // 添加新动画
+            interactionManager.addAnimation(target, animationType);
+        }
+        
+        function resetAnimation() {
+            const target = document.getElementById('animationTarget');
+            target.className = 'demo-target';
+            target.style.transform = '';
+            target.style.opacity = '';
+        }
+        
+        // 波纹效果
+        function createRipple(event) {
+            interactionManager.createRippleEffect(event.currentTarget, event);
+        }
+        
+        // 成绩更新
+        function updateScore(newScore) {
+            const scoreEl = document.getElementById('scoreDemo');
+            const oldScore = currentScore;
+            currentScore = newScore;
+            
+            // 触发成绩更新事件
+            const event = new CustomEvent('scoreUpdate', {
+                detail: { element: scoreEl, newScore, oldScore }
+            });
+            scoreEl.dispatchEvent(event);
+            
+            // 更新显示
+            interactionManager.animateDataUpdate(scoreEl, newScore, oldScore);
+        }
+        
+        // 进度更新
+        function updateProgress() {
+            currentProgress = Math.min(currentProgress + 20, 90);
+            const progressEl = document.getElementById('progressDemo');
+            const progressBar = progressEl.querySelector('.progress-bar');
+            
+            progressBar.style.width = currentProgress + '%';
+            
+            // 触发进度更新事件
+            const event = new CustomEvent('progressUpdate', {
+                detail: { element: progressEl, progress: currentProgress }
+            });
+            progressEl.dispatchEvent(event);
+        }
+        
+        function completeProgress() {
+            currentProgress = 100;
+            const progressEl = document.getElementById('progressDemo');
+            const progressBar = progressEl.querySelector('.progress-bar');
+            
+            progressBar.style.width = '100%';
+            
+            // 触发完成事件
+            setTimeout(() => {
+                interactionManager.addAnimation(progressEl, 'progress-celebration');
+                educationInteractions.showCompletionEffect(progressEl);
+            }, 500);
+        }
+        
+        // AI反馈
+        function showAIFeedback() {
+            const aiDemo = document.getElementById('aiDemo');
+            const messages = [
+                '很好！你的学习进度很稳定。',
+                '建议加强练习薄弱环节。',
+                '恭喜！你已经掌握了这个知识点。',
+                '继续保持，你做得很棒！'
+            ];
+            
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            
+            // 触发AI反馈事件
+            const event = new CustomEvent('aiFeedback', {
+                detail: { element: aiDemo, type: 'positive', message }
+            });
+            aiDemo.dispatchEvent(event);
+            
+            // 打字机效果
+            const messageEl = aiDemo.querySelector('.ai-message');
+            educationInteractions.typewriterEffect(messageEl, message);
+        }
+        
+        // 通知系统
+        function showNotification(message, type) {
+            interactionManager.showNotification(message, type);
+        }
+        
+        // 模态框
+        function showModal() {
+            const modal = document.getElementById('demoModal');
+            interactionManager.showModal(modal);
+        }
+        
+        function hideModal() {
+            const modal = document.getElementById('demoModal');
+            interactionManager.hideModal(modal);
+        }
+        
+        // 游戏化元素
+        function levelUp() {
+            currentLevel++;
+            document.getElementById('levelDisplay').textContent = `等级 ${currentLevel}`;
+            
+            // 触发升级事件
+            const event = new CustomEvent('levelUp', {
+                detail: { level: currentLevel }
+            });
+            document.dispatchEvent(event);
+        }
+        
+        function unlockAchievement() {
+            const locked = document.querySelector('.achievement-item:not(.unlocked)');
+            if (locked) {
+                locked.classList.add('unlocked');
+                interactionManager.addAnimation(locked, 'bounce-in');
+                
+                // 触发成就事件
+                const achievement = locked.dataset.achievement;
+                const titles = {
+                    'week-streak': '连续学习一周',
+                    'master': '学习大师'
+                };
+                
+                const event = new CustomEvent('achievement', {
+                    detail: {
+                        type: achievement,
+                        title: titles[achievement] || '新成就',
+                        description: '恭喜解锁新成就！'
+                    }
+                });
+                document.dispatchEvent(event);
+            }
+        }
+        
+        function showReward() {
+            interactionManager.showNotification('🎉 获得 50 学习积分！', 'success', 3000);
+        }
+        
+        // 加载动画
+        function showLoading(type) {
+            const playground = document.getElementById('loadingPlayground');
+            
+            // 清除之前的加载动画
+            if (loadingElement) {
+                loadingElement.remove();
+            }
+            
+            // 创建新的加载动画
+            loadingElement = interactionManager.createLoadingAnimation(playground, type);
+        }
+        
+        function hideLoading() {
+            if (loadingElement) {
+                interactionManager.removeLoadingAnimation(loadingElement);
+                loadingElement = null;
+            }
+        }
+        
+        // 设置面板
+        function initSettings() {
+            const reducedMotionSwitch = document.getElementById('reducedMotionSwitch');
+            const soundSwitch = document.getElementById('soundSwitch');
+            const vibrationSwitch = document.getElementById('vibrationSwitch');
+            
+            // 初始化开关状态
+            if (interactionManager.preferences.reducedMotion) {
+                reducedMotionSwitch.classList.add('active');
+            }
+            if (interactionManager.preferences.enableSounds) {
+                soundSwitch.classList.add('active');
+            }
+            if (interactionManager.preferences.enableVibration) {
+                vibrationSwitch.classList.add('active');
+            }
+            
+            // 绑定事件
+            reducedMotionSwitch.addEventListener('click', () => {
+                reducedMotionSwitch.classList.toggle('active');
+                const enabled = reducedMotionSwitch.classList.contains('active');
+                interactionManager.preferences.reducedMotion = enabled;
+                
+                if (enabled) {
+                    interactionManager.disableAnimations();
+                } else {
+                    interactionManager.enableAnimations();
+                }
+                
+                interactionManager.saveUserPreferences();
+            });
+            
+            soundSwitch.addEventListener('click', () => {
+                soundSwitch.classList.toggle('active');
+                interactionManager.preferences.enableSounds = soundSwitch.classList.contains('active');
+                interactionManager.saveUserPreferences();
+            });
+            
+            vibrationSwitch.addEventListener('click', () => {
+                vibrationSwitch.classList.toggle('active');
+                interactionManager.preferences.enableVibration = vibrationSwitch.classList.contains('active');
+                interactionManager.saveUserPreferences();
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            initSettings();
+            
+            // 添加滚动动画
+            document.querySelectorAll('.demo-section').forEach((section, index) => {
+                section.dataset.animateOnScroll = 'fade-in-up';
+                section.dataset.animateDelay = index * 100;
+            });
+            
+            // 重新观察元素
+            interactionManager.setupAnimationObserver();
+        });
+        
+        // 键盘快捷键演示
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hideModal();
+            }
+        });
+    </script>
+</body>
+</html>

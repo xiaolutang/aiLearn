@@ -1,0 +1,140 @@
+<!-- 智能教学助手2.0 - 教育专用图标库 -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- 数学图标 -->
+  <symbol id="icon-math" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    <text x="12" y="14" text-anchor="middle" font-size="8" fill="currentColor">π</text>
+  </symbol>
+
+  <!-- 语文图标 -->
+  <symbol id="icon-chinese" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M5 4v3h5.5v12h3V7H19V4z"/>
+    <path fill="currentColor" d="M3 19h18v2H3z"/>
+  </symbol>
+
+  <!-- 英语图标 -->
+  <symbol id="icon-english" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.01-4.65.51-6.81-1.66-2.39-4.95-2.87-7.34-1.21-2.39 1.66-2.87 4.95-1.21 7.34 1.5 2.16 4.21 2.43 6.15.69l.03-.03L10.93 15l1.94 1.93zM8.5 8.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    <text x="18" y="16" text-anchor="middle" font-size="10" fill="currentColor">A</text>
+  </symbol>
+
+  <!-- 物理图标 -->
+  <symbol id="icon-physics" viewBox="0 0 24 24">
+    <circle fill="none" stroke="currentColor" stroke-width="2" cx="12" cy="12" r="8"/>
+    <path fill="currentColor" d="M12 2v4m0 12v4m10-10h-4M6 12H2"/>
+    <circle fill="currentColor" cx="12" cy="12" r="2"/>
+  </symbol>
+
+  <!-- 化学图标 -->
+  <symbol id="icon-chemistry" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M9 2v7.38l-5.55 9.62c-.75 1.3.19 2.93 1.73 2.93h13.64c1.54 0 2.48-1.63 1.73-2.93L14 9.38V2H9zm2 2h2v5.4l5.5 9.6H5.5L11 9.4V4z"/>
+    <circle fill="currentColor" cx="8" cy="17" r="1"/>
+    <circle fill="currentColor" cx="16" cy="17" r="1"/>
+  </symbol>
+
+  <!-- 生物图标 -->
+  <symbol id="icon-biology" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+  </symbol>
+
+  <!-- 历史图标 -->
+  <symbol id="icon-history" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+  </symbol>
+
+  <!-- 地理图标 -->
+  <symbol id="icon-geography" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+  </symbol>
+
+  <!-- 音乐图标 -->
+  <symbol id="icon-music" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+  </symbol>
+
+  <!-- 美术图标 -->
+  <symbol id="icon-art" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"/>
+    <circle fill="currentColor" cx="6.5" cy="11.5" r="1.5"/>
+    <circle fill="currentColor" cx="9.5" cy="7.5" r="1.5"/>
+    <circle fill="currentColor" cx="14.5" cy="7.5" r="1.5"/>
+    <circle fill="currentColor" cx="17.5" cy="11.5" r="1.5"/>
+  </symbol>
+
+  <!-- 体育图标 -->
+  <symbol id="icon-sports" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8C8.12 8 7 6.88 7 5.5S8.12 3 9.5 3s2.5 1.12 2.5 2.5S10.88 8 9.5 8zm5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM16 9c-1.38 0-2.5-1.12-2.5-2.5S14.62 4 16 4s2.5 1.12 2.5 2.5S17.38 9 16 9z"/>
+  </symbol>
+
+  <!-- 计算机图标 -->
+  <symbol id="icon-computer" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2h-4zM4 5h16v11H4V5z"/>
+  </symbol>
+
+  <!-- 黑板图标 -->
+  <symbol id="icon-blackboard" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4l-1 2v1h8v-1l-1-2h4c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H5V5h14v10z"/>
+    <path fill="currentColor" d="M7 7h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zM7 10h10v1H7z"/>
+  </symbol>
+
+  <!-- 书本图标 -->
+  <symbol id="icon-book" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+  </symbol>
+
+  <!-- 笔记本图标 -->
+  <symbol id="icon-notebook" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/>
+  </symbol>
+
+  <!-- 铅笔图标 -->
+  <symbol id="icon-pencil" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+  </symbol>
+
+  <!-- 橡皮擦图标 -->
+  <symbol id="icon-eraser" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 0 1-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84l10.6-10.6c.79-.78 2.05-.78 2.83 0zM4.22 15.58l3.54 3.53c.78.79 2.04.79 2.83 0l3.53-3.53-6.36-6.36-3.54 3.36z"/>
+  </symbol>
+
+  <!-- 尺子图标 -->
+  <symbol id="icon-ruler" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M1.39 18.36l3.16 3.16c.39.39 1.02.39 1.41 0l16.24-16.24c.39-.39.39-1.02 0-1.41L18.64 1.39c-.39-.39-1.02-.39-1.41 0L1.39 17.63c-.39.39-.39 1.02 0 .73zM6.61 7.11l.71.71-1.41 1.41-.71-.71 1.41-1.41zm2.83 2.83l.71.71-1.41 1.41-.71-.71 1.41-1.41zm2.83 2.83l.71.71-1.41 1.41-.71-.71 1.41-1.41z"/>
+  </symbol>
+
+  <!-- 计算器图标 -->
+  <symbol id="icon-calculator" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+  </symbol>
+
+  <!-- 地球仪图标 -->
+  <symbol id="icon-globe" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+  </symbol>
+
+  <!-- 显微镜图标 -->
+  <symbol id="icon-microscope" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M9.5 12c0-1.77 1.02-3.29 2.5-4.03V5h1v3.97c1.48.74 2.5 2.26 2.5 4.03 0 2.49-2.01 4.5-4.5 4.5S9.5 14.49 9.5 12zM12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"/>
+  </symbol>
+
+  <!-- 试管图标 -->
+  <symbol id="icon-test-tube" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M7 2v2h1v16c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V4h1V2H7zm2 2h6v4h-6V4zm0 6h6v2h-6v-2z"/>
+  </symbol>
+
+  <!-- 奖杯图标 -->
+  <symbol id="icon-trophy" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M7 4V2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v2h2.5c1.38 0 2.5 1.12 2.5 2.5 0 .69-.28 1.31-.73 1.76L20 9.5c0 2.21-1.79 4-4 4h-1v2h3c.55 0 1 .45 1 1v2c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h3v-2H8c-2.21 0-4-1.79-4-4l-.77-1.24C2.78 7.81 2.5 7.19 2.5 6.5 2.5 5.12 3.62 4 5 4H7z"/>
+  </symbol>
+
+  <!-- 证书图标 -->
+  <symbol id="icon-certificate" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M14 9V7c0-1.1-.9-2-2-2s-2 .9-2 2v2c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1zm-1 0h-2V7c0-.55.45-1 1-1s1 .45 1 1v2z"/>
+    <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/>
+  </symbol>
+
+  <!-- 毕业帽图标 -->
+  <symbol id="icon-graduation" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+  </symbol>
+</svg>

@@ -1,0 +1,96 @@
+# LLM配置文件
+
+# 默认配置
+default_model: "qwen-plus"
+default_provider: "tongyi"
+max_tokens: 4000
+temperature: 0.7
+timeout: 30
+
+# 提供商配置
+providers:
+  tongyi:
+    api_key: "${TONGYI_API_KEY}"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    models:
+      - "qwen-plus"
+      - "qwen-turbo"
+      - "qwen-max"
+    default_model: "qwen-plus"
+    max_tokens: 4000
+    temperature: 0.7
+    timeout: 30
+    rate_limit:
+      requests_per_minute: 60
+      tokens_per_minute: 100000
+    
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    base_url: "https://api.openai.com/v1"
+    models:
+      - "gpt-3.5-turbo"
+      - "gpt-4"
+      - "gpt-4-turbo"
+    default_model: "gpt-3.5-turbo"
+    max_tokens: 4000
+    temperature: 0.7
+    timeout: 30
+    rate_limit:
+      requests_per_minute: 60
+      tokens_per_minute: 100000
+
+# 缓存配置
+cache:
+  enabled: true
+  type: "memory"  # memory 或 redis
+  ttl: 3600  # 缓存时间（秒）
+  max_size: 1000  # 最大缓存条目数
+  redis:
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: null
+
+# 重试配置
+retry:
+  max_attempts: 3
+  base_delay: 1.0
+  max_delay: 60.0
+  exponential_base: 2.0
+  jitter: true
+
+# 熔断器配置
+circuit_breaker:
+  failure_threshold: 5
+  recovery_timeout: 60
+  expected_exception_types:
+    - "LLMRateLimitException"
+    - "LLMServiceUnavailableException"
+
+# 监控配置
+monitoring:
+  enabled: true
+  metrics_retention: 86400  # 24小时
+  slow_request_threshold: 5.0  # 慢请求阈值（秒）
+  health_check_interval: 300  # 健康检查间隔（秒）
+  
+# 并发控制
+concurrency:
+  max_concurrent_requests: 10
+  semaphore_timeout: 30
+
+# 降级配置
+fallback:
+  enabled: true
+  primary_provider: "tongyi"
+  fallback_providers:
+    - "openai"
+  fallback_delay: 2.0  # 降级延迟（秒）
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/llm.log"
+  max_file_size: "10MB"
+  backup_count: 5

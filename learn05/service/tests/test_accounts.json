@@ -1,0 +1,106 @@
+[
+  {
+    "username": "admin_test",
+    "password": "Admin@123456",
+    "role": "系统管理员",
+    "email": "admin.test@school.edu",
+    "status": "active",
+    "description": "系统管理员测试账号，拥有所有权限"
+  },
+  {
+    "username": "teacher_zhang",
+    "password": "Teacher@123",
+    "role": "教师",
+    "email": "zhang.teacher@school.edu",
+    "status": "active",
+    "description": "高中数学教师，负责高三年级"
+  },
+  {
+    "username": "teacher_li",
+    "password": "Teacher@456",
+    "role": "教师",
+    "email": "li.teacher@school.edu",
+    "status": "active",
+    "description": "初中语文教师，负责初二年级"
+  },
+  {
+    "username": "teacher_wang",
+    "password": "Teacher@789",
+    "role": "教师",
+    "email": "wang.teacher@school.edu",
+    "status": "active",
+    "description": "高中生物教师，负责实验教学"
+  },
+  {
+    "username": "principal_chen",
+    "password": "Principal@123",
+    "role": "校长",
+    "email": "chen.principal@school.edu",
+    "status": "active",
+    "description": "学校校长，需要查看全校教学数据"
+  },
+  {
+    "username": "director_liu",
+    "password": "Director@123",
+    "role": "教务主任",
+    "email": "liu.director@school.edu",
+    "status": "active",
+    "description": "教务主任，负责教学管理"
+  },
+  {
+    "username": "student_xiaoming",
+    "password": "Student@123",
+    "role": "学生",
+    "email": "xiaoming@student.edu",
+    "status": "active",
+    "description": "高三学生，理科班"
+  },
+  {
+    "username": "student_xiaohong",
+    "password": "Student@456",
+    "role": "学生",
+    "email": "xiaohong@student.edu",
+    "status": "active",
+    "description": "初二学生，文科倾向"
+  },
+  {
+    "username": "parent_zhang",
+    "password": "Parent@123",
+    "role": "家长",
+    "email": "zhang.parent@family.com",
+    "status": "active",
+    "description": "学生xiaoming的家长"
+  },
+  {
+    "username": "parent_li",
+    "password": "Parent@456",
+    "role": "家长",
+    "email": "li.parent@family.com",
+    "status": "active",
+    "description": "学生xiaohong的家长"
+  },
+  {
+    "username": "guest_visitor",
+    "password": "Guest@123",
+    "role": "访客",
+    "email": "guest@visitor.com",
+    "status": "active",
+    "description": "系统访客账号，用于演示"
+  },
+  {
+    "username": "inactive_user",
+    "password": "Inactive@123",
+    "role": "教师",
+    "email": "inactive@test.com",
+    "status": "inactive",
+    "description": "已停用的测试账号"
+  },
+  {
+    "username": "locked_user",
+    "password": "Locked@123",
+    "role": "教师",
+    "email": "locked@test.com",
+    "status": "locked",
+    "description": "被锁定的测试账号"
+  }
+]

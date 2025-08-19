@@ -1,0 +1,145 @@
+{
+  "start_time": "2025-08-17T00:04:24.189418",
+  "tests": {
+    "concurrent_login": {
+      "test_type": "并发登录测试",
+      "total_accounts": 10,
+      "successful_logins": 0,
+      "failed_logins": 10,
+      "success_rate": 0.0,
+      "total_time": 0.009333133697509766,
+      "avg_login_time": 0,
+      "max_login_time": 0,
+      "min_login_time": 0,
+      "role_statistics": {
+        "系统管理员": {
+          "successful": 0,
+          "failed": 1
+        },
+        "教师": {
+          "successful": 0,
+          "failed": 3
+        },
+        "校长": {
+          "successful": 0,
+          "failed": 1
+        },
+        "教务主任": {
+          "successful": 0,
+          "failed": 1
+        },
+        "学生": {
+          "successful": 0,
+          "failed": 2
+        },
+        "家长": {
+          "successful": 0,
+          "failed": 2
+        }
+      },
+      "concurrent_level": 10
+    },
+    "concurrent_api_calls": {
+      "test_type": "并发API调用测试",
+      "test_duration": 31.36104416847229,
+      "concurrent_users": 8,
+      "total_requests": 190,
+      "successful_requests": 0,
+      "failed_requests": 190,
+      "success_rate": 0.0,
+      "requests_per_second": 6.05847174537032,
+      "avg_response_time": 0,
+      "max_response_time": 0,
+      "min_response_time": 0,
+      "endpoint_statistics": {
+        "未知": {
+          "total": 190,
+          "successful": 0,
+          "failed": 190
+        }
+      },
+      "status_code_distribution": {}
+    },
+    "resource_competition": {
+      "test_type": "资源竞争测试",
+      "resource_id": "shared_resource_001",
+      "concurrent_users": 6,
+      "total_operations": 30,
+      "successful_operations": 0,
+      "failed_operations": 30,
+      "overall_success_rate": 0.0,
+      "read_operations": {
+        "total": 18,
+        "successful": 0,
+        "success_rate": 0.0
+      },
+      "write_operations": {
+        "total": 12,
+        "successful": 0,
+        "success_rate": 0.0
+      },
+      "test_duration": 0.0005817413330078125
+    },
+    "load_capacity": {
+      "test_type": "系统负载能力测试",
+      "max_tested_users": 11,
+      "max_stable_users": 0,
+      "performance_degradation_point": 3,
+      "load_test_details": [
+        {
+          "concurrent_users": 3,
+          "login_success_rate": 0.0,
+          "api_success_rate": 0,
+          "avg_response_time": 0,
+          "requests_per_second": 0,
+          "system_stable": false,
+          "note": "登录成功率过低，跳过API测试"
+        },
+        {
+          "concurrent_users": 6,
+          "login_success_rate": 0.0,
+          "api_success_rate": 0,
+          "avg_response_time": 0,
+          "requests_per_second": 0,
+          "system_stable": false,
+          "note": "登录成功率过低，跳过API测试"
+        },
+        {
+          "concurrent_users": 9,
+          "login_success_rate": 0.0,
+          "api_success_rate": 0,
+          "avg_response_time": 0,
+          "requests_per_second": 0,
+          "system_stable": false,
+          "note": "登录成功率过低，跳过API测试"
+        }
+      ],
+      "system_capacity_rating": "较差"
+    }
+  },
+  "summary": {
+    "total_accounts_available": 11,
+    "concurrent_login": {
+      "success_rate": 0.0,
+      "avg_login_time": 0,
+      "concurrent_level": 10
+    },
+    "concurrent_api_calls": {
+      "success_rate": 0.0,
+      "requests_per_second": 6.05847174537032,
+      "avg_response_time": 0
+    },
+    "resource_competition": {
+      "overall_success_rate": 0.0,
+      "read_success_rate": 0.0,
+      "write_success_rate": 0.0
+    },
+    "load_capacity": {
+      "max_stable_users": 0,
+      "system_capacity_rating": "较差"
+    },
+    "overall_concurrent_performance_score": 0.0,
+    "performance_rating": "需要改进"
+  },
+  "end_time": "2025-08-17T00:05:01.610075"
+}

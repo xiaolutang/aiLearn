@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="整体代码结构设计，函数调用">
-      <change afterPath="$PROJECT_DIR$/learn02/ai_call_back.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/ai_function_call_back.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/ai_helper_prompt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_display/chat_display_mixIn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_input/chat_input_mixin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_model/ali_bai_lian_chat_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_model/chat_model_mixin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_model01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_tools/chat_tool_mixin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/chat_tools/chat_tools.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/context/chat_context.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/context/chat_context_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/local_input_and_display_chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/message_manager/message_adapter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/message_manager/message_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learn02/代码设计.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plan.md" afterDir="false" />
+    <list default="true" id="658c4e45-a99b-4b54-b81f-38fe1a2ac80c" name="Changes" comment="rag 入门">
+      <change afterPath="$PROJECT_DIR$/learn03/learn03.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn03/rag.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn04/提示词模版案例.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/learn04/自动文章助手提示词" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tongyi_ai_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/tongyi_ai_chat.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +28,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file:///Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/test/test__interpreters.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/Library/Caches/JetBrains/PyCharm2025.1/python_stubs/-251471180/builtins.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/_base_client.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/_types.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion_assistant_message_param.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion_message.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion_message_tool_call_param.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion_tool_message_param.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/chat_completion_user_message_param.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/openai/types/chat/completion_create_params.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.13/site-packages/pydantic/main.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -49,30 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Class",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.chat_model.executor": "Run",
-    "Python.fun_and_rag.executor": "Run",
-    "Python.local_input_and_display_chat.executor": "Run",
-    "Python.open_ai_chat.executor": "Run",
-    "Python.tongyi_ai_chat.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.chat_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.content_loader.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fun_and_rag.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lang_chain_chat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lang_graph.executor&quot;: &quot;Run&quot;,
+    &quot;Python.local_input_and_display_chat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.open_ai_chat.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sql_connect.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tongyi_ai_chat.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.local_input_and_display_chat">
-    <configuration name="chat_model01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RunManager" selected="Python.sql_connect">
+    <configuration name="content_loader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="aiLearn" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,12 +87,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn03" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn02/chat_model01.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn03/content_loader.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -95,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="local_input_and_display_chat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="lang_chain_chat" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="aiLearn" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,12 +109,55 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn02" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn03" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn02/local_input_and_display_chat.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn03/lang_chain_chat.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lang_graph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="aiLearn" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn03" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn03/lang_graph.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sql_connect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="aiLearn" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/learn05" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/learn05/sql_connect.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,8 +191,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.local_input_and_display_chat" />
-        <item itemvalue="Python.chat_model01" />
+        <item itemvalue="Python.sql_connect" />
+        <item itemvalue="Python.lang_chain_chat" />
+        <item itemvalue="Python.content_loader" />
+        <item itemvalue="Python.lang_graph" />
         <item itemvalue="Python.tongyi_ai_chat" />
       </list>
     </recent_temporary>
@@ -152,7 +202,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
         <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
       </set>
     </attachedChunks>
@@ -167,7 +216,9 @@
       <workItem from="1752857729906" duration="20602000" />
       <workItem from="1753096100265" duration="127000" />
       <workItem from="1753096230094" duration="10154000" />
-      <workItem from="1753118420271" duration="51957000" />
+      <workItem from="1753118420271" duration="56537000" />
+      <workItem from="1753376038115" duration="13769000" />
+      <workItem from="1753662734480" duration="231000" />
     </task>
     <task id="LOCAL-00001" summary="ai 入门搭建本地聊天机器人">
       <option name="closed" value="true" />
@@ -193,7 +244,31 @@
       <option name="project" value="LOCAL" />
       <updated>1753276590710</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="整体代码结构设计，函数调用">
+      <option name="closed" value="true" />
+      <created>1753294583316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753294583316</updated>
+    </task>
+    <task id="LOCAL-00005" summary="整体代码结构设计，函数调用">
+      <option name="closed" value="true" />
+      <created>1753520188064</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1753520188064</updated>
+    </task>
+    <task id="LOCAL-00006" summary="rag 入门">
+      <option name="closed" value="true" />
+      <created>1754102094221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1754102094221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +289,8 @@
     <MESSAGE value="ai 入门搭建本地聊天机器人" />
     <MESSAGE value="ai 提示词优化" />
     <MESSAGE value="整体代码结构设计，函数调用" />
-    <option name="LAST_COMMIT_MESSAGE" value="整体代码结构设计，函数调用" />
+    <MESSAGE value="rag 入门" />
+    <option name="LAST_COMMIT_MESSAGE" value="rag 入门" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -230,13 +306,20 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aiLearn$chat_model.coverage" NAME="chat_model Coverage Results" MODIFIED="1753189051681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn02" />
     <SUITE FILE_PATH="coverage/aiLearn$open_ai_chat.coverage" NAME="tongyi_ai_chat Coverage Results" MODIFIED="1753012840552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiLearn$fun_and_rag.coverage" NAME="fun_and_rag Coverage Results" MODIFIED="1753117575218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn02" />
-    <SUITE FILE_PATH="coverage/aiLearn$local_input_and_display_chat.coverage" NAME="local_input_and_display_chat Coverage Results" MODIFIED="1753291120917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn02" />
+    <SUITE FILE_PATH="coverage/aiLearn$local_input_and_display_chat.coverage" NAME="local_input_and_display_chat Coverage Results" MODIFIED="1753519508782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn02" />
     <SUITE FILE_PATH="coverage/aiLearn$tongyi_ai_chat.coverage" NAME="tongyi_ai_chat Coverage Results" MODIFIED="1753012865686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

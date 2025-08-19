@@ -1,0 +1,25 @@
+{
+  "check_time": "2025-08-17T18:19:50.640099",
+  "total_users": {
+    "database": 500,
+    "excel": 500,
+    "consistent": true
+  },
+  "role_counts": {
+    "database": {
+      "admin": 10,
+      "parent": 60,
+      "student": 350,
+      "teacher": 80
+    },
+    "excel": {
+      "admin": 10,
+      "teacher": 80,
+      "student": 350,
+      "parent": 60
+    },
+    "consistent": true
+  },
+  "username_consistency": true,
+  "overall_consistent": true
+}

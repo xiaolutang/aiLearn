@@ -1,0 +1,261 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .subtitle { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #4a90e2; }
+      .text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 12px; fill: #333; }
+      .small-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 10px; fill: #666; }
+      .layer-box { fill: #f8f9fa; stroke: #4a90e2; stroke-width: 2; rx: 10; }
+      .module-box { fill: #ffffff; stroke: #ddd; stroke-width: 1; rx: 5; }
+      .database-box { fill: #e8f4fd; stroke: #4a90e2; stroke-width: 1; rx: 5; }
+      .api-box { fill: #f0f8ff; stroke: #28a745; stroke-width: 1; rx: 5; }
+      .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #4a90e2; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="600" y="30" text-anchor="middle" class="title">智能教学助手系统架构图</text>
+  
+  <!-- 表示层 -->
+  <rect x="50" y="60" width="1100" height="120" class="layer-box"/>
+  <text x="70" y="85" class="subtitle">表示层 (Presentation Layer)</text>
+  
+  <!-- Web端 -->
+  <rect x="80" y="100" width="150" height="60" class="module-box"/>
+  <text x="155" y="120" text-anchor="middle" class="text">Web端</text>
+  <text x="155" y="135" text-anchor="middle" class="small-text">React/Vue.js</text>
+  <text x="155" y="150" text-anchor="middle" class="small-text">响应式设计</text>
+  
+  <!-- 移动端 -->
+  <rect x="250" y="100" width="150" height="60" class="module-box"/>
+  <text x="325" y="120" text-anchor="middle" class="text">移动端</text>
+  <text x="325" y="135" text-anchor="middle" class="small-text">Flutter</text>
+  <text x="325" y="150" text-anchor="middle" class="small-text">iOS/Android</text>
+  
+  <!-- 桌面端 -->
+  <rect x="420" y="100" width="150" height="60" class="module-box"/>
+  <text x="495" y="120" text-anchor="middle" class="text">桌面端</text>
+  <text x="495" y="135" text-anchor="middle" class="small-text">Electron</text>
+  <text x="495" y="150" text-anchor="middle" class="small-text">跨平台</text>
+  
+  <!-- 管理后台 -->
+  <rect x="590" y="100" width="150" height="60" class="module-box"/>
+  <text x="665" y="120" text-anchor="middle" class="text">管理后台</text>
+  <text x="665" y="135" text-anchor="middle" class="small-text">Admin Panel</text>
+  <text x="665" y="150" text-anchor="middle" class="small-text">系统管理</text>
+  
+  <!-- API网关 -->
+  <rect x="760" y="100" width="150" height="60" class="api-box"/>
+  <text x="835" y="120" text-anchor="middle" class="text">API网关</text>
+  <text x="835" y="135" text-anchor="middle" class="small-text">Gateway</text>
+  <text x="835" y="150" text-anchor="middle" class="small-text">路由/认证</text>
+  
+  <!-- 负载均衡 -->
+  <rect x="930" y="100" width="150" height="60" class="api-box"/>
+  <text x="1005" y="120" text-anchor="middle" class="text">负载均衡</text>
+  <text x="1005" y="135" text-anchor="middle" class="small-text">Load Balancer</text>
+  <text x="1005" y="150" text-anchor="middle" class="small-text">Nginx</text>
+  
+  <!-- 业务逻辑层 -->
+  <rect x="50" y="200" width="1100" height="180" class="layer-box"/>
+  <text x="70" y="225" class="subtitle">业务逻辑层 (Business Logic Layer)</text>
+  
+  <!-- 用户管理服务 -->
+  <rect x="80" y="240" width="120" height="80" class="module-box"/>
+  <text x="140" y="265" text-anchor="middle" class="text">用户管理</text>
+  <text x="140" y="280" text-anchor="middle" class="small-text">• 用户注册</text>
+  <text x="140" y="295" text-anchor="middle" class="small-text">• 身份认证</text>
+  <text x="140" y="310" text-anchor="middle" class="small-text">• 权限控制</text>
+  
+  <!-- 备课服务 -->
+  <rect x="220" y="240" width="120" height="80" class="module-box"/>
+  <text x="280" y="265" text-anchor="middle" class="text">备课服务</text>
+  <text x="280" y="280" text-anchor="middle" class="small-text">• 教材分析</text>
+  <text x="280" y="295" text-anchor="middle" class="small-text">• 环节策划</text>
+  <text x="280" y="310" text-anchor="middle" class="small-text">• 学情预设</text>
+  
+  <!-- 上课服务 -->
+  <rect x="360" y="240" width="120" height="80" class="module-box"/>
+  <text x="420" y="265" text-anchor="middle" class="text">上课服务</text>
+  <text x="420" y="280" text-anchor="middle" class="small-text">• 实时互动</text>
+  <text x="420" y="295" text-anchor="middle" class="small-text">• 学情生成</text>
+  <text x="420" y="310" text-anchor="middle" class="small-text">• 视频分析</text>
+  
+  <!-- 成绩服务 -->
+  <rect x="500" y="240" width="120" height="80" class="module-box"/>
+  <text x="560" y="265" text-anchor="middle" class="text">成绩服务</text>
+  <text x="560" y="280" text-anchor="middle" class="small-text">• 成绩录入</text>
+  <text x="560" y="295" text-anchor="middle" class="small-text">• 数据分析</text>
+  <text x="560" y="310" text-anchor="middle" class="small-text">• 报告生成</text>
+  
+  <!-- AI服务 -->
+  <rect x="640" y="240" width="120" height="80" class="module-box"/>
+  <text x="700" y="265" text-anchor="middle" class="text">AI服务</text>
+  <text x="700" y="280" text-anchor="middle" class="small-text">• 智能分析</text>
+  <text x="700" y="295" text-anchor="middle" class="small-text">• 内容生成</text>
+  <text x="700" y="310" text-anchor="middle" class="small-text">• 推荐算法</text>
+  
+  <!-- 通知服务 -->
+  <rect x="780" y="240" width="120" height="80" class="module-box"/>
+  <text x="840" y="265" text-anchor="middle" class="text">通知服务</text>
+  <text x="840" y="280" text-anchor="middle" class="small-text">• 消息推送</text>
+  <text x="840" y="295" text-anchor="middle" class="small-text">• 邮件通知</text>
+  <text x="840" y="310" text-anchor="middle" class="small-text">• 短信提醒</text>
+  
+  <!-- 文件服务 -->
+  <rect x="920" y="240" width="120" height="80" class="module-box"/>
+  <text x="980" y="265" text-anchor="middle" class="text">文件服务</text>
+  <text x="980" y="280" text-anchor="middle" class="small-text">• 文件上传</text>
+  <text x="980" y="295" text-anchor="middle" class="small-text">• 存储管理</text>
+  <text x="980" y="310" text-anchor="middle" class="small-text">• CDN加速</text>
+  
+  <!-- 数据访问层 -->
+  <rect x="50" y="400" width="1100" height="120" class="layer-box"/>
+  <text x="70" y="425" class="subtitle">数据访问层 (Data Access Layer)</text>
+  
+  <!-- ORM框架 -->
+  <rect x="80" y="440" width="150" height="60" class="module-box"/>
+  <text x="155" y="460" text-anchor="middle" class="text">ORM框架</text>
+  <text x="155" y="475" text-anchor="middle" class="small-text">SQLAlchemy</text>
+  <text x="155" y="490" text-anchor="middle" class="small-text">数据映射</text>
+  
+  <!-- 数据库连接池 -->
+  <rect x="250" y="440" width="150" height="60" class="module-box"/>
+  <text x="325" y="460" text-anchor="middle" class="text">连接池</text>
+  <text x="325" y="475" text-anchor="middle" class="small-text">Connection Pool</text>
+  <text x="325" y="490" text-anchor="middle" class="small-text">性能优化</text>
+  
+  <!-- 缓存层 -->
+  <rect x="420" y="440" width="150" height="60" class="module-box"/>
+  <text x="495" y="460" text-anchor="middle" class="text">缓存层</text>
+  <text x="495" y="475" text-anchor="middle" class="small-text">Redis</text>
+  <text x="495" y="490" text-anchor="middle" class="small-text">数据缓存</text>
+  
+  <!-- 搜索引擎 -->
+  <rect x="590" y="440" width="150" height="60" class="module-box"/>
+  <text x="665" y="460" text-anchor="middle" class="text">搜索引擎</text>
+  <text x="665" y="475" text-anchor="middle" class="small-text">Elasticsearch</text>
+  <text x="665" y="490" text-anchor="middle" class="small-text">全文检索</text>
+  
+  <!-- 消息队列 -->
+  <rect x="760" y="440" width="150" height="60" class="module-box"/>
+  <text x="835" y="460" text-anchor="middle" class="text">消息队列</text>
+  <text x="835" y="475" text-anchor="middle" class="small-text">RabbitMQ</text>
+  <text x="835" y="490" text-anchor="middle" class="small-text">异步处理</text>
+  
+  <!-- 数据同步 -->
+  <rect x="930" y="440" width="150" height="60" class="module-box"/>
+  <text x="1005" y="460" text-anchor="middle" class="text">数据同步</text>
+  <text x="1005" y="475" text-anchor="middle" class="small-text">ETL</text>
+  <text x="1005" y="490" text-anchor="middle" class="small-text">数据集成</text>
+  
+  <!-- 数据存储层 -->
+  <rect x="50" y="540" width="1100" height="120" class="layer-box"/>
+  <text x="70" y="565" class="subtitle">数据存储层 (Data Storage Layer)</text>
+  
+  <!-- 主数据库 -->
+  <rect x="80" y="580" width="150" height="60" class="database-box"/>
+  <text x="155" y="600" text-anchor="middle" class="text">主数据库</text>
+  <text x="155" y="615" text-anchor="middle" class="small-text">PostgreSQL</text>
+  <text x="155" y="630" text-anchor="middle" class="small-text">业务数据</text>
+  
+  <!-- 从数据库 -->
+  <rect x="250" y="580" width="150" height="60" class="database-box"/>
+  <text x="325" y="600" text-anchor="middle" class="text">从数据库</text>
+  <text x="325" y="615" text-anchor="middle" class="small-text">PostgreSQL</text>
+  <text x="325" y="630" text-anchor="middle" class="small-text">读取优化</text>
+  
+  <!-- 文件存储 -->
+  <rect x="420" y="580" width="150" height="60" class="database-box"/>
+  <text x="495" y="600" text-anchor="middle" class="text">文件存储</text>
+  <text x="495" y="615" text-anchor="middle" class="small-text">MinIO/OSS</text>
+  <text x="495" y="630" text-anchor="middle" class="small-text">多媒体文件</text>
+  
+  <!-- 日志存储 -->
+  <rect x="590" y="580" width="150" height="60" class="database-box"/>
+  <text x="665" y="600" text-anchor="middle" class="text">日志存储</text>
+  <text x="665" y="615" text-anchor="middle" class="small-text">MongoDB</text>
+  <text x="665" y="630" text-anchor="middle" class="small-text">系统日志</text>
+  
+  <!-- 数据仓库 -->
+  <rect x="760" y="580" width="150" height="60" class="database-box"/>
+  <text x="835" y="600" text-anchor="middle" class="text">数据仓库</text>
+  <text x="835" y="615" text-anchor="middle" class="small-text">ClickHouse</text>
+  <text x="835" y="630" text-anchor="middle" class="small-text">分析数据</text>
+  
+  <!-- 备份存储 -->
+  <rect x="930" y="580" width="150" height="60" class="database-box"/>
+  <text x="1005" y="600" text-anchor="middle" class="text">备份存储</text>
+  <text x="1005" y="615" text-anchor="middle" class="small-text">云存储</text>
+  <text x="1005" y="630" text-anchor="middle" class="small-text">数据备份</text>
+  
+  <!-- 外部服务层 -->
+  <rect x="50" y="680" width="1100" height="100" class="layer-box"/>
+  <text x="70" y="705" class="subtitle">外部服务层 (External Services)</text>
+  
+  <!-- AI服务 -->
+  <rect x="80" y="720" width="130" height="40" class="api-box"/>
+  <text x="145" y="735" text-anchor="middle" class="text">AI服务</text>
+  <text x="145" y="750" text-anchor="middle" class="small-text">OpenAI/百度AI</text>
+  
+  <!-- 短信服务 -->
+  <rect x="230" y="720" width="130" height="40" class="api-box"/>
+  <text x="295" y="735" text-anchor="middle" class="text">短信服务</text>
+  <text x="295" y="750" text-anchor="middle" class="small-text">阿里云SMS</text>
+  
+  <!-- 邮件服务 -->
+  <rect x="380" y="720" width="130" height="40" class="api-box"/>
+  <text x="445" y="735" text-anchor="middle" class="text">邮件服务</text>
+  <text x="445" y="750" text-anchor="middle" class="small-text">SMTP</text>
+  
+  <!-- 支付服务 -->
+  <rect x="530" y="720" width="130" height="40" class="api-box"/>
+  <text x="595" y="735" text-anchor="middle" class="text">支付服务</text>
+  <text x="595" y="750" text-anchor="middle" class="small-text">微信/支付宝</text>
+  
+  <!-- 地图服务 -->
+  <rect x="680" y="720" width="130" height="40" class="api-box"/>
+  <text x="745" y="735" text-anchor="middle" class="text">地图服务</text>
+  <text x="745" y="750" text-anchor="middle" class="small-text">高德地图</text>
+  
+  <!-- 统计服务 -->
+  <rect x="830" y="720" width="130" height="40" class="api-box"/>
+  <text x="895" y="735" text-anchor="middle" class="text">统计服务</text>
+  <text x="895" y="750" text-anchor="middle" class="small-text">Google Analytics</text>
+  
+  <!-- 监控服务 -->
+  <rect x="980" y="720" width="130" height="40" class="api-box"/>
+  <text x="1045" y="735" text-anchor="middle" class="text">监控服务</text>
+  <text x="1045" y="750" text-anchor="middle" class="small-text">Prometheus</text>
+  
+  <!-- 连接线 -->
+  <!-- 表示层到业务逻辑层 -->
+  <line x1="155" y1="180" x2="155" y2="200" class="arrow"/>
+  <line x1="325" y1="180" x2="325" y2="200" class="arrow"/>
+  <line x1="495" y1="180" x2="495" y2="200" class="arrow"/>
+  <line x1="665" y1="180" x2="665" y2="200" class="arrow"/>
+  <line x1="835" y1="180" x2="835" y2="200" class="arrow"/>
+  
+  <!-- 业务逻辑层到数据访问层 -->
+  <line x1="280" y1="340" x2="280" y2="400" class="arrow"/>
+  <line x1="420" y1="340" x2="420" y2="400" class="arrow"/>
+  <line x1="560" y1="340" x2="560" y2="400" class="arrow"/>
+  <line x1="700" y1="340" x2="700" y2="400" class="arrow"/>
+  
+  <!-- 数据访问层到数据存储层 -->
+  <line x1="155" y1="520" x2="155" y2="540" class="arrow"/>
+  <line x1="325" y1="520" x2="325" y2="540" class="arrow"/>
+  <line x1="495" y1="520" x2="495" y2="540" class="arrow"/>
+  <line x1="665" y1="520" x2="665" y2="540" class="arrow"/>
+  <line x1="835" y1="520" x2="835" y2="540" class="arrow"/>
+  
+  <!-- 业务逻辑层到外部服务层 -->
+  <line x1="700" y1="340" x2="145" y2="680" class="data-flow"/>
+  <line x1="840" y1="340" x2="295" y2="680" class="data-flow"/>
+  <line x1="840" y1="340" x2="445" y2="680" class="data-flow"/>
+  
+</svg>

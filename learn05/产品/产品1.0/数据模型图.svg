@@ -1,0 +1,609 @@
+<svg width="1600" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .subtitle { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #4a90e2; }
+      .table-title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .field-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 11px; fill: #333; }
+      .type-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 10px; fill: #666; }
+      .pk-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 10px; fill: #dc3545; font-weight: bold; }
+      .fk-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 10px; fill: #28a745; }
+      .table-box { fill: #ffffff; stroke: #4a90e2; stroke-width: 2; }
+      .table-header { fill: #4a90e2; }
+      .relation-line { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .one-to-many { stroke: #28a745; stroke-width: 2; fill: none; }
+      .many-to-many { stroke: #dc3545; stroke-width: 2; fill: none; stroke-dasharray: 5,5; }
+      .white-text { fill: white; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="800" y="30" text-anchor="middle" class="title">智能教学助手数据模型图</text>
+  
+  <!-- 用户表 (Users) -->
+  <g id="users-table">
+    <rect x="50" y="80" width="200" height="220" class="table-box"/>
+    <rect x="50" y="80" width="200" height="30" class="table-header"/>
+    <text x="150" y="100" text-anchor="middle" class="table-title white-text">用户表 (Users)</text>
+    
+    <text x="60" y="125" class="field-text pk-text">id (PK)</text>
+    <text x="180" y="125" class="type-text">INT</text>
+    
+    <text x="60" y="145" class="field-text">username</text>
+    <text x="180" y="145" class="type-text">VARCHAR(50)</text>
+    
+    <text x="60" y="165" class="field-text">password</text>
+    <text x="180" y="165" class="type-text">VARCHAR(255)</text>
+    
+    <text x="60" y="185" class="field-text">email</text>
+    <text x="180" y="185" class="type-text">VARCHAR(100)</text>
+    
+    <text x="60" y="205" class="field-text">phone</text>
+    <text x="180" y="205" class="type-text">VARCHAR(20)</text>
+    
+    <text x="60" y="225" class="field-text">role</text>
+    <text x="180" y="225" class="type-text">ENUM</text>
+    
+    <text x="60" y="245" class="field-text">status</text>
+    <text x="180" y="245" class="type-text">TINYINT</text>
+    
+    <text x="60" y="265" class="field-text">created_at</text>
+    <text x="180" y="265" class="type-text">DATETIME</text>
+    
+    <text x="60" y="285" class="field-text">updated_at</text>
+    <text x="180" y="285" class="type-text">DATETIME</text>
+  </g>
+  
+  <!-- 教师表 (Teachers) -->
+  <g id="teachers-table">
+    <rect x="300" y="80" width="200" height="240" class="table-box"/>
+    <rect x="300" y="80" width="200" height="30" class="table-header"/>
+    <text x="400" y="100" text-anchor="middle" class="table-title white-text">教师表 (Teachers)</text>
+    
+    <text x="310" y="125" class="field-text pk-text">id (PK)</text>
+    <text x="430" y="125" class="type-text">INT</text>
+    
+    <text x="310" y="145" class="field-text fk-text">user_id (FK)</text>
+    <text x="430" y="145" class="type-text">INT</text>
+    
+    <text x="310" y="165" class="field-text">teacher_name</text>
+    <text x="430" y="165" class="type-text">VARCHAR(50)</text>
+    
+    <text x="310" y="185" class="field-text">subject</text>
+    <text x="430" y="185" class="type-text">VARCHAR(50)</text>
+    
+    <text x="310" y="205" class="field-text">title</text>
+    <text x="430" y="205" class="type-text">VARCHAR(50)</text>
+    
+    <text x="310" y="225" class="field-text">department</text>
+    <text x="430" y="225" class="type-text">VARCHAR(100)</text>
+    
+    <text x="310" y="245" class="field-text">hire_date</text>
+    <text x="430" y="245" class="type-text">DATE</text>
+    
+    <text x="310" y="265" class="field-text">created_at</text>
+    <text x="430" y="265" class="type-text">DATETIME</text>
+    
+    <text x="310" y="285" class="field-text">updated_at</text>
+    <text x="430" y="285" class="type-text">DATETIME</text>
+    
+    <text x="310" y="305" class="field-text">status</text>
+    <text x="430" y="305" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 学生表 (Students) -->
+  <g id="students-table">
+    <rect x="550" y="80" width="200" height="260" class="table-box"/>
+    <rect x="550" y="80" width="200" height="30" class="table-header"/>
+    <text x="650" y="100" text-anchor="middle" class="table-title white-text">学生表 (Students)</text>
+    
+    <text x="560" y="125" class="field-text pk-text">id (PK)</text>
+    <text x="680" y="125" class="type-text">INT</text>
+    
+    <text x="560" y="145" class="field-text">student_id</text>
+    <text x="680" y="145" class="type-text">VARCHAR(20)</text>
+    
+    <text x="560" y="165" class="field-text">student_name</text>
+    <text x="680" y="165" class="type-text">VARCHAR(50)</text>
+    
+    <text x="560" y="185" class="field-text fk-text">class_id (FK)</text>
+    <text x="680" y="185" class="type-text">INT</text>
+    
+    <text x="560" y="205" class="field-text">gender</text>
+    <text x="680" y="205" class="type-text">ENUM</text>
+    
+    <text x="560" y="225" class="field-text">birth_date</text>
+    <text x="680" y="225" class="type-text">DATE</text>
+    
+    <text x="560" y="245" class="field-text">parent_phone</text>
+    <text x="680" y="245" class="type-text">VARCHAR(20)</text>
+    
+    <text x="560" y="265" class="field-text">address</text>
+    <text x="680" y="265" class="type-text">TEXT</text>
+    
+    <text x="560" y="285" class="field-text">enrollment_date</text>
+    <text x="680" y="285" class="type-text">DATE</text>
+    
+    <text x="560" y="305" class="field-text">created_at</text>
+    <text x="680" y="305" class="type-text">DATETIME</text>
+    
+    <text x="560" y="325" class="field-text">status</text>
+    <text x="680" y="325" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 班级表 (Classes) -->
+  <g id="classes-table">
+    <rect x="800" y="80" width="200" height="220" class="table-box"/>
+    <rect x="800" y="80" width="200" height="30" class="table-header"/>
+    <text x="900" y="100" text-anchor="middle" class="table-title white-text">班级表 (Classes)</text>
+    
+    <text x="810" y="125" class="field-text pk-text">id (PK)</text>
+    <text x="930" y="125" class="type-text">INT</text>
+    
+    <text x="810" y="145" class="field-text">class_name</text>
+    <text x="930" y="145" class="type-text">VARCHAR(50)</text>
+    
+    <text x="810" y="165" class="field-text">grade</text>
+    <text x="930" y="165" class="type-text">VARCHAR(20)</text>
+    
+    <text x="810" y="185" class="field-text fk-text">head_teacher_id (FK)</text>
+    <text x="930" y="185" class="type-text">INT</text>
+    
+    <text x="810" y="205" class="field-text">academic_year</text>
+    <text x="930" y="205" class="type-text">VARCHAR(20)</text>
+    
+    <text x="810" y="225" class="field-text">student_count</text>
+    <text x="930" y="225" class="type-text">INT</text>
+    
+    <text x="810" y="245" class="field-text">created_at</text>
+    <text x="930" y="245" class="type-text">DATETIME</text>
+    
+    <text x="810" y="265" class="field-text">status</text>
+    <text x="930" y="265" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 科目表 (Subjects) -->
+  <g id="subjects-table">
+    <rect x="1050" y="80" width="200" height="200" class="table-box"/>
+    <rect x="1050" y="80" width="200" height="30" class="table-header"/>
+    <text x="1150" y="100" text-anchor="middle" class="table-title white-text">科目表 (Subjects)</text>
+    
+    <text x="1060" y="125" class="field-text pk-text">id (PK)</text>
+    <text x="1180" y="125" class="type-text">INT</text>
+    
+    <text x="1060" y="145" class="field-text">subject_name</text>
+    <text x="1180" y="145" class="type-text">VARCHAR(50)</text>
+    
+    <text x="1060" y="165" class="field-text">subject_code</text>
+    <text x="1180" y="165" class="type-text">VARCHAR(20)</text>
+    
+    <text x="1060" y="185" class="field-text">description</text>
+    <text x="1180" y="185" class="type-text">TEXT</text>
+    
+    <text x="1060" y="205" class="field-text">credit_hours</text>
+    <text x="1180" y="205" class="type-text">INT</text>
+    
+    <text x="1060" y="225" class="field-text">created_at</text>
+    <text x="1180" y="225" class="type-text">DATETIME</text>
+    
+    <text x="1060" y="245" class="field-text">status</text>
+    <text x="1180" y="245" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 成绩表 (Grades) -->
+  <g id="grades-table">
+    <rect x="300" y="380" width="200" height="280" class="table-box"/>
+    <rect x="300" y="380" width="200" height="30" class="table-header"/>
+    <text x="400" y="400" text-anchor="middle" class="table-title white-text">成绩表 (Grades)</text>
+    
+    <text x="310" y="425" class="field-text pk-text">id (PK)</text>
+    <text x="430" y="425" class="type-text">INT</text>
+    
+    <text x="310" y="445" class="field-text fk-text">student_id (FK)</text>
+    <text x="430" y="445" class="type-text">INT</text>
+    
+    <text x="310" y="465" class="field-text fk-text">subject_id (FK)</text>
+    <text x="430" y="465" class="type-text">INT</text>
+    
+    <text x="310" y="485" class="field-text fk-text">exam_id (FK)</text>
+    <text x="430" y="485" class="type-text">INT</text>
+    
+    <text x="310" y="505" class="field-text">score</text>
+    <text x="430" y="505" class="type-text">DECIMAL(5,2)</text>
+    
+    <text x="310" y="525" class="field-text">full_score</text>
+    <text x="430" y="525" class="type-text">DECIMAL(5,2)</text>
+    
+    <text x="310" y="545" class="field-text">percentage</text>
+    <text x="430" y="545" class="type-text">DECIMAL(5,2)</text>
+    
+    <text x="310" y="565" class="field-text">rank_in_class</text>
+    <text x="430" y="565" class="type-text">INT</text>
+    
+    <text x="310" y="585" class="field-text">rank_in_grade</text>
+    <text x="430" y="585" class="type-text">INT</text>
+    
+    <text x="310" y="605" class="field-text">comments</text>
+    <text x="430" y="605" class="type-text">TEXT</text>
+    
+    <text x="310" y="625" class="field-text">created_at</text>
+    <text x="430" y="625" class="type-text">DATETIME</text>
+    
+    <text x="310" y="645" class="field-text">updated_at</text>
+    <text x="430" y="645" class="type-text">DATETIME</text>
+  </g>
+  
+  <!-- 考试表 (Exams) -->
+  <g id="exams-table">
+    <rect x="550" y="380" width="200" height="240" class="table-box"/>
+    <rect x="550" y="380" width="200" height="30" class="table-header"/>
+    <text x="650" y="400" text-anchor="middle" class="table-title white-text">考试表 (Exams)</text>
+    
+    <text x="560" y="425" class="field-text pk-text">id (PK)</text>
+    <text x="680" y="425" class="type-text">INT</text>
+    
+    <text x="560" y="445" class="field-text">exam_name</text>
+    <text x="680" y="445" class="type-text">VARCHAR(100)</text>
+    
+    <text x="560" y="465" class="field-text">exam_type</text>
+    <text x="680" y="465" class="type-text">ENUM</text>
+    
+    <text x="560" y="485" class="field-text">exam_date</text>
+    <text x="680" y="485" class="type-text">DATE</text>
+    
+    <text x="560" y="505" class="field-text">academic_year</text>
+    <text x="680" y="505" class="type-text">VARCHAR(20)</text>
+    
+    <text x="560" y="525" class="field-text">semester</text>
+    <text x="680" y="525" class="type-text">ENUM</text>
+    
+    <text x="560" y="545" class="field-text">description</text>
+    <text x="680" y="545" class="type-text">TEXT</text>
+    
+    <text x="560" y="565" class="field-text">created_by</text>
+    <text x="680" y="565" class="type-text">INT</text>
+    
+    <text x="560" y="585" class="field-text">created_at</text>
+    <text x="680" y="585" class="type-text">DATETIME</text>
+    
+    <text x="560" y="605" class="field-text">status</text>
+    <text x="680" y="605" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 教材表 (Textbooks) -->
+  <g id="textbooks-table">
+    <rect x="50" y="380" width="200" height="240" class="table-box"/>
+    <rect x="50" y="380" width="200" height="30" class="table-header"/>
+    <text x="150" y="400" text-anchor="middle" class="table-title white-text">教材表 (Textbooks)</text>
+    
+    <text x="60" y="425" class="field-text pk-text">id (PK)</text>
+    <text x="180" y="425" class="type-text">INT</text>
+    
+    <text x="60" y="445" class="field-text">title</text>
+    <text x="180" y="445" class="type-text">VARCHAR(200)</text>
+    
+    <text x="60" y="465" class="field-text fk-text">subject_id (FK)</text>
+    <text x="180" y="465" class="type-text">INT</text>
+    
+    <text x="60" y="485" class="field-text">grade</text>
+    <text x="180" y="485" class="type-text">VARCHAR(20)</text>
+    
+    <text x="60" y="505" class="field-text">publisher</text>
+    <text x="180" y="505" class="type-text">VARCHAR(100)</text>
+    
+    <text x="60" y="525" class="field-text">edition</text>
+    <text x="180" y="525" class="type-text">VARCHAR(50)</text>
+    
+    <text x="60" y="545" class="field-text">isbn</text>
+    <text x="180" y="545" class="type-text">VARCHAR(20)</text>
+    
+    <text x="60" y="565" class="field-text">file_path</text>
+    <text x="180" y="565" class="type-text">VARCHAR(500)</text>
+    
+    <text x="60" y="585" class="field-text">created_at</text>
+    <text x="180" y="585" class="type-text">DATETIME</text>
+    
+    <text x="60" y="605" class="field-text">status</text>
+    <text x="180" y="605" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 备课方案表 (Lesson_Plans) -->
+  <g id="lesson-plans-table">
+    <rect x="800" y="380" width="200" height="280" class="table-box"/>
+    <rect x="800" y="380" width="200" height="30" class="table-header"/>
+    <text x="900" y="400" text-anchor="middle" class="table-title white-text">备课方案表 (Lesson_Plans)</text>
+    
+    <text x="810" y="425" class="field-text pk-text">id (PK)</text>
+    <text x="930" y="425" class="type-text">INT</text>
+    
+    <text x="810" y="445" class="field-text">plan_title</text>
+    <text x="930" y="445" class="type-text">VARCHAR(200)</text>
+    
+    <text x="810" y="465" class="field-text fk-text">teacher_id (FK)</text>
+    <text x="930" y="465" class="type-text">INT</text>
+    
+    <text x="810" y="485" class="field-text fk-text">subject_id (FK)</text>
+    <text x="930" y="485" class="type-text">INT</text>
+    
+    <text x="810" y="505" class="field-text fk-text">textbook_id (FK)</text>
+    <text x="930" y="505" class="type-text">INT</text>
+    
+    <text x="810" y="525" class="field-text">grade</text>
+    <text x="930" y="525" class="type-text">VARCHAR(20)</text>
+    
+    <text x="810" y="545" class="field-text">lesson_content</text>
+    <text x="930" y="545" class="type-text">TEXT</text>
+    
+    <text x="810" y="565" class="field-text">teaching_objectives</text>
+    <text x="930" y="565" class="type-text">TEXT</text>
+    
+    <text x="810" y="585" class="field-text">teaching_methods</text>
+    <text x="930" y="585" class="type-text">TEXT</text>
+    
+    <text x="810" y="605" class="field-text">duration_minutes</text>
+    <text x="930" y="605" class="type-text">INT</text>
+    
+    <text x="810" y="625" class="field-text">created_at</text>
+    <text x="930" y="625" class="type-text">DATETIME</text>
+    
+    <text x="810" y="645" class="field-text">status</text>
+    <text x="930" y="645" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 课堂记录表 (Class_Records) -->
+  <g id="class-records-table">
+    <rect x="1050" y="380" width="200" height="260" class="table-box"/>
+    <rect x="1050" y="380" width="200" height="30" class="table-header"/>
+    <text x="1150" y="400" text-anchor="middle" class="table-title white-text">课堂记录表 (Class_Records)</text>
+    
+    <text x="1060" y="425" class="field-text pk-text">id (PK)</text>
+    <text x="1180" y="425" class="type-text">INT</text>
+    
+    <text x="1060" y="445" class="field-text fk-text">lesson_plan_id (FK)</text>
+    <text x="1180" y="445" class="type-text">INT</text>
+    
+    <text x="1060" y="465" class="field-text fk-text">teacher_id (FK)</text>
+    <text x="1180" y="465" class="type-text">INT</text>
+    
+    <text x="1060" y="485" class="field-text fk-text">class_id (FK)</text>
+    <text x="1180" y="485" class="type-text">INT</text>
+    
+    <text x="1060" y="505" class="field-text">class_date</text>
+    <text x="1180" y="505" class="type-text">DATETIME</text>
+    
+    <text x="1060" y="525" class="field-text">attendance_count</text>
+    <text x="1180" y="525" class="type-text">INT</text>
+    
+    <text x="1060" y="545" class="field-text">interaction_data</text>
+    <text x="1180" y="545" class="type-text">JSON</text>
+    
+    <text x="1060" y="565" class="field-text">video_path</text>
+    <text x="1180" y="565" class="type-text">VARCHAR(500)</text>
+    
+    <text x="1060" y="585" class="field-text">ai_analysis</text>
+    <text x="1180" y="585" class="type-text">TEXT</text>
+    
+    <text x="1060" y="605" class="field-text">created_at</text>
+    <text x="1180" y="605" class="type-text">DATETIME</text>
+    
+    <text x="1060" y="625" class="field-text">status</text>
+    <text x="1180" y="625" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 辅导方案表 (Tutoring_Plans) -->
+  <g id="tutoring-plans-table">
+    <rect x="300" y="720" width="200" height="280" class="table-box"/>
+    <rect x="300" y="720" width="200" height="30" class="table-header"/>
+    <text x="400" y="740" text-anchor="middle" class="table-title white-text">辅导方案表 (Tutoring_Plans)</text>
+    
+    <text x="310" y="765" class="field-text pk-text">id (PK)</text>
+    <text x="430" y="765" class="type-text">INT</text>
+    
+    <text x="310" y="785" class="field-text fk-text">student_id (FK)</text>
+    <text x="430" y="785" class="type-text">INT</text>
+    
+    <text x="310" y="805" class="field-text fk-text">teacher_id (FK)</text>
+    <text x="430" y="805" class="type-text">INT</text>
+    
+    <text x="310" y="825" class="field-text fk-text">subject_id (FK)</text>
+    <text x="430" y="825" class="type-text">INT</text>
+    
+    <text x="310" y="845" class="field-text">plan_title</text>
+    <text x="430" y="845" class="type-text">VARCHAR(200)</text>
+    
+    <text x="310" y="865" class="field-text">objectives</text>
+    <text x="430" y="865" class="type-text">TEXT</text>
+    
+    <text x="310" y="885" class="field-text">content</text>
+    <text x="430" y="885" class="type-text">TEXT</text>
+    
+    <text x="310" y="905" class="field-text">duration_weeks</text>
+    <text x="430" y="905" class="type-text">INT</text>
+    
+    <text x="310" y="925" class="field-text">progress</text>
+    <text x="430" y="925" class="type-text">DECIMAL(5,2)</text>
+    
+    <text x="310" y="945" class="field-text">created_at</text>
+    <text x="430" y="945" class="type-text">DATETIME</text>
+    
+    <text x="310" y="965" class="field-text">status</text>
+    <text x="430" y="965" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 练习题表 (Exercises) -->
+  <g id="exercises-table">
+    <rect x="550" y="720" width="200" height="260" class="table-box"/>
+    <rect x="550" y="720" width="200" height="30" class="table-header"/>
+    <text x="650" y="740" text-anchor="middle" class="table-title white-text">练习题表 (Exercises)</text>
+    
+    <text x="560" y="765" class="field-text pk-text">id (PK)</text>
+    <text x="680" y="765" class="type-text">INT</text>
+    
+    <text x="560" y="785" class="field-text fk-text">subject_id (FK)</text>
+    <text x="680" y="785" class="type-text">INT</text>
+    
+    <text x="560" y="805" class="field-text">question_text</text>
+    <text x="680" y="805" class="type-text">TEXT</text>
+    
+    <text x="560" y="825" class="field-text">question_type</text>
+    <text x="680" y="825" class="type-text">ENUM</text>
+    
+    <text x="560" y="845" class="field-text">options</text>
+    <text x="680" y="845" class="type-text">JSON</text>
+    
+    <text x="560" y="865" class="field-text">correct_answer</text>
+    <text x="680" y="865" class="type-text">TEXT</text>
+    
+    <text x="560" y="885" class="field-text">difficulty_level</text>
+    <text x="680" y="885" class="type-text">ENUM</text>
+    
+    <text x="560" y="905" class="field-text">knowledge_points</text>
+    <text x="680" y="905" class="type-text">JSON</text>
+    
+    <text x="560" y="925" class="field-text">created_at</text>
+    <text x="680" y="925" class="type-text">DATETIME</text>
+    
+    <text x="560" y="945" class="field-text">status</text>
+    <text x="680" y="945" class="type-text">TINYINT</text>
+  </g>
+  
+  <!-- 学生练习记录表 (Student_Exercise_Records) -->
+  <g id="exercise-records-table">
+    <rect x="800" y="720" width="220" height="260" class="table-box"/>
+    <rect x="800" y="720" width="220" height="30" class="table-header"/>
+    <text x="910" y="740" text-anchor="middle" class="table-title white-text">学生练习记录表 (Student_Exercise_Records)</text>
+    
+    <text x="810" y="765" class="field-text pk-text">id (PK)</text>
+    <text x="950" y="765" class="type-text">INT</text>
+    
+    <text x="810" y="785" class="field-text fk-text">student_id (FK)</text>
+    <text x="950" y="785" class="type-text">INT</text>
+    
+    <text x="810" y="805" class="field-text fk-text">exercise_id (FK)</text>
+    <text x="950" y="805" class="type-text">INT</text>
+    
+    <text x="810" y="825" class="field-text">student_answer</text>
+    <text x="950" y="825" class="type-text">TEXT</text>
+    
+    <text x="810" y="845" class="field-text">is_correct</text>
+    <text x="950" y="845" class="type-text">BOOLEAN</text>
+    
+    <text x="810" y="865" class="field-text">time_spent</text>
+    <text x="950" y="865" class="type-text">INT</text>
+    
+    <text x="810" y="885" class="field-text">attempt_count</text>
+    <text x="950" y="885" class="type-text">INT</text>
+    
+    <text x="810" y="905" class="field-text">completed_at</text>
+    <text x="950" y="905" class="type-text">DATETIME</text>
+    
+    <text x="810" y="925" class="field-text">created_at</text>
+    <text x="950" y="925" class="type-text">DATETIME</text>
+  </g>
+  
+  <!-- 关系连线 -->
+  <!-- Users -> Teachers -->
+  <line x1="250" y1="150" x2="300" y2="150" class="one-to-many"/>
+  <text x="275" y="145" class="type-text">1:1</text>
+  
+  <!-- Teachers -> Classes (head_teacher) -->
+  <line x1="500" y1="185" x2="800" y2="185" class="one-to-many"/>
+  <text x="650" y="180" class="type-text">1:N</text>
+  
+  <!-- Classes -> Students -->
+  <line x1="750" y1="185" x2="650" y2="185" class="one-to-many"/>
+  <text x="700" y="180" class="type-text">1:N</text>
+  
+  <!-- Students -> Grades -->
+  <line x1="550" y1="340" x2="450" y2="445" class="one-to-many"/>
+  <text x="500" y="390" class="type-text">1:N</text>
+  
+  <!-- Subjects -> Grades -->
+  <line x1="1050" y1="200" x2="450" y2="465" class="one-to-many"/>
+  <text x="750" y="330" class="type-text">1:N</text>
+  
+  <!-- Exams -> Grades -->
+  <line x1="550" y1="485" x2="500" y2="485" class="one-to-many"/>
+  <text x="525" y="480" class="type-text">1:N</text>
+  
+  <!-- Subjects -> Textbooks -->
+  <line x1="1050" y1="250" x2="200" y2="465" class="one-to-many"/>
+  <text x="625" y="350" class="type-text">1:N</text>
+  
+  <!-- Teachers -> Lesson_Plans -->
+  <line x1="500" y1="300" x2="850" y2="465" class="one-to-many"/>
+  <text x="675" y="380" class="type-text">1:N</text>
+  
+  <!-- Subjects -> Lesson_Plans -->
+  <line x1="1050" y1="280" x2="950" y2="485" class="one-to-many"/>
+  <text x="1000" y="380" class="type-text">1:N</text>
+  
+  <!-- Textbooks -> Lesson_Plans -->
+  <line x1="250" y1="500" x2="800" y2="505" class="one-to-many"/>
+  <text x="525" y="500" class="type-text">1:N</text>
+  
+  <!-- Lesson_Plans -> Class_Records -->
+  <line x1="1000" y1="445" x2="1050" y2="445" class="one-to-many"/>
+  <text x="1025" y="440" class="type-text">1:N</text>
+  
+  <!-- Teachers -> Class_Records -->
+  <line x1="500" y1="320" x2="1100" y2="465" class="one-to-many"/>
+  <text x="800" y="390" class="type-text">1:N</text>
+  
+  <!-- Classes -> Class_Records -->
+  <line x1="900" y1="300" x2="1100" y2="485" class="one-to-many"/>
+  <text x="1000" y="390" class="type-text">1:N</text>
+  
+  <!-- Students -> Tutoring_Plans -->
+  <line x1="550" y1="360" x2="400" y2="785" class="one-to-many"/>
+  <text x="475" y="570" class="type-text">1:N</text>
+  
+  <!-- Teachers -> Tutoring_Plans -->
+  <line x1="400" y1="320" x2="400" y2="720" class="one-to-many"/>
+  <text x="405" y="520" class="type-text">1:N</text>
+  
+  <!-- Subjects -> Tutoring_Plans -->
+  <line x1="1050" y1="300" x2="450" y2="825" class="one-to-many"/>
+  <text x="750" y="560" class="type-text">1:N</text>
+  
+  <!-- Subjects -> Exercises -->
+  <line x1="1050" y1="320" x2="700" y2="785" class="one-to-many"/>
+  <text x="875" y="550" class="type-text">1:N</text>
+  
+  <!-- Students -> Student_Exercise_Records -->
+  <line x1="650" y1="340" x2="850" y2="785" class="one-to-many"/>
+  <text x="750" y="560" class="type-text">1:N</text>
+  
+  <!-- Exercises -> Student_Exercise_Records -->
+  <line x1="750" y1="805" x2="800" y2="805" class="one-to-many"/>
+  <text x="775" y="800" class="type-text">1:N</text>
+  
+  <!-- 图例 -->
+  <g id="legend">
+    <text x="1300" y="100" class="subtitle">图例说明</text>
+    
+    <text x="1310" y="130" class="pk-text">PK - 主键</text>
+    <text x="1310" y="150" class="fk-text">FK - 外键</text>
+    
+    <line x1="1310" y1="170" x2="1360" y2="170" class="one-to-many"/>
+    <text x="1370" y="175" class="type-text">一对多关系</text>
+    
+    <line x1="1310" y1="190" x2="1360" y2="190" class="many-to-many"/>
+    <text x="1370" y="195" class="type-text">多对多关系</text>
+    
+    <text x="1310" y="220" class="type-text">数据类型说明：</text>
+    <text x="1310" y="240" class="type-text">• INT - 整数</text>
+    <text x="1310" y="255" class="type-text">• VARCHAR - 可变长字符串</text>
+    <text x="1310" y="270" class="type-text">• TEXT - 长文本</text>
+    <text x="1310" y="285" class="type-text">• DECIMAL - 小数</text>
+    <text x="1310" y="300" class="type-text">• DATE - 日期</text>
+    <text x="1310" y="315" class="type-text">• DATETIME - 日期时间</text>
+    <text x="1310" y="330" class="type-text">• ENUM - 枚举</text>
+    <text x="1310" y="345" class="type-text">• JSON - JSON数据</text>
+    <text x="1310" y="360" class="type-text">• BOOLEAN - 布尔值</text>
+  </g>
+  
+</svg>

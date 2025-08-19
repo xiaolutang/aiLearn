@@ -1,0 +1,199 @@
+{
+  "start_time": "2025-08-17T00:32:28.777610",
+  "tests": {
+    "valid_login": {
+      "admin_test": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.004537105560302734
+      },
+      "teacher_zhang": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0016717910766601562
+      },
+      "teacher_li": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0013399124145507812
+      },
+      "teacher_wang": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0012810230255126953
+      },
+      "principal_chen": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0014619827270507812
+      },
+      "director_liu": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0012350082397460938
+      },
+      "student_xiaoming": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0011012554168701172
+      },
+      "student_xiaohong": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0011603832244873047
+      },
+      "parent_zhang": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0012688636779785156
+      },
+      "parent_li": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.001107931137084961
+      },
+      "guest_visitor": {
+        "success": false,
+        "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+        "response_time": 0.0011200904846191406
+      }
+    },
+    "invalid_credentials": [
+      {
+        "case": "完全无效的用户名和密码",
+        "username": "invalid_user",
+        "status_code": 401,
+        "response_time": 0.0024819374084472656,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "有效用户名，无效密码",
+        "username": "admin",
+        "status_code": 401,
+        "response_time": 0.001953125,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "无效用户名，有效密码格式",
+        "username": "wrong_user",
+        "status_code": 401,
+        "response_time": 0.0020608901977539062,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空用户名",
+        "username": "",
+        "status_code": 401,
+        "response_time": 0.0017919540405273438,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空密码",
+        "username": "admin",
+        "status_code": 401,
+        "response_time": 0.00185394287109375,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空用户名和密码",
+        "username": "",
+        "status_code": 401,
+        "response_time": 0.0019299983978271484,
+        "expected_failure": true,
+        "success": true
+      }
+    ],
+    "session_validation": {},
+    "invalid_token": {
+      "results": [
+        {
+          "token": "invalid_token",
+          "status_code": 404,
+          "response_time": 0.0011990070343017578,
+          "expected_failure": false,
+          "success": false
+        },
+        {
+          "token": "Bearer invalid_token",
+          "status_code": 404,
+          "response_time": 0.0011301040649414062,
+          "expected_failure": false,
+          "success": false
+        },
+        {
+          "token": "expired_token_12345",
+          "status_code": 404,
+          "response_time": 0.0010161399841308594,
+          "expected_failure": false,
+          "success": false
+        },
+        {
+          "token": "(empty)",
+          "status_code": 404,
+          "response_time": 0.0010638236999511719,
+          "expected_failure": false,
+          "success": false
+        },
+        {
+          "token": "malformed.token.here",
+          "status_code": 404,
+          "response_time": 0.0010390281677246094,
+          "expected_failure": false,
+          "success": false
+        }
+      ],
+      "success": false
+    },
+    "concurrent_login": {
+      "success": false,
+      "total_accounts": 5,
+      "successful_logins": 0,
+      "failed_logins": 5,
+      "total_time": 0.0037870407104492188,
+      "average_time": 0.0007574081420898438,
+      "results": [
+        {
+          "success": false,
+          "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+          "response_time": 0.0031790733337402344
+        },
+        {
+          "success": false,
+          "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+          "response_time": 0.003236055374145508
+        },
+        {
+          "success": false,
+          "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+          "response_time": 0.003245115280151367
+        },
+        {
+          "success": false,
+          "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+          "response_time": 0.002178192138671875
+        },
+        {
+          "success": false,
+          "error": "HTTP 404: {\"detail\":\"Not Found\"}",
+          "response_time": 0.0024340152740478516
+        }
+      ]
+    },
+    "logout": {}
+  },
+  "summary": {
+    "total_accounts": 11,
+    "login_success_rate": 0.0,
+    "session_validation_success_rate": 0,
+    "logout_success_rate": 0,
+    "invalid_credentials_handled": 100.0,
+    "invalid_token_handled": false,
+    "concurrent_login_success": false
+  },
+  "end_time": "2025-08-17T00:32:28.820563"
+}

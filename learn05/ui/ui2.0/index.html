@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能教学助手 2.0 - AI Teaching Assistant</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 主应用容器 -->
+    <div class="app-container">
+        <!-- 侧边导航栏 -->
+        <aside class="sidebar" id="sidebar">
+            <!-- 品牌标识 -->
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="brand-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">智能教学助手</h1>
+                        <span class="brand-version">2.0</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- 用户信息 -->
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="https://via.placeholder.com/40x40/4A90E2/FFFFFF?text=张" alt="用户头像">
+                </div>
+                <div class="user-info">
+                    <div class="user-name">张老师</div>
+                    <div class="user-role">高中数学教师</div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-icon btn-text" title="设置">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 主导航菜单 -->
+            <nav class="sidebar-nav">
+                <ul class="nav nav-vertical">
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span class="nav-text">工作台</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#lesson-prep" class="nav-link" data-page="lesson-prep">
+                            <i class="fas fa-book-open nav-icon"></i>
+                            <span class="nav-text">备课助手</span>
+                            <span class="badge badge-primary nav-badge">AI</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#classroom" class="nav-link" data-page="classroom">
+                            <i class="fas fa-chalkboard-teacher nav-icon"></i>
+                            <span class="nav-text">课堂助手</span>
+                            <span class="badge badge-success nav-badge">智能</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#grade-management" class="nav-link" data-page="grade-management">
+                            <i class="fas fa-chart-line nav-icon"></i>
+                            <span class="nav-text">成绩管理</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#data-analysis" class="nav-link" data-page="data-analysis">
+                            <i class="fas fa-analytics nav-icon"></i>
+                            <span class="nav-text">数据分析</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resource-library" class="nav-link" data-page="resource-library">
+                            <i class="fas fa-folder-open nav-icon"></i>
+                            <span class="nav-text">资源库</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- 分割线 -->
+                <div class="nav-divider"></div>
+
+                <!-- 系统功能 -->
+                <ul class="nav nav-vertical">
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link" data-page="settings">
+                            <i class="fas fa-cog nav-icon"></i>
+                            <span class="nav-text">系统设置</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#help" class="nav-link" data-page="help">
+                            <i class="fas fa-question-circle nav-icon"></i>
+                            <span class="nav-text">帮助中心</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 侧边栏底部 -->
+            <div class="sidebar-footer">
+                <div class="upgrade-prompt">
+                    <div class="upgrade-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="upgrade-content">
+                        <div class="upgrade-title">升级到专业版</div>
+                        <div class="upgrade-desc">解锁更多AI功能</div>
+                    </div>
+                    <button class="btn btn-primary btn-sm upgrade-btn">升级</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <div class="breadcrumb-item">
+                            <span class="breadcrumb-link">工作台</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="form-input" placeholder="搜索功能、课程、学生..." id="globalSearch">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <!-- 快速操作 -->
+                    <div class="quick-actions">
+                        <button class="btn-icon" title="新建课程">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="btn-icon" title="消息通知" data-badge="3">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="btn-icon" title="AI助手">
+                            <i class="fas fa-robot"></i>
+                        </button>
+                    </div>
+
+                    <!-- 用户菜单 -->
+                    <div class="dropdown user-dropdown">
+                        <button class="user-menu-trigger">
+                            <img src="https://via.placeholder.com/32x32/4A90E2/FFFFFF?text=张" alt="用户头像" class="user-avatar-sm">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#profile" class="dropdown-item">
+                                <i class="fas fa-user"></i>
+                                个人资料
+                            </a>
+                            <a href="#preferences" class="dropdown-item">
+                                <i class="fas fa-cog"></i>
+                                偏好设置
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#logout" class="dropdown-item">
+                                <i class="fas fa-sign-out-alt"></i>
+                                退出登录
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 页面内容区域 -->
+            <div class="page-content" id="pageContent">
+                <!-- 工作台页面 -->
+                <div class="page" id="dashboard-page" data-page="dashboard">
+                    <!-- 欢迎横幅 -->
+                    <section class="welcome-banner">
+                        <div class="banner-content">
+                            <div class="banner-text">
+                                <h2 class="banner-title">早上好，张老师！</h2>
+                                <p class="banner-subtitle">今天是2024年12月27日，您有3节课程安排</p>
+                            </div>
+                            <div class="banner-actions">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    开始备课
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-calendar"></i>
+                                    查看课表
+                                </button>
+                            </div>
+                        </div>
+                        <div class="banner-illustration">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </section>
+
+                    <!-- 数据概览 -->
+                    <section class="dashboard-stats">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                            <div class="card data-card">
+                                <div class="data-card-value">156</div>
+                                <div class="data-card-label">本周备课数</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +12%
+                                </div>
+                            </div>
+                            <div class="card data-card">
+                                <div class="data-card-value">89%</div>
+                                <div class="data-card-label">课堂参与度</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +5%
+                                </div>
+                            </div>
+                            <div class="card data-card">
+                                <div class="data-card-value">92.5</div>
+                                <div class="data-card-label">平均成绩</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +3.2
+                                </div>
+                            </div>
+                            <div class="card data-card">
+                                <div class="data-card-value">24</div>
+                                <div class="data-card-label">AI建议采纳</div>
+                                <div class="data-card-trend positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    +8
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 主要功能区域 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- 快速入口 -->
+                        <section class="lg:col-span-2">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">快速入口</h3>
+                                    <p class="card-subtitle">常用功能快速访问</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                        <a href="#lesson-prep" class="quick-entry" data-page="lesson-prep">
+                                            <div class="quick-entry-icon bg-brand">
+                                                <i class="fas fa-book-open"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">AI备课</div>
+                                                <div class="quick-entry-desc">智能教材分析</div>
+                                            </div>
+                                        </a>
+                                        <a href="#classroom" class="quick-entry" data-page="classroom">
+                                            <div class="quick-entry-icon bg-success">
+                                                <i class="fas fa-chalkboard-teacher"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">智能课堂</div>
+                                                <div class="quick-entry-desc">实时学情分析</div>
+                                            </div>
+                                        </a>
+                                        <a href="#grade-management" class="quick-entry" data-page="grade-management">
+                                            <div class="quick-entry-icon bg-warning">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">成绩分析</div>
+                                                <div class="quick-entry-desc">个性化报告</div>
+                                            </div>
+                                        </a>
+                                        <a href="#data-analysis" class="quick-entry" data-page="data-analysis">
+                                            <div class="quick-entry-icon bg-info">
+                                                <i class="fas fa-analytics"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">数据洞察</div>
+                                                <div class="quick-entry-desc">教学效果分析</div>
+                                            </div>
+                                        </a>
+                                        <a href="#resource-library" class="quick-entry" data-page="resource-library">
+                                            <div class="quick-entry-icon bg-secondary">
+                                                <i class="fas fa-folder-open"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">资源库</div>
+                                                <div class="quick-entry-desc">教学资源管理</div>
+                                            </div>
+                                        </a>
+                                        <a href="#ai-assistant" class="quick-entry">
+                                            <div class="quick-entry-icon bg-accent">
+                                                <i class="fas fa-robot"></i>
+                                            </div>
+                                            <div class="quick-entry-content">
+                                                <div class="quick-entry-title">AI助手</div>
+                                                <div class="quick-entry-desc">智能问答</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- 最近活动 -->
+                        <section>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">最近活动</h3>
+                                    <a href="#" class="text-brand text-sm">查看全部</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="activity-list">
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-brand-light">
+                                                <i class="fas fa-book-open text-brand"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <div class="activity-title">完成《函数的性质》备课</div>
+                                                <div class="activity-time">2小时前</div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-success-light">
+                                                <i class="fas fa-chalkboard-teacher text-success"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <div class="activity-title">高二(3)班课堂互动</div>
+                                                <div class="activity-time">4小时前</div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-warning-light">
+                                                <i class="fas fa-chart-line text-warning"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <div class="activity-title">月考成绩分析报告</div>
+                                                <div class="activity-time">1天前</div>
+                                            </div>
+                                        </div>
+                                        <div class="activity-item">
+                                            <div class="activity-icon bg-info-light">
+                                                <i class="fas fa-robot text-info"></i>
+                                            </div>
+                                            <div class="activity-content">
+                                                <div class="activity-title">AI生成个性化练习</div>
+                                                <div class="activity-time">2天前</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- 今日课程安排 -->
+                    <section class="today-schedule">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">今日课程安排</h3>
+                                <div class="schedule-date">2024年12月27日 星期五</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="schedule-list">
+                                    <div class="schedule-item current">
+                                        <div class="schedule-time">
+                                            <div class="time-start">08:00</div>
+                                            <div class="time-end">08:45</div>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">高二数学</div>
+                                            <div class="schedule-topic">函数的性质与图像</div>
+                                            <div class="schedule-class">高二(3)班 · 教室A201</div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-primary btn-sm">开始上课</button>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">
+                                            <div class="time-start">10:00</div>
+                                            <div class="time-end">10:45</div>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">高一数学</div>
+                                            <div class="schedule-topic">一元二次方程</div>
+                                            <div class="schedule-class">高一(2)班 · 教室B103</div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-secondary btn-sm">查看备课</button>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item">
+                                        <div class="schedule-time">
+                                            <div class="time-start">14:30</div>
+                                            <div class="time-end">15:15</div>
+                                        </div>
+                                        <div class="schedule-content">
+                                            <div class="schedule-subject">高三数学</div>
+                                            <div class="schedule-topic">导数的应用</div>
+                                            <div class="schedule-class">高三(1)班 · 教室C301</div>
+                                        </div>
+                                        <div class="schedule-actions">
+                                            <button class="btn btn-secondary btn-sm">查看备课</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 其他页面内容将在后续模块中加载 -->
+                <div class="page hidden" id="lesson-prep-page" data-page="lesson-prep">
+                    <div class="page-loading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">正在加载备课助手...</div>
+                    </div>
+                </div>
+
+                <div class="page hidden" id="classroom-page" data-page="classroom">
+                    <div class="page-loading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">正在加载课堂助手...</div>
+                    </div>
+                </div>
+
+                <div class="page hidden" id="grade-management-page" data-page="grade-management">
+                    <div class="page-loading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">正在加载成绩管理...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 移动端遮罩层 -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

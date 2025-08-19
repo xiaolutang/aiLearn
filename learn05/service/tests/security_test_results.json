@@ -1,0 +1,240 @@
+{
+  "start_time": "2025-08-17T00:04:16.978679",
+  "tests": {
+    "authentication_security": {
+      "test_type": "认证安全性测试",
+      "tests": {
+        "weak_password_test": [
+          {
+            "password": "123456",
+            "login_successful": false
+          },
+          {
+            "password": "password",
+            "login_successful": false
+          },
+          {
+            "password": "admin",
+            "login_successful": false
+          },
+          {
+            "password": "123123",
+            "login_successful": false
+          },
+          {
+            "password": "qwerty",
+            "login_successful": false
+          },
+          {
+            "password": "abc123",
+            "login_successful": false
+          }
+        ],
+        "brute_force_protection": {
+          "total_attempts": 10,
+          "blocked_attempts": 0,
+          "protection_exists": false,
+          "attempts_details": [
+            {
+              "attempt": 1,
+              "status_code": 422,
+              "response_time": 0.0013129711151123047,
+              "blocked": false
+            },
+            {
+              "attempt": 2,
+              "status_code": 422,
+              "response_time": 0.002602100372314453,
+              "blocked": false
+            },
+            {
+              "attempt": 3,
+              "status_code": 422,
+              "response_time": 0.0021576881408691406,
+              "blocked": false
+            },
+            {
+              "attempt": 4,
+              "status_code": 422,
+              "response_time": 0.0020940303802490234,
+              "blocked": false
+            },
+            {
+              "attempt": 5,
+              "status_code": 422,
+              "response_time": 0.0022628307342529297,
+              "blocked": false
+            },
+            {
+              "attempt": 6,
+              "status_code": 422,
+              "response_time": 0.002872943878173828,
+              "blocked": false
+            },
+            {
+              "attempt": 7,
+              "status_code": 422,
+              "response_time": 0.005995035171508789,
+              "blocked": false
+            },
+            {
+              "attempt": 8,
+              "status_code": 422,
+              "response_time": 0.0022029876708984375,
+              "blocked": false
+            },
+            {
+              "attempt": 9,
+              "status_code": 422,
+              "response_time": 0.0072557926177978516,
+              "blocked": false
+            },
+            {
+              "attempt": 10,
+              "status_code": 422,
+              "response_time": 0.0022237300872802734,
+              "blocked": false
+            }
+          ]
+        },
+        "sql_injection_test": [
+          {
+            "payload": "' OR '1'='1",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          },
+          {
+            "payload": "'; DROP TABLE users; --",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          },
+          {
+            "payload": "' UNION SELECT * FROM users --",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          },
+          {
+            "payload": "admin'--",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          },
+          {
+            "payload": "' OR 1=1#",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          },
+          {
+            "payload": "1' AND (SELECT COUNT(*) FROM users) > 0 --",
+            "status_code": 422,
+            "sql_error_exposed": false,
+            "login_successful": false
+          }
+        ],
+        "session_fixation_test": []
+      },
+      "vulnerabilities": [
+        "缺少暴力破解防护机制"
+      ],
+      "security_score": 90.0,
+      "security_rating": "优秀"
+    },
+    "authorization_security": {
+      "test_type": "权限控制安全性测试",
+      "tests": {
+        "vertical_privilege_escalation": [],
+        "horizontal_privilege_escalation": [],
+        "unauthorized_access": [
+          {
+            "endpoint": "/api/user/profile",
+            "unauthorized_access_granted": false,
+            "status_code": 404
+          },
+          {
+            "endpoint": "/api/grades/list",
+            "unauthorized_access_granted": false,
+            "status_code": 401
+          },
+          {
+            "endpoint": "/api/lesson/list",
+            "unauthorized_access_granted": false,
+            "status_code": 404
+          },
+          {
+            "endpoint": "/api/admin/users",
+            "unauthorized_access_granted": false,
+            "status_code": 404
+          },
+          {
+            "endpoint": "/api/student/progress",
+            "unauthorized_access_granted": false,
+            "status_code": 404
+          }
+        ],
+        "token_tampering": []
+      },
+      "vulnerabilities": [],
+      "security_score": 100.0,
+      "security_rating": "优秀"
+    },
+    "input_validation_security": {
+      "test_type": "输入验证安全性测试",
+      "tests": {},
+      "vulnerabilities": [],
+      "security_score": 0
+    },
+    "session_management_security": {
+      "test_type": "会话管理安全性测试",
+      "tests": {
+        "session_timeout_test": [],
+        "session_logout_test": [],
+        "concurrent_session_test": [
+          {
+            "total_sessions_created": 0,
+            "valid_concurrent_sessions": 0,
+            "multiple_sessions_allowed": false
+          }
+        ]
+      },
+      "vulnerabilities": [],
+      "security_score": 100.0,
+      "security_rating": "优秀"
+    }
+  },
+  "summary": {
+    "total_vulnerabilities": 1,
+    "high_risk_vulnerabilities": 0,
+    "medium_risk_vulnerabilities": 1,
+    "low_risk_vulnerabilities": 0,
+    "security_scores": {
+      "authentication": 90.0,
+      "authorization": 100.0,
+      "input_validation": 0,
+      "session_management": 100.0
+    },
+    "overall_security_score": 72.5,
+    "security_level": "一般",
+    "vulnerability_details": {
+      "high_risk": [],
+      "medium_risk": [
+        "缺少暴力破解防护机制"
+      ],
+      "low_risk": []
+    },
+    "security_recommendations": [
+      "实施账号锁定和验证码机制防止暴力破解",
+      "定期进行安全审计和渗透测试",
+      "保持系统和依赖库的及时更新",
+      "实施安全日志记录和监控",
+      "对敏感数据进行加密存储和传输"
+    ]
+  },
+  "overall_vulnerabilities": [
+    "缺少暴力破解防护机制"
+  ],
+  "end_time": "2025-08-17T00:04:22.061739"
+}

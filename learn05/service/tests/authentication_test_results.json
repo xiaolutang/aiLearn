@@ -1,0 +1,537 @@
+{
+  "start_time": "2025-08-17T00:39:58.828009",
+  "tests": {
+    "valid_login": {
+      "admin_test": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzU1MzkyOTk5fQ.k6KYg77uNSI1_agLGIONIE08EZKxFV6zCribwRw5NJM",
+        "response_time": 0.26028919219970703,
+        "user_info": {
+          "user_id": 1,
+          "username": "admin_test",
+          "email": "admin.test@school.edu"
+        }
+      },
+      "teacher_zhang": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzU1MzkyOTk5fQ.oWJzQw3q_-QxYEPRkkbFcDab91IPvT7e71AFNsUxxB4",
+        "response_time": 0.2290191650390625,
+        "user_info": {
+          "user_id": 2,
+          "username": "teacher_zhang",
+          "email": "zhang.teacher@school.edu"
+        }
+      },
+      "teacher_li": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwiZXhwIjoxNzU1MzkyOTk5fQ.vX0pdfdqMnpurbSTxn5jj3cGuf97Fk1sTVq6TrnwwLU",
+        "response_time": 0.22786402702331543,
+        "user_info": {
+          "user_id": 3,
+          "username": "teacher_li",
+          "email": "li.teacher@school.edu"
+        }
+      },
+      "teacher_wang": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0IiwiZXhwIjoxNzU1MzkyOTk5fQ.FEUE2j_51mhmTECndJhygL_Z9k1O7ucD9ZCnA6qoPUM",
+        "response_time": 0.22899603843688965,
+        "user_info": {
+          "user_id": 4,
+          "username": "teacher_wang",
+          "email": "wang.teacher@school.edu"
+        }
+      },
+      "principal_chen": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1IiwiZXhwIjoxNzU1MzkzMDAwfQ.I4tDkcNd-GBub5wzvjEYzx4wOIoZCCNonWj9sm8oKQE",
+        "response_time": 0.24576592445373535,
+        "user_info": {
+          "user_id": 5,
+          "username": "principal_chen",
+          "email": "chen.principal@school.edu"
+        }
+      },
+      "director_liu": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2IiwiZXhwIjoxNzU1MzkzMDAwfQ.Wzls4ltR6BSeDJPPPO2n8EYos1U5Uomq_hn83sTuAdg",
+        "response_time": 0.24836993217468262,
+        "user_info": {
+          "user_id": 6,
+          "username": "director_liu",
+          "email": "liu.director@school.edu"
+        }
+      },
+      "student_xiaoming": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3IiwiZXhwIjoxNzU1MzkzMDAwfQ.x1BbO1piiB6CRXtLFILXU5xuo780W6nYW746_owfo9U",
+        "response_time": 0.22800207138061523,
+        "user_info": {
+          "user_id": 7,
+          "username": "student_xiaoming",
+          "email": "xiaoming@student.edu"
+        }
+      },
+      "student_xiaohong": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4IiwiZXhwIjoxNzU1MzkzMDAwfQ.3E7ClLvkWmf7qysepC2lQ317mpWXq5HW6Ol7znAFPik",
+        "response_time": 0.2298727035522461,
+        "user_info": {
+          "user_id": 8,
+          "username": "student_xiaohong",
+          "email": "xiaohong@student.edu"
+        }
+      },
+      "parent_zhang": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzU1MzkzMDAwfQ.Ru0YZB3MYR69XaVANM5r_gxhEE2Zw3Uj-tIEXCDvzHk",
+        "response_time": 0.2286839485168457,
+        "user_info": {
+          "user_id": 9,
+          "username": "parent_zhang",
+          "email": "zhang.parent@family.com"
+        }
+      },
+      "parent_li": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMCIsImV4cCI6MTc1NTM5MzAwMX0.d487oVJ3BJE_nJUc995B6harSRFrC8ImmKx9pedoucA",
+        "response_time": 0.2254791259765625,
+        "user_info": {
+          "user_id": 10,
+          "username": "parent_li",
+          "email": "li.parent@family.com"
+        }
+      },
+      "guest_visitor": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMSIsImV4cCI6MTc1NTM5MzAwMX0.lwCmxDSpD24A-t9-ZUmrlUV3r0xKl69L4sbI2B11Myc",
+        "response_time": 0.2248079776763916,
+        "user_info": {
+          "user_id": 11,
+          "username": "guest_visitor",
+          "email": "guest@visitor.com"
+        }
+      }
+    },
+    "invalid_credentials": [
+      {
+        "case": "完全无效的用户名和密码",
+        "username": "invalid_user",
+        "status_code": 401,
+        "response_time": 0.0026319026947021484,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "有效用户名，无效密码",
+        "username": "admin",
+        "status_code": 401,
+        "response_time": 0.22431492805480957,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "无效用户名，有效密码格式",
+        "username": "wrong_user",
+        "status_code": 401,
+        "response_time": 0.0025949478149414062,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空用户名",
+        "username": "",
+        "status_code": 401,
+        "response_time": 0.002043008804321289,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空密码",
+        "username": "admin",
+        "status_code": 401,
+        "response_time": 0.22498703002929688,
+        "expected_failure": true,
+        "success": true
+      },
+      {
+        "case": "空用户名和密码",
+        "username": "",
+        "status_code": 401,
+        "response_time": 0.0024347305297851562,
+        "expected_failure": true,
+        "success": true
+      }
+    ],
+    "session_validation": {
+      "admin_test": {
+        "success": true,
+        "response_time": 0.005774259567260742,
+        "user_info": {
+          "user_id": 1,
+          "username": "admin_test",
+          "email": "admin.test@school.edu",
+          "created_at": "2025-08-17T00:31:03.789302",
+          "roles": [
+            {
+              "role_id": 5,
+              "role_name": "admin",
+              "description": "系统管理员"
+            }
+          ]
+        }
+      },
+      "teacher_zhang": {
+        "success": true,
+        "response_time": 0.002817869186401367,
+        "user_info": {
+          "user_id": 2,
+          "username": "teacher_zhang",
+          "email": "zhang.teacher@school.edu",
+          "created_at": "2025-08-17T00:31:04.016669",
+          "roles": [
+            {
+              "role_id": 5,
+              "role_name": "admin",
+              "description": "系统管理员"
+            },
+            {
+              "role_id": 6,
+              "role_name": "teacher",
+              "description": "教师"
+            }
+          ]
+        }
+      },
+      "teacher_li": {
+        "success": true,
+        "response_time": 0.0029821395874023438,
+        "user_info": {
+          "user_id": 3,
+          "username": "teacher_li",
+          "email": "li.teacher@school.edu",
+          "created_at": "2025-08-17T00:31:04.243342",
+          "roles": [
+            {
+              "role_id": 6,
+              "role_name": "teacher",
+              "description": "教师"
+            }
+          ]
+        }
+      },
+      "teacher_wang": {
+        "success": true,
+        "response_time": 0.002496957778930664,
+        "user_info": {
+          "user_id": 4,
+          "username": "teacher_wang",
+          "email": "wang.teacher@school.edu",
+          "created_at": "2025-08-17T00:31:04.469850",
+          "roles": [
+            {
+              "role_id": 6,
+              "role_name": "teacher",
+              "description": "教师"
+            }
+          ]
+        }
+      },
+      "principal_chen": {
+        "success": true,
+        "response_time": 0.0026121139526367188,
+        "user_info": {
+          "user_id": 5,
+          "username": "principal_chen",
+          "email": "chen.principal@school.edu",
+          "created_at": "2025-08-17T00:31:04.694241",
+          "roles": [
+            {
+              "role_id": 5,
+              "role_name": "admin",
+              "description": "系统管理员"
+            },
+            {
+              "role_id": 6,
+              "role_name": "teacher",
+              "description": "教师"
+            }
+          ]
+        }
+      },
+      "director_liu": {
+        "success": true,
+        "response_time": 0.002736806869506836,
+        "user_info": {
+          "user_id": 6,
+          "username": "director_liu",
+          "email": "liu.director@school.edu",
+          "created_at": "2025-08-17T00:31:04.919520",
+          "roles": [
+            {
+              "role_id": 5,
+              "role_name": "admin",
+              "description": "系统管理员"
+            }
+          ]
+        }
+      },
+      "student_xiaoming": {
+        "success": true,
+        "response_time": 0.002593994140625,
+        "user_info": {
+          "user_id": 7,
+          "username": "student_xiaoming",
+          "email": "xiaoming@student.edu",
+          "created_at": "2025-08-17T00:31:05.143970",
+          "roles": [
+            {
+              "role_id": 5,
+              "role_name": "admin",
+              "description": "系统管理员"
+            },
+            {
+              "role_id": 9,
+              "role_name": "student",
+              "description": "学生"
+            }
+          ]
+        }
+      },
+      "student_xiaohong": {
+        "success": true,
+        "response_time": 0.0028679370880126953,
+        "user_info": {
+          "user_id": 8,
+          "username": "student_xiaohong",
+          "email": "xiaohong@student.edu",
+          "created_at": "2025-08-17T00:31:05.367884",
+          "roles": [
+            {
+              "role_id": 9,
+              "role_name": "student",
+              "description": "学生"
+            }
+          ]
+        }
+      },
+      "parent_zhang": {
+        "success": true,
+        "response_time": 0.0026760101318359375,
+        "user_info": {
+          "user_id": 9,
+          "username": "parent_zhang",
+          "email": "zhang.parent@family.com",
+          "created_at": "2025-08-17T00:31:05.594218",
+          "roles": [
+            {
+              "role_id": 9,
+              "role_name": "student",
+              "description": "学生"
+            },
+            {
+              "role_id": 10,
+              "role_name": "parent",
+              "description": "家长"
+            }
+          ]
+        }
+      },
+      "parent_li": {
+        "success": true,
+        "response_time": 0.002730131149291992,
+        "user_info": {
+          "user_id": 10,
+          "username": "parent_li",
+          "email": "li.parent@family.com",
+          "created_at": "2025-08-17T00:31:05.817007",
+          "roles": [
+            {
+              "role_id": 10,
+              "role_name": "parent",
+              "description": "家长"
+            }
+          ]
+        }
+      },
+      "guest_visitor": {
+        "success": true,
+        "response_time": 0.002975940704345703,
+        "user_info": {
+          "user_id": 11,
+          "username": "guest_visitor",
+          "email": "guest@visitor.com",
+          "created_at": "2025-08-17T00:31:06.040302",
+          "roles": [
+            {
+              "role_id": 9,
+              "role_name": "student",
+              "description": "学生"
+            },
+            {
+              "role_id": 10,
+              "role_name": "parent",
+              "description": "家长"
+            }
+          ]
+        }
+      }
+    },
+    "invalid_token": {
+      "results": [
+        {
+          "token": "invalid_token",
+          "status_code": 401,
+          "response_time": 0.0014317035675048828,
+          "expected_failure": true,
+          "success": true
+        },
+        {
+          "token": "Bearer invalid_token",
+          "status_code": 401,
+          "response_time": 0.001809835433959961,
+          "expected_failure": true,
+          "success": true
+        },
+        {
+          "token": "expired_token_12345",
+          "status_code": 401,
+          "response_time": 0.0020089149475097656,
+          "expected_failure": true,
+          "success": true
+        },
+        {
+          "token": "(empty)",
+          "status_code": 401,
+          "response_time": 0.001428842544555664,
+          "expected_failure": true,
+          "success": true
+        },
+        {
+          "token": "malformed.token.here",
+          "status_code": 401,
+          "response_time": 0.0014529228210449219,
+          "expected_failure": true,
+          "success": true
+        }
+      ],
+      "success": true
+    },
+    "concurrent_login": {
+      "success": true,
+      "total_accounts": 5,
+      "successful_logins": 5,
+      "failed_logins": 0,
+      "total_time": 0.2866342067718506,
+      "average_time": 0.05732684135437012,
+      "results": [
+        {
+          "success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZXhwIjoxNzU1MzkzMDAyfQ.RvkfCsdCLDkcjgf_AnEtFhKnhNibdcOwjLZqLtoFp00",
+          "response_time": 0.2809751033782959,
+          "user_info": {
+            "user_id": 1,
+            "username": "admin_test",
+            "email": "admin.test@school.edu"
+          }
+        },
+        {
+          "success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzU1MzkzMDAyfQ.W40EB8736YOYpQPxZdD_6RmBvPvENOvhf1EpczodV54",
+          "response_time": 0.28171300888061523,
+          "user_info": {
+            "user_id": 2,
+            "username": "teacher_zhang",
+            "email": "zhang.teacher@school.edu"
+          }
+        },
+        {
+          "success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwiZXhwIjoxNzU1MzkzMDAyfQ.RX26m5E4yY22tUBDWfO6T8T5SPgU7Hg1FiIzANxduqk",
+          "response_time": 0.2833421230316162,
+          "user_info": {
+            "user_id": 3,
+            "username": "teacher_li",
+            "email": "li.teacher@school.edu"
+          }
+        },
+        {
+          "success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0IiwiZXhwIjoxNzU1MzkzMDAyfQ.efg7YKuso0PfMvXB4SL874XUmlu22kGcT-JA0OSje8I",
+          "response_time": 0.2771592140197754,
+          "user_info": {
+            "user_id": 4,
+            "username": "teacher_wang",
+            "email": "wang.teacher@school.edu"
+          }
+        },
+        {
+          "success": true,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1IiwiZXhwIjoxNzU1MzkzMDAyfQ.wX-v8pRKPq_B0rCEAw_8FnQXEjbLelR6moOkMxAe198",
+          "response_time": 0.28556084632873535,
+          "user_info": {
+            "user_id": 5,
+            "username": "principal_chen",
+            "email": "chen.principal@school.edu"
+          }
+        }
+      ]
+    },
+    "logout": {
+      "admin_test": {
+        "success": true,
+        "response_time": 0.0026412010192871094
+      },
+      "teacher_zhang": {
+        "success": true,
+        "response_time": 0.0019881725311279297
+      },
+      "teacher_li": {
+        "success": true,
+        "response_time": 0.0018351078033447266
+      },
+      "teacher_wang": {
+        "success": true,
+        "response_time": 0.0017650127410888672
+      },
+      "principal_chen": {
+        "success": true,
+        "response_time": 0.00179290771484375
+      },
+      "director_liu": {
+        "success": true,
+        "response_time": 0.0017161369323730469
+      },
+      "student_xiaoming": {
+        "success": true,
+        "response_time": 0.0019490718841552734
+      },
+      "student_xiaohong": {
+        "success": true,
+        "response_time": 0.0017018318176269531
+      },
+      "parent_zhang": {
+        "success": true,
+        "response_time": 0.0017199516296386719
+      },
+      "parent_li": {
+        "success": true,
+        "response_time": 0.0019049644470214844
+      },
+      "guest_visitor": {
+        "success": true,
+        "response_time": 0.0017642974853515625
+      }
+    }
+  },
+  "summary": {
+    "total_accounts": 11,
+    "login_success_rate": 100.0,
+    "session_validation_success_rate": 100.0,
+    "logout_success_rate": 100.0,
+    "invalid_credentials_handled": 100.0,
+    "invalid_token_handled": true,
+    "concurrent_login_success": true
+  },
+  "end_time": "2025-08-17T00:40:02.223536"
+}

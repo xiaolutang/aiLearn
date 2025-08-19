@@ -1,0 +1,284 @@
+<svg width="1400" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+      .layer-title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #fff; }
+      .module-title { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #333; }
+      .function-text { font-family: 'Microsoft YaHei', Arial, sans-serif; font-size: 11px; fill: #333; }
+      .layer-box { fill: #4a90e2; stroke: #2c5aa0; stroke-width: 2; }
+      .module-box { fill: #ffffff; stroke: #4a90e2; stroke-width: 1.5; }
+      .core-module { fill: #e8f4fd; stroke: #4a90e2; stroke-width: 2; }
+      .support-module { fill: #f0f8ff; stroke: #87ceeb; stroke-width: 1.5; }
+      .data-module { fill: #fff5ee; stroke: #ff7f50; stroke-width: 1.5; }
+      .ai-module { fill: #f0fff0; stroke: #32cd32; stroke-width: 1.5; }
+      .connection-line { stroke: #666; stroke-width: 1.5; fill: none; stroke-dasharray: 3,3; }
+    </style>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="700" y="30" text-anchor="middle" class="title">智能教学助手功能架构图</text>
+  
+  <!-- 用户界面层 -->
+  <g id="ui-layer">
+    <rect x="50" y="70" width="1300" height="80" class="layer-box"/>
+    <text x="700" y="95" text-anchor="middle" class="layer-title">用户界面层 (Presentation Layer)</text>
+    
+    <!-- Web端界面 -->
+    <rect x="80" y="110" width="200" height="30" class="module-box"/>
+    <text x="180" y="130" text-anchor="middle" class="module-title">Web端界面</text>
+    
+    <!-- 移动端界面 -->
+    <rect x="300" y="110" width="200" height="30" class="module-box"/>
+    <text x="400" y="130" text-anchor="middle" class="module-title">移动端界面</text>
+    
+    <!-- 管理后台 -->
+    <rect x="520" y="110" width="200" height="30" class="module-box"/>
+    <text x="620" y="130" text-anchor="middle" class="module-title">管理后台</text>
+    
+    <!-- API接口 -->
+    <rect x="740" y="110" width="200" height="30" class="module-box"/>
+    <text x="840" y="130" text-anchor="middle" class="module-title">API接口</text>
+    
+    <!-- 第三方集成 -->
+    <rect x="960" y="110" width="200" height="30" class="module-box"/>
+    <text x="1060" y="130" text-anchor="middle" class="module-title">第三方集成</text>
+  </g>
+  
+  <!-- 核心业务层 -->
+  <g id="business-layer">
+    <rect x="50" y="180" width="1300" height="300" class="layer-box"/>
+    <text x="700" y="205" text-anchor="middle" class="layer-title">核心业务层 (Business Logic Layer)</text>
+    
+    <!-- 备课模块 -->
+    <rect x="80" y="230" width="240" height="120" class="core-module"/>
+    <text x="200" y="250" text-anchor="middle" class="module-title">备课模块</text>
+    <text x="90" y="270" class="function-text">• 教材管理</text>
+    <text x="90" y="285" class="function-text">• 课程规划</text>
+    <text x="90" y="300" class="function-text">• 教案生成</text>
+    <text x="90" y="315" class="function-text">• 资源推荐</text>
+    <text x="90" y="330" class="function-text">• 备课方案管理</text>
+    
+    <!-- 上课模块 -->
+    <rect x="340" y="230" width="240" height="120" class="core-module"/>
+    <text x="460" y="250" text-anchor="middle" class="module-title">上课模块</text>
+    <text x="350" y="270" class="function-text">• 课堂互动</text>
+    <text x="350" y="285" class="function-text">• 实时问答</text>
+    <text x="350" y="300" class="function-text">• 课堂录制</text>
+    <text x="350" y="315" class="function-text">• 学生参与度分析</text>
+    <text x="350" y="330" class="function-text">• 课堂效果评估</text>
+    
+    <!-- 成绩模块 -->
+    <rect x="600" y="230" width="240" height="120" class="core-module"/>
+    <text x="720" y="250" text-anchor="middle" class="module-title">成绩模块</text>
+    <text x="610" y="270" class="function-text">• 成绩录入</text>
+    <text x="610" y="285" class="function-text">• 成绩分析</text>
+    <text x="610" y="300" class="function-text">• 排名统计</text>
+    <text x="610" y="315" class="function-text">• 趋势分析</text>
+    <text x="610" y="330" class="function-text">• 报告生成</text>
+    
+    <!-- 辅导模块 -->
+    <rect x="860" y="230" width="240" height="120" class="core-module"/>
+    <text x="980" y="250" text-anchor="middle" class="module-title">辅导模块</text>
+    <text x="870" y="270" class="function-text">• 个性化分析</text>
+    <text x="870" y="285" class="function-text">• 辅导方案生成</text>
+    <text x="870" y="300" class="function-text">• 练习题推荐</text>
+    <text x="870" y="315" class="function-text">• 学习路径规划</text>
+    <text x="870" y="330" class="function-text">• 进度跟踪</text>
+    
+    <!-- 用户管理 -->
+    <rect x="80" y="370" width="180" height="90" class="support-module"/>
+    <text x="170" y="390" text-anchor="middle" class="module-title">用户管理</text>
+    <text x="90" y="410" class="function-text">• 用户注册登录</text>
+    <text x="90" y="425" class="function-text">• 权限管理</text>
+    <text x="90" y="440" class="function-text">• 角色分配</text>
+    
+    <!-- 班级管理 -->
+    <rect x="280" y="370" width="180" height="90" class="support-module"/>
+    <text x="370" y="390" text-anchor="middle" class="module-title">班级管理</text>
+    <text x="290" y="410" class="function-text">• 班级创建</text>
+    <text x="290" y="425" class="function-text">• 学生管理</text>
+    <text x="290" y="440" class="function-text">• 班级统计</text>
+    
+    <!-- 考试管理 -->
+    <rect x="480" y="370" width="180" height="90" class="support-module"/>
+    <text x="570" y="390" text-anchor="middle" class="module-title">考试管理</text>
+    <text x="490" y="410" class="function-text">• 考试安排</text>
+    <text x="490" y="425" class="function-text">• 试卷管理</text>
+    <text x="490" y="440" class="function-text">• 考试监控</text>
+    
+    <!-- 通知系统 -->
+    <rect x="680" y="370" width="180" height="90" class="support-module"/>
+    <text x="770" y="390" text-anchor="middle" class="module-title">通知系统</text>
+    <text x="690" y="410" class="function-text">• 消息推送</text>
+    <text x="690" y="425" class="function-text">• 邮件通知</text>
+    <text x="690" y="440" class="function-text">• 系统公告</text>
+    
+    <!-- 报表统计 -->
+    <rect x="880" y="370" width="180" height="90" class="support-module"/>
+    <text x="970" y="390" text-anchor="middle" class="module-title">报表统计</text>
+    <text x="890" y="410" class="function-text">• 数据可视化</text>
+    <text x="890" y="425" class="function-text">• 统计分析</text>
+    <text x="890" y="440" class="function-text">• 导出功能</text>
+    
+    <!-- 系统配置 -->
+    <rect x="1080" y="370" width="180" height="90" class="support-module"/>
+    <text x="1170" y="390" text-anchor="middle" class="module-title">系统配置</text>
+    <text x="1090" y="410" class="function-text">• 参数设置</text>
+    <text x="1090" y="425" class="function-text">• 系统维护</text>
+    <text x="1090" y="440" class="function-text">• 日志管理</text>
+  </g>
+  
+  <!-- AI智能服务层 -->
+  <g id="ai-layer">
+    <rect x="50" y="510" width="1300" height="120" class="layer-box"/>
+    <text x="700" y="535" text-anchor="middle" class="layer-title">AI智能服务层 (AI Service Layer)</text>
+    
+    <!-- 智能分析引擎 -->
+    <rect x="80" y="560" width="200" height="60" class="ai-module"/>
+    <text x="180" y="580" text-anchor="middle" class="module-title">智能分析引擎</text>
+    <text x="90" y="600" class="function-text">• 学习行为分析</text>
+    <text x="90" y="615" class="function-text">• 成绩趋势预测</text>
+    
+    <!-- 个性化推荐 -->
+    <rect x="300" y="560" width="200" height="60" class="ai-module"/>
+    <text x="400" y="580" text-anchor="middle" class="module-title">个性化推荐</text>
+    <text x="310" y="600" class="function-text">• 学习资源推荐</text>
+    <text x="310" y="615" class="function-text">• 练习题智能匹配</text>
+    
+    <!-- 自然语言处理 -->
+    <rect x="520" y="560" width="200" height="60" class="ai-module"/>
+    <text x="620" y="580" text-anchor="middle" class="module-title">自然语言处理</text>
+    <text x="530" y="600" class="function-text">• 智能问答</text>
+    <text x="530" y="615" class="function-text">• 文本分析</text>
+    
+    <!-- 图像识别 -->
+    <rect x="740" y="560" width="200" height="60" class="ai-module"/>
+    <text x="840" y="580" text-anchor="middle" class="module-title">图像识别</text>
+    <text x="750" y="600" class="function-text">• 作业批改</text>
+    <text x="750" y="615" class="function-text">• 课堂行为识别</text>
+    
+    <!-- 机器学习模型 -->
+    <rect x="960" y="560" width="200" height="60" class="ai-module"/>
+    <text x="1060" y="580" text-anchor="middle" class="module-title">机器学习模型</text>
+    <text x="970" y="600" class="function-text">• 模型训练</text>
+    <text x="970" y="615" class="function-text">• 算法优化</text>
+  </g>
+  
+  <!-- 数据服务层 -->
+  <g id="data-layer">
+    <rect x="50" y="660" width="1300" height="120" class="layer-box"/>
+    <text x="700" y="685" text-anchor="middle" class="layer-title">数据服务层 (Data Service Layer)</text>
+    
+    <!-- 数据访问层 -->
+    <rect x="80" y="710" width="200" height="60" class="data-module"/>
+    <text x="180" y="730" text-anchor="middle" class="module-title">数据访问层</text>
+    <text x="90" y="750" class="function-text">• ORM映射</text>
+    <text x="90" y="765" class="function-text">• 数据库连接池</text>
+    
+    <!-- 缓存服务 -->
+    <rect x="300" y="710" width="200" height="60" class="data-module"/>
+    <text x="400" y="730" text-anchor="middle" class="module-title">缓存服务</text>
+    <text x="310" y="750" class="function-text">• Redis缓存</text>
+    <text x="310" y="765" class="function-text">• 内存缓存</text>
+    
+    <!-- 文件存储 -->
+    <rect x="520" y="710" width="200" height="60" class="data-module"/>
+    <text x="620" y="730" text-anchor="middle" class="module-title">文件存储</text>
+    <text x="530" y="750" class="function-text">• 云存储</text>
+    <text x="530" y="765" class="function-text">• 本地存储</text>
+    
+    <!-- 数据同步 -->
+    <rect x="740" y="710" width="200" height="60" class="data-module"/>
+    <text x="840" y="730" text-anchor="middle" class="module-title">数据同步</text>
+    <text x="750" y="750" class="function-text">• 数据备份</text>
+    <text x="750" y="765" class="function-text">• 数据恢复</text>
+    
+    <!-- 数据安全 -->
+    <rect x="960" y="710" width="200" height="60" class="data-module"/>
+    <text x="1060" y="730" text-anchor="middle" class="module-title">数据安全</text>
+    <text x="970" y="750" class="function-text">• 数据加密</text>
+    <text x="970" y="765" class="function-text">• 访问控制</text>
+  </g>
+  
+  <!-- 基础设施层 -->
+  <g id="infrastructure-layer">
+    <rect x="50" y="810" width="1300" height="120" class="layer-box"/>
+    <text x="700" y="835" text-anchor="middle" class="layer-title">基础设施层 (Infrastructure Layer)</text>
+    
+    <!-- 应用服务器 -->
+    <rect x="80" y="860" width="200" height="60" class="module-box"/>
+    <text x="180" y="880" text-anchor="middle" class="module-title">应用服务器</text>
+    <text x="90" y="900" class="function-text">• Web服务器</text>
+    <text x="90" y="915" class="function-text">• 负载均衡</text>
+    
+    <!-- 数据库 -->
+    <rect x="300" y="860" width="200" height="60" class="module-box"/>
+    <text x="400" y="880" text-anchor="middle" class="module-title">数据库</text>
+    <text x="310" y="900" class="function-text">• MySQL/PostgreSQL</text>
+    <text x="310" y="915" class="function-text">• 数据库集群</text>
+    
+    <!-- 消息队列 -->
+    <rect x="520" y="860" width="200" height="60" class="module-box"/>
+    <text x="620" y="880" text-anchor="middle" class="module-title">消息队列</text>
+    <text x="530" y="900" class="function-text">• RabbitMQ/Kafka</text>
+    <text x="530" y="915" class="function-text">• 异步处理</text>
+    
+    <!-- 监控日志 -->
+    <rect x="740" y="860" width="200" height="60" class="module-box"/>
+    <text x="840" y="880" text-anchor="middle" class="module-title">监控日志</text>
+    <text x="750" y="900" class="function-text">• 系统监控</text>
+    <text x="750" y="915" class="function-text">• 日志收集</text>
+    
+    <!-- 容器化部署 -->
+    <rect x="960" y="860" width="200" height="60" class="module-box"/>
+    <text x="1060" y="880" text-anchor="middle" class="module-title">容器化部署</text>
+    <text x="970" y="900" class="function-text">• Docker容器</text>
+    <text x="970" y="915" class="function-text">• Kubernetes</text>
+  </g>
+  
+  <!-- 连接线 -->
+  <!-- UI层到业务层 -->
+  <line x1="180" y1="150" x2="200" y2="230" class="connection-line"/>
+  <line x1="400" y1="150" x2="460" y2="230" class="connection-line"/>
+  <line x1="620" y1="150" x2="720" y2="230" class="connection-line"/>
+  <line x1="840" y1="150" x2="980" y2="230" class="connection-line"/>
+  
+  <!-- 业务层到AI层 -->
+  <line x1="200" y1="350" x2="180" y2="560" class="connection-line"/>
+  <line x1="460" y1="350" x2="400" y2="560" class="connection-line"/>
+  <line x1="720" y1="350" x2="620" y2="560" class="connection-line"/>
+  <line x1="980" y1="350" x2="840" y2="560" class="connection-line"/>
+  
+  <!-- AI层到数据层 -->
+  <line x1="180" y1="620" x2="180" y2="710" class="connection-line"/>
+  <line x1="400" y1="620" x2="400" y2="710" class="connection-line"/>
+  <line x1="620" y1="620" x2="620" y2="710" class="connection-line"/>
+  <line x1="840" y1="620" x2="840" y2="710" class="connection-line"/>
+  
+  <!-- 数据层到基础设施层 -->
+  <line x1="180" y1="770" x2="180" y2="860" class="connection-line"/>
+  <line x1="400" y1="770" x2="400" y2="860" class="connection-line"/>
+  <line x1="620" y1="770" x2="620" y2="860" class="connection-line"/>
+  <line x1="840" y1="770" x2="840" y2="860" class="connection-line"/>
+  
+  <!-- 图例 -->
+  <g id="legend">
+    <text x="50" y="970" class="module-title">图例说明：</text>
+    
+    <rect x="200" y="955" width="80" height="20" class="core-module"/>
+    <text x="290" y="970" class="function-text">核心业务模块</text>
+    
+    <rect x="400" y="955" width="80" height="20" class="support-module"/>
+    <text x="490" y="970" class="function-text">支撑服务模块</text>
+    
+    <rect x="600" y="955" width="80" height="20" class="ai-module"/>
+    <text x="690" y="970" class="function-text">AI智能模块</text>
+    
+    <rect x="800" y="955" width="80" height="20" class="data-module"/>
+    <text x="890" y="970" class="function-text">数据服务模块</text>
+    
+    <line x1="1000" y1="965" x2="1050" y2="965" class="connection-line"/>
+    <text x="1060" y="970" class="function-text">模块间调用关系</text>
+  </g>
+  
+</svg>

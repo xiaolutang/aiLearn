@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成绩管理 - 智能教学助手2.0</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边导航 -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>智能教学助手2.0</span>
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="lesson-prep.html"><i class="fas fa-book-open"></i> 备课助手</a></li>
+                <li><a href="classroom.html"><i class="fas fa-chalkboard-teacher"></i> 课堂助手</a></li>
+                <li class="active"><a href="grade-management.html"><i class="fas fa-chart-line"></i> 成绩管理</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> 系统设置</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 成绩管理模块 -->
+            <div class="module-container" id="grade-management-module">
+                <!-- 模块头部 -->
+                <div class="module-header">
+                    <div class="header-left">
+                        <h1><i class="fas fa-chart-line"></i> 成绩管理</h1>
+                        <p>智能成绩录入、多维度分析、个性化报告生成</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" id="total-students">0</span>
+                                <span class="stat-label">学生总数</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="total-subjects">0</span>
+                                <span class="stat-label">科目数量</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="avg-score">0</span>
+                                <span class="stat-label">平均分</span>
+                            </div>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="GradeManagement.exportAllData()">
+                                <i class="fas fa-download"></i> 导出数据
+                            </button>
+                            <button class="btn btn-primary" onclick="GradeManagement.importGrades()">
+                                <i class="fas fa-upload"></i> 导入成绩
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 功能导航 -->
+                <div class="function-nav">
+                    <button class="nav-item active" data-tab="grade-input">
+                        <i class="fas fa-edit"></i>
+                        <span>成绩录入</span>
+                    </button>
+                    <button class="nav-item" data-tab="grade-analysis">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>成绩分析</span>
+                    </button>
+                    <button class="nav-item" data-tab="student-reports">
+                        <i class="fas fa-file-alt"></i>
+                        <span>学习报告</span>
+                    </button>
+                    <button class="nav-item" data-tab="tutoring-plans">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>辅导方案</span>
+                    </button>
+                </div>
+
+                <!-- 标签页内容 -->
+                <div class="tab-content">
+                    <!-- 成绩录入 -->
+                    <div class="tab-pane active" id="grade-input">
+                        <div class="grade-input-container">
+                            <!-- 录入方式选择 -->
+                            <div class="input-method-selector">
+                                <h3>选择录入方式</h3>
+                                <div class="method-options">
+                                    <button class="method-option active" data-method="manual">
+                                        <i class="fas fa-keyboard"></i>
+                                        <span>手动录入</span>
+                                    </button>
+                                    <button class="method-option" data-method="excel">
+                                        <i class="fas fa-file-excel"></i>
+                                        <span>Excel导入</span>
+                                    </button>
+                                    <button class="method-option" data-method="photo">
+                                        <i class="fas fa-camera"></i>
+                                        <span>拍照识别</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 手动录入区域 -->
+                            <div class="manual-input-area" id="manual-input">
+                                <div class="input-controls">
+                                    <div class="control-group">
+                                        <label for="select-class">选择班级</label>
+                                        <select id="select-class" class="form-select">
+                                            <option value="">请选择班级</option>
+                                            <option value="class1">高一(1)班</option>
+                                            <option value="class2">高一(2)班</option>
+                                            <option value="class3">高一(3)班</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="select-subject">选择科目</label>
+                                        <select id="select-subject" class="form-select">
+                                            <option value="">请选择科目</option>
+                                            <option value="语文">语文</option>
+                                            <option value="数学">数学</option>
+                                            <option value="英语">英语</option>
+                                            <option value="物理">物理</option>
+                                            <option value="化学">化学</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-group">
+                                        <label for="select-exam">考试类型</label>
+                                        <select id="select-exam" class="form-select">
+                                            <option value="">请选择考试类型</option>
+                                            <option value="平时测验">平时测验</option>
+                                            <option value="月考">月考</option>
+                                            <option value="期中考试">期中考试</option>
+                                            <option value="期末考试">期末考试</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary" onclick="GradeManagement.loadStudentList()">
+                                        <i class="fas fa-list"></i> 加载学生名单
+                                    </button>
+                                </div>
+
+                                <!-- 成绩录入表格 -->
+                                <div class="grade-table-container">
+                                    <table class="grade-table" id="grade-input-table">
+                                        <thead>
+                                            <tr>
+                                                <th>学号</th>
+                                                <th>姓名</th>
+                                                <th>成绩</th>
+                                                <th>等级</th>
+                                                <th>备注</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="student-grade-list">
+                                            <!-- 动态生成学生成绩录入行 -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="input-actions">
+                                    <button class="btn btn-secondary" onclick="GradeManagement.clearAllGrades()">
+                                        <i class="fas fa-eraser"></i> 清空
+                                    </button>
+                                    <button class="btn btn-success" onclick="GradeManagement.saveGrades()">
+                                        <i class="fas fa-save"></i> 保存成绩
+                                    </button>
+                                    <button class="btn btn-primary" onclick="GradeManagement.previewGrades()">
+                                        <i class="fas fa-eye"></i> 预览
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Excel导入区域 -->
+                            <div class="excel-import-area" id="excel-import" style="display: none;">
+                                <div class="import-steps">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h4>下载模板</h4>
+                                            <p>下载标准的Excel模板文件</p>
+                                            <button class="btn btn-outline" onclick="GradeManagement.downloadTemplate()">
+                                                <i class="fas fa-download"></i> 下载模板
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h4>填写数据</h4>
+                                            <p>按照模板格式填写学生成绩数据</p>
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h4>上传文件</h4>
+                                            <div class="file-upload-area">
+                                                <input type="file" id="excel-file" accept=".xlsx,.xls" style="display: none;">
+                                                <div class="upload-zone" onclick="document.getElementById('excel-file').click()">
+                                                    <i class="fas fa-cloud-upload-alt"></i>
+                                                    <p>点击选择Excel文件或拖拽到此处</p>
+                                                    <span class="file-types">支持 .xlsx, .xls 格式</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 拍照识别区域 -->
+                            <div class="photo-recognition-area" id="photo-recognition" style="display: none;">
+                                <div class="photo-upload-container">
+                                    <div class="photo-upload-area">
+                                        <input type="file" id="photo-file" accept="image/*" style="display: none;">
+                                        <div class="photo-zone" onclick="document.getElementById('photo-file').click()">
+                                            <i class="fas fa-camera"></i>
+                                            <h4>拍照上传成绩单</h4>
+                                            <p>支持手写或打印的成绩单识别</p>
+                                            <button class="btn btn-primary">选择图片</button>
+                                        </div>
+                                    </div>
+                                    <div class="recognition-tips">
+                                        <h4>拍照提示</h4>
+                                        <ul>
+                                            <li>确保光线充足，避免阴影</li>
+                                            <li>保持图片清晰，避免模糊</li>
+                                            <li>尽量平铺拍摄，避免倾斜</li>
+                                            <li>确保文字完整，不要遮挡</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 成绩分析 -->
+                    <div class="tab-pane" id="grade-analysis">
+                        <div class="analysis-container">
+                            <!-- 分析控制面板 -->
+                            <div class="analysis-controls">
+                                <div class="control-group">
+                                    <label for="analysis-class">班级</label>
+                                    <select id="analysis-class" class="form-select">
+                                        <option value="all">全部班级</option>
+                                        <option value="class1">高一(1)班</option>
+                                        <option value="class2">高一(2)班</option>
+                                        <option value="class3">高一(3)班</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label for="analysis-subject">科目</label>
+                                    <select id="analysis-subject" class="form-select">
+                                        <option value="all">全部科目</option>
+                                        <option value="语文">语文</option>
+                                        <option value="数学">数学</option>
+                                        <option value="英语">英语</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label for="analysis-period">时间范围</label>
+                                    <select id="analysis-period" class="form-select">
+                                        <option value="current">本学期</option>
+                                        <option value="last">上学期</option>
+                                        <option value="year">本学年</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" onclick="GradeManagement.generateAnalysis()">
+                                    <i class="fas fa-chart-bar"></i> 生成分析
+                                </button>
+                            </div>
+
+                            <!-- 分析结果展示 -->
+                            <div class="analysis-results" id="analysis-results">
+                                <!-- 动态生成分析图表和数据 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 学习报告 -->
+                    <div class="tab-pane" id="student-reports">
+                        <div class="reports-container">
+                            <!-- 报告生成控制 -->
+                            <div class="report-controls">
+                                <div class="control-group">
+                                    <label for="report-student">选择学生</label>
+                                    <select id="report-student" class="form-select">
+                                        <option value="">请选择学生</option>
+                                        <!-- 动态加载学生列表 -->
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label for="report-type">报告类型</label>
+                                    <select id="report-type" class="form-select">
+                                        <option value="comprehensive">综合学习报告</option>
+                                        <option value="subject">单科分析报告</option>
+                                        <option value="progress">学习进步报告</option>
+                                        <option value="weakness">薄弱点分析报告</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <label for="report-period">报告周期</label>
+                                    <select id="report-period" class="form-select">
+                                        <option value="month">本月</option>
+                                        <option value="semester">本学期</option>
+                                        <option value="year">本学年</option>
+                                    </select>
+                                </div>
+                                <div class="control-actions">
+                                    <button class="btn btn-primary" onclick="GradeManagement.generateReport()">
+                                        <i class="fas fa-file-alt"></i> 生成报告
+                                    </button>
+                                    <button class="btn btn-success" onclick="GradeManagement.batchGenerateReports()">
+                                        <i class="fas fa-files"></i> 批量生成
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 报告列表 -->
+                            <div class="reports-list" id="reports-list">
+                                <!-- 动态生成报告列表 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 辅导方案 -->
+                    <div class="tab-pane" id="tutoring-plans">
+                        <div class="tutoring-container">
+                            <!-- 方案管理头部 -->
+                            <div class="tutoring-header">
+                                <h3>个性化辅导方案</h3>
+                                <div class="tutoring-actions">
+                                    <button class="btn btn-primary" onclick="GradeManagement.createTutoringPlan()">
+                                        <i class="fas fa-plus"></i> 创建方案
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="GradeManagement.exportTutoringPlans()">
+                                        <i class="fas fa-download"></i> 导出方案
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- 方案列表 -->
+                            <div class="tutoring-plans-list" id="tutoring-plans-list">
+                                <!-- 动态生成辅导方案列表 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 引入JavaScript -->
+    <script src="scripts/grade-management.js"></script>
+</body>
+</html>

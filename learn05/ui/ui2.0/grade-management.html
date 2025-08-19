@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成绩管理 - 智能教学助手2.0</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="grade-management.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边导航栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>智能教学助手</span>
+                </div>
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-user">
+                <div class="user-avatar">T</div>
+                <div class="user-info">
+                    <div class="user-name">张老师</div>
+                    <div class="user-role">生物教师</div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>工作台</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lesson-prep.html" class="nav-link">
+                            <i class="fas fa-book-open"></i>
+                            <span>备课助手</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="classroom-ai.html" class="nav-link">
+                            <i class="fas fa-robot"></i>
+                            <span>课堂AI助手</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="grade-management.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>成绩管理</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>学生管理</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calendar"></i>
+                            <span>课程安排</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>设置</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>退出</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 顶部导航栏 -->
+            <header class="top-nav">
+                <div class="nav-left">
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="breadcrumb">
+                        <span class="breadcrumb-item">首页</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="breadcrumb-item active">成绩管理</span>
+                    </div>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索学生、班级..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <button class="btn btn-outline btn-sm" title="导入成绩">
+                            <i class="fas fa-upload"></i>
+                        </button>
+                        <button class="btn btn-outline btn-sm" title="导出报告">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn btn-primary btn-sm" title="录入成绩">
+                            <i class="fas fa-plus"></i>
+                            录入成绩
+                        </button>
+                    </div>
+                    
+                    <div class="user-menu">
+                        <div class="user-avatar">T</div>
+                        <div class="user-dropdown">
+                            <a href="#">个人资料</a>
+                            <a href="#">设置</a>
+                            <a href="#">退出登录</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- 页面内容 -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1 class="page-title">成绩管理</h1>
+                    <p class="page-description">管理学生成绩，生成分析报告，跟踪学习进度</p>
+                </div>
+                
+                <!-- 功能导航标签 -->
+                <div class="function-tabs">
+                    <div class="tab-list">
+                        <button class="tab-item active" data-tab="grade-entry">
+                            <i class="fas fa-edit"></i>
+                            <span>成绩录入</span>
+                        </button>
+                        <button class="tab-item" data-tab="grade-analysis">
+                            <i class="fas fa-chart-line"></i>
+                            <span>统计分析</span>
+                        </button>
+                        <button class="tab-item" data-tab="student-profile">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>学生档案</span>
+                        </button>
+                        <button class="tab-item" data-tab="report-export">
+                            <i class="fas fa-file-export"></i>
+                            <span>报告导出</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 标签页内容 -->
+                <div class="tab-content">
+                    <!-- 成绩录入 -->
+                    <div id="grade-entry" class="tab-pane active">
+                        <div class="grade-entry-container">
+                            <!-- 录入配置 -->
+                            <div class="entry-config">
+                                <div class="config-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>选择班级</label>
+                                            <select class="form-select">
+                                                <option>高一(1)班</option>
+                                                <option>高一(2)班</option>
+                                                <option>高一(3)班</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>考试类型</label>
+                                            <select class="form-select">
+                                                <option>期中考试</option>
+                                                <option>期末考试</option>
+                                                <option>月考</option>
+                                                <option>单元测试</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>科目</label>
+                                            <select class="form-select">
+                                                <option>生物</option>
+                                                <option>数学</option>
+                                                <option>语文</option>
+                                                <option>英语</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>考试日期</label>
+                                            <input type="date" class="form-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>总分</label>
+                                            <input type="number" class="form-input" value="100" min="0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>及格分</label>
+                                            <input type="number" class="form-input" value="60" min="0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>录入方式</label>
+                                            <div class="radio-group">
+                                                <label class="radio-item">
+                                                    <input type="radio" name="entry-method" value="manual" checked>
+                                                    <span>手动录入</span>
+                                                </label>
+                                                <label class="radio-item">
+                                                    <input type="radio" name="entry-method" value="import">
+                                                    <span>批量导入</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 成绩录入表格 -->
+                            <div class="grade-table-container">
+                                <div class="table-header">
+                                    <h3>成绩录入表</h3>
+                                    <div class="table-actions">
+                                        <button class="btn btn-outline btn-sm btn-import-excel">
+                                            <i class="fas fa-file-excel"></i>
+                                            导入Excel
+                                        </button>
+                                        <button class="btn btn-outline btn-sm btn-auto-calculate">
+                                            <i class="fas fa-calculator"></i>
+                                            自动计算
+                                        </button>
+                                        <button class="btn btn-primary btn-sm btn-save-grades">
+                                            <i class="fas fa-save"></i>
+                                            保存成绩
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="grade-table-wrapper">
+                                    <table class="grade-table">
+                                        <thead>
+                                            <tr>
+                                                <th>学号</th>
+                                                <th>姓名</th>
+                                                <th>原始分数</th>
+                                                <th>等级</th>
+                                                <th>排名</th>
+                                                <th>备注</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="grade-table-body">
+                                            <!-- 动态生成的成绩行 -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="table-footer">
+                                    <div class="table-summary">
+                                        <span>共 <strong class="total-students">0</strong> 名学生</span>
+                                        <span>平均分：<strong class="average-score">0</strong></span>
+                                        <span>及格率：<strong class="pass-rate">0%</strong></span>
+                                        <span>优秀率：<strong class="excellent-rate">0%</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 统计分析 -->
+                    <div id="grade-analysis" class="tab-pane">
+                        <div class="analysis-container">
+                            <!-- 分析筛选 -->
+                            <div class="analysis-filters">
+                                <div class="filter-row">
+                                    <div class="filter-group">
+                                        <label>班级</label>
+                                        <select class="form-select">
+                                            <option>全部班级</option>
+                                            <option>高一(1)班</option>
+                                            <option>高一(2)班</option>
+                                            <option>高一(3)班</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label>科目</label>
+                                        <select class="form-select">
+                                            <option>全部科目</option>
+                                            <option>生物</option>
+                                            <option>数学</option>
+                                            <option>语文</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label>考试类型</label>
+                                        <select class="form-select">
+                                            <option>全部类型</option>
+                                            <option>期中考试</option>
+                                            <option>期末考试</option>
+                                            <option>月考</option>
+                                        </select>
+                                    </div>
+                                    <div class="filter-group">
+                                        <label>时间范围</label>
+                                        <div class="date-range">
+                                            <input type="date" class="form-input">
+                                            <span>至</span>
+                                            <input type="date" class="form-input">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-apply-filter">
+                                        <i class="fas fa-search"></i>
+                                        查询
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- 统计概览 -->
+                            <div class="statistics-overview">
+                                <div class="stat-cards">
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-value">156</div>
+                                            <div class="stat-label">参考人数</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-value">78.5</div>
+                                            <div class="stat-label">平均分</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-value">95</div>
+                                            <div class="stat-label">最高分</div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-card">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-percentage"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-value">85.2%</div>
+                                            <div class="stat-label">及格率</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 图表分析 -->
+                            <div class="chart-analysis">
+                                <div class="chart-row">
+                                    <div class="chart-card">
+                                        <div class="chart-header">
+                                            <h3>成绩分布</h3>
+                                            <div class="chart-actions">
+                                                <button class="btn-icon" title="刷新">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <button class="btn-icon" title="导出">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <canvas id="score-distribution-chart" width="400" height="300"></canvas>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chart-card">
+                                        <div class="chart-header">
+                                            <h3>班级对比</h3>
+                                            <div class="chart-actions">
+                                                <button class="btn-icon" title="刷新">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <button class="btn-icon" title="导出">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <canvas id="class-comparison-chart" width="400" height="300"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-row">
+                                    <div class="chart-card full-width">
+                                        <div class="chart-header">
+                                            <h3>成绩趋势</h3>
+                                            <div class="chart-actions">
+                                                <select class="form-select">
+                                                    <option>最近6次考试</option>
+                                                    <option>本学期</option>
+                                                    <option>本学年</option>
+                                                </select>
+                                                <button class="btn-icon" title="刷新">
+                                                    <i class="fas fa-sync-alt"></i>
+                                                </button>
+                                                <button class="btn-icon" title="导出">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="chart-content">
+                                            <canvas id="grade-trend-chart" width="800" height="400"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- AI分析建议 -->
+                            <div class="ai-analysis">
+                                <div class="analysis-header">
+                                    <h3>AI智能分析</h3>
+                                    <button class="btn btn-outline btn-sm btn-refresh-analysis">
+                                        <i class="fas fa-robot"></i>
+                                        重新分析
+                                    </button>
+                                </div>
+                                <div class="analysis-content">
+                                    <div class="analysis-insights">
+                                        <!-- AI分析结果将在这里动态生成 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 学生档案 -->
+                    <div id="student-profile" class="tab-pane">
+                        <div class="profile-container">
+                            <!-- 学生搜索 -->
+                            <div class="student-search">
+                                <div class="search-form">
+                                    <div class="search-input-group">
+                                        <input type="text" class="form-input" placeholder="搜索学生姓名或学号...">
+                                        <button class="btn btn-primary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="search-filters">
+                                        <select class="form-select">
+                                            <option>全部班级</option>
+                                            <option>高一(1)班</option>
+                                            <option>高一(2)班</option>
+                                        </select>
+                                        <select class="form-select">
+                                            <option>全部状态</option>
+                                            <option>优秀</option>
+                                            <option>良好</option>
+                                            <option>需关注</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 学生列表 -->
+                            <div class="student-list">
+                                <div class="list-header">
+                                    <h3>学生档案</h3>
+                                    <div class="list-actions">
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-filter"></i>
+                                            筛选
+                                        </button>
+                                        <button class="btn btn-outline btn-sm">
+                                            <i class="fas fa-sort"></i>
+                                            排序
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="student-grid">
+                                    <!-- 学生卡片将在这里动态生成 -->
+                                </div>
+                            </div>
+                            
+                            <!-- 学生详情模态框 -->
+                            <div id="student-detail-modal" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">学生详情</h3>
+                                        <button class="modal-close">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="student-detail-content">
+                                            <!-- 学生详情内容 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 报告导出 -->
+                    <div id="report-export" class="tab-pane">
+                        <div class="export-container">
+                            <!-- 报告配置 -->
+                            <div class="export-config">
+                                <div class="config-header">
+                                    <h3>报告配置</h3>
+                                    <p>选择要导出的报告类型和内容</p>
+                                </div>
+                                
+                                <div class="config-form">
+                                    <div class="form-section">
+                                        <h4>报告类型</h4>
+                                        <div class="report-types">
+                                            <label class="report-type-item">
+                                                <input type="radio" name="report-type" value="class-summary" checked>
+                                                <div class="type-card">
+                                                    <i class="fas fa-chart-bar"></i>
+                                                    <h5>班级成绩汇总</h5>
+                                                    <p>包含班级整体成绩统计和分析</p>
+                                                </div>
+                                            </label>
+                                            <label class="report-type-item">
+                                                <input type="radio" name="report-type" value="student-detail">
+                                                <div class="type-card">
+                                                    <i class="fas fa-user-graduate"></i>
+                                                    <h5>学生个人报告</h5>
+                                                    <p>详细的学生个人成绩分析</p>
+                                                </div>
+                                            </label>
+                                            <label class="report-type-item">
+                                                <input type="radio" name="report-type" value="subject-analysis">
+                                                <div class="type-card">
+                                                    <i class="fas fa-book"></i>
+                                                    <h5>科目分析报告</h5>
+                                                    <p>按科目进行深度分析</p>
+                                                </div>
+                                            </label>
+                                            <label class="report-type-item">
+                                                <input type="radio" name="report-type" value="trend-analysis">
+                                                <div class="type-card">
+                                                    <i class="fas fa-chart-line"></i>
+                                                    <h5>趋势分析报告</h5>
+                                                    <p>成绩变化趋势和预测</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-section">
+                                        <h4>导出设置</h4>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label>选择班级</label>
+                                                <select class="form-select" multiple>
+                                                    <option>高一(1)班</option>
+                                                    <option>高一(2)班</option>
+                                                    <option>高一(3)班</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>选择科目</label>
+                                                <select class="form-select" multiple>
+                                                    <option>生物</option>
+                                                    <option>数学</option>
+                                                    <option>语文</option>
+                                                    <option>英语</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>时间范围</label>
+                                                <div class="date-range">
+                                                    <input type="date" class="form-input">
+                                                    <span>至</span>
+                                                    <input type="date" class="form-input">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-section">
+                                        <h4>输出格式</h4>
+                                        <div class="format-options">
+                                            <label class="format-item">
+                                                <input type="checkbox" checked>
+                                                <i class="fas fa-file-pdf"></i>
+                                                <span>PDF报告</span>
+                                            </label>
+                                            <label class="format-item">
+                                                <input type="checkbox">
+                                                <i class="fas fa-file-excel"></i>
+                                                <span>Excel表格</span>
+                                            </label>
+                                            <label class="format-item">
+                                                <input type="checkbox">
+                                                <i class="fas fa-file-word"></i>
+                                                <span>Word文档</span>
+                                            </label>
+                                            <label class="format-item">
+                                                <input type="checkbox">
+                                                <i class="fas fa-file-image"></i>
+                                                <span>图片格式</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 报告预览 -->
+                            <div class="report-preview">
+                                <div class="preview-header">
+                                    <h3>报告预览</h3>
+                                    <div class="preview-actions">
+                                        <button class="btn btn-outline btn-sm btn-refresh-preview">
+                                            <i class="fas fa-sync-alt"></i>
+                                            刷新预览
+                                        </button>
+                                        <button class="btn btn-primary btn-sm btn-generate-report">
+                                            <i class="fas fa-download"></i>
+                                            生成报告
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="preview-content">
+                                    <div class="preview-placeholder">
+                                        <i class="fas fa-file-alt fa-3x"></i>
+                                        <p>选择报告配置后将显示预览</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 导出历史 -->
+                            <div class="export-history">
+                                <div class="history-header">
+                                    <h3>导出历史</h3>
+                                    <button class="btn btn-outline btn-sm btn-clear-history">
+                                        <i class="fas fa-trash"></i>
+                                        清空历史
+                                    </button>
+                                </div>
+                                
+                                <div class="history-list">
+                                    <!-- 导出历史记录 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- 成绩录入模态框 -->
+    <div id="grade-entry-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">快速录入成绩</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="quick-entry-form">
+                    <!-- 快速录入表单 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 批量导入模态框 -->
+    <div id="import-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">批量导入成绩</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="import-interface">
+                    <!-- 导入界面 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="grade-management.js"></script>
+</body>
+</html>

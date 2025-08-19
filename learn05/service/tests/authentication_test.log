@@ -1,0 +1,849 @@
+2025-08-16 23:42:40,695 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:42:40,695 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:42:40,695 - INFO - 开始执行完整认证测试套件...
+2025-08-16 23:42:40,695 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:42:40,695 - INFO - 1. 测试有效登录...
+2025-08-16 23:42:40,704 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,705 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,706 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,707 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,708 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,709 - ERROR - 账号 director_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,710 - ERROR - 账号 student_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,710 - ERROR - 账号 student_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,711 - ERROR - 账号 parent_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,712 - ERROR - 账号 parent_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,712 - ERROR - 账号 guest_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,712 - INFO - 2. 测试无效凭据...
+2025-08-16 23:42:40,713 - INFO - 开始测试无效凭据...
+2025-08-16 23:42:40,713 - ERROR - 无效凭据测试异常: 完全无效的用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,714 - ERROR - 无效凭据测试异常: 有效用户名，无效密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,715 - ERROR - 无效凭据测试异常: 无效用户名，有效密码格式 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空用户名 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,716 - ERROR - 无效凭据测试异常: 空密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,717 - ERROR - 无效凭据测试异常: 空用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,717 - INFO - 3. 测试会话验证...
+2025-08-16 23:42:40,717 - INFO - 4. 测试无效token访问...
+2025-08-16 23:42:40,717 - INFO - 测试无效token访问...
+2025-08-16 23:42:40,718 - ERROR - 无效token测试异常: invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: Bearer invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,719 - ERROR - 无效token测试异常: expired_token_12345 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,720 - ERROR - 无效token测试异常:  - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,720 - ERROR - 无效token测试异常: malformed.token.here - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,720 - INFO - 5. 测试并发登录...
+2025-08-16 23:42:40,720 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-16 23:42:40,722 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,722 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,722 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,722 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,722 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:42:40,722 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:42:40,722 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:42:40,722 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:42:40,722 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s
+2025-08-16 23:42:40,722 - INFO - 6. 测试登出...
+2025-08-16 23:42:40,723 - INFO - 认证测试套件执行完成
+2025-08-16 23:42:40,723 - INFO - 登录成功率: 0.0%
+2025-08-16 23:42:40,723 - INFO - 会话验证成功率: 0.0%
+2025-08-16 23:42:40,723 - INFO - 登出成功率: 0.0%
+2025-08-16 23:42:40,723 - INFO - 无效凭据处理率: 0.0%
+2025-08-16 23:42:40,723 - INFO - 无效token处理: 失败
+2025-08-16 23:42:40,723 - INFO - 并发登录测试: 失败
+2025-08-16 23:45:37,516 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:45:37,516 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:45:37,516 - INFO - 开始执行完整认证测试套件...
+2025-08-16 23:45:37,516 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:45:37,516 - INFO - 1. 测试有效登录...
+2025-08-16 23:45:37,522 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,523 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,523 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,524 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,524 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,525 - ERROR - 账号 director_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,526 - ERROR - 账号 student_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,527 - ERROR - 账号 student_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,527 - ERROR - 账号 parent_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,528 - ERROR - 账号 parent_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,529 - ERROR - 账号 guest_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,529 - INFO - 2. 测试无效凭据...
+2025-08-16 23:45:37,529 - INFO - 开始测试无效凭据...
+2025-08-16 23:45:37,530 - ERROR - 无效凭据测试异常: 完全无效的用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,531 - ERROR - 无效凭据测试异常: 有效用户名，无效密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,532 - ERROR - 无效凭据测试异常: 无效用户名，有效密码格式 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,532 - ERROR - 无效凭据测试异常: 空用户名 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,533 - ERROR - 无效凭据测试异常: 空密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,534 - ERROR - 无效凭据测试异常: 空用户名和密码 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,534 - INFO - 3. 测试会话验证...
+2025-08-16 23:45:37,534 - INFO - 4. 测试无效token访问...
+2025-08-16 23:45:37,534 - INFO - 测试无效token访问...
+2025-08-16 23:45:37,535 - ERROR - 无效token测试异常: invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,536 - ERROR - 无效token测试异常: Bearer invalid_token - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,537 - ERROR - 无效token测试异常: expired_token_12345 - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,537 - ERROR - 无效token测试异常:  - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,538 - ERROR - 无效token测试异常: malformed.token.here - Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,538 - INFO - 5. 测试并发登录...
+2025-08-16 23:45:37,538 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-16 23:45:37,540 - ERROR - 账号 admin_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,540 - ERROR - 账号 teacher_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,540 - ERROR - 账号 teacher_003 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,540 - ERROR - 账号 teacher_002 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,540 - ERROR - 账号 principal_001 登录异常: Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]
+2025-08-16 23:45:37,541 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:45:37,541 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:45:37,541 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:45:37,541 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:45:37,541 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': "Cannot connect to host localhost:8000 ssl:default [Multiple exceptions: [Errno 61] Connect call failed ('::1', 8000, 0, 0), [Errno 61] Connect call failed ('127.0.0.1', 8000)]"}
+2025-08-16 23:45:37,541 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s
+2025-08-16 23:45:37,541 - INFO - 6. 测试登出...
+2025-08-16 23:45:37,541 - INFO - 认证测试套件执行完成
+2025-08-16 23:45:37,541 - INFO - 登录成功率: 0.0%
+2025-08-16 23:45:37,541 - INFO - 会话验证成功率: 0.0%
+2025-08-16 23:45:37,541 - INFO - 登出成功率: 0.0%
+2025-08-16 23:45:37,541 - INFO - 无效凭据处理率: 0.0%
+2025-08-16 23:45:37,541 - INFO - 无效token处理: 失败
+2025-08-16 23:45:37,541 - INFO - 并发登录测试: 失败
+2025-08-16 23:59:16,028 - INFO - 成功加载 13 个测试账号
+2025-08-16 23:59:16,029 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-16 23:59:16,029 - INFO - 开始执行完整认证测试套件...
+2025-08-16 23:59:16,029 - INFO - 找到 11 个活跃测试账号
+2025-08-16 23:59:16,029 - INFO - 1. 测试有效登录...
+2025-08-16 23:59:16,034 - ERROR - 账号 admin_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,035 - ERROR - 账号 teacher_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,037 - ERROR - 账号 teacher_002 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,038 - ERROR - 账号 teacher_003 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,039 - ERROR - 账号 principal_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,040 - ERROR - 账号 director_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,041 - ERROR - 账号 student_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,042 - ERROR - 账号 student_002 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,043 - ERROR - 账号 parent_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,045 - ERROR - 账号 parent_002 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,046 - ERROR - 账号 guest_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,046 - INFO - 2. 测试无效凭据...
+2025-08-16 23:59:16,046 - INFO - 开始测试无效凭据...
+2025-08-16 23:59:16,047 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 404
+2025-08-16 23:59:16,048 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 404
+2025-08-16 23:59:16,049 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 404
+2025-08-16 23:59:16,050 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 404
+2025-08-16 23:59:16,051 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 404
+2025-08-16 23:59:16,052 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 404
+2025-08-16 23:59:16,052 - INFO - 3. 测试会话验证...
+2025-08-16 23:59:16,052 - INFO - 4. 测试无效token访问...
+2025-08-16 23:59:16,052 - INFO - 测试无效token访问...
+2025-08-16 23:59:16,053 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-16 23:59:16,054 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-16 23:59:16,055 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-16 23:59:16,056 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-16 23:59:16,057 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-16 23:59:16,057 - INFO - 5. 测试并发登录...
+2025-08-16 23:59:16,057 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-16 23:59:16,060 - ERROR - 账号 teacher_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,060 - ERROR - 账号 admin_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,060 - ERROR - 账号 teacher_002 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,060 - ERROR - 账号 principal_001 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,060 - ERROR - 账号 teacher_003 登录失败，状态码: 404, 错误: {"detail":"Not Found"}
+2025-08-16 23:59:16,061 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 404: {"detail":"Not Found"}', 'response_time': 0.0022690296173095703}
+2025-08-16 23:59:16,061 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 404: {"detail":"Not Found"}', 'response_time': 0.0019872188568115234}
+2025-08-16 23:59:16,061 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 404: {"detail":"Not Found"}', 'response_time': 0.0022542476654052734}
+2025-08-16 23:59:16,061 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 404: {"detail":"Not Found"}', 'response_time': 0.002518892288208008}
+2025-08-16 23:59:16,061 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 404: {"detail":"Not Found"}', 'response_time': 0.002212047576904297}
+2025-08-16 23:59:16,061 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s
+2025-08-16 23:59:16,061 - INFO - 6. 测试登出...
+2025-08-16 23:59:16,061 - INFO - 认证测试套件执行完成
+2025-08-16 23:59:16,061 - INFO - 登录成功率: 0.0%
+2025-08-16 23:59:16,061 - INFO - 会话验证成功率: 0.0%
+2025-08-16 23:59:16,061 - INFO - 登出成功率: 0.0%
+2025-08-16 23:59:16,061 - INFO - 无效凭据处理率: 0.0%
+2025-08-16 23:59:16,061 - INFO - 无效token处理: 失败
+2025-08-16 23:59:16,061 - INFO - 并发登录测试: 失败
+2025-08-17 00:04:08,341 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:04:08,341 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:04:08,341 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:04:08,341 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:04:08,341 - INFO - 1. 测试有效登录...
+2025-08-17 00:04:08,351 - ERROR - 账号 admin_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,353 - ERROR - 账号 teacher_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,354 - ERROR - 账号 teacher_002 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,356 - ERROR - 账号 teacher_003 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,357 - ERROR - 账号 principal_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,359 - ERROR - 账号 director_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,360 - ERROR - 账号 student_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,361 - ERROR - 账号 student_002 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,363 - ERROR - 账号 parent_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,364 - ERROR - 账号 parent_002 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,365 - ERROR - 账号 guest_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,366 - INFO - 2. 测试无效凭据...
+2025-08-17 00:04:08,366 - INFO - 开始测试无效凭据...
+2025-08-17 00:04:08,367 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 422
+2025-08-17 00:04:08,368 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 422
+2025-08-17 00:04:08,369 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 422
+2025-08-17 00:04:08,371 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 422
+2025-08-17 00:04:08,372 - INFO - 无效凭据测试通过: 空密码 - 状态码: 422
+2025-08-17 00:04:08,373 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 422
+2025-08-17 00:04:08,373 - INFO - 3. 测试会话验证...
+2025-08-17 00:04:08,373 - INFO - 4. 测试无效token访问...
+2025-08-17 00:04:08,373 - INFO - 测试无效token访问...
+2025-08-17 00:04:08,374 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:04:08,375 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:04:08,376 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:04:08,377 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:04:08,378 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:04:08,378 - INFO - 5. 测试并发登录...
+2025-08-17 00:04:08,378 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:04:08,380 - ERROR - 账号 teacher_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,382 - ERROR - 账号 admin_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,382 - ERROR - 账号 teacher_003 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,382 - ERROR - 账号 principal_001 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,382 - ERROR - 账号 teacher_002 登录失败，状态码: 422, 错误: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}
+2025-08-17 00:04:08,382 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 422: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}', 'response_time': 0.003194093704223633}
+2025-08-17 00:04:08,382 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 422: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}', 'response_time': 0.0018880367279052734}
+2025-08-17 00:04:08,382 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 422: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}', 'response_time': 0.0034329891204833984}
+2025-08-17 00:04:08,382 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 422: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}', 'response_time': 0.0030679702758789062}
+2025-08-17 00:04:08,382 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 422: {"detail":[{"type":"missing","loc":["body","username"],"msg":"Field required","input":null},{"type":"missing","loc":["body","password"],"msg":"Field required","input":null}]}', 'response_time': 0.003101825714111328}
+2025-08-17 00:04:08,382 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.00s
+2025-08-17 00:04:08,382 - INFO - 6. 测试登出...
+2025-08-17 00:04:08,383 - INFO - 认证测试套件执行完成
+2025-08-17 00:04:08,383 - INFO - 登录成功率: 0.0%
+2025-08-17 00:04:08,383 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:04:08,383 - INFO - 登出成功率: 0.0%
+2025-08-17 00:04:08,383 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:04:08,383 - INFO - 无效token处理: 失败
+2025-08-17 00:04:08,383 - INFO - 并发登录测试: 失败
+2025-08-17 00:05:58,835 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:05:58,836 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:05:58,836 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:05:58,836 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:05:58,836 - INFO - 1. 测试有效登录...
+2025-08-17 00:05:58,841 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,849 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,851 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,854 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,856 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,857 - ERROR - 账号 director_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,860 - ERROR - 账号 student_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,862 - ERROR - 账号 student_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,863 - ERROR - 账号 parent_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,866 - ERROR - 账号 parent_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,868 - ERROR - 账号 guest_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,868 - INFO - 2. 测试无效凭据...
+2025-08-17 00:05:58,868 - INFO - 开始测试无效凭据...
+2025-08-17 00:05:58,870 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:05:58,872 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 500
+2025-08-17 00:05:58,874 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 500
+2025-08-17 00:05:58,876 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 500
+2025-08-17 00:05:58,878 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 500
+2025-08-17 00:05:58,880 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:05:58,880 - INFO - 3. 测试会话验证...
+2025-08-17 00:05:58,880 - INFO - 4. 测试无效token访问...
+2025-08-17 00:05:58,880 - INFO - 测试无效token访问...
+2025-08-17 00:05:58,881 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:05:58,883 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:05:58,884 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:05:58,885 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:05:58,886 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:05:58,886 - INFO - 5. 测试并发登录...
+2025-08-17 00:05:58,886 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:05:58,890 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,891 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,893 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,894 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,896 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:05:58,896 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.0050318241119384766}
+2025-08-17 00:05:58,896 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.003554105758666992}
+2025-08-17 00:05:58,896 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.0062558650970458984}
+2025-08-17 00:05:58,896 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.007370948791503906}
+2025-08-17 00:05:58,896 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.008945941925048828}
+2025-08-17 00:05:58,896 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.01s
+2025-08-17 00:05:58,896 - INFO - 6. 测试登出...
+2025-08-17 00:05:58,897 - INFO - 认证测试套件执行完成
+2025-08-17 00:05:58,897 - INFO - 登录成功率: 0.0%
+2025-08-17 00:05:58,897 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:05:58,897 - INFO - 登出成功率: 0.0%
+2025-08-17 00:05:58,897 - INFO - 无效凭据处理率: 0.0%
+2025-08-17 00:05:58,897 - INFO - 无效token处理: 失败
+2025-08-17 00:05:58,897 - INFO - 并发登录测试: 失败
+2025-08-17 00:07:07,571 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:07:07,571 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:07:07,571 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:07:07,571 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:07:07,571 - INFO - 1. 测试有效登录...
+2025-08-17 00:07:07,580 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,587 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,590 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,592 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,594 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,596 - ERROR - 账号 director_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,598 - ERROR - 账号 student_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,600 - ERROR - 账号 student_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,602 - ERROR - 账号 parent_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,604 - ERROR - 账号 parent_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,607 - ERROR - 账号 guest_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,607 - INFO - 2. 测试无效凭据...
+2025-08-17 00:07:07,607 - INFO - 开始测试无效凭据...
+2025-08-17 00:07:07,609 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:07:07,611 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 500
+2025-08-17 00:07:07,613 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 500
+2025-08-17 00:07:07,615 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 500
+2025-08-17 00:07:07,617 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 500
+2025-08-17 00:07:07,619 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:07:07,620 - INFO - 3. 测试会话验证...
+2025-08-17 00:07:07,620 - INFO - 4. 测试无效token访问...
+2025-08-17 00:07:07,620 - INFO - 测试无效token访问...
+2025-08-17 00:07:07,621 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:07:07,623 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:07:07,624 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:07:07,625 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:07:07,627 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:07:07,627 - INFO - 5. 测试并发登录...
+2025-08-17 00:07:07,627 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:07:07,631 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,632 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,634 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,827 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,829 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:07:07,829 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.004103899002075195}
+2025-08-17 00:07:07,829 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.007113218307495117}
+2025-08-17 00:07:07,829 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.0053119659423828125}
+2025-08-17 00:07:07,829 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.20148301124572754}
+2025-08-17 00:07:07,829 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.19999003410339355}
+2025-08-17 00:07:07,829 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.20s
+2025-08-17 00:07:07,829 - INFO - 6. 测试登出...
+2025-08-17 00:07:07,830 - INFO - 认证测试套件执行完成
+2025-08-17 00:07:07,830 - INFO - 登录成功率: 0.0%
+2025-08-17 00:07:07,830 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:07:07,830 - INFO - 登出成功率: 0.0%
+2025-08-17 00:07:07,830 - INFO - 无效凭据处理率: 0.0%
+2025-08-17 00:07:07,830 - INFO - 无效token处理: 失败
+2025-08-17 00:07:07,830 - INFO - 并发登录测试: 失败
+2025-08-17 00:08:49,884 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:08:49,884 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:08:49,884 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:08:49,884 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:08:49,884 - INFO - 1. 测试有效登录...
+2025-08-17 00:08:49,892 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,900 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,902 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,905 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,907 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,909 - ERROR - 账号 director_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,912 - ERROR - 账号 student_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,914 - ERROR - 账号 student_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,916 - ERROR - 账号 parent_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,918 - ERROR - 账号 parent_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,920 - ERROR - 账号 guest_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,920 - INFO - 2. 测试无效凭据...
+2025-08-17 00:08:49,920 - INFO - 开始测试无效凭据...
+2025-08-17 00:08:49,922 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:08:49,924 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 500
+2025-08-17 00:08:49,926 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 500
+2025-08-17 00:08:49,928 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 500
+2025-08-17 00:08:49,930 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 500
+2025-08-17 00:08:49,933 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:08:49,933 - INFO - 3. 测试会话验证...
+2025-08-17 00:08:49,933 - INFO - 4. 测试无效token访问...
+2025-08-17 00:08:49,933 - INFO - 测试无效token访问...
+2025-08-17 00:08:49,935 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:08:49,936 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:08:49,937 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:08:49,938 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:08:49,939 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:08:49,940 - INFO - 5. 测试并发登录...
+2025-08-17 00:08:49,940 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:08:49,944 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,946 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,947 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,949 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,954 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:08:49,955 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.014374256134033203}
+2025-08-17 00:08:49,956 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.00436091423034668}
+2025-08-17 00:08:49,956 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.006051063537597656}
+2025-08-17 00:08:49,956 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.007261037826538086}
+2025-08-17 00:08:49,956 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.008663177490234375}
+2025-08-17 00:08:49,956 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.02s
+2025-08-17 00:08:49,956 - INFO - 6. 测试登出...
+2025-08-17 00:08:49,957 - INFO - 认证测试套件执行完成
+2025-08-17 00:08:49,957 - INFO - 登录成功率: 0.0%
+2025-08-17 00:08:49,957 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:08:49,957 - INFO - 登出成功率: 0.0%
+2025-08-17 00:08:49,957 - INFO - 无效凭据处理率: 0.0%
+2025-08-17 00:08:49,958 - INFO - 无效token处理: 失败
+2025-08-17 00:08:49,958 - INFO - 并发登录测试: 失败
+2025-08-17 00:10:49,123 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:10:49,124 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:10:49,124 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:10:49,124 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:10:49,124 - INFO - 1. 测试有效登录...
+2025-08-17 00:10:49,132 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,139 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,141 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,143 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,146 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,147 - ERROR - 账号 director_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,149 - ERROR - 账号 student_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,151 - ERROR - 账号 student_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,153 - ERROR - 账号 parent_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,155 - ERROR - 账号 parent_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,157 - ERROR - 账号 guest_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:10:49,158 - INFO - 2. 测试无效凭据...
+2025-08-17 00:10:49,158 - INFO - 开始测试无效凭据...
+2025-08-17 00:10:49,159 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:10:49,162 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 500
+2025-08-17 00:10:49,163 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 500
+2025-08-17 00:10:49,165 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 500
+2025-08-17 00:10:49,167 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 500
+2025-08-17 00:10:49,170 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:10:49,170 - INFO - 3. 测试会话验证...
+2025-08-17 00:10:49,170 - INFO - 4. 测试无效token访问...
+2025-08-17 00:10:49,170 - INFO - 测试无效token访问...
+2025-08-17 00:10:49,171 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:10:49,172 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:10:49,174 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:10:49,175 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:10:49,176 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:10:49,176 - INFO - 5. 测试并发登录...
+2025-08-17 00:10:49,176 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:10:49,180 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:11:56,409 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:11:56,411 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:11:56,412 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:11:56,414 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:11:56,414 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 67.23290181159973}
+2025-08-17 00:11:56,414 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.0034101009368896484}
+2025-08-17 00:11:56,414 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 67.23396801948547}
+2025-08-17 00:11:56,414 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 67.23513197898865}
+2025-08-17 00:11:56,414 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 67.23709607124329}
+2025-08-17 00:11:56,414 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 67.24s
+2025-08-17 00:11:56,414 - INFO - 6. 测试登出...
+2025-08-17 00:11:56,415 - INFO - 认证测试套件执行完成
+2025-08-17 00:11:56,415 - INFO - 登录成功率: 0.0%
+2025-08-17 00:11:56,415 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:11:56,415 - INFO - 登出成功率: 0.0%
+2025-08-17 00:11:56,415 - INFO - 无效凭据处理率: 0.0%
+2025-08-17 00:11:56,415 - INFO - 无效token处理: 失败
+2025-08-17 00:11:56,415 - INFO - 并发登录测试: 失败
+2025-08-17 00:17:51,286 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:17:51,286 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:17:51,286 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:17:51,286 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:17:51,286 - INFO - 1. 测试有效登录...
+2025-08-17 00:17:51,295 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,301 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,303 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,305 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,307 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,309 - ERROR - 账号 director_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,311 - ERROR - 账号 student_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,314 - ERROR - 账号 student_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,316 - ERROR - 账号 parent_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,318 - ERROR - 账号 parent_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,320 - ERROR - 账号 guest_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,320 - INFO - 2. 测试无效凭据...
+2025-08-17 00:17:51,320 - INFO - 开始测试无效凭据...
+2025-08-17 00:17:51,322 - ERROR - 无效凭据测试失败: 完全无效的用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:17:51,324 - ERROR - 无效凭据测试失败: 有效用户名，无效密码 - 期望4xx，实际: 500
+2025-08-17 00:17:51,326 - ERROR - 无效凭据测试失败: 无效用户名，有效密码格式 - 期望4xx，实际: 500
+2025-08-17 00:17:51,328 - ERROR - 无效凭据测试失败: 空用户名 - 期望4xx，实际: 500
+2025-08-17 00:17:51,331 - ERROR - 无效凭据测试失败: 空密码 - 期望4xx，实际: 500
+2025-08-17 00:17:51,333 - ERROR - 无效凭据测试失败: 空用户名和密码 - 期望4xx，实际: 500
+2025-08-17 00:17:51,334 - INFO - 3. 测试会话验证...
+2025-08-17 00:17:51,334 - INFO - 4. 测试无效token访问...
+2025-08-17 00:17:51,334 - INFO - 测试无效token访问...
+2025-08-17 00:17:51,335 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:17:51,337 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:17:51,338 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:17:51,339 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:17:51,340 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:17:51,341 - INFO - 5. 测试并发登录...
+2025-08-17 00:17:51,341 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:17:51,345 - ERROR - 账号 admin_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,346 - ERROR - 账号 teacher_002 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:51,347 - ERROR - 账号 teacher_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:53,397 - ERROR - 账号 principal_001 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:53,399 - ERROR - 账号 teacher_003 登录失败，状态码: 500, 错误: Internal Server Error
+2025-08-17 00:17:53,399 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.004133939743041992}
+2025-08-17 00:17:53,399 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.00671696662902832}
+2025-08-17 00:17:53,399 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 0.005244016647338867}
+2025-08-17 00:17:53,399 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 2.057356834411621}
+2025-08-17 00:17:53,399 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 500: Internal Server Error', 'response_time': 2.0556538105010986}
+2025-08-17 00:17:53,399 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 2.06s
+2025-08-17 00:17:53,399 - INFO - 6. 测试登出...
+2025-08-17 00:17:53,399 - INFO - 认证测试套件执行完成
+2025-08-17 00:17:53,399 - INFO - 登录成功率: 0.0%
+2025-08-17 00:17:53,399 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:17:53,399 - INFO - 登出成功率: 0.0%
+2025-08-17 00:17:53,399 - INFO - 无效凭据处理率: 0.0%
+2025-08-17 00:17:53,399 - INFO - 无效token处理: 失败
+2025-08-17 00:17:53,399 - INFO - 并发登录测试: 失败
+2025-08-17 00:19:32,254 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:19:32,254 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:19:32,254 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:19:32,254 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:19:32,254 - INFO - 1. 测试有效登录...
+2025-08-17 00:19:32,263 - ERROR - 账号 admin_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,265 - ERROR - 账号 teacher_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,268 - ERROR - 账号 teacher_002 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,271 - ERROR - 账号 teacher_003 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,273 - ERROR - 账号 principal_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,275 - ERROR - 账号 director_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,277 - ERROR - 账号 student_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,280 - ERROR - 账号 student_002 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,281 - ERROR - 账号 parent_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,283 - ERROR - 账号 parent_002 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,285 - ERROR - 账号 guest_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,285 - INFO - 2. 测试无效凭据...
+2025-08-17 00:19:32,285 - INFO - 开始测试无效凭据...
+2025-08-17 00:19:32,287 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:19:32,529 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:19:32,532 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:19:32,534 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:19:32,757 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:19:32,760 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:19:32,760 - INFO - 3. 测试会话验证...
+2025-08-17 00:19:32,760 - INFO - 4. 测试无效token访问...
+2025-08-17 00:19:32,760 - INFO - 测试无效token访问...
+2025-08-17 00:19:32,761 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:19:32,763 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:19:32,764 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:19:32,765 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:19:32,766 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:19:32,766 - INFO - 5. 测试并发登录...
+2025-08-17 00:19:32,766 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:19:32,772 - ERROR - 账号 admin_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,773 - ERROR - 账号 teacher_003 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,774 - ERROR - 账号 principal_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,774 - ERROR - 账号 teacher_002 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,774 - ERROR - 账号 teacher_001 登录失败，状态码: 401, 错误: {"detail":"用户名或密码错误"}
+2025-08-17 00:19:32,775 - ERROR - 并发登录失败: admin_001 - {'success': False, 'error': 'HTTP 401: {"detail":"用户名或密码错误"}', 'response_time': 0.005896091461181641}
+2025-08-17 00:19:32,775 - ERROR - 并发登录失败: teacher_001 - {'success': False, 'error': 'HTTP 401: {"detail":"用户名或密码错误"}', 'response_time': 0.007664203643798828}
+2025-08-17 00:19:32,775 - ERROR - 并发登录失败: teacher_002 - {'success': False, 'error': 'HTTP 401: {"detail":"用户名或密码错误"}', 'response_time': 0.007331132888793945}
+2025-08-17 00:19:32,775 - ERROR - 并发登录失败: teacher_003 - {'success': False, 'error': 'HTTP 401: {"detail":"用户名或密码错误"}', 'response_time': 0.006323099136352539}
+2025-08-17 00:19:32,775 - ERROR - 并发登录失败: principal_001 - {'success': False, 'error': 'HTTP 401: {"detail":"用户名或密码错误"}', 'response_time': 0.006905078887939453}
+2025-08-17 00:19:32,775 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.01s
+2025-08-17 00:19:32,775 - INFO - 6. 测试登出...
+2025-08-17 00:19:32,775 - INFO - 认证测试套件执行完成
+2025-08-17 00:19:32,775 - INFO - 登录成功率: 0.0%
+2025-08-17 00:19:32,775 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:19:32,775 - INFO - 登出成功率: 0.0%
+2025-08-17 00:19:32,775 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:19:32,775 - INFO - 无效token处理: 失败
+2025-08-17 00:19:32,775 - INFO - 并发登录测试: 失败
+2025-08-17 00:33:16,322 - ERROR - 加载测试账号失败: [Errno 2] No such file or directory: 'tests/test_accounts.json'
+2025-08-17 00:33:16,323 - ERROR - 认证测试执行失败: [Errno 2] No such file or directory: 'tests/test_accounts.json'
+2025-08-17 00:33:56,761 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:33:56,761 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:33:56,761 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:33:56,761 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:33:56,761 - INFO - 1. 测试有效登录...
+2025-08-17 00:33:59,310 - INFO - 2. 测试无效凭据...
+2025-08-17 00:33:59,310 - INFO - 开始测试无效凭据...
+2025-08-17 00:33:59,313 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:33:59,315 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:33:59,317 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:33:59,320 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:33:59,322 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:33:59,324 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:33:59,324 - INFO - 3. 测试会话验证...
+2025-08-17 00:33:59,324 - INFO - 4. 测试无效token访问...
+2025-08-17 00:33:59,324 - INFO - 测试无效token访问...
+2025-08-17 00:33:59,326 - ERROR - 无效token测试失败: invalid_token - 期望401，实际: 404
+2025-08-17 00:33:59,327 - ERROR - 无效token测试失败: Bearer invalid_token - 期望401，实际: 404
+2025-08-17 00:33:59,330 - ERROR - 无效token测试失败: expired_token_12345 - 期望401，实际: 404
+2025-08-17 00:33:59,331 - ERROR - 无效token测试失败: (empty) - 期望401，实际: 404
+2025-08-17 00:33:59,332 - ERROR - 无效token测试失败: malformed.token.here - 期望401，实际: 404
+2025-08-17 00:33:59,333 - INFO - 5. 测试并发登录...
+2025-08-17 00:33:59,333 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:33:59,591 - ERROR - 并发登录失败: admin_test - {'success': False, 'error': '未返回有效token'}
+2025-08-17 00:33:59,591 - ERROR - 并发登录失败: teacher_zhang - {'success': False, 'error': '未返回有效token'}
+2025-08-17 00:33:59,591 - ERROR - 并发登录失败: teacher_li - {'success': False, 'error': '未返回有效token'}
+2025-08-17 00:33:59,591 - ERROR - 并发登录失败: teacher_wang - {'success': False, 'error': '未返回有效token'}
+2025-08-17 00:33:59,591 - ERROR - 并发登录失败: principal_chen - {'success': False, 'error': '未返回有效token'}
+2025-08-17 00:33:59,591 - INFO - 并发登录测试完成，成功: 0, 失败: 5, 总时间: 0.26s
+2025-08-17 00:33:59,591 - INFO - 6. 测试登出...
+2025-08-17 00:33:59,591 - INFO - 认证测试套件执行完成
+2025-08-17 00:33:59,591 - INFO - 登录成功率: 0.0%
+2025-08-17 00:33:59,591 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:33:59,591 - INFO - 登出成功率: 0.0%
+2025-08-17 00:33:59,591 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:33:59,591 - INFO - 无效token处理: 失败
+2025-08-17 00:33:59,591 - INFO - 并发登录测试: 失败
+2025-08-17 00:35:38,475 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:35:38,475 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:35:38,475 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:35:38,475 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:35:38,475 - INFO - 1. 测试有效登录...
+2025-08-17 00:35:38,709 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:38,937 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:39,183 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.25s
+2025-08-17 00:35:39,414 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:39,665 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.25s
+2025-08-17 00:35:39,893 - INFO - 账号 director_liu (教务主任) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:40,122 - INFO - 账号 student_xiaoming (学生) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:40,348 - INFO - 账号 student_xiaohong (学生) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:40,576 - INFO - 账号 parent_zhang (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:40,807 - INFO - 账号 parent_li (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,036 - INFO - 账号 guest_visitor (访客) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,037 - INFO - 2. 测试无效凭据...
+2025-08-17 00:35:41,037 - INFO - 开始测试无效凭据...
+2025-08-17 00:35:41,039 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:35:41,042 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:35:41,044 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:35:41,046 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:35:41,049 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:35:41,050 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:35:41,051 - INFO - 3. 测试会话验证...
+2025-08-17 00:35:41,056 - ERROR - 账号 admin_test 会话验证失败，状态码: 500
+2025-08-17 00:35:41,060 - ERROR - 账号 teacher_zhang 会话验证失败，状态码: 500
+2025-08-17 00:35:41,063 - ERROR - 账号 teacher_li 会话验证失败，状态码: 500
+2025-08-17 00:35:41,066 - ERROR - 账号 teacher_wang 会话验证失败，状态码: 500
+2025-08-17 00:35:41,069 - ERROR - 账号 principal_chen 会话验证失败，状态码: 500
+2025-08-17 00:35:41,072 - ERROR - 账号 director_liu 会话验证失败，状态码: 500
+2025-08-17 00:35:41,075 - ERROR - 账号 student_xiaoming 会话验证失败，状态码: 500
+2025-08-17 00:35:41,078 - ERROR - 账号 student_xiaohong 会话验证失败，状态码: 500
+2025-08-17 00:35:41,082 - ERROR - 账号 parent_zhang 会话验证失败，状态码: 500
+2025-08-17 00:35:41,085 - ERROR - 账号 parent_li 会话验证失败，状态码: 500
+2025-08-17 00:35:41,088 - ERROR - 账号 guest_visitor 会话验证失败，状态码: 500
+2025-08-17 00:35:41,088 - INFO - 4. 测试无效token访问...
+2025-08-17 00:35:41,088 - INFO - 测试无效token访问...
+2025-08-17 00:35:41,090 - INFO - 无效token测试通过: invalid_token - 状态码: 401
+2025-08-17 00:35:41,092 - INFO - 无效token测试通过: Bearer invalid_token - 状态码: 401
+2025-08-17 00:35:41,094 - INFO - 无效token测试通过: expired_token_12345 - 状态码: 401
+2025-08-17 00:35:41,095 - INFO - 无效token测试通过: (empty) - 状态码: 401
+2025-08-17 00:35:41,097 - INFO - 无效token测试通过: malformed.token.here - 状态码: 401
+2025-08-17 00:35:41,097 - INFO - 5. 测试并发登录...
+2025-08-17 00:35:41,097 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:35:41,330 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,330 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,331 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,331 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,331 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.23s
+2025-08-17 00:35:41,332 - INFO - 并发登录测试完成，成功: 5, 失败: 0, 总时间: 0.23s
+2025-08-17 00:35:41,332 - INFO - 6. 测试登出...
+2025-08-17 00:35:41,333 - ERROR - 账号 admin_test 登出失败，状态码: 404
+2025-08-17 00:35:41,334 - ERROR - 账号 teacher_zhang 登出失败，状态码: 404
+2025-08-17 00:35:41,336 - ERROR - 账号 teacher_li 登出失败，状态码: 404
+2025-08-17 00:35:41,337 - ERROR - 账号 teacher_wang 登出失败，状态码: 404
+2025-08-17 00:35:41,338 - ERROR - 账号 principal_chen 登出失败，状态码: 404
+2025-08-17 00:35:41,340 - ERROR - 账号 director_liu 登出失败，状态码: 404
+2025-08-17 00:35:41,341 - ERROR - 账号 student_xiaoming 登出失败，状态码: 404
+2025-08-17 00:35:41,342 - ERROR - 账号 student_xiaohong 登出失败，状态码: 404
+2025-08-17 00:35:41,343 - ERROR - 账号 parent_zhang 登出失败，状态码: 404
+2025-08-17 00:35:41,345 - ERROR - 账号 parent_li 登出失败，状态码: 404
+2025-08-17 00:35:41,346 - ERROR - 账号 guest_visitor 登出失败，状态码: 404
+2025-08-17 00:35:41,347 - INFO - 认证测试套件执行完成
+2025-08-17 00:35:41,347 - INFO - 登录成功率: 100.0%
+2025-08-17 00:35:41,347 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:35:41,347 - INFO - 登出成功率: 0.0%
+2025-08-17 00:35:41,347 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:35:41,347 - INFO - 无效token处理: 通过
+2025-08-17 00:35:41,347 - INFO - 并发登录测试: 通过
+2025-08-17 00:37:19,515 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:37:19,515 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:37:19,515 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:37:19,515 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:37:19,515 - INFO - 1. 测试有效登录...
+2025-08-17 00:37:19,744 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:19,970 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:20,195 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.22s
+2025-08-17 00:37:20,419 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.22s
+2025-08-17 00:37:20,646 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:20,874 - INFO - 账号 director_liu (教务主任) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:21,098 - INFO - 账号 student_xiaoming (学生) 登录成功，响应时间: 0.22s
+2025-08-17 00:37:21,323 - INFO - 账号 student_xiaohong (学生) 登录成功，响应时间: 0.22s
+2025-08-17 00:37:21,548 - INFO - 账号 parent_zhang (家长) 登录成功，响应时间: 0.22s
+2025-08-17 00:37:21,774 - INFO - 账号 parent_li (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,001 - INFO - 账号 guest_visitor (访客) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,001 - INFO - 2. 测试无效凭据...
+2025-08-17 00:37:22,001 - INFO - 开始测试无效凭据...
+2025-08-17 00:37:22,004 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:37:22,227 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:37:22,230 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:37:22,232 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:37:22,456 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:37:22,459 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:37:22,459 - INFO - 3. 测试会话验证...
+2025-08-17 00:37:22,464 - ERROR - 账号 admin_test 会话验证失败，状态码: 500
+2025-08-17 00:37:22,472 - ERROR - 账号 teacher_zhang 会话验证失败，状态码: 500
+2025-08-17 00:37:22,475 - ERROR - 账号 teacher_li 会话验证失败，状态码: 500
+2025-08-17 00:37:22,478 - ERROR - 账号 teacher_wang 会话验证失败，状态码: 500
+2025-08-17 00:37:22,482 - ERROR - 账号 principal_chen 会话验证失败，状态码: 500
+2025-08-17 00:37:22,485 - ERROR - 账号 director_liu 会话验证失败，状态码: 500
+2025-08-17 00:37:22,489 - ERROR - 账号 student_xiaoming 会话验证失败，状态码: 500
+2025-08-17 00:37:22,491 - ERROR - 账号 student_xiaohong 会话验证失败，状态码: 500
+2025-08-17 00:37:22,494 - ERROR - 账号 parent_zhang 会话验证失败，状态码: 500
+2025-08-17 00:37:22,497 - ERROR - 账号 parent_li 会话验证失败，状态码: 500
+2025-08-17 00:37:22,499 - ERROR - 账号 guest_visitor 会话验证失败，状态码: 500
+2025-08-17 00:37:22,500 - INFO - 4. 测试无效token访问...
+2025-08-17 00:37:22,500 - INFO - 测试无效token访问...
+2025-08-17 00:37:22,501 - INFO - 无效token测试通过: invalid_token - 状态码: 401
+2025-08-17 00:37:22,503 - INFO - 无效token测试通过: Bearer invalid_token - 状态码: 401
+2025-08-17 00:37:22,505 - INFO - 无效token测试通过: expired_token_12345 - 状态码: 401
+2025-08-17 00:37:22,506 - INFO - 无效token测试通过: (empty) - 状态码: 401
+2025-08-17 00:37:22,507 - INFO - 无效token测试通过: malformed.token.here - 状态码: 401
+2025-08-17 00:37:22,508 - INFO - 5. 测试并发登录...
+2025-08-17 00:37:22,508 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:37:22,739 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,739 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,740 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,741 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,741 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.23s
+2025-08-17 00:37:22,741 - INFO - 并发登录测试完成，成功: 5, 失败: 0, 总时间: 0.23s
+2025-08-17 00:37:22,741 - INFO - 6. 测试登出...
+2025-08-17 00:37:22,744 - INFO - 账号 admin_test 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,746 - INFO - 账号 teacher_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,748 - INFO - 账号 teacher_li 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,750 - INFO - 账号 teacher_wang 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,752 - INFO - 账号 principal_chen 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,754 - INFO - 账号 director_liu 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,756 - INFO - 账号 student_xiaoming 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,758 - INFO - 账号 student_xiaohong 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,760 - INFO - 账号 parent_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,762 - INFO - 账号 parent_li 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,764 - INFO - 账号 guest_visitor 登出成功，响应时间: 0.00s
+2025-08-17 00:37:22,764 - INFO - 认证测试套件执行完成
+2025-08-17 00:37:22,764 - INFO - 登录成功率: 100.0%
+2025-08-17 00:37:22,764 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:37:22,764 - INFO - 登出成功率: 100.0%
+2025-08-17 00:37:22,764 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:37:22,764 - INFO - 无效token处理: 通过
+2025-08-17 00:37:22,765 - INFO - 并发登录测试: 通过
+2025-08-17 00:38:45,816 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:38:45,817 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:38:45,817 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:38:45,817 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:38:45,817 - INFO - 1. 测试有效登录...
+2025-08-17 00:38:46,058 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.24s
+2025-08-17 00:38:46,306 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.25s
+2025-08-17 00:38:46,536 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:46,765 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:46,996 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:47,226 - INFO - 账号 director_liu (教务主任) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:47,478 - INFO - 账号 student_xiaoming (学生) 登录成功，响应时间: 0.25s
+2025-08-17 00:38:47,708 - INFO - 账号 student_xiaohong (学生) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:47,937 - INFO - 账号 parent_zhang (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:48,189 - INFO - 账号 parent_li (家长) 登录成功，响应时间: 0.25s
+2025-08-17 00:38:48,441 - INFO - 账号 guest_visitor (访客) 登录成功，响应时间: 0.25s
+2025-08-17 00:38:48,442 - INFO - 2. 测试无效凭据...
+2025-08-17 00:38:48,442 - INFO - 开始测试无效凭据...
+2025-08-17 00:38:48,447 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:38:48,678 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:38:48,680 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:38:48,683 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:38:48,913 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:38:48,916 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:38:48,916 - INFO - 3. 测试会话验证...
+2025-08-17 00:38:48,919 - ERROR - 账号 admin_test 会话验证失败，状态码: 500
+2025-08-17 00:38:48,923 - ERROR - 账号 teacher_zhang 会话验证失败，状态码: 500
+2025-08-17 00:38:48,926 - ERROR - 账号 teacher_li 会话验证失败，状态码: 500
+2025-08-17 00:38:48,929 - ERROR - 账号 teacher_wang 会话验证失败，状态码: 500
+2025-08-17 00:38:48,933 - ERROR - 账号 principal_chen 会话验证失败，状态码: 500
+2025-08-17 00:38:48,936 - ERROR - 账号 director_liu 会话验证失败，状态码: 500
+2025-08-17 00:38:48,939 - ERROR - 账号 student_xiaoming 会话验证失败，状态码: 500
+2025-08-17 00:38:48,941 - ERROR - 账号 student_xiaohong 会话验证失败，状态码: 500
+2025-08-17 00:38:48,944 - ERROR - 账号 parent_zhang 会话验证失败，状态码: 500
+2025-08-17 00:38:48,947 - ERROR - 账号 parent_li 会话验证失败，状态码: 500
+2025-08-17 00:38:48,950 - ERROR - 账号 guest_visitor 会话验证失败，状态码: 500
+2025-08-17 00:38:48,951 - INFO - 4. 测试无效token访问...
+2025-08-17 00:38:48,951 - INFO - 测试无效token访问...
+2025-08-17 00:38:48,952 - INFO - 无效token测试通过: invalid_token - 状态码: 401
+2025-08-17 00:38:48,954 - INFO - 无效token测试通过: Bearer invalid_token - 状态码: 401
+2025-08-17 00:38:48,956 - INFO - 无效token测试通过: expired_token_12345 - 状态码: 401
+2025-08-17 00:38:48,957 - INFO - 无效token测试通过: (empty) - 状态码: 401
+2025-08-17 00:38:48,959 - INFO - 无效token测试通过: malformed.token.here - 状态码: 401
+2025-08-17 00:38:48,960 - INFO - 5. 测试并发登录...
+2025-08-17 00:38:48,960 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:38:49,193 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:49,193 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:49,193 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:49,193 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:49,194 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:38:49,194 - INFO - 并发登录测试完成，成功: 5, 失败: 0, 总时间: 0.23s
+2025-08-17 00:38:49,194 - INFO - 6. 测试登出...
+2025-08-17 00:38:49,197 - INFO - 账号 admin_test 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,199 - INFO - 账号 teacher_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,201 - INFO - 账号 teacher_li 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,203 - INFO - 账号 teacher_wang 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,205 - INFO - 账号 principal_chen 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,207 - INFO - 账号 director_liu 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,209 - INFO - 账号 student_xiaoming 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,211 - INFO - 账号 student_xiaohong 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,213 - INFO - 账号 parent_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,215 - INFO - 账号 parent_li 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,217 - INFO - 账号 guest_visitor 登出成功，响应时间: 0.00s
+2025-08-17 00:38:49,217 - INFO - 认证测试套件执行完成
+2025-08-17 00:38:49,217 - INFO - 登录成功率: 100.0%
+2025-08-17 00:38:49,217 - INFO - 会话验证成功率: 0.0%
+2025-08-17 00:38:49,217 - INFO - 登出成功率: 100.0%
+2025-08-17 00:38:49,217 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:38:49,217 - INFO - 无效token处理: 通过
+2025-08-17 00:38:49,218 - INFO - 并发登录测试: 通过
+2025-08-17 00:39:58,827 - INFO - 成功加载 13 个测试账号
+2025-08-17 00:39:58,827 - INFO - 认证测试器初始化完成，基础URL: http://localhost:8000
+2025-08-17 00:39:58,827 - INFO - 开始执行完整认证测试套件...
+2025-08-17 00:39:58,828 - INFO - 找到 11 个活跃测试账号
+2025-08-17 00:39:58,828 - INFO - 1. 测试有效登录...
+2025-08-17 00:39:59,088 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.26s
+2025-08-17 00:39:59,317 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:39:59,546 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:39:59,775 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.23s
+2025-08-17 00:40:00,021 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.25s
+2025-08-17 00:40:00,270 - INFO - 账号 director_liu (教务主任) 登录成功，响应时间: 0.25s
+2025-08-17 00:40:00,498 - INFO - 账号 student_xiaoming (学生) 登录成功，响应时间: 0.23s
+2025-08-17 00:40:00,728 - INFO - 账号 student_xiaohong (学生) 登录成功，响应时间: 0.23s
+2025-08-17 00:40:00,957 - INFO - 账号 parent_zhang (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:40:01,183 - INFO - 账号 parent_li (家长) 登录成功，响应时间: 0.23s
+2025-08-17 00:40:01,408 - INFO - 账号 guest_visitor (访客) 登录成功，响应时间: 0.22s
+2025-08-17 00:40:01,408 - INFO - 2. 测试无效凭据...
+2025-08-17 00:40:01,408 - INFO - 开始测试无效凭据...
+2025-08-17 00:40:01,411 - INFO - 无效凭据测试通过: 完全无效的用户名和密码 - 状态码: 401
+2025-08-17 00:40:01,635 - INFO - 无效凭据测试通过: 有效用户名，无效密码 - 状态码: 401
+2025-08-17 00:40:01,638 - INFO - 无效凭据测试通过: 无效用户名，有效密码格式 - 状态码: 401
+2025-08-17 00:40:01,640 - INFO - 无效凭据测试通过: 空用户名 - 状态码: 401
+2025-08-17 00:40:01,866 - INFO - 无效凭据测试通过: 空密码 - 状态码: 401
+2025-08-17 00:40:01,868 - INFO - 无效凭据测试通过: 空用户名和密码 - 状态码: 401
+2025-08-17 00:40:01,869 - INFO - 3. 测试会话验证...
+2025-08-17 00:40:01,874 - INFO - 账号 admin_test 会话验证成功，响应时间: 0.01s
+2025-08-17 00:40:01,878 - INFO - 账号 teacher_zhang 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,881 - INFO - 账号 teacher_li 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,883 - INFO - 账号 teacher_wang 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,886 - INFO - 账号 principal_chen 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,889 - INFO - 账号 director_liu 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,892 - INFO - 账号 student_xiaoming 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,895 - INFO - 账号 student_xiaohong 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,898 - INFO - 账号 parent_zhang 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,901 - INFO - 账号 parent_li 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,904 - INFO - 账号 guest_visitor 会话验证成功，响应时间: 0.00s
+2025-08-17 00:40:01,904 - INFO - 4. 测试无效token访问...
+2025-08-17 00:40:01,904 - INFO - 测试无效token访问...
+2025-08-17 00:40:01,906 - INFO - 无效token测试通过: invalid_token - 状态码: 401
+2025-08-17 00:40:01,908 - INFO - 无效token测试通过: Bearer invalid_token - 状态码: 401
+2025-08-17 00:40:01,910 - INFO - 无效token测试通过: expired_token_12345 - 状态码: 401
+2025-08-17 00:40:01,912 - INFO - 无效token测试通过: (empty) - 状态码: 401
+2025-08-17 00:40:01,913 - INFO - 无效token测试通过: malformed.token.here - 状态码: 401
+2025-08-17 00:40:01,913 - INFO - 5. 测试并发登录...
+2025-08-17 00:40:01,913 - INFO - 开始并发登录测试，账号数: 5, 并发数: 5
+2025-08-17 00:40:02,191 - INFO - 账号 teacher_wang (教师) 登录成功，响应时间: 0.28s
+2025-08-17 00:40:02,195 - INFO - 账号 admin_test (系统管理员) 登录成功，响应时间: 0.28s
+2025-08-17 00:40:02,195 - INFO - 账号 teacher_zhang (教师) 登录成功，响应时间: 0.28s
+2025-08-17 00:40:02,197 - INFO - 账号 teacher_li (教师) 登录成功，响应时间: 0.28s
+2025-08-17 00:40:02,200 - INFO - 账号 principal_chen (校长) 登录成功，响应时间: 0.29s
+2025-08-17 00:40:02,200 - INFO - 并发登录测试完成，成功: 5, 失败: 0, 总时间: 0.29s
+2025-08-17 00:40:02,200 - INFO - 6. 测试登出...
+2025-08-17 00:40:02,203 - INFO - 账号 admin_test 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,205 - INFO - 账号 teacher_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,207 - INFO - 账号 teacher_li 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,209 - INFO - 账号 teacher_wang 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,211 - INFO - 账号 principal_chen 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,213 - INFO - 账号 director_liu 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,215 - INFO - 账号 student_xiaoming 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,217 - INFO - 账号 student_xiaohong 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,219 - INFO - 账号 parent_zhang 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,221 - INFO - 账号 parent_li 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,223 - INFO - 账号 guest_visitor 登出成功，响应时间: 0.00s
+2025-08-17 00:40:02,224 - INFO - 认证测试套件执行完成
+2025-08-17 00:40:02,224 - INFO - 登录成功率: 100.0%
+2025-08-17 00:40:02,224 - INFO - 会话验证成功率: 100.0%
+2025-08-17 00:40:02,224 - INFO - 登出成功率: 100.0%
+2025-08-17 00:40:02,224 - INFO - 无效凭据处理率: 100.0%
+2025-08-17 00:40:02,224 - INFO - 无效token处理: 通过
+2025-08-17 00:40:02,224 - INFO - 并发登录测试: 通过

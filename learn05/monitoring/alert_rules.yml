@@ -1,0 +1,189 @@
+# 智能教学助手告警规则
+
+groups:
+  - name: ai-tutor-alerts
+    rules:
+      # 服务可用性告警
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "服务 {{ $labels.job }} 不可用"
+          description: "服务 {{ $labels.job }} 在实例 {{ $labels.instance }} 上已经停止运行超过1分钟"
+
+      # 高错误率告警
+      - alert: HighErrorRate
+        expr: |
+          (
+            rate(http_requests_total{status=~"5.."}[5m]) /
+            rate(http_requests_total[5m])
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "高错误率检测到"
+          description: "服务 {{ $labels.job }} 的错误率在过去5分钟内超过10%"
+
+      # 响应时间过长告警
+      - alert: HighResponseTime
+        expr: |
+          histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "响应时间过长"
+          description: "服务 {{ $labels.job }} 的95%响应时间超过2秒"
+
+      # CPU使用率过高告警
+      - alert: HighCPUUsage
+        expr: |
+          100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU使用率过高"
+          description: "实例 {{ $labels.instance }} 的CPU使用率超过80%"
+
+      # 内存使用率过高告警
+      - alert: HighMemoryUsage
+        expr: |
+          (
+            (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) /
+            node_memory_MemTotal_bytes
+          ) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "内存使用率过高"
+          description: "实例 {{ $labels.instance }} 的内存使用率超过85%"
+
+      # 磁盘空间不足告警
+      - alert: DiskSpaceLow
+        expr: |
+          (
+            (node_filesystem_size_bytes{fstype!="tmpfs"} - node_filesystem_free_bytes{fstype!="tmpfs"}) /
+            node_filesystem_size_bytes{fstype!="tmpfs"}
+          ) > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "磁盘空间不足"
+          description: "实例 {{ $labels.instance }} 的磁盘使用率超过85%"
+
+      # Redis连接数过高告警
+      - alert: RedisHighConnections
+        expr: redis_connected_clients > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Redis连接数过高"
+          description: "Redis实例 {{ $labels.instance }} 的连接数超过100"
+
+      # 数据库连接池耗尽告警
+      - alert: DatabaseConnectionPoolExhausted
+        expr: |
+          (
+            database_connections_active /
+            database_connections_max
+          ) > 0.9
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "数据库连接池即将耗尽"
+          description: "数据库连接池使用率超过90%"
+
+      # API请求量异常告警
+      - alert: UnusualAPIRequestVolume
+        expr: |
+          (
+            rate(http_requests_total[5m]) >
+            (avg_over_time(rate(http_requests_total[5m])[1h]) * 2)
+          ) or
+          (
+            rate(http_requests_total[5m]) <
+            (avg_over_time(rate(http_requests_total[5m])[1h]) * 0.5)
+          )
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API请求量异常"
+          description: "API请求量与过去1小时的平均值相比异常（超过2倍或低于50%）"
+
+      # 大模型API调用失败率过高
+      - alert: LLMAPIHighFailureRate
+        expr: |
+          (
+            rate(llm_api_requests_total{status="error"}[5m]) /
+            rate(llm_api_requests_total[5m])
+          ) > 0.2
+        for: 3m
+        labels:
+          severity: critical
+        annotations:
+          summary: "大模型API调用失败率过高"
+          description: "大模型API调用失败率超过20%"
+
+      # 文件上传失败率过高
+      - alert: FileUploadHighFailureRate
+        expr: |
+          (
+            rate(file_upload_total{status="error"}[5m]) /
+            rate(file_upload_total[5m])
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "文件上传失败率过高"
+          description: "文件上传失败率超过10%"
+
+  - name: ai-tutor-business-alerts
+    rules:
+      # 成绩分析处理时间过长
+      - alert: GradeAnalysisSlowProcessing
+        expr: |
+          histogram_quantile(0.95, rate(grade_analysis_duration_seconds_bucket[5m])) > 30
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "成绩分析处理时间过长"
+          description: "95%的成绩分析请求处理时间超过30秒"
+
+      # 辅导方案生成失败率过高
+      - alert: TutoringPlanHighFailureRate
+        expr: |
+          (
+            rate(tutoring_plan_generation_total{status="error"}[5m]) /
+            rate(tutoring_plan_generation_total[5m])
+          ) > 0.15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "辅导方案生成失败率过高"
+          description: "辅导方案生成失败率超过15%"
+
+      # 用户登录失败率异常
+      - alert: HighLoginFailureRate
+        expr: |
+          (
+            rate(user_login_total{status="failed"}[5m]) /
+            rate(user_login_total[5m])
+          ) > 0.3
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "用户登录失败率异常"
+          description: "用户登录失败率超过30%，可能存在安全问题"

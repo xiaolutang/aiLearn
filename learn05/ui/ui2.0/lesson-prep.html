@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>备课助手 - 智能教学助手 2.0</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="lesson-prep.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="lesson-prep-container">
+        <!-- 页面头部 -->
+        <header class="lesson-prep-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="page-title-section">
+                        <h1 class="page-title">
+                            <i class="fas fa-book-open page-icon"></i>
+                            备课助手
+                        </h1>
+                        <p class="page-subtitle">AI驱动的智能备课系统，让教学准备更高效</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-history"></i>
+                            历史记录
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-folder-open"></i>
+                            我的备课
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            新建备课
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="lesson-prep-main">
+            <!-- 功能导航标签 -->
+            <nav class="feature-tabs">
+                <div class="tabs-container">
+                    <button class="tab-item active" data-tab="material-analysis">
+                        <i class="fas fa-microscope"></i>
+                        <span>教材智能分析</span>
+                    </button>
+                    <button class="tab-item" data-tab="lesson-planning">
+                        <i class="fas fa-sitemap"></i>
+                        <span>教学环节策划</span>
+                    </button>
+                    <button class="tab-item" data-tab="student-analysis">
+                        <i class="fas fa-users"></i>
+                        <span>学情预设分析</span>
+                    </button>
+                    <button class="tab-item" data-tab="case-recommendation">
+                        <i class="fas fa-star"></i>
+                        <span>优秀案例推荐</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- 标签页内容 -->
+            <div class="tab-content">
+                <!-- 教材智能分析 -->
+                <div class="tab-pane active" id="material-analysis">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- 文件上传区域 -->
+                        <div class="lg:col-span-2">
+                            <div class="card upload-card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        教材文件上传
+                                    </h3>
+                                    <p class="card-subtitle">支持PDF、Word、PPT等格式，AI将自动分析教材内容</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-content">
+                                            <div class="upload-icon">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                            </div>
+                                            <div class="upload-text">
+                                                <h4>拖拽文件到此处或点击上传</h4>
+                                                <p>支持 PDF、DOC、DOCX、PPT、PPTX 格式，最大 50MB</p>
+                                            </div>
+                                            <button class="btn btn-primary upload-btn">
+                                                <i class="fas fa-plus"></i>
+                                                选择文件
+                                            </button>
+                                        </div>
+                                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx" multiple>
+                                    </div>
+                                    
+                                    <!-- 已上传文件列表 -->
+                                    <div class="uploaded-files" id="uploadedFiles" style="display: none;">
+                                        <h4 class="files-title">已上传文件</h4>
+                                        <div class="file-list" id="fileList">
+                                            <!-- 动态生成文件项 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI分析结果 -->
+                            <div class="card analysis-results" id="analysisResults" style="display: none;">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-brain"></i>
+                                        AI分析结果
+                                    </h3>
+                                    <div class="analysis-status">
+                                        <span class="status-badge status-success">
+                                            <i class="fas fa-check"></i>
+                                            分析完成
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="analysis-tabs">
+                                        <div class="mini-tabs">
+                                            <button class="mini-tab active" data-analysis="content">内容概要</button>
+                                            <button class="mini-tab" data-analysis="structure">知识结构</button>
+                                            <button class="mini-tab" data-analysis="difficulty">难点分析</button>
+                                            <button class="mini-tab" data-analysis="objectives">教学目标</button>
+                                        </div>
+                                        
+                                        <div class="analysis-content">
+                                            <div class="analysis-panel active" id="content-analysis">
+                                                <div class="content-summary">
+                                                    <h4>章节概要</h4>
+                                                    <p>本章节主要讲解函数的基本性质，包括单调性、奇偶性、周期性等核心概念。通过具体实例和图像分析，帮助学生理解函数性质的几何意义和代数表示。</p>
+                                                    
+                                                    <h4>关键概念</h4>
+                                                    <div class="concept-tags">
+                                                        <span class="concept-tag">函数单调性</span>
+                                                        <span class="concept-tag">奇偶性判断</span>
+                                                        <span class="concept-tag">周期函数</span>
+                                                        <span class="concept-tag">复合函数性质</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="analysis-panel" id="structure-analysis">
+                                                <div class="knowledge-tree">
+                                                    <div class="tree-node root">
+                                                        <span class="node-title">函数的性质</span>
+                                                        <div class="tree-children">
+                                                            <div class="tree-node">
+                                                                <span class="node-title">单调性</span>
+                                                                <div class="tree-children">
+                                                                    <div class="tree-node leaf">单调递增</div>
+                                                                    <div class="tree-node leaf">单调递减</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tree-node">
+                                                                <span class="node-title">奇偶性</span>
+                                                                <div class="tree-children">
+                                                                    <div class="tree-node leaf">奇函数</div>
+                                                                    <div class="tree-node leaf">偶函数</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tree-node">
+                                                                <span class="node-title">周期性</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="analysis-panel" id="difficulty-analysis">
+                                                <div class="difficulty-items">
+                                                    <div class="difficulty-item high">
+                                                        <div class="difficulty-header">
+                                                            <span class="difficulty-level">高难度</span>
+                                                            <span class="difficulty-title">复合函数性质判断</span>
+                                                        </div>
+                                                        <p class="difficulty-desc">学生容易在复合函数的单调性和奇偶性判断上出错，需要重点讲解。</p>
+                                                        <div class="difficulty-suggestions">
+                                                            <span class="suggestion-tag">增加练习</span>
+                                                            <span class="suggestion-tag">分步讲解</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="difficulty-item medium">
+                                                        <div class="difficulty-header">
+                                                            <span class="difficulty-level">中难度</span>
+                                                            <span class="difficulty-title">函数图像与性质对应</span>
+                                                        </div>
+                                                        <p class="difficulty-desc">从图像读取函数性质信息，需要加强图像分析能力。</p>
+                                                        <div class="difficulty-suggestions">
+                                                            <span class="suggestion-tag">图像演示</span>
+                                                            <span class="suggestion-tag">互动练习</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="analysis-panel" id="objectives-analysis">
+                                                <div class="objectives-list">
+                                                    <div class="objective-item">
+                                                        <div class="objective-type">知识目标</div>
+                                                        <ul>
+                                                            <li>理解函数单调性的定义和判断方法</li>
+                                                            <li>掌握函数奇偶性的概念和性质</li>
+                                                            <li>了解周期函数的基本特征</li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="objective-item">
+                                                        <div class="objective-type">能力目标</div>
+                                                        <ul>
+                                                            <li>能够通过图像分析函数性质</li>
+                                                            <li>能够运用定义证明函数性质</li>
+                                                            <li>能够解决实际问题中的函数性质应用</li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="objective-item">
+                                                        <div class="objective-type">情感目标</div>
+                                                        <ul>
+                                                            <li>培养数学抽象思维能力</li>
+                                                            <li>增强数学应用意识</li>
+                                                            <li>提高数学学习兴趣</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 侧边栏 -->
+                        <div class="sidebar-content">
+                            <!-- 快速操作 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">快速操作</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="quick-actions-vertical">
+                                        <button class="btn btn-secondary btn-block">
+                                            <i class="fas fa-magic"></i>
+                                            AI生成教案
+                                        </button>
+                                        <button class="btn btn-secondary btn-block">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            生成课件
+                                        </button>
+                                        <button class="btn btn-secondary btn-block">
+                                            <i class="fas fa-question-circle"></i>
+                                            生成练习题
+                                        </button>
+                                        <button class="btn btn-secondary btn-block">
+                                            <i class="fas fa-clipboard-check"></i>
+                                            生成测试卷
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- AI建议 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-lightbulb"></i>
+                                        AI教学建议
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ai-suggestions">
+                                        <div class="suggestion-item">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="suggestion-content">
+                                                <h4>教学重点</h4>
+                                                <p>建议重点讲解函数单调性的判断方法，这是学生的薄弱环节。</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="suggestion-item">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="suggestion-content">
+                                                <h4>时间分配</h4>
+                                                <p>建议概念讲解20分钟，例题分析15分钟，练习巩固10分钟。</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="suggestion-item">
+                                            <div class="suggestion-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="suggestion-content">
+                                                <h4>互动方式</h4>
+                                                <p>可以采用小组讨论的方式，让学生自主探索函数性质。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 相关资源 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-folder-open"></i>
+                                        相关资源
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="resource-list">
+                                        <div class="resource-item">
+                                            <div class="resource-icon">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </div>
+                                            <div class="resource-info">
+                                                <div class="resource-name">函数性质练习题.pdf</div>
+                                                <div class="resource-meta">2.3MB · 昨天</div>
+                                            </div>
+                                            <button class="btn-icon btn-sm">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="resource-item">
+                                            <div class="resource-icon">
+                                                <i class="fas fa-file-powerpoint"></i>
+                                            </div>
+                                            <div class="resource-info">
+                                                <div class="resource-name">函数图像课件.pptx</div>
+                                                <div class="resource-meta">5.1MB · 3天前</div>
+                                            </div>
+                                            <button class="btn-icon btn-sm">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="resource-item">
+                                            <div class="resource-icon">
+                                                <i class="fas fa-video"></i>
+                                            </div>
+                                            <div class="resource-info">
+                                                <div class="resource-name">函数性质讲解视频</div>
+                                                <div class="resource-meta">15分钟 · 1周前</div>
+                                            </div>
+                                            <button class="btn-icon btn-sm">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 教学环节策划 -->
+                <div class="tab-pane" id="lesson-planning">
+                    <div class="lesson-planning-content">
+                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                            <!-- 教学流程设计 -->
+                            <div class="lg:col-span-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-sitemap"></i>
+                                            教学流程设计
+                                        </h3>
+                                        <div class="header-actions">
+                                            <button class="btn btn-secondary btn-sm">
+                                                <i class="fas fa-magic"></i>
+                                                AI生成流程
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-plus"></i>
+                                                添加环节
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="lesson-timeline">
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker">
+                                                    <span class="timeline-number">1</span>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="timeline-header">
+                                                        <h4 class="timeline-title">课程导入</h4>
+                                                        <span class="timeline-duration">5分钟</span>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p class="timeline-description">通过生活中的实例引入函数概念，激发学生学习兴趣。</p>
+                                                        <div class="timeline-details">
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">教学方法：</span>
+                                                                <span class="detail-value">情境导入法</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">教学工具：</span>
+                                                                <span class="detail-value">多媒体课件</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-actions">
+                                                        <button class="btn-icon btn-sm" title="编辑">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-icon btn-sm" title="删除">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker">
+                                                    <span class="timeline-number">2</span>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="timeline-header">
+                                                        <h4 class="timeline-title">概念讲解</h4>
+                                                        <span class="timeline-duration">15分钟</span>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p class="timeline-description">详细讲解函数单调性、奇偶性的定义和判断方法。</p>
+                                                        <div class="timeline-details">
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">教学方法：</span>
+                                                                <span class="detail-value">讲授法、演示法</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">重点难点：</span>
+                                                                <span class="detail-value">单调性判断</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-actions">
+                                                        <button class="btn-icon btn-sm" title="编辑">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-icon btn-sm" title="删除">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker">
+                                                    <span class="timeline-number">3</span>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="timeline-header">
+                                                        <h4 class="timeline-title">例题分析</h4>
+                                                        <span class="timeline-duration">15分钟</span>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p class="timeline-description">通过典型例题巩固概念理解，培养解题能力。</p>
+                                                        <div class="timeline-details">
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">教学方法：</span>
+                                                                <span class="detail-value">启发式教学</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">互动方式：</span>
+                                                                <span class="detail-value">师生问答</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-actions">
+                                                        <button class="btn-icon btn-sm" title="编辑">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-icon btn-sm" title="删除">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker">
+                                                    <span class="timeline-number">4</span>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="timeline-header">
+                                                        <h4 class="timeline-title">课堂练习</h4>
+                                                        <span class="timeline-duration">8分钟</span>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p class="timeline-description">学生独立完成练习题，检验学习效果。</p>
+                                                        <div class="timeline-details">
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">练习形式：</span>
+                                                                <span class="detail-value">个人练习</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">题目数量：</span>
+                                                                <span class="detail-value">3-5题</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-actions">
+                                                        <button class="btn-icon btn-sm" title="编辑">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-icon btn-sm" title="删除">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="timeline-item">
+                                                <div class="timeline-marker">
+                                                    <span class="timeline-number">5</span>
+                                                </div>
+                                                <div class="timeline-content">
+                                                    <div class="timeline-header">
+                                                        <h4 class="timeline-title">课堂小结</h4>
+                                                        <span class="timeline-duration">2分钟</span>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p class="timeline-description">总结本节课重点内容，布置课后作业。</p>
+                                                        <div class="timeline-details">
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">总结方式：</span>
+                                                                <span class="detail-value">师生共同总结</span>
+                                                            </div>
+                                                            <div class="detail-item">
+                                                                <span class="detail-label">作业布置：</span>
+                                                                <span class="detail-value">课后练习题</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="timeline-actions">
+                                                        <button class="btn-icon btn-sm" title="编辑">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn-icon btn-sm" title="删除">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 教学配置 -->
+                            <div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">教学配置</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="config-form">
+                                            <div class="form-group">
+                                                <label class="form-label">课程时长</label>
+                                                <select class="form-select">
+                                                    <option value="45">45分钟</option>
+                                                    <option value="40">40分钟</option>
+                                                    <option value="35">35分钟</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="form-label">班级规模</label>
+                                                <select class="form-select">
+                                                    <option value="small">小班(≤20人)</option>
+                                                    <option value="medium" selected>中班(21-40人)</option>
+                                                    <option value="large">大班(>40人)</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="form-label">教学重点</label>
+                                                <div class="checkbox-group">
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        函数单调性
+                                                    </label>
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        函数奇偶性
+                                                    </label>
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        周期性
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="form-label">教学方法</label>
+                                                <div class="method-tags">
+                                                    <span class="method-tag active">讲授法</span>
+                                                    <span class="method-tag active">演示法</span>
+                                                    <span class="method-tag">讨论法</span>
+                                                    <span class="method-tag">实验法</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 时间分配 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">时间分配</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="time-chart">
+                                            <div class="time-item">
+                                                <div class="time-label">导入</div>
+                                                <div class="time-bar">
+                                                    <div class="time-fill" style="width: 11%;"></div>
+                                                </div>
+                                                <div class="time-value">5分钟</div>
+                                            </div>
+                                            <div class="time-item">
+                                                <div class="time-label">讲解</div>
+                                                <div class="time-bar">
+                                                    <div class="time-fill" style="width: 33%;"></div>
+                                                </div>
+                                                <div class="time-value">15分钟</div>
+                                            </div>
+                                            <div class="time-item">
+                                                <div class="time-label">例题</div>
+                                                <div class="time-bar">
+                                                    <div class="time-fill" style="width: 33%;"></div>
+                                                </div>
+                                                <div class="time-value">15分钟</div>
+                                            </div>
+                                            <div class="time-item">
+                                                <div class="time-label">练习</div>
+                                                <div class="time-bar">
+                                                    <div class="time-fill" style="width: 18%;"></div>
+                                                </div>
+                                                <div class="time-value">8分钟</div>
+                                            </div>
+                                            <div class="time-item">
+                                                <div class="time-label">小结</div>
+                                                <div class="time-bar">
+                                                    <div class="time-fill" style="width: 4%;"></div>
+                                                </div>
+                                                <div class="time-value">2分钟</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学情预设分析 -->
+                <div class="tab-pane" id="student-analysis">
+                    <div class="student-analysis-content">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <!-- 学生能力分析 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-chart-bar"></i>
+                                        学生能力分析
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="ability-analysis">
+                                        <div class="ability-item">
+                                            <div class="ability-header">
+                                                <span class="ability-name">基础知识掌握</span>
+                                                <span class="ability-score good">85%</span>
+                                            </div>
+                                            <div class="ability-bar">
+                                                <div class="ability-fill good" style="width: 85%;"></div>
+                                            </div>
+                                            <p class="ability-desc">大部分学生对基础函数概念掌握较好</p>
+                                        </div>
+                                        
+                                        <div class="ability-item">
+                                            <div class="ability-header">
+                                                <span class="ability-name">逻辑推理能力</span>
+                                                <span class="ability-score average">72%</span>
+                                            </div>
+                                            <div class="ability-bar">
+                                                <div class="ability-fill average" style="width: 72%;"></div>
+                                            </div>
+                                            <p class="ability-desc">逻辑推理能力有待提高，需要加强训练</p>
+                                        </div>
+                                        
+                                        <div class="ability-item">
+                                            <div class="ability-header">
+                                                <span class="ability-name">图像分析能力</span>
+                                                <span class="ability-score poor">58%</span>
+                                            </div>
+                                            <div class="ability-bar">
+                                                <div class="ability-fill poor" style="width: 58%;"></div>
+                                            </div>
+                                            <p class="ability-desc">图像分析是薄弱环节，需要重点关注</p>
+                                        </div>
+                                        
+                                        <div class="ability-item">
+                                            <div class="ability-header">
+                                                <span class="ability-name">应用能力</span>
+                                                <span class="ability-score average">68%</span>
+                                            </div>
+                                            <div class="ability-bar">
+                                                <div class="ability-fill average" style="width: 68%;"></div>
+                                            </div>
+                                            <p class="ability-desc">实际应用能力中等，可通过练习提升</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 学习困难预测 -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        学习困难预测
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="difficulty-predictions">
+                                        <div class="prediction-item high-risk">
+                                            <div class="prediction-header">
+                                                <span class="risk-level">高风险</span>
+                                                <span class="prediction-title">复合函数性质判断</span>
+                                            </div>
+                                            <div class="prediction-details">
+                                                <p>预计65%的学生在复合函数性质判断上会遇到困难</p>
+                                                <div class="prediction-suggestions">
+                                                    <span class="suggestion-tag">分步讲解</span>
+                                                    <span class="suggestion-tag">增加例题</span>
+                                                    <span class="suggestion-tag">个别辅导</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="prediction-item medium-risk">
+                                            <div class="prediction-header">
+                                                <span class="risk-level">中风险</span>
+                                                <span class="prediction-title">函数图像与性质对应</span>
+                                            </div>
+                                            <div class="prediction-details">
+                                                <p>预计40%的学生在图像分析方面需要额外帮助</p>
+                                                <div class="prediction-suggestions">
+                                                    <span class="suggestion-tag">图像演示</span>
+                                                    <span class="suggestion-tag">互动练习</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="prediction-item low-risk">
+                                            <div class="prediction-header">
+                                                <span class="risk-level">低风险</span>
+                                                <span class="prediction-title">基本概念理解</span>
+                                            </div>
+                                            <div class="prediction-details">
+                                                <p>大部分学生能够理解基本概念</p>
+                                                <div class="prediction-suggestions">
+                                                    <span class="suggestion-tag">常规讲解</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 个性化建议 -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <i class="fas fa-user-cog"></i>
+                                    个性化教学建议
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="personalized-suggestions">
+                                    <div class="suggestion-category">
+                                        <h4 class="category-title">优秀学生群体 (20%)</h4>
+                                        <div class="category-content">
+                                            <p>建议提供拓展性问题和挑战性任务，培养创新思维能力。</p>
+                                            <div class="suggestion-actions">
+                                                <span class="action-tag">拓展练习</span>
+                                                <span class="action-tag">探究性学习</span>
+                                                <span class="action-tag">同伴教学</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="suggestion-category">
+                                        <h4 class="category-title">中等学生群体 (60%)</h4>
+                                        <div class="category-content">
+                                            <p>重点关注基础知识的巩固和应用能力的提升。</p>
+                                            <div class="suggestion-actions">
+                                                <span class="action-tag">基础练习</span>
+                                                <span class="action-tag">分层教学</span>
+                                                <span class="action-tag">及时反馈</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="suggestion-category">
+                                        <h4 class="category-title">学困学生群体 (20%)</h4>
+                                        <div class="category-content">
+                                            <p>需要额外的个别辅导和基础知识强化训练。</p>
+                                            <div class="suggestion-actions">
+                                                <span class="action-tag">个别辅导</span>
+                                                <span class="action-tag">基础强化</span>
+                                                <span class="action-tag">鼓励激励</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 优秀案例推荐 -->
+                <div class="tab-pane" id="case-recommendation">
+                    <div class="case-recommendation-content">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <!-- 案例列表 -->
+                            <div class="lg:col-span-2">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            <i class="fas fa-star"></i>
+                                            优秀教学案例
+                                        </h3>
+                                        <div class="header-filters">
+                                            <select class="form-select form-select-sm">
+                                                <option value="all">全部类型</option>
+                                                <option value="innovative">创新教学</option>
+                                                <option value="interactive">互动教学</option>
+                                                <option value="technology">技术融合</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="case-list">
+                                            <div class="case-item featured">
+                                                <div class="case-header">
+                                                    <div class="case-title">函数性质的探究式教学设计</div>
+                                                    <div class="case-meta">
+                                                        <span class="case-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            4.9
+                                                        </span>
+                                                        <span class="case-author">李老师 · 北京四中</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <p class="case-description">通过学生自主探究和小组合作，引导学生发现函数性质的规律，培养数学思维能力。该案例获得全国优秀教学设计一等奖。</p>
+                                                    <div class="case-tags">
+                                                        <span class="case-tag">探究式学习</span>
+                                                        <span class="case-tag">小组合作</span>
+                                                        <span class="case-tag">思维培养</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-actions">
+                                                    <button class="btn btn-secondary btn-sm">
+                                                        <i class="fas fa-eye"></i>
+                                                        查看详情
+                                                    </button>
+                                                    <button class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-download"></i>
+                                                        下载案例
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="case-item">
+                                                <div class="case-header">
+                                                    <div class="case-title">基于GeoGebra的函数图像教学</div>
+                                                    <div class="case-meta">
+                                                        <span class="case-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            4.6
+                                                        </span>
+                                                        <span class="case-author">王老师 · 上海中学</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <p class="case-description">利用GeoGebra动态几何软件，让学生直观感受函数性质的变化，提高学习兴趣和理解效果。</p>
+                                                    <div class="case-tags">
+                                                        <span class="case-tag">技术融合</span>
+                                                        <span class="case-tag">动态演示</span>
+                                                        <span class="case-tag">可视化</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-actions">
+                                                    <button class="btn btn-secondary btn-sm">
+                                                        <i class="fas fa-eye"></i>
+                                                        查看详情
+                                                    </button>
+                                                    <button class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-download"></i>
+                                                        下载案例
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="case-item">
+                                                <div class="case-header">
+                                                    <div class="case-title">翻转课堂模式下的函数性质教学</div>
+                                                    <div class="case-meta">
+                                                        <span class="case-rating">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                            4.3
+                                                        </span>
+                                                        <span class="case-author">张老师 · 深圳实验学校</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-content">
+                                                    <p class="case-description">采用翻转课堂模式，学生课前自学基础知识，课堂重点进行问题讨论和深度学习。</p>
+                                                    <div class="case-tags">
+                                                        <span class="case-tag">翻转课堂</span>
+                                                        <span class="case-tag">自主学习</span>
+                                                        <span class="case-tag">深度学习</span>
+                                                    </div>
+                                                </div>
+                                                <div class="case-actions">
+                                                    <button class="btn btn-secondary btn-sm">
+                                                        <i class="fas fa-eye"></i>
+                                                        查看详情
+                                                    </button>
+                                                    <button class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-download"></i>
+                                                        下载案例
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 推荐筛选 -->
+                            <div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">智能推荐</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="recommendation-filters">
+                                            <div class="filter-group">
+                                                <label class="filter-label">教学对象</label>
+                                                <div class="filter-options">
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="target" value="high1" checked>
+                                                        <span class="radio-mark"></span>
+                                                        高一学生
+                                                    </label>
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="target" value="high2">
+                                                        <span class="radio-mark"></span>
+                                                        高二学生
+                                                    </label>
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="target" value="high3">
+                                                        <span class="radio-mark"></span>
+                                                        高三学生
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="filter-group">
+                                                <label class="filter-label">班级规模</label>
+                                                <div class="filter-options">
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="size" value="small">
+                                                        <span class="radio-mark"></span>
+                                                        小班教学
+                                                    </label>
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="size" value="medium" checked>
+                                                        <span class="radio-mark"></span>
+                                                        中班教学
+                                                    </label>
+                                                    <label class="radio-item">
+                                                        <input type="radio" name="size" value="large">
+                                                        <span class="radio-mark"></span>
+                                                        大班教学
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="filter-group">
+                                                <label class="filter-label">教学风格</label>
+                                                <div class="filter-options">
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox" checked>
+                                                        <span class="checkmark"></span>
+                                                        互动式
+                                                    </label>
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        探究式
+                                                    </label>
+                                                    <label class="checkbox-item">
+                                                        <input type="checkbox">
+                                                        <span class="checkmark"></span>
+                                                        讲授式
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            
+                                            <button class="btn btn-primary btn-block">
+                                                <i class="fas fa-search"></i>
+                                                智能匹配
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 热门标签 -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">热门标签</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="popular-tags">
+                                            <span class="popular-tag">探究式学习</span>
+                                            <span class="popular-tag">小组合作</span>
+                                            <span class="popular-tag">技术融合</span>
+                                            <span class="popular-tag">翻转课堂</span>
+                                            <span class="popular-tag">可视化</span>
+                                            <span class="popular-tag">互动教学</span>
+                                            <span class="popular-tag">思维培养</span>
+                                            <span class="popular-tag">个性化</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    <script src="lesson-prep.js"></script>
+</body>
+</html>

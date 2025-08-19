@@ -2,29 +2,28 @@
 import asyncio
 import platform
 
-from httpx import stream
-from openai import OpenAI
-from dotenv import load_dotenv
-import os
 from openai.types.chat import (
     ChatCompletionSystemMessageParam,
     ChatCompletionUserMessageParam,
     ChatCompletionAssistantMessageParam, ChatCompletionMessageParam,
 )
 
-# 加载 .env 文件
-load_dotenv()  # 默认加载项目根目录的 .env 文件
+# 导入自定义的LLM配置模块
+from llm_config import get_default_llm
 
+# 获取默认的LLM实例
 try:
-    # 初始化客户端（默认从环境变量 OPENAI_API_KEY 读取密钥）
-    # api key
-    client = OpenAI(
-        # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key="sk-xxx",
-        api_key=os.getenv("TONG_YI_API_KEY"),
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-    )
+    llm = get_default_llm()
 except Exception as e:
-    print(e)
+    print(f"LLM初始化失败: {e}")
+    # 创建一个简单的mock对象以便程序可以继续运行
+    class MockLLM:
+        def stream_response(self, messages, model, **kwargs):
+            class MockChunk:
+                def __init__(self):
+                    self.choices = [type('obj', (object,), {'delta': type('obj', (object,), {'content': 'LLM初始化失败，请检查配置'})})()]
+            return [MockChunk()]
+    llm = MockLLM()
 
 
 system_prompt = ChatCompletionSystemMessageParam(
@@ -87,11 +86,13 @@ async def task(question):
     print(f"Sending question: {question}")
     #记录用户信息
     messages.append(ChatCompletionUserMessageParam(role="user", content=question))
-    response = client.chat.completions.create(
+    
+    # 使用LLM接口获取流式响应
+    response = llm.stream_response(
         messages=messages,
         model="qwen-plus",  # 模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
-        stream=True,# 是否流式输出 流式输出时 会将模型的输出流式返回，非流式输出时 会将完整的输出返回（有较长的等待期）不同的输出 结果处理方式会不同
     )
+    
     full_response = ""
     for chunk in response:
         content = chunk.choices[0].delta.content

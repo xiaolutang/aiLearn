@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据分析 - 智能教学助手</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/mobile-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>智能教学助手</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>工作台</span>
+            </a>
+            <a href="lesson-prep.html" class="nav-item">
+                <i class="fas fa-book-open"></i>
+                <span>备课助手</span>
+            </a>
+            <a href="classroom.html" class="nav-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>课堂助手</span>
+            </a>
+            <a href="grades.html" class="nav-item">
+                <i class="fas fa-chart-line"></i>
+                <span>成绩管理</span>
+            </a>
+            <a href="analytics.html" class="nav-item active">
+                <i class="fas fa-analytics"></i>
+                <span>数据分析</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>个人中心</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 页面头部 -->
+        <header class="page-header">
+            <div class="header-left">
+                <h1 class="page-title">
+                    <i class="fas fa-analytics"></i>
+                    数据分析
+                </h1>
+                <p class="page-subtitle">深度洞察教学数据，优化教学效果</p>
+            </div>
+            <div class="header-right">
+                <div class="date-range-picker">
+                    <button class="btn btn-outline" id="dateRangeBtn">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="dateRangeText">最近30天</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dateRangeMenu">
+                        <a href="#" data-range="7">最近7天</a>
+                        <a href="#" data-range="30">最近30天</a>
+                        <a href="#" data-range="90">最近3个月</a>
+                        <a href="#" data-range="365">最近1年</a>
+                        <a href="#" data-range="custom">自定义范围</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="exportReportBtn">
+                    <i class="fas fa-download"></i>
+                    导出报告
+                </button>
+            </div>
+        </header>
+
+        <!-- 数据概览 -->
+        <section class="analytics-overview">
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" data-target="156">0</div>
+                        <div class="card-label">总学生数</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" data-target="85.6">0</div>
+                        <div class="card-label">平均成绩</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+3.2%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" data-target="78.5">0</div>
+                        <div class="card-label">优秀率(%)</div>
+                        <div class="card-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+5.8%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-value" data-target="42">0</div>
+                        <div class="card-label">课时完成</div>
+                        <div class="card-change negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>-2.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要分析区域 -->
+        <div class="analytics-main">
+            <!-- 左侧图表区域 -->
+            <div class="analytics-charts">
+                <!-- 成绩趋势分析 -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-line-chart"></i>
+                            成绩趋势分析
+                        </h3>
+                        <div class="chart-controls">
+                            <div class="btn-group">
+                                <button class="btn btn-sm active" data-period="week">周</button>
+                                <button class="btn btn-sm" data-period="month">月</button>
+                                <button class="btn btn-sm" data-period="quarter">季</button>
+                            </div>
+                            <div class="subject-selector">
+                                <select id="trendSubject">
+                                    <option value="all">全部科目</option>
+                                    <option value="math">数学</option>
+                                    <option value="chinese">语文</option>
+                                    <option value="english">英语</option>
+                                    <option value="physics">物理</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="trendChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- 班级对比分析 -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-bar-chart"></i>
+                            班级对比分析
+                        </h3>
+                        <div class="chart-controls">
+                            <div class="btn-group">
+                                <button class="btn btn-sm active" data-type="average">平均分</button>
+                                <button class="btn btn-sm" data-type="excellent">优秀率</button>
+                                <button class="btn btn-sm" data-type="pass">及格率</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="comparisonChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- 学科分布分析 -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-pie-chart"></i>
+                            学科分布分析
+                        </h3>
+                        <div class="chart-controls">
+                            <div class="btn-group">
+                                <button class="btn btn-sm active" data-metric="score">成绩分布</button>
+                                <button class="btn btn-sm" data-metric="difficulty">难度分布</button>
+                                <button class="btn btn-sm" data-metric="time">用时分布</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="distributionChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- 学习行为分析 -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h3 class="chart-title">
+                            <i class="fas fa-activity"></i>
+                            学习行为分析
+                        </h3>
+                        <div class="chart-controls">
+                            <div class="btn-group">
+                                <button class="btn btn-sm active" data-behavior="engagement">参与度</button>
+                                <button class="btn btn-sm" data-behavior="completion">完成率</button>
+                                <button class="btn btn-sm" data-behavior="interaction">互动频次</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="behaviorChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧分析面板 -->
+            <div class="analytics-sidebar">
+                <!-- 智能洞察 -->
+                <div class="sidebar-panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">
+                            <i class="fas fa-lightbulb"></i>
+                            智能洞察
+                        </h4>
+                    </div>
+                    <div class="panel-content">
+                        <div class="insight-list">
+                            <div class="insight-item">
+                                <div class="insight-icon positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <div class="insight-title">数学成绩显著提升</div>
+                                    <div class="insight-desc">本月数学平均分较上月提升8.5分</div>
+                                </div>
+                            </div>
+                            
+                            <div class="insight-item">
+                                <div class="insight-icon warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <div class="insight-title">英语成绩需关注</div>
+                                    <div class="insight-desc">高一(2)班英语及格率偏低</div>
+                                </div>
+                            </div>
+                            
+                            <div class="insight-item">
+                                <div class="insight-icon info">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="insight-content">
+                                    <div class="insight-title">学习活跃度良好</div>
+                                    <div class="insight-desc">课堂互动参与度达到85%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 排行榜 -->
+                <div class="sidebar-panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">
+                            <i class="fas fa-medal"></i>
+                            成绩排行榜
+                        </h4>
+                        <div class="panel-controls">
+                            <select id="rankingType">
+                                <option value="total">总分</option>
+                                <option value="improvement">进步幅度</option>
+                                <option value="consistency">稳定性</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="panel-content">
+                        <div class="ranking-list" id="rankingList">
+                            <!-- 排行榜内容将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学习建议 -->
+                <div class="sidebar-panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">
+                            <i class="fas fa-compass"></i>
+                            学习建议
+                        </h4>
+                    </div>
+                    <div class="panel-content">
+                        <div class="suggestion-list">
+                            <div class="suggestion-item">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="suggestion-content">
+                                    <div class="suggestion-title">加强基础练习</div>
+                                    <div class="suggestion-desc">建议增加数学基础题型练习</div>
+                                </div>
+                            </div>
+                            
+                            <div class="suggestion-item">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="suggestion-content">
+                                    <div class="suggestion-title">小组合作学习</div>
+                                    <div class="suggestion-desc">组织英语口语练习小组</div>
+                                </div>
+                            </div>
+                            
+                            <div class="suggestion-item">
+                                <div class="suggestion-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="suggestion-content">
+                                    <div class="suggestion-title">调整教学节奏</div>
+                                    <div class="suggestion-desc">物理课程可适当放慢进度</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 快速操作 -->
+                <div class="sidebar-panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">
+                            <i class="fas fa-bolt"></i>
+                            快速操作
+                        </h4>
+                    </div>
+                    <div class="panel-content">
+                        <div class="quick-actions">
+                            <button class="action-btn" id="generateReportBtn">
+                                <i class="fas fa-file-alt"></i>
+                                <span>生成分析报告</span>
+                            </button>
+                            <button class="action-btn" id="scheduleReportBtn">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>定时报告</span>
+                            </button>
+                            <button class="action-btn" id="shareAnalyticsBtn">
+                                <i class="fas fa-share-alt"></i>
+                                <span>分享分析</span>
+                            </button>
+                            <button class="action-btn" id="exportDataBtn">
+                                <i class="fas fa-database"></i>
+                                <span>导出数据</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 详细报告模态框 -->
+        <div class="modal" id="reportModal">
+            <div class="modal-content large">
+                <div class="modal-header">
+                    <h3 class="modal-title">
+                        <i class="fas fa-chart-bar"></i>
+                        详细分析报告
+                    </h3>
+                    <button class="modal-close" id="closeReportModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="report-tabs">
+                        <div class="tab-nav">
+                            <button class="tab-btn active" data-tab="summary">概要分析</button>
+                            <button class="tab-btn" data-tab="detailed">详细数据</button>
+                            <button class="tab-btn" data-tab="trends">趋势预测</button>
+                            <button class="tab-btn" data-tab="recommendations">改进建议</button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="summaryTab">
+                                <div class="report-section">
+                                    <h4>整体表现概要</h4>
+                                    <div class="summary-grid">
+                                        <div class="summary-item">
+                                            <div class="summary-label">班级平均分</div>
+                                            <div class="summary-value">85.6分</div>
+                                            <div class="summary-trend positive">↑ 3.2%</div>
+                                        </div>
+                                        <div class="summary-item">
+                                            <div class="summary-label">优秀率</div>
+                                            <div class="summary-value">78.5%</div>
+                                            <div class="summary-trend positive">↑ 5.8%</div>
+                                        </div>
+                                        <div class="summary-item">
+                                            <div class="summary-label">及格率</div>
+                                            <div class="summary-value">94.2%</div>
+                                            <div class="summary-trend positive">↑ 1.5%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane" id="detailedTab">
+                                <div class="report-section">
+                                    <h4>详细数据分析</h4>
+                                    <div class="data-table-container">
+                                        <table class="data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>班级</th>
+                                                    <th>平均分</th>
+                                                    <th>最高分</th>
+                                                    <th>最低分</th>
+                                                    <th>标准差</th>
+                                                    <th>优秀率</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="detailedDataBody">
+                                                <!-- 数据将通过JavaScript填充 -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane" id="trendsTab">
+                                <div class="report-section">
+                                    <h4>趋势预测分析</h4>
+                                    <div class="prediction-content">
+                                        <div class="prediction-chart">
+                                            <canvas id="predictionChart" width="400" height="200"></canvas>
+                                        </div>
+                                        <div class="prediction-insights">
+                                            <div class="insight-card">
+                                                <h5>短期预测（1个月）</h5>
+                                                <p>基于当前趋势，预计下月平均分将达到87.2分</p>
+                                            </div>
+                                            <div class="insight-card">
+                                                <h5>中期预测（3个月）</h5>
+                                                <p>预计本学期末优秀率可提升至82%</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane" id="recommendationsTab">
+                                <div class="report-section">
+                                    <h4>个性化改进建议</h4>
+                                    <div class="recommendations-list">
+                                        <div class="recommendation-item">
+                                            <div class="recommendation-priority high">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                                高优先级
+                                            </div>
+                                            <div class="recommendation-content">
+                                                <h5>加强英语听力训练</h5>
+                                                <p>数据显示英语听力部分失分较多，建议增加听力练习时间</p>
+                                                <div class="recommendation-actions">
+                                                    <button class="btn btn-sm btn-primary">制定计划</button>
+                                                    <button class="btn btn-sm btn-outline">查看资源</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="recommendation-item">
+                                            <div class="recommendation-priority medium">
+                                                <i class="fas fa-info-circle"></i>
+                                                中优先级
+                                            </div>
+                                            <div class="recommendation-content">
+                                                <h5>优化数学解题方法</h5>
+                                                <p>部分学生在几何题型上存在方法性问题</p>
+                                                <div class="recommendation-actions">
+                                                    <button class="btn btn-sm btn-primary">制定计划</button>
+                                                    <button class="btn btn-sm btn-outline">查看资源</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline" id="cancelReportBtn">取消</button>
+                    <button class="btn btn-primary" id="downloadReportBtn">
+                        <i class="fas fa-download"></i>
+                        下载报告
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="animations.js"></script>
+    <script src="analytics.js"></script>
+    <script src="scripts/mobile-interactions.js"></script>
+</body>
+</html>
